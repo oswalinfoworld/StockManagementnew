@@ -1,14 +1,16 @@
-package com.example.stockmangmentnew;
+package com.example.stockmangmentnew.Services.StockOut;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Loginpg extends AppCompatActivity {
+import com.example.stockmangmentnew.R;
+
+public class Return extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_loginpg);
+        setContentView(R.layout.activity_return);
     }
 }

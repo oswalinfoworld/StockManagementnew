@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".stock_OUT">
+    tools:context=".Services.StockOut.stock_OUT">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

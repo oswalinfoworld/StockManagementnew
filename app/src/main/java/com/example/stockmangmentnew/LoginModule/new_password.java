@@ -1,14 +1,16 @@
-package com.example.stockmangmentnew;
+package com.example.stockmangmentnew.LoginModule;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Return extends AppCompatActivity {
+import com.example.stockmangmentnew.R;
+
+public class new_password extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_return);
+        setContentView(R.layout.activity_new_password);
     }
 }

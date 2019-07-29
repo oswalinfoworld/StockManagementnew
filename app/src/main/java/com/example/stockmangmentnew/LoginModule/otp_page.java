@@ -1,14 +1,16 @@
-package com.example.stockmangmentnew;
+package com.example.stockmangmentnew.LoginModule;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Damage extends AppCompatActivity {
+import com.example.stockmangmentnew.R;
+
+public class otp_page extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_damage);
+        setContentView(R.layout.activity_otp_page);
     }
 }

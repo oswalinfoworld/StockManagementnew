@@ -1,8 +1,10 @@
-package com.example.stockmangmentnew;
+package com.example.stockmangmentnew.LoginModule;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.stockmangmentnew.R;
 
 public class ForgetPassword extends AppCompatActivity {
 

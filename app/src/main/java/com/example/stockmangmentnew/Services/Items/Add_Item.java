@@ -1,14 +1,16 @@
-package com.example.stockmangmentnew;
+package com.example.stockmangmentnew.Services.Items;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class otp_page extends AppCompatActivity {
+import com.example.stockmangmentnew.R;
+
+public class Add_Item extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_otp_page);
+        setContentView(R.layout.activity_add__item);
     }
 }

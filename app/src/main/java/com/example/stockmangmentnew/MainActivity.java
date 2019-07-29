@@ -3,6 +3,13 @@ package com.example.stockmangmentnew;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.stockmangmentnew.LoginModule.ForgetPassword;
+import com.example.stockmangmentnew.LoginModule.LoginPage;
+import com.example.stockmangmentnew.Services.Items.Add_Item;
+import com.example.stockmangmentnew.Services.Items.view_item;
+import com.example.stockmangmentnew.Services.StockIn.IN_View;
+import com.example.stockmangmentnew.Services.StockOut.Stock_Out_View;
+import com.example.stockmangmentnew.Services.StockOut.stock_OUT;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -21,6 +28,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -88,8 +96,7 @@ public class MainActivity extends AppCompatActivity
 
 
         if (id == R.id.item) {
-            Intent intent = new Intent(MainActivity.this,Loginpg.class);
-            startActivity(intent);
+            Toast.makeText(getApplicationContext(),"Show Item Page Here ",Toast.LENGTH_LONG).show();
 
         } else if (id == R.id.supplier) {
             Intent intent = new Intent(MainActivity.this, IN_View.class);
@@ -114,13 +121,11 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.retun) {
             Intent intent = new Intent(MainActivity.this, customer_List.class);
             startActivity(intent);
-        }
-        else if (id == R.id.damage) {
+        } else if (id == R.id.damage) {
             Intent intent = new Intent(MainActivity.this, ForgetPassword.class);
             startActivity(intent);
 
         }
-
 
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
