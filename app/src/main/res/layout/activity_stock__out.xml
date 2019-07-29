@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".stock_OUT">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stock OUT "
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:background="#F77F76"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/t2"
+            android:layout_width="384dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingTop="40dp">
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:id="@+id/stockoutid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:text="Stockout ID:"
+                    android:textStyle="bold"
+                    android:textSize="20dp"/>
+
+                <EditText
+                    android:id="@+id/stockoutidEditText"
+                    android:layout_width="282dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="15dp"
+                    android:width="200px"
+                    />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:text="Date:"
+                    android:textSize="20dp"/>
+
+                <EditText
+                    android:id="@+id/coNoEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="15dp"
+                    android:width="200px" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:text="Bill No."
+                    android:textSize="20dp"/>
+
+                <EditText
+                    android:id="@+id/addEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+
+                    android:width="100px" />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp">
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/t3"
+            android:layout_width="384dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingTop="20dp">
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:id="@+id/stockid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:text="Customer Name:"
+                    android:textStyle="bold"
+                    android:textSize="20dp"/>
+
+                <EditText
+                    android:id="@+id/stockidEditText"
+                    android:layout_width="282dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="15dp"
+                    android:width="200px"
+                    />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/soutcono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:text="Contact no.:"
+                    android:textSize="20dp"/>
+
+                <EditText
+                    android:id="@+id/soutconoEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="15dp"
+                    android:width="200px" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/soutaddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:text="Address."
+                    android:textSize="20dp"/>
+
+                <EditText
+                    android:id="@+id/soutaddEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+
+                    android:width="100px" />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="370dp">
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/t4"
+            android:layout_width="384dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingTop="20dp">
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:id="@+id/barcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:text="Barcode:"
+                    android:textStyle="bold"
+                    android:textSize="20dp"/>
+
+                <EditText
+                    android:id="@+id/barcodeEditText"
+                    android:layout_width="282dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="15dp"
+                    android:width="200px"
+                    />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/itemname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:text="ITEM name:"
+                    android:textSize="20dp"/>
+
+                <EditText
+                    android:id="@+id/itemnameEdittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="15dp"
+                    android:width="200px" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/availableQuantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:text="Available Quantity"
+                    android:textSize="20dp"/>
+
+                <EditText
+                    android:id="@+id/availableEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+
+                    android:width="100px" />
+            </TableRow>
+        </TableLayout>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="90dp"
+        android:paddingTop="530dp">
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="116dp"
+            android:layout_height="35dp"
+            android:layout_below="@+id/passwordET"
+            android:layout_marginTop="90dp"
+            android:background="@drawable/rounded_button"
+            android:gravity="center"
+
+            android:text="Submit"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/resetBtn"
+            android:layout_width="112dp"
+            android:layout_height="35dp"
+            android:layout_below="@+id/passwordET"
+            android:layout_marginTop="90dp"
+            android:background="@drawable/rounded_button"
+            android:gravity="center"
+            android:text="Photo"
+
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+
+
+    <!-- <TextView
+         android:layout_width="98dp"
+         android:layout_height="25dp"
+         android:layout_marginTop="100dp"
+         android:text="Stock out ID:"
+         android:layout_marginLeft="10dp"
+         android:layout_marginRight="10dp"/>
+     <EditText
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="140dp"/>
+
+     <TextView
+         android:layout_width="98dp"
+         android:layout_height="25dp"
+         android:layout_marginTop="220dp"
+         android:text="Date:"
+         android:layout_marginLeft="10dp"
+         android:layout_marginRight="10dp"/>
+     <EditText
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="240dp"/>
+
+
+     <TextView
+         android:layout_width="98dp"
+         android:layout_height="25dp"
+         android:layout_marginTop="310dp"
+         android:text="Date:"
+         android:layout_marginLeft="10dp"
+         android:layout_marginRight="10dp"/>
+     <EditText
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="320dp"/>-->
+
+</RelativeLayout>

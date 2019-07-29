@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/item"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Item" />
+        <item
+            android:id="@+id/supplier"
+            android:icon="@drawable/add_salesman"
+            android:title="Supplier" />
+        <item
+            android:id="@+id/customer"
+            android:icon="@drawable/salesman"
+            android:title="Customer" />
+        <item
+            android:id="@+id/stockin"
+            android:icon="@drawable/add_project"
+            android:title="StockIN" />
+
+        <item
+            android:id="@+id/stockout"
+            android:icon="@drawable/commision"
+            android:title="StockOUT" />
+
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_replay_black_24dp"
+            android:title="LogOut" />
+
+        <item
+            android:id="@+id/retun"
+            android:icon="@drawable/ic_keyboard_return_black_24dp"
+            android:title="Return" />
+
+        <item
+            android:id="@+id/damage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Damage" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/menu_share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/menu_send" />
+        </menu>
+    </item>
+
+</menu>
