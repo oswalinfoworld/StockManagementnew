@@ -24,14 +24,17 @@
 
     <TableRow
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:paddingTop="13dp">
 
         <TextView
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
-            android:text="Name:" />
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="Name :" />
 
         <EditText
             android:id="@+id/nameEditText"
@@ -43,13 +46,19 @@
 
     </TableRow>
 
-    <TableRow>
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingTop="13dp"
+        >
 
         <TextView
             android:id="@+id/conNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:layout_column="1"
+            android:textSize="18dp"
             android:text="Contact No:" />
 
         <EditText
@@ -61,14 +70,19 @@
             android:width="200px" />
     </TableRow>
 
-    <TableRow>
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingTop="13dp">
 
         <TextView
             android:id="@+id/address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
-            android:text="Email:" />
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="Email :" />
 
         <EditText
             android:id="@+id/addEditText"
@@ -81,14 +95,17 @@
 
     <TableRow
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:paddingTop="13dp">
 
         <TextView
             android:id="@+id/dob"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:textStyle="bold"
             android:layout_column="1"
-            android:text="DOB:"
+            android:text="DOB :"
              />
 
         <EditText
@@ -104,19 +121,23 @@
 
     <TableRow
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:paddingTop="13dp">
 
         <TextView
             android:id="@+id/vat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="18dp"
             android:layout_column="1"
-            android:text="Photo:" />
+            android:textStyle="bold"
+            android:text="Photo :" />
 
         <EditText
             android:id="@+id/vatEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:textSize="15dp"
             android:hint="Enter photo"
             android:width="100px" />
@@ -126,12 +147,11 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/submit"
+        android:id="@+id/signup_submit"
         android:layout_width="210dp"
         android:layout_height="37dp"
         android:layout_marginLeft="90dp"
-        android:layout_marginTop="350dp"
-        android:background="@drawable/rounded_button"
+        android:layout_marginTop="370dp"
         android:gravity="center"
         android:text="SUBMIT "
         />

@@ -263,7 +263,6 @@
             android:layout_height="35dp"
             android:layout_below="@+id/passwordET"
             android:layout_marginTop="90dp"
-            android:background="@drawable/rounded_button"
             android:gravity="center"
 
             android:text="Submit"
@@ -276,7 +275,6 @@
             android:layout_height="35dp"
             android:layout_below="@+id/passwordET"
             android:layout_marginTop="90dp"
-            android:background="@drawable/rounded_button"
             android:gravity="center"
             android:text="Photo"
 
