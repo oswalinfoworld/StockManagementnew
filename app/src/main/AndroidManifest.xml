@@ -40,6 +40,14 @@
         <activity android:name=".LoginModule.new_password" />
         <activity android:name=".LoginModule.otp_page" />
         <activity android:name=".LoginModule.ForgetPassword"/>
+        <activity
+            android:name="com.example.stockmangmentnew.QRcodeModule.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.QRcodeModule.MainActivity" />
+              </intent-filter>
+        </activity>
     </application>
 
 </manifest>

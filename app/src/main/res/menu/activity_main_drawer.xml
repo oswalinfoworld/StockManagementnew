@@ -40,6 +40,10 @@
             android:id="@+id/damage"
             android:icon="@drawable/ic_menu_manage"
             android:title="Damage" />
+        <item
+            android:id="@+id/qrCode"
+            android:icon="@drawable/ic_menu_share"
+            android:title="QR Code Reader" />
     </group>
 
     <item android:title="Communicate">
