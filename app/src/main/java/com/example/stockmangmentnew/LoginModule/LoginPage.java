@@ -9,6 +9,7 @@ import android.content.Intent;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +20,9 @@ import com.example.stockmangmentnew.MainActivity;
 import com.example.stockmangmentnew.OnlineDBActivity.ApiConnector;
 import com.example.stockmangmentnew.R;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 public class LoginPage extends AppCompatActivity {
 
@@ -26,6 +30,7 @@ public class LoginPage extends AppCompatActivity {
     String userNameString, passwordString;
     private TextView forgetPassword, register;
     Button login, reset;
+
 
 
     @Override
@@ -39,15 +44,47 @@ public class LoginPage extends AppCompatActivity {
 
         forgetPassword = (TextView) findViewById(R.id.TVforgetPass);
         register = (TextView) findViewById(R.id.TVregistration);
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Pattern pattern;
+                Matcher matcher;
+               String Password= password.getText().toString().trim();
+                final String PASSWORD_PATTERN = "((?=.*[a-z])(?=.*\\d)(?=.*[A-Z])(?=.*[@#$%!]).{6,})";
+                pattern = Pattern.compile(PASSWORD_PATTERN);
+                matcher = pattern.matcher(Password);
+                if (matcher.matches()){
+                    Toast.makeText(getApplicationContext(),"True",Toast.LENGTH_LONG).show();
+
+
+                }
+                else {
+                    Toast.makeText(getApplicationContext(),"Enter Valid Password",Toast.LENGTH_LONG).show();
+                }
+
+
                 Toast.makeText(getApplicationContext(), "Login Pressed", Toast.LENGTH_LONG).show();
+
+
+
+                if (userName.getText().toString().trim().length() == 0) {
+                    userName.setError("Username is not entered");
+                    userName.requestFocus();
+
+                }
+                if (password.getText().toString().trim().length() == 0) {
+                    password.setError("Password is not entered");
+                    password.requestFocus();
+                }
                 userNameString = userName.getText().toString();
                 passwordString = password.getText().toString();
                 new checkCredential().execute(new ApiConnector());
+
             }
         });
+
+
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,7 +117,7 @@ public class LoginPage extends AppCompatActivity {
 
     }
 
-    private class checkCredential extends AsyncTask<ApiConnector, Long, String> {
+    public class checkCredential extends AsyncTask<ApiConnector, Long, String> {
         @Override
         protected String doInBackground(ApiConnector... params) {
 
@@ -133,4 +170,6 @@ public class LoginPage extends AppCompatActivity {
         }
 
     }
+
+
 }

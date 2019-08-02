@@ -280,6 +280,8 @@ public class MainActivity extends AppCompatActivity
                 if (childList.get(headerList.get(groupPosition)) != null) {
                     MenuModel model = childList.get(headerList.get(groupPosition)).get(childPosition);
                     if (model.url.length() > 0) {
+
+
                         Toast.makeText(getApplicationContext(), "Child Selected Menu " + model.url, Toast.LENGTH_LONG).show();
                         onBackPressed();
                     }
@@ -290,13 +292,17 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
+
     private void openPage(String pageName) {
 
         if (pageName.contains("item add")) {
             Toast.makeText(getApplicationContext(), "Show Item Page Add ", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(MainActivity.this, Add_Item.class);
+            startActivity(intent);
 
         } else if (pageName.contains("item view")) {
             Toast.makeText(getApplicationContext(), "Show Item Page View ", Toast.LENGTH_LONG).show();
+
         } else if (pageName.contains("supplier")) {
             Intent intent = new Intent(MainActivity.this, IN_View.class);
             startActivity(intent);
@@ -309,6 +315,7 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(getApplicationContext(), "stock in add ", Toast.LENGTH_LONG).show();
         } else if (pageName.contains("stock in view")) {
             Toast.makeText(getApplicationContext(), "stock in view ", Toast.LENGTH_LONG).show();
+
         } else if (pageName.contains("stock out add")) {
             Toast.makeText(getApplicationContext(), "stock out add ", Toast.LENGTH_LONG).show();
         } else if (pageName.contains("stock out view")) {
