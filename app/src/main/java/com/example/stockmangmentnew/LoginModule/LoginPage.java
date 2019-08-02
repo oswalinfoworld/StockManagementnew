@@ -7,9 +7,9 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 
+import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,8 +31,6 @@ public class LoginPage extends AppCompatActivity {
     private TextView forgetPassword, register;
     Button login, reset;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,48 +46,18 @@ public class LoginPage extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Pattern pattern;
-                Matcher matcher;
-               String Password= password.getText().toString().trim();
-                final String PASSWORD_PATTERN = "((?=.*[a-z])(?=.*\\d)(?=.*[A-Z])(?=.*[@#$%!]).{6,})";
-                pattern = Pattern.compile(PASSWORD_PATTERN);
-                matcher = pattern.matcher(Password);
-                if (matcher.matches()){
-                    Toast.makeText(getApplicationContext(),"True",Toast.LENGTH_LONG).show();
-
-
-                }
-                else {
-                    Toast.makeText(getApplicationContext(),"Enter Valid Password",Toast.LENGTH_LONG).show();
-                }
-
-
-                Toast.makeText(getApplicationContext(), "Login Pressed", Toast.LENGTH_LONG).show();
-
-
-
-                if (userName.getText().toString().trim().length() == 0) {
-                    userName.setError("Username is not entered");
-                    userName.requestFocus();
-
-                }
-                if (password.getText().toString().trim().length() == 0) {
-                    password.setError("Password is not entered");
-                    password.requestFocus();
-                }
                 userNameString = userName.getText().toString();
                 passwordString = password.getText().toString();
-                new checkCredential().execute(new ApiConnector());
-
+                if(isInternetOn() && validateForm()) {
+                    new checkCredential().execute(new ApiConnector());
+                }
             }
         });
-
 
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "Reset Pressed", Toast.LENGTH_LONG).show();
-
                 userName.getText().clear();
                 password.getText().clear();
             }
@@ -114,16 +82,49 @@ public class LoginPage extends AppCompatActivity {
 
             }
         });
+    }
 
+
+    public boolean validateForm() {
+        String validEmailPattern = "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
+                "\\@" +
+
+                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
+
+                "(" +
+
+                "\\." +
+
+                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
+
+                ")+";
+
+        Matcher matcher = Pattern.compile(validEmailPattern).matcher(userNameString);
+        if (matcher.matches()) {
+            Toast.makeText(getApplicationContext(), "True", Toast.LENGTH_LONG).show();
+        } else {
+            //Toast.makeText(getApplicationContext(), "Enter Valid Email-Id", Toast.LENGTH_LONG).show();
+            userName.setError("Enter Valid User Name");
+            userName.requestFocus();
+            return false;
+        }
+
+        if (userNameString.length() == 0) {
+            userName.setError("Username is not entered");
+            userName.requestFocus();
+            return false;
+        }
+        if (passwordString.length() == 0) {
+            password.setError("Password is not entered");
+            password.requestFocus();
+            return false;
+        }
+        return true;
     }
 
     public class checkCredential extends AsyncTask<ApiConnector, Long, String> {
         @Override
         protected String doInBackground(ApiConnector... params) {
-
-            // it is executed on Background thread
-            //  Toast.makeText(getApplicationContext(),"Image Capture "+imageData,Toast.LENGTH_LONG).show();
-
             return params[0].checkUserCredential(userNameString, passwordString);
         }
 
@@ -160,7 +161,6 @@ public class LoginPage extends AppCompatActivity {
 
                 // Showing Alert Message
                 alertDialog.show();
-
             } else {
                 Toast.makeText(getApplicationContext(), "Welcome User", Toast.LENGTH_LONG).show();
 
@@ -168,8 +168,30 @@ public class LoginPage extends AppCompatActivity {
                 startActivity(i);
             }
         }
-
     }
 
+    public boolean isInternetOn() {
 
+        // get Connectivity Manager object to check connection
+        ConnectivityManager connec =
+                (ConnectivityManager) getSystemService(getBaseContext().CONNECTIVITY_SERVICE);
+
+        // Check for network connections
+        if (connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.CONNECTED ||
+                connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.CONNECTING ||
+                connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.CONNECTING ||
+                connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.CONNECTED) {
+
+
+            return true;
+
+        } else if (
+                connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.DISCONNECTED ||
+                        connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.DISCONNECTED) {
+
+            Toast.makeText(getApplicationContext(), "Internet Down Data not Reflect on server", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        return false;
+    }
 }

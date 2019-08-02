@@ -66,6 +66,8 @@
             android:layout_height="wrap_content"
             android:hint="Enter contact no."
             android:textSize="15dp"
+            android:maxLength="10"
+            android:inputType="number"
             android:width="200px" />
     </TableRow>
 
@@ -89,6 +91,7 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:hint="Enter email "
+            android:inputType="textEmailAddress"
             android:width="100px" />
     </TableRow>
 
@@ -136,7 +139,6 @@
             android:id="@+id/photEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:textSize="15dp"
             android:hint="Enter photo"
             android:width="100px" />

@@ -1,6 +1,16 @@
 package com.example.stockmangmentnew.OnlineDBActivity;
 
 
+import com.example.stockmangmentnew.POJO.StockUser;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -17,8 +27,8 @@ public class ApiConnector {
     public String checkUserCredential(String userName, String password) {
 
         //New Code Embeded
-        String url1 = "http://www.evbd.mannewarsamaj.org/dixit/validateStockUserDetails.php?username=" + userName +"&&password=" + password ;
-        String response="";
+        String url1 = "http://www.evbd.mannewarsamaj.org/dixit/validateStockUserDetails.php?username=" + userName + "&&password=" + password;
+        String response = "";
         java.net.URL url = null;
         try {
             url = new java.net.URL(url1);
@@ -33,9 +43,59 @@ public class ApiConnector {
             System.out.println(response);
         } catch (MalformedURLException e) {
             e.printStackTrace();
-        }  catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return response;
+    }
+
+
+    public JSONArray insert_stock_user(StockUser userProfile) {
+        String name = userProfile.getName().replaceAll(" ", "%20");
+        String contactNumber = userProfile.getContactNumber();
+        String userName = userProfile.getUserName();
+        String DOB = userProfile.getDOB();
+
+        String url = "http://www.evbd.mannewarsamaj.org/dixit/stockUserAdd.php?name=" + name + "&contactNumber=" + contactNumber + "&username=" + userName + "&DOB=" + DOB;
+        // Get HttpResponse Object from url.
+        // Get HttpEntity from Http Response Object
+        HttpEntity httpEntity = null;
+        try {
+
+            DefaultHttpClient httpClient = new DefaultHttpClient();  // Default HttpClient
+            //Log.d("abhi", url);
+            System.out.print("***************** URL " + url);
+            HttpPost httpGet = new HttpPost(url);
+
+            HttpResponse httpResponse = httpClient.execute(httpGet);
+
+            httpEntity = httpResponse.getEntity();
+
+
+        } catch (ClientProtocolException e) {
+            System.out.print("Error " + e.getMessage());
+            // Signals error in http protocol
+            e.printStackTrace();
+
+            //Log Errors Here
+        } catch (IOException e) {
+            System.out.print("Error " + e.getMessage());
+            e.printStackTrace();
+        }
+        // Convert HttpEntity into JSON Array
+        JSONArray jsonArray = null;
+        if (httpEntity != null) {
+            try {
+                String entityResponse = EntityUtils.toString(httpEntity);
+
+                // Log.e("Entity Response  : ", entityResponse);
+                jsonArray = new JSONArray(entityResponse);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return jsonArray;
     }
 }
