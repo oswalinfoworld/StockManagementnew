@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Services.StockOut.Return">
+    tools:context="com.example.stockmangmentnew.Services.StockOut.Return">
 
     <RelativeLayout
         android:layout_width="match_parent"

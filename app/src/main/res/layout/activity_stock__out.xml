@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Services.StockOut.stock_OUT">
+    tools:context="com.example.stockmangmentnew.Services.StockOut.stock_OUT">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,248 +18,203 @@
         android:textSize="25dp"
         android:background="#F77F76"
         />
+<TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="70dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginLeft="5dp">
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingTop="13dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp">
+        <TextView
+            android:id="@+id/uniqid"
+            android:layout_width="38dp"
+            android:layout_height="35dp"
+            android:layout_column="1"
+            android:text="Uniq ID:"
+            android:textSize="13dp"
+            android:textStyle="bold" />
 
-        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/t2"
-            android:layout_width="384dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:paddingTop="40dp">
+        <EditText
+            android:id="@+id/uniqidEdittext"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:textSize="15dp"
+            android:background="@drawable/edit_text_boarder1"
+            android:width="200px" />
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_column="1"
+            android:textSize="15dp"
+            android:layout_marginLeft="2dp"
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
+            android:text="Date:" />
 
-                <TextView
-                    android:id="@+id/stockoutid"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:text="Stockout ID:"
-                    android:textStyle="bold"
-                    android:textSize="20dp"/>
+        <EditText
+            android:id="@+id/dateEditText"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/edit_text_boarder1"
+            android:textSize="15dp"
+            android:width="200px" />
+        <TextView
+            android:id="@+id/billno"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_column="1"
+            android:textSize="15dp"
+            android:layout_marginLeft="2dp"
 
-                <EditText
-                    android:id="@+id/stockoutidEditText"
-                    android:layout_width="282dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="15dp"
-                    android:width="200px"
-                    />
+            android:text="Bill no:" />
 
-            </TableRow>
+        <EditText
+            android:id="@+id/billnoEditText"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/edit_text_boarder1"
+            android:textSize="15dp"
+            android:width="200px" />
 
-            <TableRow>
+    </TableRow>
+    <TableRow
+        android:layout_width="55dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="13dp">
+        <TextView
+            android:id="@+id/customername"
+            android:layout_width="55dp"
+            android:layout_height="45dp"
+            android:layout_column="1"
+            android:textSize="13dp"
+            android:textStyle="bold"
+            android:text="CustomerName:" />
 
-                <TextView
-                    android:id="@+id/date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:text="Date:"
-                    android:textSize="20dp"/>
+        <EditText
+            android:id="@+id/customernameEditText"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/edit_text_boarder1"
+            android:textSize="15dp"
+            android:width="200px" />
+        <TextView
+            android:id="@+id/conactno"
+            android:layout_width="66dp"
+            android:layout_height="55dp"
+            android:layout_column="1"
+            android:textSize="15dp"
+            android:layout_marginLeft="2dp"
 
-                <EditText
-                    android:id="@+id/coNoEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+            android:text="Contact no:" />
 
-                    android:textSize="15dp"
-                    android:width="200px" />
-            </TableRow>
+        <EditText
+            android:id="@+id/contactnoEditText"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/edit_text_boarder1"
+            android:textSize="15dp"
+            android:width="200px" />
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="65dp"
+            android:layout_height="45dp"
+            android:layout_column="1"
+            android:textSize="15dp"
+            android:layout_marginLeft="2dp"
 
-            <TableRow>
+            android:text="Address:" />
 
-                <TextView
-                    android:id="@+id/address"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:text="Bill No."
-                    android:textSize="20dp"/>
+        <EditText
+            android:id="@+id/addressEditText"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/edit_text_boarder1"
+            android:textSize="15dp"
+            android:width="200px" />
 
-                <EditText
-                    android:id="@+id/addEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
+    </TableRow>
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingTop="13dp">
 
-                    android:width="100px" />
-            </TableRow>
-        </TableLayout>
+    <TextView
+        android:id="@+id/Barcode"
+        android:layout_width="65dp"
+        android:layout_height="35dp"
+        android:layout_column="1"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        android:text="Barcode:"
+       />
 
-    </LinearLayout>
+    <EditText
+        android:id="@+id/BarcodeEdittext"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:background="@drawable/edit_text_boarder1"
+        android:textSize="15dp"
+        android:width="200px" />
+    <TextView
+        android:id="@+id/itemname"
+        android:layout_width="55dp"
+        android:layout_height="35dp"
+        android:layout_column="1"
+        android:textSize="15dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="2dp"
 
+        android:text="Item name:" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="220dp">
+    <EditText
+        android:id="@+id/itemnameEditText"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:textSize="15dp"
+        android:background="@drawable/edit_text_boarder1"
+        android:width="200px" />
+    <TextView
+        android:id="@+id/availableQuantity"
+        android:layout_width="65dp"
+        android:layout_height="55dp"
+        android:layout_column="1"
+        android:layout_gravity="center"
 
-        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/t3"
-            android:layout_width="384dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:paddingTop="20dp">
+        android:textSize="15dp"
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
+        android:text="availableQuantity:" />
 
-                <TextView
-                    android:id="@+id/stockid"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:text="Customer Name:"
-                    android:textStyle="bold"
-                    android:textSize="20dp"/>
-
-                <EditText
-                    android:id="@+id/stockidEditText"
-                    android:layout_width="282dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="15dp"
-                    android:width="200px"
-                    />
-
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-                    android:id="@+id/soutcono"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:text="Contact no.:"
-                    android:textSize="20dp"/>
-
-                <EditText
-                    android:id="@+id/soutconoEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:textSize="15dp"
-                    android:width="200px" />
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-                    android:id="@+id/soutaddress"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:text="Address."
-                    android:textSize="20dp"/>
-
-                <EditText
-                    android:id="@+id/soutaddEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-
-                    android:width="100px" />
-            </TableRow>
-        </TableLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="370dp">
-
-        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/t4"
-            android:layout_width="384dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:paddingTop="20dp">
-
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
-
-                <TextView
-                    android:id="@+id/barcode"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:text="Barcode:"
-                    android:textStyle="bold"
-                    android:textSize="20dp"/>
-
-                <EditText
-                    android:id="@+id/barcodeEditText"
-                    android:layout_width="282dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="15dp"
-                    android:width="200px"
-                    />
-
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-                    android:id="@+id/itemname"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:text="ITEM name:"
-                    android:textSize="20dp"/>
-
-                <EditText
-                    android:id="@+id/itemnameEdittext"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:textSize="15dp"
-                    android:width="200px" />
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-                    android:id="@+id/availableQuantity"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:text="Available Quantity"
-                    android:textSize="20dp"/>
-
-                <EditText
-                    android:id="@+id/availableEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-
-                    android:width="100px" />
-            </TableRow>
-        </TableLayout>
+    <EditText
+        android:id="@+id/availableQuantityEditText"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:textSize="15dp"
+        android:background="@drawable/edit_text_boarder1"
+        android:width="200px" />
+    </TableRow>
 
 
 
-    </LinearLayout>
+</TableLayout>
+
+
+        <Button android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/circle_button"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="290dp"
+            />
+
+
     <LinearLayout
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="90dp"
-        android:paddingTop="530dp">
+        android:paddingTop="310dp">
 
         <Button
             android:id="@+id/loginBtn"
@@ -284,42 +243,6 @@
 
 
 
+    </RelativeLayout>
 
-    <!-- <TextView
-         android:layout_width="98dp"
-         android:layout_height="25dp"
-         android:layout_marginTop="100dp"
-         android:text="Stock out ID:"
-         android:layout_marginLeft="10dp"
-         android:layout_marginRight="10dp"/>
-     <EditText
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_marginTop="140dp"/>
-
-     <TextView
-         android:layout_width="98dp"
-         android:layout_height="25dp"
-         android:layout_marginTop="220dp"
-         android:text="Date:"
-         android:layout_marginLeft="10dp"
-         android:layout_marginRight="10dp"/>
-     <EditText
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_marginTop="240dp"/>
-
-
-     <TextView
-         android:layout_width="98dp"
-         android:layout_height="25dp"
-         android:layout_marginTop="310dp"
-         android:text="Date:"
-         android:layout_marginLeft="10dp"
-         android:layout_marginRight="10dp"/>
-     <EditText
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_marginTop="320dp"/>-->
-
-</RelativeLayout>
+</ScrollView>
