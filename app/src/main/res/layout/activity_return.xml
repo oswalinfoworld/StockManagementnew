@@ -23,7 +23,7 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="120dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp">
 
@@ -38,15 +38,16 @@
                     android:text="Sr.no" />
 
                 <TextView
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Customer name"/>
+                    android:text="Customer name" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
+                    android:gravity="center"
                     android:text="Bill No." />
 
 
@@ -58,14 +59,7 @@
                     android:text="ITEM Name"/>
 
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="RETURN">
 
-
-                </Button>
 
             </TableRow>
 
@@ -127,11 +121,6 @@
                     android:layout_weight="1"
                     android:text="" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="" />
 
             </TableRow>
 
@@ -162,6 +151,19 @@
 
             </TableRow>
         </TableLayout>
+        <Button
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/border_table"
+            android:text="RETURN">
+
+
+        </Button>
+
     </RelativeLayout>
 
 </ScrollView>

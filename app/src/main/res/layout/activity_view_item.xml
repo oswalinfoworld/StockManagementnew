@@ -54,17 +54,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Edit"/>
+            android:text="Edit/Delet"/>
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Delete">
 
 
-        </TextView>
+
+
 
     </TableRow>
 
@@ -95,12 +91,6 @@
             android:layout_weight="1">
         </TextView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-        </TextView>
 
 
 
@@ -137,11 +127,6 @@
             android:layout_weight="1"
             android:text="" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="" />
 
     </TableRow>
 
@@ -173,11 +158,6 @@
                 android:layout_weight="1"
                 android:text="" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="" />
 
         </TableRow>
     </TableLayout>

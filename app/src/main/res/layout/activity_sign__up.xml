@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
-            android:textSize="18dp"
+            android:textSize="15dp"
             android:textStyle="bold"
             android:text="Name :" />
 
@@ -42,6 +42,7 @@
             android:layout_height="wrap_content"
             android:hint="Enter name"
             android:textSize="15dp"
+
             android:width="200px" />
 
     </TableRow>
@@ -57,7 +58,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_column="1"
-            android:textSize="18dp"
+            android:textSize="15dp"
             android:text="Contact No:" />
 
         <EditText
@@ -82,7 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:textStyle="bold"
-            android:textSize="18dp"
+            android:textSize="15dp"
             android:text="Email :" />
 
         <EditText
@@ -94,8 +95,56 @@
             android:inputType="textEmailAddress"
             android:width="100px" />
     </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:paddingTop="13dp">
 
-    <TableRow
+            <TextView
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="Password:" />
+
+            <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:hint="Enter password "
+                android:inputType="textEmailAddress"
+                android:width="100px" />
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:paddingTop="13dp">
+
+            <TextView
+                android:id="@+id/confom_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="Confirm Password:" />
+
+            <EditText
+                android:id="@+id/confim_passEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:hint="Enter Confirm Password "
+                android:inputType="textEmailAddress"
+                android:width="100px" />
+        </TableRow>
+
+
+
+        <TableRow
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:paddingTop="13dp">
@@ -104,7 +153,7 @@
             android:id="@+id/dob"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
+            android:textSize="15dp"
             android:textStyle="bold"
             android:layout_column="1"
             android:text="DOB :"
@@ -112,17 +161,20 @@
 
         <EditText
             android:id="@+id/dobEditText"
-            android:layout_width="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Enter date of birth"
             android:textSize="15dp"
-            android:width="100px" />
+
+
+           />
 
 
     </TableRow>
 
     <TableRow
-        android:layout_width="fill_parent"
+        android:layout_width="200dp"
         android:layout_height="fill_parent"
         android:paddingTop="13dp">
 
@@ -130,18 +182,20 @@
             android:id="@+id/vat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
+            android:textSize="15dp"
             android:layout_column="1"
             android:textStyle="bold"
             android:text="Photo :" />
 
-        <EditText
-            android:id="@+id/photEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:hint="Enter photo"
-            android:width="100px" />
+        <Button
+            android:id="@+id/photobtn"
+            android:layout_width="10dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="90dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center"
+            android:text="Select Photo "
+            />
     </TableRow>
 
 
@@ -152,7 +206,7 @@
         android:layout_width="210dp"
         android:layout_height="37dp"
         android:layout_marginLeft="90dp"
-        android:layout_marginTop="370dp"
+        android:layout_marginTop="490dp"
         android:gravity="center"
         android:text="SUBMIT "
         />

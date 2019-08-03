@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.stockmangmentnew.Services.StockOut.stock_OUT">
+    tools:context=".Services.StockIn.stock_in">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -12,7 +12,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Stock OUT "
+            android:text="Stock IN "
             android:gravity="center"
             android:textStyle="bold"
             android:textSize="25dp"
@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
                     android:gravity="center"
-                    android:background="@drawable/edit_text_boarder1"
+                    android:background="@drawable/border_table"
                     android:width="200px" />
                 <TextView
                     android:id="@+id/date"
@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:layout_column="1"
                     android:textSize="15dp"
-
+                    android:gravity="center"
                     android:layout_marginLeft="2dp"
 
                     android:text="Date:" />
@@ -63,7 +63,7 @@
                     android:id="@+id/dateEditText"
                     android:layout_width="55dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/edit_text_boarder1"
+                    android:background="@drawable/border_table"
                     android:textSize="15dp"
                     android:width="200px" />
                 <TextView
@@ -72,17 +72,16 @@
                     android:layout_height="wrap_content"
                     android:layout_column="1"
                     android:textSize="15dp"
-
+                    android:gravity="center"
                     android:layout_marginLeft="2dp"
 
                     android:text="Bill no:" />
 
                 <EditText
                     android:id="@+id/billnoEditText"
-                    android:layout_width="65dp"
+                    android:layout_width="55dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="16dp"
-                    android:background="@drawable/edit_text_boarder1"
+                    android:background="@drawable/border_table"
                     android:textSize="15dp"
                     android:width="200px" />
 
@@ -100,14 +99,14 @@
                     android:textSize="13dp"
 
                     android:textStyle="bold"
-                    android:text="CustomerName:" />
+                    android:text="Supplier Name:" />
 
                 <EditText
                     android:id="@+id/suppliernameEditText"
                     android:layout_width="55dp"
-
                     android:layout_height="wrap_content"
-                    android:background="@drawable/edit_text_boarder1"
+                    android:background="@drawable/border_table"
+
                     android:textSize="15dp"
                     android:width="200px" />
                 <TextView
@@ -116,16 +115,16 @@
                     android:layout_height="wrap_content"
                     android:layout_column="1"
                     android:textSize="13dp"
-
+                    android:gravity="center"
                     android:layout_marginLeft="2dp"
 
                     android:text="Contact no:" />
 
                 <EditText
                     android:id="@+id/contactnoEditText"
-                    android:layout_width="65dp"
+                    android:layout_width="55dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/edit_text_boarder1"
+                    android:background="@drawable/border_table"
                     android:textSize="15dp"
                     android:width="200px" />
                 <TextView
@@ -140,12 +139,11 @@
 
                 <EditText
                     android:id="@+id/addressEditText"
-                    android:layout_width="65dp"
+                    android:layout_width="55dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/edit_text_boarder1"
+                    android:background="@drawable/border_table"
                     android:textSize="15dp"
                     android:gravity="center"
-                    android:layout_marginRight="10dp"
                     android:width="200px" />
 
             </TableRow>
@@ -170,7 +168,7 @@
                     android:id="@+id/BarcodeEdittext"
                     android:layout_width="55dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/edit_text_boarder1"
+                    android:background="@drawable/border_table"
                     android:textSize="15dp"
                     android:width="200px" />
                 <TextView
@@ -189,7 +187,7 @@
                     android:layout_width="55dp"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
-                    android:background="@drawable/edit_text_boarder1"
+                    android:background="@drawable/border_table"
                     android:width="200px" />
                 <TextView
                     android:id="@+id/availableQuantity"
@@ -207,8 +205,7 @@
                     android:layout_width="55dp"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/edit_text_boarder1"
+                    android:background="@drawable/border_table"
                     android:width="200px" />
             </TableRow>
 
@@ -228,7 +225,7 @@
         <LinearLayout
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="90dp"
             android:paddingTop="310dp">
 
             <Button
@@ -259,7 +256,5 @@
 
 
     </RelativeLayout>
-
-
 
 </ScrollView>

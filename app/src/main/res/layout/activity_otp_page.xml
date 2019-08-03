@@ -24,7 +24,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginTop="225dp"
         android:layout_marginLeft="55dp"
-        android:text="OTP:"
+        android:text="OTP :"
         android:textSize="20dp"
         android:textStyle="bold"
         android:textAppearance="?android:attr/textAppearanceMedium" />

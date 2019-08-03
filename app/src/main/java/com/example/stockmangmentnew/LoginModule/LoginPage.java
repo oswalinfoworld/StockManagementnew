@@ -19,6 +19,9 @@ import android.widget.Toast;
 import com.example.stockmangmentnew.MainActivity;
 import com.example.stockmangmentnew.OnlineDBActivity.ApiConnector;
 import com.example.stockmangmentnew.R;
+import com.example.stockmangmentnew.Services.StockOut.Damage;
+import com.example.stockmangmentnew.Services.StockOut.Return;
+import com.example.stockmangmentnew.Services.StockOut.Stock_Out_View;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -67,7 +70,7 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(LoginPage.this, ForgetPassword.class);
+                Intent i = new Intent(LoginPage.this, com.example.stockmangmentnew.Services.StockIn.stock_in.class);
                 startActivity(i);
 
             }
