@@ -17,4 +17,18 @@
         <item>add</item>
         <item>View</item>
     </string-array>
+    <string-array name="select">
+        <item>Computer</item>
+        <item>Laptop</item>
+        <item>UPS</item>
+        <item>Mouse</item>
+        <item>Cable</item>
+        <item>Printer</item>
+        <item>LAN</item>
+        <item>Keyboard</item>
+        <item>Xrox</item>
+        <item>wifi Router</item>
+        <item>wifi Dongle</item>
+        <item>Switches</item>
+    </string-array>
 </resources>
