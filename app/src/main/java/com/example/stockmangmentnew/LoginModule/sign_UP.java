@@ -3,13 +3,11 @@ package com.example.stockmangmentnew.LoginModule;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.TextUtils;
+
 import android.util.Log;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,7 +25,7 @@ import java.util.regex.Pattern;
 
 public class sign_UP extends AppCompatActivity {
     EditText name, phone, email, dob;
-    Button Submit,photobtn;
+    Button Submit, photobtn;
     String nameString, contactNumber, emailString, DOBString;
     private StockUser user = new StockUser();
 
