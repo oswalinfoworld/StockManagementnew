@@ -7,6 +7,7 @@ import com.example.stockmangmentnew.LoginModule.ForgetPassword;
 import com.example.stockmangmentnew.Services.Items.Add_Item;
 import com.example.stockmangmentnew.Services.Items.view_item;
 import com.example.stockmangmentnew.Services.StockIn.IN_View;
+import com.example.stockmangmentnew.Services.StockIn.stock_in;
 import com.example.stockmangmentnew.Services.StockOut.Stock_Out_View;
 import com.example.stockmangmentnew.Services.StockOut.stock_OUT;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -280,9 +281,8 @@ public class MainActivity extends AppCompatActivity
                 if (childList.get(headerList.get(groupPosition)) != null) {
                     MenuModel model = childList.get(headerList.get(groupPosition)).get(childPosition);
                     if (model.url.length() > 0) {
-
-
                         Toast.makeText(getApplicationContext(), "Child Selected Menu " + model.url, Toast.LENGTH_LONG).show();
+                        openPage(model.url);
                         onBackPressed();
                     }
                 }
@@ -313,6 +313,8 @@ public class MainActivity extends AppCompatActivity
 
         } else if (pageName.contains("stock in add")) {
             Toast.makeText(getApplicationContext(), "stock in add ", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(MainActivity.this, stock_in.class);
+            startActivity(intent);
         } else if (pageName.contains("stock in view")) {
             Toast.makeText(getApplicationContext(), "stock in view ", Toast.LENGTH_LONG).show();
 

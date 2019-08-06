@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Services.StockIn.stock_in">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -12,12 +13,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Stock IN "
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textSize="25dp"
             android:background="#F77F76"
-            />
+            android:gravity="center"
+            android:text="Stock IN "
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
         <TableLayout
             android:id="@+id/tab1"
@@ -67,7 +67,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/dateEditText"
+                    android:id="@+id/stockINdateEditText"
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
 
@@ -93,7 +93,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/emailEditText"
+                    android:id="@+id/stockInBillNumber"
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
 
@@ -118,7 +118,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/supplierrnameEditText"
+                    android:id="@+id/StockINsupplierrnameEditText"
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:background="@drawable/border_table"
@@ -143,11 +143,11 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/conoEditText"
-                    android:background="@drawable/border_table"
+                    android:id="@+id/StockInContactNumber"
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:width="100px"
+                    android:background="@drawable/border_table"
                     android:hint="Enter contact no"
 
                     android:textSize="15dp" />
@@ -169,11 +169,11 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/addessEditText"
+                    android:id="@+id/stockINAddress"
                     android:layout_width="wrap_content"
-                    android:background="@drawable/border_table"
                     android:layout_height="25dp"
                     android:layout_marginRight="5dp"
+                    android:background="@drawable/border_table"
                     android:hint="Enter address"
                     android:textSize="15dp"
 
@@ -193,12 +193,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Barcode:"
-
                     android:textSize="15dp"
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/scanbtn"
+                    android:id="@+id/stockInFormBarcodeScan"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_marginTop="0dp"
@@ -222,7 +221,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/itemnameEditText"
+                    android:id="@+id/stockInItemname"
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:layout_marginRight="5dp"
@@ -251,7 +250,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/availableQuantityEditText"
+                    android:id="@+id/StockInavailableQuantity"
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:layout_marginRight="5dp"
@@ -264,6 +263,7 @@
 
 
             </TableRow>
+
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
@@ -279,21 +279,21 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/loadEditText"
+                    android:id="@+id/StockInloadPage"
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/border_table"
                     android:hint="Enter page no."
-                  />
+                    android:inputType="number" />
 
                 <Button
                     android:id="@+id/page"
                     android:layout_width="80dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="0dp"
+                    android:onClick="openStockInPage"
                     android:text="Open page"
-
                     android:textSize="13dp" />
 
             </TableRow>
@@ -302,21 +302,22 @@
         </TableLayout>
 
 
-        <ImageView android:layout_width="40dp"
+        <ImageView
+            android:layout_width="40dp"
             android:layout_height="30dp"
-            android:src="@drawable/plus_button"
             android:layout_marginLeft="314dp"
             android:layout_marginTop="480dp"
-            />
+            android:onClick="addStockIn"
+            android:src="@drawable/plus_button" />
 
         <Button
+            android:id="@+id/stockInFormSubmit"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="130dp"
             android:layout_marginTop="520dp"
             android:gravity="center"
-            android:layout_marginLeft="130dp"
             android:text="Submit" />
-
 
 
     </RelativeLayout>
