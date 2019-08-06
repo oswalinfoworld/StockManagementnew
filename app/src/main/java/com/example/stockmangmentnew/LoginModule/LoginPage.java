@@ -71,7 +71,7 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(LoginPage.this, Add_Item.class);
+                Intent i = new Intent(LoginPage.this,com.example.stockmangmentnew.Services.StockIn.stock_in.class);
                 startActivity(i);
 
             }

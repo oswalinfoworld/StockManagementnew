@@ -2,6 +2,7 @@ package com.example.stockmangmentnew.LoginModule;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -20,13 +22,15 @@ import com.example.stockmangmentnew.R;
 
 import org.json.JSONArray;
 
+import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class sign_UP extends AppCompatActivity {
-    EditText name, phone, email, dob;
+    EditText name, phone,dob, email,password,confmpass;
+
     Button Submit, photobtn;
-    String nameString, contactNumber, emailString, DOBString;
+    String nameString, contactNumber, emailString, DOBString,passwordString,confirmPassString;
     private StockUser user = new StockUser();
 
     @Override
@@ -38,6 +42,8 @@ public class sign_UP extends AppCompatActivity {
         phone = (EditText) findViewById(R.id.coNoEditText);
         email = (EditText) findViewById(R.id.emailEditText);
         dob = (EditText) findViewById(R.id.dobEditText);
+        password = (EditText) findViewById(R.id.passwordEditText);
+        confmpass = (EditText) findViewById(R.id.confim_passEditText);
         photobtn = (Button) findViewById(R.id.photobtn);
 
         Submit.setOnClickListener(new View.OnClickListener() {
@@ -47,12 +53,16 @@ public class sign_UP extends AppCompatActivity {
                 contactNumber = phone.getText().toString().trim();
                 emailString = email.getText().toString().trim();
                 DOBString = dob.getText().toString().trim();
+                passwordString = password.getText().toString().trim();
+                confirmPassString = confmpass.getText().toString().trim();
 
                 if (validateForm()) {
                     user.setName(nameString);
                     user.setUserName(emailString);
                     user.setContactNumber(contactNumber);
                     user.setDOB(DOBString);
+                    user.setPassword(passwordString);
+                    user.setPassword(confirmPassString);
                     if (isInternetOn()) {
                         new insertUserToOnlineDB().execute(new ApiConnector());
                     }
@@ -61,9 +71,50 @@ public class sign_UP extends AppCompatActivity {
                 }
             }
         });
+
+
+        dob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int mYear, mMonth, mDay;
+                DatePicker datePicker;
+                final Calendar c = Calendar.getInstance();
+                mYear = c.get(Calendar.YEAR);
+                mMonth = c.get(Calendar.MONTH);
+                mDay = c.get(Calendar.DAY_OF_MONTH);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(sign_UP.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        dob.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
+
+                    }
+                }, mYear, mMonth, mDay);
+
+                datePickerDialog.show();
+            }
+        });
     }
 
+
+
+
+
+        public static boolean isValidPassword( final String passwordString){
+
+            Pattern pattern;
+            Matcher matcher;
+            final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{4,}$";
+            pattern = Pattern.compile(PASSWORD_PATTERN);
+            matcher = pattern.matcher(passwordString);
+
+           return matcher.matches();
+
+
+        }
+
     public boolean validateForm() {
+
+
         String validEmailPattern = "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
 
                 "\\@" +
@@ -80,14 +131,43 @@ public class sign_UP extends AppCompatActivity {
 
         Matcher matcher = Pattern.compile(validEmailPattern).matcher(emailString);
         if (matcher.matches()) {
-            Toast.makeText(getApplicationContext(), "True", Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(), "valid", Toast.LENGTH_SHORT).show();
 
         } else {
-            //Toast.makeText(getApplicationContext(), "Enter Valid Email-Id", Toast.LENGTH_LONG).show();
+
             email.setError("Enter Valid Email-Id");
             email.requestFocus();
             return false;
         }
+        if(!passwordString.equals(confirmPassString)) {
+
+            Toast.makeText(sign_UP.this, "Password Not matching", Toast.LENGTH_SHORT).show();
+            return false;
+
+        }
+        if(isValidPassword(passwordString)&&passwordString.length()>7) {
+            Toast.makeText(getApplicationContext(),"Go Ahead",Toast.LENGTH_SHORT).show();
+            //return false;
+        }
+        else{
+            Toast.makeText(getApplicationContext(),"Password must contain mix of upper and lower case letters as well as digits and one special charecter)",Toast.LENGTH_LONG).show();
+            return false;
+
+        }
+        if (passwordString.length() == 0) {
+            password.setError("Enter Password");
+            password.requestFocus();
+            return false;
+        }
+
+        if (confirmPassString.length() == 0) {
+            confmpass.setError("Enter confirm Password");
+            confmpass.requestFocus();
+            return false;
+        }
+
+
+
 
         if (nameString.length() < 3) {
             name.setError("Enter Valid name");
@@ -112,8 +192,10 @@ public class sign_UP extends AppCompatActivity {
             dob.requestFocus();
             return false;
         }
+
         return true;
     }
+
 
 
     private class insertUserToOnlineDB extends AsyncTask<ApiConnector, Long, JSONArray> {

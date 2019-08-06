@@ -36,7 +36,7 @@
         android:layout_alignBottom="@+id/textView2"
         android:layout_marginLeft="20dp"
         android:layout_toRightOf="@+id/textView2"
-        android:background="@drawable/edit_text_boarder1"
+        android:background="@drawable/border_table"
         android:hint="Enter OTP">
         <requestFocus />
     </EditText>

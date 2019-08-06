@@ -65,17 +65,20 @@
                 <TextView
                     android:layout_width="13dp"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border_table"
                     android:layout_weight="1" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border_table"
                     android:layout_weight="1"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border_table"
                     android:layout_weight="1"
                     />
 
@@ -90,6 +93,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border_table"
                     android:layout_weight="1"
 
                     android:text="" />
@@ -97,12 +101,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border_table"
                     android:layout_weight="1"
                     android:text=" " />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border_table"
                     android:layout_weight="1"
                     android:text="" />
 
@@ -115,25 +121,28 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border_table"
                     android:layout_weight="1"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border_table"
                     android:layout_weight="1" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border_table"
                     android:layout_weight="1" />
 
 
             </TableRow>
         </TableLayout>
         <Button
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
             android:layout_marginLeft="110dp"

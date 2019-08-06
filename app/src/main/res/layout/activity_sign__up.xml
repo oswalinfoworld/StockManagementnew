@@ -115,8 +115,9 @@
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
                 android:hint="Enter password "
-                android:inputType="textEmailAddress"
-                android:width="100px" />
+                android:inputType="textPassword"
+                android:width="100px"
+               />
         </TableRow>
         <TableRow
             android:layout_width="fill_parent"
@@ -138,7 +139,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
                 android:hint="Enter Confirm Password "
-                android:inputType="textEmailAddress"
+                android:inputType="textPassword"
                 android:width="100px" />
         </TableRow>
 
