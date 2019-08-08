@@ -2,22 +2,26 @@ package com.example.stockmangmentnew.Services.StockIn;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.stockmangmentnew.LoginModule.sign_UP;
 import com.example.stockmangmentnew.POJO.StockIn;
 import com.example.stockmangmentnew.R;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class stock_in extends AppCompatActivity {
     EditText supplierID, date, billno, sname, contact, add, itemname, availableq, openpg;
     String supplierIDString, dateString, billnoString, snameString, contactString, addString, itemnameString, availableqString, openpgString;
-    Button submit, scan;
+    Button submit, scan,open;
     List<StockIn> stockInList = new ArrayList<>();
     StockIn stockIn = new StockIn();
 
@@ -34,8 +38,9 @@ public class stock_in extends AppCompatActivity {
         itemname = (EditText) findViewById(R.id.stockInItemname);
         availableq = (EditText) findViewById(R.id.StockInavailableQuantity);
         openpg = (EditText) findViewById(R.id.StockInloadPage);
-        submit = (Button) findViewById(R.id.stockInFormSubmit);
-        scan = (Button) findViewById(R.id.stockInFormBarcodeScan);
+        submit = (Button) findViewById(R.id.stockInSubmitbtn);
+        scan = (Button) findViewById(R.id.stockInBarcodebtn);
+        open = (Button) findViewById(R.id.stockIn_opnbtn);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,12 +52,68 @@ public class stock_in extends AppCompatActivity {
 
 
         });
-    }
 
+        date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int mYear, mMonth, mDay;
+                DatePicker datePicker;
+                final Calendar c = Calendar.getInstance();
+                mYear = c.get(Calendar.YEAR);
+                mMonth = c.get(Calendar.MONTH);
+                mDay = c.get(Calendar.DAY_OF_MONTH);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(stock_in.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        date.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
+
+                    }
+                }, mYear, mMonth, mDay);
+
+                datePickerDialog.show();
+            }
+    });
+    }
     private boolean emptyvalidate(StockIn passData) {
         if (passData.getSupplierID().length() == 0) {
-            supplierID.setError("Username is not entered");
+            supplierID.setError("Enter Supplier ID");
             supplierID.requestFocus();
+            return false;
+
+        }
+        if (passData.getDate().length() == 0) {
+            date.setError("Enter valid Date");
+            date.requestFocus();
+            return false;
+
+        }
+        if (passData.getBillNumber().length() == 0) {
+            billno.setError("Enter Bill no");
+            billno.requestFocus();
+            return false;
+
+        }
+        if (passData.getSupplierName().length() == 0) {
+            sname.setError("Enter Supplier name");
+            sname.requestFocus();
+            return false;
+
+        }
+        if (passData.getContactNumber().length() != 10) {
+            contact.setError("Enter vaild Contact no");
+            contact.requestFocus();
+            return false;
+
+        }
+        if (passData.getAddress().length() == 0) {
+            add.setError("Enter Address");
+            add.requestFocus();
+            return false;
+
+        }
+        if (passData.getItemName().length() == 0) {
+            itemname.setError("Enter item name");
+            itemname.requestFocus();
             return false;
 
         }
@@ -78,7 +139,7 @@ public class stock_in extends AppCompatActivity {
     public void openStockInPage(View v) {
         //Load value on form as per number
         int openPage = Integer.parseInt(openpg.getText().toString().trim());
-        Toast.makeText(getApplicationContext(), "Open Page " + openPage, Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Open Page " + openPage, Toast.LENGTH_SHORT).show();
         setStockInFormData(openPage);
     }
 

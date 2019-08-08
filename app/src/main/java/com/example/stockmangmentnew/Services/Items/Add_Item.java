@@ -28,7 +28,7 @@ public class Add_Item extends AppCompatActivity implements AdapterView.OnItemSel
     private String nameS, model_numberS, serial_numberS, specificationS, supplier_nameS, mobile_numberS, storage_locationS, categoryS;
     Button submit;
     private Item oneItem = new Item();
-    String[] categoryList = {"category1", "category2", "category3", "category4", "category5"};
+    String[] categoryList = {"Computer", "Laptop", "Printer", "Scanner", "UPS","Processor","Router","Wifi-Dongle"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

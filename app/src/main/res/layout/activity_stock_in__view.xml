@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.stockmangmentnew.Services.StockIn.Stock_IN_View">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Stock IN View "
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:background="#F77F76"
+            />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="List of Supplier name :"
+        android:layout_marginTop="10dp"/>
+
+              <ListView
+                  android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                  android:divider="#f00"
+                  android:dividerHeight="1dp"
+                  android:layout_marginTop="0dp"
+                  android:id="@+id/stockIn_listview"
+                  android:listSelector="#2196F3"></ListView>
+    <!--   <TableLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="120dp"
+         android:paddingLeft="10dp"
+         android:paddingRight="10dp">
+
+         <TableRow
+             android:background="#ADA8A8"
+             android:padding="8dp">
+
+             <TextView
+
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:gravity="center"
+
+                 android:text="Sr.no" />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:gravity="center"
+
+                 android:text="Bill No." />
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:gravity="center"
+
+                 android:text="Date" />
+
+
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:gravity="center"
+
+                 android:text="Supplier Name"/>
+
+
+         </TableRow>
+
+         <TableRow
+             android:background="#E7EAEB"
+             android:padding="5dp">
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:background="@drawable/border_table"/>
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:background="@drawable/border_table"
+                 />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:background="@drawable/border_table"></TextView>
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:background="@drawable/border_table">
+             </TextView>
+
+
+         </TableRow>
+
+         <TableRow
+             android:background="#E7EAEB"
+
+             android:padding="5dp">
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:background="@drawable/border_table"
+                 android:layout_weight="1"
+                 android:text="" />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:background="@drawable/border_table"
+                 android:layout_weight="1"
+                 android:text=" " />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:background="@drawable/border_table"
+                 android:layout_weight="1"
+                 android:text="" />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:background="@drawable/border_table"
+                 android:layout_weight="1"
+                 android:text="" />
+
+         </TableRow>
+
+         <TableRow
+             android:background="#E7EAEB"
+             android:padding="5dp">
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:background="@drawable/border_table"
+                 android:layout_weight="1"
+                 />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:background="@drawable/border_table"
+                 android:layout_weight="1" />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:background="@drawable/border_table"
+                 android:layout_weight="1" />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:background="@drawable/border_table"
+                 android:layout_weight="1" />
+
+         </TableRow>
+     </TableLayout>
+     <Button
+         android:layout_width="130dp"
+         android:layout_height="wrap_content"
+         android:layout_weight="1"
+         android:gravity="center"
+         android:layout_marginLeft="110dp"
+         android:layout_marginTop="50dp"
+         android:background="@drawable/border_table"
+         android:text="SHOW">
+
+
+     </Button>
+
+ </RelativeLayout>
+-->
+</LinearLayout>

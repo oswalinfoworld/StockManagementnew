@@ -12,7 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Services.StockIn.stock_in"></activity>
+        <activity android:name=".Wifidongle_activity"></activity>
+        <activity android:name=".Router_activity" />
+        <activity android:name=".Printer_activity" />
+        <activity android:name=".Switches_activity" />
+        <activity android:name=".Cables_activity" />
+        <activity android:name=".RAM_activity" />
+        <activity android:name=".Monitor_activity" />
+        <activity android:name=".Mouse_activity" />
+        <activity android:name=".Keyboard_activity" />
+        <activity android:name=".UPS_activity" />
+        <activity android:name=".Services.StockIn.stock_in" />
         <activity
             android:name=".LoginModule.LoginPage"
             android:label="@string/app_name"
@@ -33,7 +43,7 @@
         </activity>
         <activity android:name=".Services.StockOut.Damage" />
         <activity android:name=".Services.StockOut.Return" />
-        <activity android:name=".Services.StockIn.IN_View" />
+        <activity android:name=".Services.StockIn.Stock_IN_View" />
         <activity android:name=".Services.StockOut.Stock_Out_View" />
         <activity android:name=".Services.StockOut.stock_OUT" />
         <activity android:name=".customer_List" />

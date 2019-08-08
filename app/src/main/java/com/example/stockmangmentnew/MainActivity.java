@@ -6,14 +6,15 @@ import android.os.Bundle;
 import com.example.stockmangmentnew.LoginModule.ForgetPassword;
 import com.example.stockmangmentnew.Services.Items.Add_Item;
 import com.example.stockmangmentnew.Services.Items.view_item;
-import com.example.stockmangmentnew.Services.StockIn.IN_View;
+import com.example.stockmangmentnew.Services.StockIn.Stock_IN_View;
 import com.example.stockmangmentnew.Services.StockIn.stock_in;
+import com.example.stockmangmentnew.Services.StockOut.Damage;
+import com.example.stockmangmentnew.Services.StockOut.Return;
 import com.example.stockmangmentnew.Services.StockOut.Stock_Out_View;
 import com.example.stockmangmentnew.Services.StockOut.stock_OUT;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import android.util.Log;
 import android.view.View;
 
 import androidx.core.view.GravityCompat;
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_SHORT)
                         .setAction("Action", null).show();
             }
         });
@@ -114,10 +115,10 @@ public class MainActivity extends AppCompatActivity
 
 
         if (id == R.id.item) {
-            Toast.makeText(getApplicationContext(), "Show Item Page Here ", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Show Item Page Here ", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.supplier) {
-            Intent intent = new Intent(MainActivity.this, IN_View.class);
+            Intent intent = new Intent(MainActivity.this, Stock_IN_View.class);
             startActivity(intent);
 
         } else if (id == R.id.customer) {
@@ -264,7 +265,7 @@ public class MainActivity extends AppCompatActivity
 
                 if (headerList.get(groupPosition).isGroup) {
                     if (!headerList.get(groupPosition).hasChildren) {
-                        Toast.makeText(getApplicationContext(), "Selected Menu " + headerList.get(groupPosition).url, Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Selected Menu " + headerList.get(groupPosition).url, Toast.LENGTH_SHORT).show();
                         openPage(headerList.get(groupPosition).url);
                         onBackPressed();
                     }
@@ -281,7 +282,7 @@ public class MainActivity extends AppCompatActivity
                 if (childList.get(headerList.get(groupPosition)) != null) {
                     MenuModel model = childList.get(headerList.get(groupPosition)).get(childPosition);
                     if (model.url.length() > 0) {
-                        Toast.makeText(getApplicationContext(), "Child Selected Menu " + model.url, Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Child Selected Menu " + model.url, Toast.LENGTH_SHORT).show();
                         openPage(model.url);
                         onBackPressed();
                     }
@@ -296,40 +297,53 @@ public class MainActivity extends AppCompatActivity
     private void openPage(String pageName) {
 
         if (pageName.contains("item add")) {
-            Toast.makeText(getApplicationContext(), "Show Item Page Add ", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Show Item Page Add ", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(MainActivity.this, Add_Item.class);
             startActivity(intent);
 
         } else if (pageName.contains("item view")) {
-            Toast.makeText(getApplicationContext(), "Show Item Page View ", Toast.LENGTH_LONG).show();
+
+            Intent intent = new Intent(MainActivity.this, view_item.class);
+            startActivity(intent);
 
         } else if (pageName.contains("supplier")) {
-            Intent intent = new Intent(MainActivity.this, IN_View.class);
+            Intent intent = new Intent(MainActivity.this, supplier_List.class);
             startActivity(intent);
 
         } else if (pageName.contains("customer")) {
-            Intent intent = new Intent(MainActivity.this, stock_OUT.class);
+            Intent intent = new Intent(MainActivity.this, customer_List.class);
             startActivity(intent);
 
         } else if (pageName.contains("stock in add")) {
-            Toast.makeText(getApplicationContext(), "stock in add ", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "stock in add ", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(MainActivity.this, stock_in.class);
             startActivity(intent);
         } else if (pageName.contains("stock in view")) {
-            Toast.makeText(getApplicationContext(), "stock in view ", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "stock in view ", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, Stock_IN_View.class);
+            startActivity(intent);
 
         } else if (pageName.contains("stock out add")) {
-            Toast.makeText(getApplicationContext(), "stock out add ", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "stock out add ", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, stock_OUT.class);
+            startActivity(intent);
         } else if (pageName.contains("stock out view")) {
-            Toast.makeText(getApplicationContext(), "stock out view ", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "stock out view ", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, Stock_Out_View.class);
+            startActivity(intent);
         }else if (pageName.contains("return add")) {
-            Toast.makeText(getApplicationContext(), "return add ", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "return add ", Toast.LENGTH_SHORT).show();
+
         } else if (pageName.contains("return view")) {
-            Toast.makeText(getApplicationContext(), "return view ", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "return view ", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, Return.class);
+            startActivity(intent);
         }else if (pageName.contains("damage add")) {
-            Toast.makeText(getApplicationContext(), "damage add ", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "damage add ", Toast.LENGTH_SHORT).show();
         } else if (pageName.contains("damage view")) {
-            Toast.makeText(getApplicationContext(), "damage view ", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "damage view ", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, Damage.class);
+            startActivity(intent);
         } else if (pageName.contains("qrCode")) {
             Intent intent = new Intent(MainActivity.this, com.example.stockmangmentnew.QRcodeModule.MainActivity.class);
             startActivity(intent);

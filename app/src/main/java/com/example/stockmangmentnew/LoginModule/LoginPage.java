@@ -23,6 +23,7 @@ import com.example.stockmangmentnew.Services.Items.Add_Item;
 import com.example.stockmangmentnew.Services.StockOut.Damage;
 import com.example.stockmangmentnew.Services.StockOut.Return;
 import com.example.stockmangmentnew.Services.StockOut.Stock_Out_View;
+import com.example.stockmangmentnew.UPS_activity;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -61,7 +62,7 @@ public class LoginPage extends AppCompatActivity {
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Reset Pressed", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Reset Pressed", Toast.LENGTH_SHORT).show();
                 userName.getText().clear();
                 password.getText().clear();
             }
@@ -71,7 +72,7 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(LoginPage.this,com.example.stockmangmentnew.Services.StockIn.stock_in.class);
+                Intent i = new Intent(LoginPage.this, UPS_activity.class);
                 startActivity(i);
 
             }
@@ -105,10 +106,10 @@ public class LoginPage extends AppCompatActivity {
 
         Matcher matcher = Pattern.compile(validEmailPattern).matcher(userNameString);
         if (matcher.matches()) {
-            Toast.makeText(getApplicationContext(), "True", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "True", Toast.LENGTH_SHORT).show();
         } else {
             //Toast.makeText(getApplicationContext(), "Enter Valid Email-Id", Toast.LENGTH_LONG).show();
-            userName.setError("Enter Valid User Name");
+            userName.setError("User Name must be in Email-id Formate");
             userName.requestFocus();
             return false;
         }
@@ -166,7 +167,7 @@ public class LoginPage extends AppCompatActivity {
                 // Showing Alert Message
                 alertDialog.show();
             } else {
-                Toast.makeText(getApplicationContext(), "Welcome User", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Welcome User"+userNameString+"", Toast.LENGTH_SHORT).show();
 
                 Intent i = new Intent(LoginPage.this, MainActivity.class);
                 startActivity(i);
@@ -193,7 +194,7 @@ public class LoginPage extends AppCompatActivity {
                 connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.DISCONNECTED ||
                         connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.DISCONNECTED) {
 
-            Toast.makeText(getApplicationContext(), "Internet Down Data not Reflect on server", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Internet Down Data not Reflect on server", Toast.LENGTH_SHORT).show();
             return false;
         }
         return false;

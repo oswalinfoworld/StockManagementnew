@@ -41,6 +41,7 @@
         android:layout_height="32dp"
 
         android:hint="Enter model no."
+        android:textSize="15dp"
         android:background="@drawable/border_table"
         android:layout_marginTop="140dp"
         android:layout_marginLeft="130dp"/>
@@ -66,6 +67,7 @@
         android:layout_below="@+id/textView2"
         android:layout_marginLeft="130dp"
         android:layout_marginTop="220dp"
+        android:textSize="15dp"
         android:background="@drawable/border_table"
         android:hint="Enter serial no."/>
     <TextView
@@ -83,6 +85,7 @@
         android:layout_below="@+id/textView2"
         android:layout_marginLeft="130dp"
         android:layout_marginTop="280dp"
+        android:textSize="15dp"
         android:hint="Enter specification."
         android:background="@drawable/border_table"/>
 
@@ -106,6 +109,7 @@
         android:layout_below="@+id/textView2"
         android:layout_marginLeft="130dp"
         android:layout_marginTop="400dp"
+        android:textSize="15dp"
         android:background="@drawable/border_table"
         android:hint="Enter supplier name"/>
 
@@ -128,6 +132,7 @@
             android:layout_height="32dp"
             android:layout_below="@+id/textView2"
             android:layout_marginLeft="130dp"
+            android:textSize="15dp"
             android:layout_marginTop="60dp"
 
             android:background="@drawable/border_table"
@@ -152,6 +157,7 @@
         android:layout_below="@+id/textView2"
         android:layout_marginLeft="130dp"
         android:layout_marginTop="470dp"
+        android:textSize="15dp"
         android:background="@drawable/border_table"
         android:hint="Enter mobile no."
          />
@@ -175,6 +181,7 @@
         android:layout_below="@+id/textView2"
         android:layout_marginLeft="130dp"
         android:layout_marginTop="530dp"
+        android:textSize="15dp"
         android:background="@drawable/border_table"
         android:hint="Enter Location" />
     <TextView

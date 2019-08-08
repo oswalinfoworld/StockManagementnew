@@ -1,16 +1,14 @@
-package com.example.stockmangmentnew.Services.StockIn;
+package com.example.stockmangmentnew;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.stockmangmentnew.R;
-
-public class IN_View extends AppCompatActivity {
+public class Switches_activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_in__view);
+        setContentView(R.layout.activity_switches_activity);
     }
 }
