@@ -1,18 +1,31 @@
 package com.example.stockmangmentnew.Services.StockIn;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.stockmangmentnew.LoginModule.LoginPage;
 import com.example.stockmangmentnew.LoginModule.sign_UP;
+import com.example.stockmangmentnew.MainActivity;
+import com.example.stockmangmentnew.OnlineDBActivity.ApiConnector;
 import com.example.stockmangmentnew.POJO.StockIn;
 import com.example.stockmangmentnew.R;
+
+import org.json.JSONArray;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -21,10 +34,11 @@ import java.util.List;
 public class stock_in extends AppCompatActivity {
     EditText supplierID, date, billno, sname, contact, add, itemname, availableq, openpg;
     String supplierIDString, dateString, billnoString, snameString, contactString, addString, itemnameString, availableqString, openpgString;
-    Button submit, scan,open;
+    Button submit, open;
     List<StockIn> stockInList = new ArrayList<>();
     StockIn stockIn = new StockIn();
-
+    boolean addMultipleStock = false;
+    static final String ACTION_SCAN = "com.google.zxing.client.android.SCAN";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,18 +53,22 @@ public class stock_in extends AppCompatActivity {
         availableq = (EditText) findViewById(R.id.StockInavailableQuantity);
         openpg = (EditText) findViewById(R.id.StockInloadPage);
         submit = (Button) findViewById(R.id.stockInSubmitbtn);
-        scan = (Button) findViewById(R.id.stockInBarcodebtn);
         open = (Button) findViewById(R.id.stockIn_opnbtn);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                stockIn = getStockInFormData();
-                if (emptyvalidate(stockIn)) {
-                    //insert value to Online DB
+                if (!addMultipleStock) {
+                    stockIn = getStockInFormData();
+                    if (emptyvalidate(stockIn)) {
+                        //insert value to Online DB
+                        new insertStockInToOnlineDB().execute(new ApiConnector());
+                    }
+                } else {
+                    new insertStockInToOnlineDB().execute(new ApiConnector());
                 }
+                Intent intent = new Intent(stock_in.this, MainActivity.class);
+                startActivity(intent);
             }
-
-
         });
 
         date.setOnClickListener(new View.OnClickListener() {
@@ -72,8 +90,9 @@ public class stock_in extends AppCompatActivity {
 
                 datePickerDialog.show();
             }
-    });
+        });
     }
+
     private boolean emptyvalidate(StockIn passData) {
         if (passData.getSupplierID().length() == 0) {
             supplierID.setError("Enter Supplier ID");
@@ -121,6 +140,7 @@ public class stock_in extends AppCompatActivity {
     }
 
     public void addStockIn(View v) {
+        addMultipleStock = true;
         //add StockIn Page
         this.stockIn = getStockInFormData();
         if (emptyvalidate(this.stockIn)) {
@@ -186,5 +206,71 @@ public class stock_in extends AppCompatActivity {
         itemname.setText("");
         availableq.setText("");
         openpg.setText("");
+    }
+
+    private class insertStockInToOnlineDB extends AsyncTask<ApiConnector, Long, JSONArray> {
+        @Override
+        protected JSONArray doInBackground(ApiConnector... params) {
+
+            // it is executed on Background thread
+            //Toast.makeText(getApplicationContext(),"Saving Data Online ",Toast.LENGTH_LONG).show();
+            Log.d("Abhishek", "Saving Data Online ");
+            if(addMultipleStock){
+                return params[0].insert_stockIn_Record_list(stockInList);
+            }else {
+                return params[0].insert_stockIn_Record(stockIn);
+            }
+        }
+
+        @Override
+        protected void onPostExecute(JSONArray jsonArray) {
+
+
+        }
+
+    }
+    //QR CODE
+    public void scanQR(View v) {
+        try {
+            Intent intent = new Intent(ACTION_SCAN);
+            intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
+            startActivityForResult(intent, 0);
+        } catch (ActivityNotFoundException anfe) {
+            showDialog(stock_in.this, "No Scanner Found", "Download a scanner code activity?", "Yes", "No").show();
+        }
+    }
+
+    private static AlertDialog showDialog(final Activity act, CharSequence title, CharSequence message, CharSequence buttonYes, CharSequence buttonNo) {
+        AlertDialog.Builder downloadDialog = new AlertDialog.Builder(act);
+        downloadDialog.setTitle(title);
+        downloadDialog.setMessage(message);
+        downloadDialog.setPositiveButton(buttonYes, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Uri uri = Uri.parse("market://search?q=pname:" + "com.google.zxing.client.android");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                try {
+                    act.startActivity(intent);
+                } catch (ActivityNotFoundException anfe) {
+
+                }
+            }
+        });
+        downloadDialog.setNegativeButton(buttonNo, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+        return downloadDialog.show();
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (requestCode == 0) {
+            if (resultCode == RESULT_OK) {
+                String contents = intent.getStringExtra("SCAN_RESULT");
+                String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
+
+                Toast toast = Toast.makeText(this, "Content:" + contents + " Format:" + format, Toast.LENGTH_LONG);
+                toast.show();
+            }
+        }
     }
 }

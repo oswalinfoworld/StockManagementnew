@@ -2,6 +2,8 @@ package com.example.stockmangmentnew.OnlineDBActivity;
 
 
 import com.example.stockmangmentnew.POJO.Item;
+import com.example.stockmangmentnew.POJO.StockIn;
+import com.example.stockmangmentnew.POJO.StockOut;
 import com.example.stockmangmentnew.POJO.StockUser;
 
 import org.apache.http.HttpEntity;
@@ -18,6 +20,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.util.List;
 
 /**
  * Created by abhishek on 09/06/2018.
@@ -150,6 +153,217 @@ public class ApiConnector {
                 e.printStackTrace();
             }
         }
+        return jsonArray;
+    }
+
+
+    public JSONArray insert_stockIn_Record_list(List<StockIn> stockInList) {
+        JSONArray jsonArray = null;
+        for(StockIn stockIn : stockInList){
+            String supplierID=stockIn.getSupplierID();
+            String date=stockIn.getDate().replaceAll("/", "%20");
+            String billNumber=stockIn.getBillNumber();
+            String supplierName=stockIn.getSupplierName().replaceAll(" ", "%20");
+            String contactNumber=stockIn.getContactNumber();
+            String address=stockIn.getAddress().replaceAll(" ", "%20");
+            String itemName=stockIn.getItemName().replaceAll(" ", "%20");
+            String availableQuantity=stockIn.getAvailableQuantity();
+            String url = "http://www.evbd.mannewarsamaj.org/dixit/stockInRecord.php?supplierID=" + supplierID + "&date=" + date + "&billNumber=" + billNumber + "&supplierName=" + supplierName+ "&contactNumber=" + contactNumber+ "&address=" + address+ "&itemName=" + itemName+ "&availableQuantity=" + availableQuantity;
+            HttpEntity httpEntity = null;
+            try {
+
+                DefaultHttpClient httpClient = new DefaultHttpClient();  // Default HttpClient
+                //Log.d("abhi", url);
+                System.out.print("***************** URL " + url);
+                HttpPost httpGet = new HttpPost(url);
+
+                HttpResponse httpResponse = httpClient.execute(httpGet);
+
+                httpEntity = httpResponse.getEntity();
+
+
+            } catch (ClientProtocolException e) {
+                System.out.print("Error " + e.getMessage());
+                // Signals error in http protocol
+                e.printStackTrace();
+
+                //Log Errors Here
+            } catch (IOException e) {
+                System.out.print("Error " + e.getMessage());
+                e.printStackTrace();
+            }
+            // Convert HttpEntity into JSON Array
+
+            if (httpEntity != null) {
+                try {
+                    String entityResponse = EntityUtils.toString(httpEntity);
+
+                    // Log.e("Entity Response  : ", entityResponse);
+                    jsonArray = new JSONArray(entityResponse);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return jsonArray;
+    }
+
+    public JSONArray insert_stockIn_Record(StockIn stockIn) {
+        JSONArray jsonArray = null;
+            String supplierID=stockIn.getSupplierID();
+            String date=stockIn.getDate().replaceAll("/", "%20");
+            String billNumber=stockIn.getBillNumber();
+            String supplierName=stockIn.getSupplierName().replaceAll(" ", "%20");
+            String contactNumber=stockIn.getContactNumber();
+            String address=stockIn.getAddress().replaceAll(" ", "%20");
+            String itemName=stockIn.getItemName().replaceAll(" ", "%20");
+            String availableQuantity=stockIn.getAvailableQuantity();
+            String url = "http://www.evbd.mannewarsamaj.org/dixit/stockInRecord.php?supplierID=" + supplierID + "&date=" + date + "&billNumber=" + billNumber + "&supplierName=" + supplierName+ "&contactNumber=" + contactNumber+ "&address=" + address+ "&itemName=" + itemName+ "&availableQuantity=" + availableQuantity;
+            HttpEntity httpEntity = null;
+            try {
+
+                DefaultHttpClient httpClient = new DefaultHttpClient();  // Default HttpClient
+                //Log.d("abhi", url);
+                System.out.print("***************** URL " + url);
+                HttpPost httpGet = new HttpPost(url);
+
+                HttpResponse httpResponse = httpClient.execute(httpGet);
+
+                httpEntity = httpResponse.getEntity();
+
+
+            } catch (ClientProtocolException e) {
+                System.out.print("Error " + e.getMessage());
+                // Signals error in http protocol
+                e.printStackTrace();
+
+                //Log Errors Here
+            } catch (IOException e) {
+                System.out.print("Error " + e.getMessage());
+                e.printStackTrace();
+            }
+            // Convert HttpEntity into JSON Array
+
+            if (httpEntity != null) {
+                try {
+                    String entityResponse = EntityUtils.toString(httpEntity);
+
+                    // Log.e("Entity Response  : ", entityResponse);
+                    jsonArray = new JSONArray(entityResponse);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        return jsonArray;
+    }
+
+    public JSONArray insert_stockOut_Record_list(List<StockOut> stockOutList) {
+        JSONArray jsonArray = null;
+        for(StockOut stockOut : stockOutList){
+            String supplierID=stockOut.getSupplierID();
+            String date=stockOut.getDate().replaceAll("/", "%20");
+            String billNumber=stockOut.getBillNumber();
+            String supplierName=stockOut.getSupplierName().replaceAll(" ", "%20");
+            String contactNumber=stockOut.getContactNumber();
+            String address=stockOut.getAddress().replaceAll(" ", "%20");
+            String itemName=stockOut.getItemName().replaceAll(" ", "%20");
+            String availableQuantity=stockOut.getAvailableQuantity();
+            String url = "http://www.evbd.mannewarsamaj.org/dixit/stockOutRecord.php?supplierID=" + supplierID + "&date=" + date + "&billNumber=" + billNumber + "&supplierName=" + supplierName+ "&contactNumber=" + contactNumber+ "&address=" + address+ "&itemName=" + itemName+ "&availableQuantity=" + availableQuantity;
+            HttpEntity httpEntity = null;
+            try {
+
+                DefaultHttpClient httpClient = new DefaultHttpClient();  // Default HttpClient
+                //Log.d("abhi", url);
+                System.out.print("***************** URL " + url);
+                HttpPost httpGet = new HttpPost(url);
+
+                HttpResponse httpResponse = httpClient.execute(httpGet);
+
+                httpEntity = httpResponse.getEntity();
+
+
+            } catch (ClientProtocolException e) {
+                System.out.print("Error " + e.getMessage());
+                // Signals error in http protocol
+                e.printStackTrace();
+
+                //Log Errors Here
+            } catch (IOException e) {
+                System.out.print("Error " + e.getMessage());
+                e.printStackTrace();
+            }
+            // Convert HttpEntity into JSON Array
+
+            if (httpEntity != null) {
+                try {
+                    String entityResponse = EntityUtils.toString(httpEntity);
+
+                    // Log.e("Entity Response  : ", entityResponse);
+                    jsonArray = new JSONArray(entityResponse);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return jsonArray;
+    }
+
+    public JSONArray insert_stockOut_Record(StockOut stockOut) {
+        JSONArray jsonArray = null;
+        String supplierID=stockOut.getSupplierID();
+        String date=stockOut.getDate().replaceAll("/", "%20");
+        String billNumber=stockOut.getBillNumber();
+        String supplierName=stockOut.getSupplierName().replaceAll(" ", "%20");
+        String contactNumber=stockOut.getContactNumber();
+        String address=stockOut.getAddress().replaceAll(" ", "%20");
+        String itemName=stockOut.getItemName().replaceAll(" ", "%20");
+        String availableQuantity=stockOut.getAvailableQuantity();
+        String url = "http://www.evbd.mannewarsamaj.org/dixit/stockOutRecord.php?supplierID=" + supplierID + "&date=" + date + "&billNumber=" + billNumber + "&supplierName=" + supplierName+ "&contactNumber=" + contactNumber+ "&address=" + address+ "&itemName=" + itemName+ "&availableQuantity=" + availableQuantity;
+        HttpEntity httpEntity = null;
+        try {
+
+            DefaultHttpClient httpClient = new DefaultHttpClient();  // Default HttpClient
+            //Log.d("abhi", url);
+            System.out.print("***************** URL " + url);
+            HttpPost httpGet = new HttpPost(url);
+
+            HttpResponse httpResponse = httpClient.execute(httpGet);
+
+            httpEntity = httpResponse.getEntity();
+
+
+        } catch (ClientProtocolException e) {
+            System.out.print("Error " + e.getMessage());
+            // Signals error in http protocol
+            e.printStackTrace();
+
+            //Log Errors Here
+        } catch (IOException e) {
+            System.out.print("Error " + e.getMessage());
+            e.printStackTrace();
+        }
+        // Convert HttpEntity into JSON Array
+
+        if (httpEntity != null) {
+            try {
+                String entityResponse = EntityUtils.toString(httpEntity);
+
+                // Log.e("Entity Response  : ", entityResponse);
+                jsonArray = new JSONArray(entityResponse);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
         return jsonArray;
     }
 }
