@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Router_activity">
+    tools:context=".ProductDetail.Router_activity">
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
@@ -29,7 +29,7 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="TP-Link"
             android:textSize="13dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="16dp"
@@ -37,25 +37,25 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="LINKSYS"
             android:textSize="13dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="16dp"
             android:id="@+id/router_compyname2"/>
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="Tenda"
             android:textSize="13dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="16dp"
             android:id="@+id/router_compyname3"/>
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="Gizga Essential"
             android:textSize="13dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="16dp"
             android:id="@+id/router_compyname4"/>
         <TextView
@@ -90,10 +90,13 @@
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="16dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="4"
             android:textSize="13dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="16dp"
@@ -101,15 +104,77 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="5"
             android:textSize="13dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="16dp"
             android:id="@+id/router_port2"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="16"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/router_port3"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="24"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/router_port4"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MBPS :"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="150"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/router_mbps1"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="300"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/router_mbps2"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="400"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/router_mbps3"/>
+        </LinearLayout>
+
+
         <Button
             android:layout_width="200dp"
             android:layout_height="45dp"
             android:text="Submit"
+            android:layout_marginTop="10dp"
             android:id="@+id/router_subbtn1"
             android:layout_gravity="center"/>
     </LinearLayout>

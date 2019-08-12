@@ -1,14 +1,16 @@
-package com.example.stockmangmentnew;
+package com.example.stockmangmentnew.ProductDetail;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Switches_activity extends AppCompatActivity {
+import com.example.stockmangmentnew.R;
+
+public class GPS_activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_switches_activity);
+        setContentView(R.layout.activity_gps_activity);
     }
 }

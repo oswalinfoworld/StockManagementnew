@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.stockmangmentnew.LoginModule.LoginPage;
@@ -32,9 +33,10 @@ import java.util.Calendar;
 import java.util.List;
 
 public class stock_in extends AppCompatActivity {
-    EditText supplierID, date, billno, sname, contact, add, itemname, availableq, openpg;
-    String supplierIDString, dateString, billnoString, snameString, contactString, addString, itemnameString, availableqString, openpgString;
-    Button submit, open;
+    EditText supplierID, date, billno, sname, contact, add, itemname, availableq, openpg,model_no,serial_no,storageloc,proadd;
+    Spinner spinner;
+    String supplierIDString, dateString, billnoString, snameString, contactString, addString, itemnameString, availableqString, openpgString,model_noString,serial_noString,storagelocString;
+    Button submit, open,scan;
     List<StockIn> stockInList = new ArrayList<>();
     StockIn stockIn = new StockIn();
     boolean addMultipleStock = false;
@@ -43,17 +45,23 @@ public class stock_in extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stock_in);
-        supplierID = (EditText) findViewById(R.id.uniqidEditText);
-        date = (EditText) findViewById(R.id.stockINdateEditText);
-        billno = (EditText) findViewById(R.id.stockInBillNumber);
-        sname = (EditText) findViewById(R.id.StockINsupplierrnameEditText);
-        contact = (EditText) findViewById(R.id.StockInContactNumber);
-        add = (EditText) findViewById(R.id.stockINAddress);
-        itemname = (EditText) findViewById(R.id.stockInItemname);
-        availableq = (EditText) findViewById(R.id.StockInavailableQuantity);
-        openpg = (EditText) findViewById(R.id.StockInloadPage);
-        submit = (Button) findViewById(R.id.stockInSubmitbtn);
-        open = (Button) findViewById(R.id.stockIn_opnbtn);
+        supplierID = (EditText) findViewById(R.id.additem_suppIDET);
+        date = (EditText) findViewById(R.id.additem_dateET);
+        billno = (EditText) findViewById(R.id.additem_billnoET);
+        sname = (EditText) findViewById(R.id.additem_snameET);
+        contact = (EditText) findViewById(R.id.additem_conoET);
+        add = (EditText) findViewById(R.id.additem_addET);
+        itemname = (EditText) findViewById(R.id.additem_nameET);
+        availableq = (EditText) findViewById(R.id.additem_availbleET);
+        model_no = (EditText) findViewById(R.id.additem_modelnoET);
+        serial_no = (EditText) findViewById(R.id.additem_serialnoET);
+        storageloc = (EditText) findViewById(R.id.additem_storageLocaET);
+        openpg = (EditText) findViewById(R.id.additem_opnpgET);
+        proadd = (EditText) findViewById(R.id.additem_proaddET);
+        submit = (Button) findViewById(R.id.add_item_Submitbtn);
+        open = (Button) findViewById(R.id.additem_opnbtn);
+        scan = (Button) findViewById(R.id.add_item_scanbtn);
+        spinner = (Spinner) findViewById(R.id.add_item_spinner);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,8 +74,8 @@ public class stock_in extends AppCompatActivity {
                 } else {
                     new insertStockInToOnlineDB().execute(new ApiConnector());
                 }
-                Intent intent = new Intent(stock_in.this, MainActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(stock_in.this, MainActivity.class);
+               // startActivity(intent);
             }
         });
 
@@ -94,6 +102,30 @@ public class stock_in extends AppCompatActivity {
     }
 
     private boolean emptyvalidate(StockIn passData) {
+        if (passData.getItemName().length() == 0) {
+            itemname.setError("Enter item name");
+            itemname.requestFocus();
+            return false;
+
+        }
+        if (model_noString.length() == 0) {
+            model_no.setError("Enter model no.");
+            model_no.requestFocus();
+            return false;
+
+        }
+        if (serial_noString.length() == 0) {
+            serial_no.setError("Enter serial no");
+            serial_no.requestFocus();
+            return false;
+
+        }
+        if (storagelocString.length() == 0) {
+            storageloc.setError("Enter storage location");
+            storageloc.requestFocus();
+            return false;
+
+        }
         if (passData.getSupplierID().length() == 0) {
             supplierID.setError("Enter Supplier ID");
             supplierID.requestFocus();
@@ -130,12 +162,7 @@ public class stock_in extends AppCompatActivity {
             return false;
 
         }
-        if (passData.getItemName().length() == 0) {
-            itemname.setError("Enter item name");
-            itemname.requestFocus();
-            return false;
 
-        }
         return true;
     }
 
@@ -173,14 +200,19 @@ public class stock_in extends AppCompatActivity {
         addString = add.getText().toString().trim();
         itemnameString = itemname.getText().toString().trim();
         availableqString = availableq.getText().toString().trim();
+        model_noString = model_no.getText().toString().trim();
+        serial_noString = serial_no.getText().toString().trim();
+        storagelocString = storageloc.getText().toString().trim();
         stockIn.setSupplierID(supplierIDString);
         stockIn.setDate(dateString);
         stockIn.setBillNumber(billnoString);
         stockIn.setSupplierName(snameString);
         stockIn.setContactNumber(contactString);
         stockIn.setAddress(addString);
+
         stockIn.setItemName(itemnameString);
         stockIn.setAvailableQuantity(availableqString);
+
         return stockIn;
     }
 
@@ -206,6 +238,9 @@ public class stock_in extends AppCompatActivity {
         itemname.setText("");
         availableq.setText("");
         openpg.setText("");
+        model_no.setText("");
+        serial_no.setText("");
+        storageloc.setText("");
     }
 
     private class insertStockInToOnlineDB extends AsyncTask<ApiConnector, Long, JSONArray> {

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Mouse_activity">
+    tools:context=".ProductDetail.Mouse_activity">
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:text="Logitech"
             android:textSize="13dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="16dp"
             android:id="@+id/keyboard_compyname1"/>
         <CheckBox
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:text="A4Tech"
             android:textSize="13dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="16dp"
             android:id="@+id/keyboard_compyname2"/>
         <CheckBox
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:text="Zebronics"
             android:textSize="13dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="16dp"
             android:id="@+id/keyboard_compyname3"/>
         <CheckBox
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:text="HP"
             android:textSize="13dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="16dp"
             android:id="@+id/keyboard_compyname4"/>
     <TextView
@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:text="Wireless"
         android:textSize="13dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="16dp"
         android:id="@+id/keyboard_wireless"/>
         <Button

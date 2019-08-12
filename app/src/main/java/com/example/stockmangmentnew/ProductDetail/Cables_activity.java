@@ -1,8 +1,10 @@
-package com.example.stockmangmentnew;
+package com.example.stockmangmentnew.ProductDetail;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.stockmangmentnew.R;
 
 public class Cables_activity extends AppCompatActivity {
 

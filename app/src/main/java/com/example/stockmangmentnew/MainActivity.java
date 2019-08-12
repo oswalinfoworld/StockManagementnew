@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.stockmangmentnew.LoginModule.ForgetPassword;
+import com.example.stockmangmentnew.POJO.StockIn;
+import com.example.stockmangmentnew.ProductDetail.supplier_List;
 import com.example.stockmangmentnew.Services.Items.Add_Item;
 import com.example.stockmangmentnew.Services.Items.view_item;
 import com.example.stockmangmentnew.Services.StockIn.Stock_IN_View;
@@ -298,7 +300,7 @@ public class MainActivity extends AppCompatActivity
 
         if (pageName.contains("item add")) {
             Toast.makeText(getApplicationContext(), "Show Item Page Add ", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(MainActivity.this, Add_Item.class);
+            Intent intent = new Intent(MainActivity.this, com.example.stockmangmentnew.Services.StockIn.stock_in.class);
             startActivity(intent);
 
         } else if (pageName.contains("item view")) {

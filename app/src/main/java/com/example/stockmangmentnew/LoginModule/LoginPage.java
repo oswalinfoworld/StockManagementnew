@@ -19,11 +19,7 @@ import android.widget.Toast;
 import com.example.stockmangmentnew.MainActivity;
 import com.example.stockmangmentnew.OnlineDBActivity.ApiConnector;
 import com.example.stockmangmentnew.R;
-import com.example.stockmangmentnew.Services.Items.Add_Item;
-import com.example.stockmangmentnew.Services.StockOut.Damage;
-import com.example.stockmangmentnew.Services.StockOut.Return;
-import com.example.stockmangmentnew.Services.StockOut.Stock_Out_View;
-import com.example.stockmangmentnew.UPS_activity;
+import com.example.stockmangmentnew.ProductDetail.UPS_activity;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

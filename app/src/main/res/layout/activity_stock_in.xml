@@ -23,38 +23,185 @@
             android:id="@+id/tab1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:paddingTop="70dp">
-
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:paddingTop="60dp">
             <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:paddingTop="13dp">
 
                 <TextView
-                    android:id="@+id/uniqid"
+                    android:id="@+id/vat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Barcode:"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/add_item_scanbtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="90dp"
+                    android:gravity="center"
+                    android:onClick="scanQR"
+                    android:text="Scan " />
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingTop="13dp">
+
+                <TextView
+                    android:id="@+id/ITEM_Category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ITEM Category:"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/add_item_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+
+                    android:entries="@array/select"
+                    android:layout_marginLeft="1dp"></Spinner>
+
+            </TableRow>
+
+
+
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingTop="13dp">
+
+                <TextView
+                    android:id="@+id/additem_name"
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
 
-                    android:text="Supplier uniq ID:"
+                    android:text="ITEM Name:"
                     android:textSize="15dp"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/uniqidEditText"
+                    android:id="@+id/additem_nameET"
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
 
                     android:background="@drawable/border_table"
-                    android:hint="Enter  supplier uniq ID"
+                    android:hint="Enter supplier uniq ID"
                     android:textSize="15dp" />
 
             </TableRow>
 
             <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingTop="13dp">
+
+                <TextView
+                    android:id="@+id/additem_modelno"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:text="Model no :"
+
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/additem_modelnoET"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+
+                    android:background="@drawable/border_table"
+                    android:hint="Enter model no"
+                    android:inputType="number"
+
+                    android:textSize="15dp" />
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingTop="13dp">
+
+                <TextView
+                    android:id="@+id/additem_serialno"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:text="Serial no:"
+
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/additem_serialnoET"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+
+                    android:background="@drawable/border_table"
+                    android:hint="Enter serial no"
+                    android:inputType="number"
+
+                    android:textSize="15dp" />
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingTop="13dp">
+
+                <TextView
+                    android:id="@+id/additem_storageLoca"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:text="Storage Location:"
+
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/additem_storageLocaET"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+
+                    android:background="@drawable/border_table"
+                    android:hint="Enter storage location"
+
+                    android:textSize="15dp" />
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingTop="13dp">
+
+                <TextView
+                    android:id="@+id/additem_suppID"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:text="Supplier ID:"
+
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/additem_suppIDET"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+
+                    android:background="@drawable/border_table"
+                    android:hint="Enter Supplier ID"
+
+
+                    android:textSize="15dp" />
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:paddingTop="13dp">
 
                 <TextView
@@ -67,7 +214,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/stockINdateEditText"
+                    android:id="@+id/additem_dateET"
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
 
@@ -79,8 +226,8 @@
             </TableRow>
 
             <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:paddingTop="13dp">
 
                 <TextView
@@ -93,19 +240,19 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/stockInBillNumber"
+                    android:id="@+id/additem_billnoET"
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
-                    android:inputType="number"
                     android:background="@drawable/border_table"
                     android:hint="Enter bill no. "
+                    android:inputType="number"
 
                     android:textSize="15dp" />
             </TableRow>
 
             <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:paddingTop="13dp">
 
                 <TextView
@@ -118,7 +265,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/StockINsupplierrnameEditText"
+                    android:id="@+id/additem_snameET"
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:background="@drawable/border_table"
@@ -129,8 +276,8 @@
             </TableRow>
 
             <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:paddingTop="13dp">
 
                 <TextView
@@ -143,7 +290,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/StockInContactNumber"
+                    android:id="@+id/additem_conoET"
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:width="100px"
@@ -157,8 +304,8 @@
 
 
             <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:paddingTop="13dp">
 
                 <TextView
@@ -171,89 +318,36 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/stockINAddress"
+                    android:id="@+id/additem_addET"
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/border_table"
                     android:hint="Enter address"
                     android:textSize="15dp"
-
-
                     />
 
 
             </TableRow>
 
-            <TableRow
-                android:layout_width="200dp"
-                android:layout_height="fill_parent"
-                android:paddingTop="13dp">
 
-                <TextView
-                    android:id="@+id/vat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Barcode:"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/stockInBarcodebtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginRight="90dp"
-                    android:gravity="center"
-                    android:onClick="scanQR"
-                    android:text="Scan " />
-            </TableRow>
 
             <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:paddingTop="13dp">
 
                 <TextView
                     android:id="@+id/itemname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ITEM name :"
+                    android:text="No. of product add:"
                     android:textSize="15dp"
 
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/stockInItemname"
-                    android:layout_width="wrap_content"
-                    android:layout_height="25dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/border_table"
-                    android:hint="Enter item name"
-                    android:textSize="15dp"
-
-
-                    />
-
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:paddingTop="13dp">
-
-                <TextView
-                    android:id="@+id/availableQuantity"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Available Quantity:"
-                    android:textSize="15dp"
-
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/StockInavailableQuantity"
+                    android:id="@+id/additem_proaddET"
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:layout_marginRight="5dp"
@@ -268,8 +362,38 @@
             </TableRow>
 
             <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingTop="13dp">
+
+                <TextView
+                    android:id="@+id/availableQuantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Available Quantity:"
+                    android:textSize="15dp"
+
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/additem_availbleET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/border_table"
+                    android:hint=""
+                    android:textSize="15dp"
+                    android:inputType="number"
+
+
+                    />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:paddingTop="13dp">
 
                 <TextView
@@ -282,7 +406,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/StockInloadPage"
+                    android:id="@+id/additem_opnpgET"
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:layout_marginRight="5dp"
@@ -300,11 +424,11 @@
         </TableLayout>
 
         <Button
-            android:id="@+id/stockIn_opnbtn"
+            android:id="@+id/additem_opnbtn"
             android:layout_width="90dp"
             android:layout_height="32dp"
             android:layout_marginLeft="130dp"
-            android:layout_marginTop="470dp"
+            android:layout_marginTop="650dp"
             android:onClick="openStockInPage"
             android:text="Open page"
             android:textSize="10dp" />
@@ -315,16 +439,17 @@
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:layout_marginLeft="313dp"
-            android:layout_marginTop="480dp"
+            android:id="@+id/additem_imgbtn"
+            android:layout_marginTop="670dp"
             android:onClick="addStockIn"
             android:src="@drawable/plus_button" />
 
         <Button
-            android:id="@+id/stockInSubmitbtn"
+            android:id="@+id/add_item_Submitbtn"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="130dp"
-            android:layout_marginTop="520dp"
+            android:layout_marginTop="680dp"
             android:gravity="center"
             android:text="Submit" />
 
