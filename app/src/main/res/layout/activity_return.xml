@@ -14,167 +14,43 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Stock OUT View "
+            android:text="RETURN"
             android:gravity="center"
             android:textStyle="bold"
             android:textSize="25dp"
             android:background="#F77F76"
             />
-        <TableLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp">
-
-            <TableRow
-                android:background="#ADA8A8"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="Sr.no" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="Customer name" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:gravity="center"
-                    android:text="Bill No." />
-
-
-
-                <TextView
-                    android:layout_width="55dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="ITEM Name"/>
-
-
-
-
-            </TableRow>
-
-            <TableRow
-                android:background="#E7EAEB"
-                android:padding="5dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_table"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_table"
-                    android:layout_weight="1"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_table"
-                    android:layout_weight="1"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_table"
-                    android:layout_weight="1">
-                </TextView>
-
-
-            </TableRow>
-
-            <TableRow
-                android:background="#E7EAEB"
-                android:padding="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:background="@drawable/border_table"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_table"
-                    android:layout_weight="1"
-                    android:text=" " />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:background="@drawable/border_table"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_table"
-                    android:layout_weight="1"
-                    android:text="" />
-
-
-            </TableRow>
-
-            <TableRow
-                android:background="#E7EAEB"
-                android:padding="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_table"
-                    android:layout_weight="1"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_table"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_table"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_table"
-                    android:layout_weight="1" />
-
-            </TableRow>
-        </TableLayout>
-        <Button
-            android:layout_width="120dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_gravity="center"
             android:gravity="center"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/border_table"
-            android:text="RETURN">
+            android:layout_height="250dp">
+            <Button
+                android:id="@+id/return_rejbtn"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Reject"/>
+
+            <Button
+                android:layout_width="120dp"
+                android:id="@+id/return_repairbtn"
+                android:layout_height="wrap_content"
+                android:text="Repair"/>
+
+            <Button
+                android:layout_width="120dp"
+                android:id="@+id/return_damgbtn"
+                android:layout_height="wrap_content"
+                android:text="Damage"/>
 
 
-        </Button>
+        </LinearLayout>
+
+
+
+
+
+
 
     </RelativeLayout>
 

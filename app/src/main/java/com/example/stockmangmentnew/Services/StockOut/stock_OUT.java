@@ -30,8 +30,8 @@ import java.util.Calendar;
 import java.util.List;
 
 public class stock_OUT extends AppCompatActivity {
-    EditText CustomerID, date, billno, Cname, contact, add, itemname, availableq, openpg;
-    String CustomerIDString, dateString, billnoString, CnameString, contactString, addString, itemnameString, availableqString, openpgString;
+    EditText CustomerID, date, billno, Cname, contact, add, itemname,quantity, availableq, openpg;
+    String CustomerIDString, dateString, billnoString, CnameString, contactString, addString, itemnameString,quantityString, availableqString, openpgString;
     Button submit, open;
     List<StockOut> stockOutList = new ArrayList<>();
     StockOut stockOut = new StockOut();
@@ -50,6 +50,7 @@ public class stock_OUT extends AppCompatActivity {
         contact = (EditText) findViewById(R.id.stockout_conoET);
         add = (EditText) findViewById(R.id.stockout_addessET);
         itemname = (EditText) findViewById(R.id.stockout_itemnameET);
+        quantity = (EditText) findViewById(R.id.stockout_qaunET);
         availableq = (EditText) findViewById(R.id.stockout_avilQET);
         openpg = (EditText) findViewById(R.id.stockout_opnET);
         submit = (Button) findViewById(R.id.stockout_submitbtn);
@@ -107,10 +108,17 @@ public class stock_OUT extends AppCompatActivity {
         contact.setText(stockOut.getContactNumber());
         add.setText(stockOut.getAddress());
         itemname.setText(stockOut.getItemName());
+
         availableq.setText(stockOut.getAvailableQuantity());
     }
 
     private boolean emptyvalidate(StockOut passData) {
+        if (passData.getItemName().length() == 0) {
+            itemname.setError("Enter item name");
+            itemname.requestFocus();
+            return false;
+
+        }
         if (passData.getSupplierID().length() == 0) {
             CustomerID.setError("Enter Customer ID");
             CustomerID.requestFocus();
@@ -146,13 +154,13 @@ public class stock_OUT extends AppCompatActivity {
             add.requestFocus();
             return false;
 
-        }
-        if (passData.getItemName().length() == 0) {
-            itemname.setError("Enter item name");
-            itemname.requestFocus();
+        }if (quantityString.length() == 0) {
+            quantity.setError("Enter quantity out");
+            quantity.requestFocus();
             return false;
 
         }
+
         return true;
     }
 
@@ -182,6 +190,7 @@ public class stock_OUT extends AppCompatActivity {
         contactString = contact.getText().toString().trim();
         addString = add.getText().toString().trim();
         itemnameString = itemname.getText().toString().trim();
+        quantityString=quantity.getText().toString().trim();
         availableqString = availableq.getText().toString().trim();
         openpgString = openpg.getText().toString().trim();
         stockOut.setSupplierID(CustomerIDString);

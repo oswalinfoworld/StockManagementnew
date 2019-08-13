@@ -51,7 +51,7 @@
             android:layout_marginLeft="16dp"
             android:id="@+id/monitor_LED"/>
     </LinearLayout>
-   
+
 
 
     <Button

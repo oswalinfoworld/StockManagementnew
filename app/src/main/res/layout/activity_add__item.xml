@@ -21,6 +21,7 @@
         android:background="#F77F76"
         />
 
+
     <TextView
         android:id="@+id/modelno"
         android:layout_width="wrap_content"
@@ -45,8 +46,29 @@
         android:background="@drawable/border_table"
         android:layout_marginTop="140dp"
         android:layout_marginLeft="130dp"/>
+        <TextView
+            android:id="@+id/category"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_marginLeft="10dp"
+            android:textSize="15dp"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="590dp"
+            android:text="ITEM Category:"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <Spinner
+            android:id="@+id/category_spinner"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="590dp"
 
-    <TextView
+            android:entries="@array/select"
+            android:layout_marginLeft="120dp"></Spinner>
+
+
+        <TextView
         android:id="@+id/serialno"
         android:layout_width="90dp"
         android:layout_height="wrap_content"
@@ -184,26 +206,6 @@
         android:textSize="15dp"
         android:background="@drawable/border_table"
         android:hint="Enter Location" />
-    <TextView
-        android:id="@+id/category"
-        android:layout_width="90dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_marginLeft="10dp"
-        android:textSize="15dp"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="590dp"
-        android:text="ITEM Category:"
-        android:textStyle="bold"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-    <Spinner
-        android:id="@+id/category_spinner"
-        android:layout_width="220dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="590dp"
-
-        android:entries="@array/select"
-        android:layout_marginLeft="120dp"></Spinner>
 
 
     <Button

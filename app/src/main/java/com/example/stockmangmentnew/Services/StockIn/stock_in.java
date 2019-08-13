@@ -33,9 +33,9 @@ import java.util.Calendar;
 import java.util.List;
 
 public class stock_in extends AppCompatActivity {
-    EditText supplierID, date, billno, sname, contact, add, itemname, availableq, openpg,model_no,serial_no,storageloc,proadd;
+    EditText supplierID, date, billno, sname, contact, add, itemname, quantity,availableq, openpg,model_no,serial_no,storageloc,proadd;
     Spinner spinner;
-    String supplierIDString, dateString, billnoString, snameString, contactString, addString, itemnameString, availableqString, openpgString,model_noString,serial_noString,storagelocString;
+    String supplierIDString, dateString, billnoString, snameString, contactString, addString, itemnameString,quantityString, availableqString, openpgString,model_noString,serial_noString,storagelocString;
     Button submit, open,scan;
     List<StockIn> stockInList = new ArrayList<>();
     StockIn stockIn = new StockIn();
@@ -52,12 +52,12 @@ public class stock_in extends AppCompatActivity {
         contact = (EditText) findViewById(R.id.additem_conoET);
         add = (EditText) findViewById(R.id.additem_addET);
         itemname = (EditText) findViewById(R.id.additem_nameET);
+        quantity = (EditText) findViewById(R.id.additem_nameET);
         availableq = (EditText) findViewById(R.id.additem_availbleET);
-        model_no = (EditText) findViewById(R.id.additem_modelnoET);
-        serial_no = (EditText) findViewById(R.id.additem_serialnoET);
+
         storageloc = (EditText) findViewById(R.id.additem_storageLocaET);
         openpg = (EditText) findViewById(R.id.additem_opnpgET);
-        proadd = (EditText) findViewById(R.id.additem_proaddET);
+        proadd = (EditText) findViewById(R.id.additem_quantityET);
         submit = (Button) findViewById(R.id.add_item_Submitbtn);
         open = (Button) findViewById(R.id.additem_opnbtn);
         scan = (Button) findViewById(R.id.add_item_scanbtn);
@@ -108,24 +108,8 @@ public class stock_in extends AppCompatActivity {
             return false;
 
         }
-        if (model_noString.length() == 0) {
-            model_no.setError("Enter model no.");
-            model_no.requestFocus();
-            return false;
 
-        }
-        if (serial_noString.length() == 0) {
-            serial_no.setError("Enter serial no");
-            serial_no.requestFocus();
-            return false;
 
-        }
-        if (storagelocString.length() == 0) {
-            storageloc.setError("Enter storage location");
-            storageloc.requestFocus();
-            return false;
-
-        }
         if (passData.getSupplierID().length() == 0) {
             supplierID.setError("Enter Supplier ID");
             supplierID.requestFocus();
@@ -144,6 +128,12 @@ public class stock_in extends AppCompatActivity {
             return false;
 
         }
+        if (storagelocString.length() == 0) {
+            storageloc.setError("Enter storage location");
+            storageloc.requestFocus();
+            return false;
+
+        }
         if (passData.getSupplierName().length() == 0) {
             sname.setError("Enter Supplier name");
             sname.requestFocus();
@@ -159,6 +149,12 @@ public class stock_in extends AppCompatActivity {
         if (passData.getAddress().length() == 0) {
             add.setError("Enter Address");
             add.requestFocus();
+            return false;
+
+        }
+        if (quantityString.length() == 0) {
+            quantity.setError("Enter quantity");
+            quantity.requestFocus();
             return false;
 
         }
@@ -199,9 +195,9 @@ public class stock_in extends AppCompatActivity {
         contactString = contact.getText().toString().trim();
         addString = add.getText().toString().trim();
         itemnameString = itemname.getText().toString().trim();
+        quantityString=quantity.getText().toString().trim();
         availableqString = availableq.getText().toString().trim();
-        model_noString = model_no.getText().toString().trim();
-        serial_noString = serial_no.getText().toString().trim();
+
         storagelocString = storageloc.getText().toString().trim();
         stockIn.setSupplierID(supplierIDString);
         stockIn.setDate(dateString);
@@ -236,10 +232,10 @@ public class stock_in extends AppCompatActivity {
         contact.setText("");
         add.setText("");
         itemname.setText("");
+        quantity.setText("");
         availableq.setText("");
         openpg.setText("");
-        model_no.setText("");
-        serial_no.setText("");
+
         storageloc.setText("");
     }
 

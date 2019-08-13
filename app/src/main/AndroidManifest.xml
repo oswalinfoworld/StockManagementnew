@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Processor"></activity>
+        <activity android:name=".Repaire"></activity>
+        <activity android:name=".Reject" />
+        <activity android:name=".Processor" />
         <activity android:name=".ProductDetail.xerox_activity" />
         <activity android:name=".ProductDetail.GPS_activity" />
         <activity android:name=".ProductDetail.Wifidongle_activity" />
