@@ -65,8 +65,8 @@
 
                 <EditText
                     android:id="@+id/stockout_itemnameET"
-                    android:layout_width="wrap_content"
-                    android:layout_height="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="28dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/border_table"
                     android:hint="Enter item name"
@@ -84,7 +84,7 @@
                 android:paddingTop="13dp">
 
                 <TextView
-                    android:id="@+id/uniqid"
+                    android:id="@+id/stockout_modelno"
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
 
@@ -93,12 +93,12 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/stockout_uniqIdET"
+                    android:id="@+id/stockout_modelnoET"
                     android:layout_width="match_parent"
-                    android:layout_height="25dp"
+                    android:layout_height="28dp"
 
                     android:background="@drawable/border_table"
-                    android:hint="Enter customer uniq ID"
+                    android:hint="Enter model no"
                     android:textSize="15dp" />
 
             </TableRow>
@@ -120,7 +120,7 @@
                 <EditText
                     android:id="@+id/stockout_dateET"
                     android:layout_width="match_parent"
-                    android:layout_height="25dp"
+                    android:layout_height="28dp"
 
                     android:background="@drawable/border_table"
                     android:hint="Enter date"
@@ -146,12 +146,36 @@
                 <EditText
                     android:id="@+id/stockout_billnoET"
                     android:layout_width="match_parent"
-                    android:layout_height="25dp"
+                    android:layout_height="28dp"
                     android:inputType="number"
                     android:background="@drawable/border_table"
                     android:hint="Enter bill no. "
 
                     android:textSize="15dp" />
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingTop="13dp">
+
+                <TextView
+                    android:id="@+id/uniqid"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+
+                    android:text="Customer  ID:"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/stockout_uniqIdET"
+                    android:layout_width="match_parent"
+                    android:layout_height="28dp"
+
+                    android:background="@drawable/border_table"
+                    android:hint="Enter customer uniq ID"
+                    android:textSize="15dp" />
+
             </TableRow>
 
             <TableRow
@@ -170,8 +194,8 @@
 
                 <EditText
                     android:id="@+id/stockout_CnameET"
-                    android:layout_width="match_parent"
-                    android:layout_height="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
                     android:background="@drawable/border_table"
 
                     android:hint="Enter name "
@@ -197,7 +221,7 @@
                     android:id="@+id/stockout_conoET"
                     android:background="@drawable/border_table"
                     android:layout_width="match_parent"
-                    android:layout_height="25dp"
+                    android:layout_height="28dp"
                     android:width="100px"
                     android:hint="Enter contact no"
                     android:inputType="number"
@@ -223,39 +247,11 @@
 
                 <EditText
                     android:id="@+id/stockout_addessET"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:background="@drawable/border_table"
-                    android:layout_height="25dp"
+                    android:layout_height="28dp"
                     android:layout_marginRight="5dp"
                     android:hint="Enter address"
-                    android:textSize="15dp"
-
-
-                    />
-
-
-            </TableRow>
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:paddingTop="13dp">
-
-                <TextView
-                    android:id="@+id/stockout_quan"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="No.Of Quantity Out:"
-                    android:textSize="15dp"
-
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/stockout_qaunET"
-                    android:layout_width="match_parent"
-                    android:layout_height="25dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/border_table"
-                    android:hint="Enter quantity"
                     android:textSize="15dp"
 
 
@@ -285,7 +281,7 @@
                 <EditText
                     android:id="@+id/stockout_avilQET"
                     android:layout_width="match_parent"
-                    android:layout_height="25dp"
+                    android:layout_height="28dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/border_table"
                     android:hint=""
@@ -305,18 +301,18 @@
                     android:id="@+id/load"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:text="Open Page:"
+                    android:text="Open Page for edit:"
                     android:textSize="15dp"
                     android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/stockout_opnET"
                     android:layout_width="match_parent"
-                    android:layout_height="25dp"
+                    android:layout_height="28dp"
                     android:layout_marginRight="5dp"
                     android:textSize="15dp"
                     android:background="@drawable/border_table"
-                    android:hint="Enter page no."
+                    android:hint="Enter customer id"
                     />
 
 
@@ -331,7 +327,7 @@
             android:layout_width="90dp"
             android:layout_height="32dp"
             android:layout_marginLeft="130dp"
-            android:layout_marginTop="510dp"
+            android:layout_marginTop="540dp"
             android:onClick="openStockInPage"
             android:text="Open page"
             android:textSize="10dp" />
@@ -341,7 +337,7 @@
             android:layout_height="30dp"
             android:src="@drawable/plus_button"
             android:layout_marginLeft="314dp"
-            android:layout_marginTop="510dp"
+            android:layout_marginTop="540dp"
             android:id="@+id/stockout_img"
             android:onClick="addstockOut"
 
@@ -350,7 +346,7 @@
         <Button
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="550dp"
+            android:layout_marginTop="580dp"
             android:gravity="center"
             android:id="@+id/stockout_submitbtn"
             android:layout_marginLeft="130dp"

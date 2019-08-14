@@ -50,7 +50,7 @@ public class stock_OUT extends AppCompatActivity {
         contact = (EditText) findViewById(R.id.stockout_conoET);
         add = (EditText) findViewById(R.id.stockout_addessET);
         itemname = (EditText) findViewById(R.id.stockout_itemnameET);
-        quantity = (EditText) findViewById(R.id.stockout_qaunET);
+
         availableq = (EditText) findViewById(R.id.stockout_avilQET);
         openpg = (EditText) findViewById(R.id.stockout_opnET);
         submit = (Button) findViewById(R.id.stockout_submitbtn);

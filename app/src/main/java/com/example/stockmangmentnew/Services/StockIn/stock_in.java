@@ -33,7 +33,7 @@ import java.util.Calendar;
 import java.util.List;
 
 public class stock_in extends AppCompatActivity {
-    EditText supplierID, date, billno, sname, contact, add, itemname, quantity,availableq, openpg,model_no,serial_no,storageloc,proadd;
+    EditText supplierID, date, billno, sname, contact, add, itemname, quantity,availableq, openpg,storageloc;
     Spinner spinner;
     String supplierIDString, dateString, billnoString, snameString, contactString, addString, itemnameString,quantityString, availableqString, openpgString,model_noString,serial_noString,storagelocString;
     Button submit, open,scan;
@@ -45,19 +45,19 @@ public class stock_in extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stock_in);
-        supplierID = (EditText) findViewById(R.id.additem_suppIDET);
+        supplierID = (EditText) findViewById(R.id.additem_suppID);
         date = (EditText) findViewById(R.id.additem_dateET);
         billno = (EditText) findViewById(R.id.additem_billnoET);
         sname = (EditText) findViewById(R.id.additem_snameET);
         contact = (EditText) findViewById(R.id.additem_conoET);
         add = (EditText) findViewById(R.id.additem_addET);
         itemname = (EditText) findViewById(R.id.additem_nameET);
-        quantity = (EditText) findViewById(R.id.additem_nameET);
+
         availableq = (EditText) findViewById(R.id.additem_availbleET);
 
         storageloc = (EditText) findViewById(R.id.additem_storageLocaET);
         openpg = (EditText) findViewById(R.id.additem_opnpgET);
-        proadd = (EditText) findViewById(R.id.additem_quantityET);
+
         submit = (Button) findViewById(R.id.add_item_Submitbtn);
         open = (Button) findViewById(R.id.additem_opnbtn);
         scan = (Button) findViewById(R.id.add_item_scanbtn);
@@ -237,6 +237,7 @@ public class stock_in extends AppCompatActivity {
         openpg.setText("");
 
         storageloc.setText("");
+
     }
 
     private class insertStockInToOnlineDB extends AsyncTask<ApiConnector, Long, JSONArray> {
@@ -299,7 +300,7 @@ public class stock_in extends AppCompatActivity {
                 String contents = intent.getStringExtra("SCAN_RESULT");
                 String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
 
-                Toast toast = Toast.makeText(this, "Content:" + contents + " Format:" + format, Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(this, "Content:" + contents + " Format:" + format, Toast.LENGTH_SHORT);
                 toast.show();
             }
         }

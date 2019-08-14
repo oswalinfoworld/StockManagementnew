@@ -36,10 +36,10 @@ import org.json.JSONArray;
 
 public class Add_Item extends AppCompatActivity implements OnItemSelectedListener {
 
-    EditText name, model_number, serial_number, specification, supplier_name, mobile_number, storage_location;
+    EditText name, model_number, serial_number, specification, supplier_name, mobile_number;
     Spinner category;
     private String nameS, model_numberS, serial_numberS, specificationS, supplier_nameS, mobile_numberS, storage_locationS, categoryS;
-    Button submit;
+    Button submit,generator;
     private Item oneItem = new Item();
     String[] categoryList = { "Keyboard","Mouse", "Printer", "Scanner", "UPS","Processor","Router","Wifi-Dongle","RAM","Cables","GPS tracking Machine"};
 
@@ -50,10 +50,10 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
         name = (EditText) findViewById(R.id.itemnameEditText);
         model_number = (EditText) findViewById(R.id.modelnoEditText);
         serial_number = (EditText) findViewById(R.id.serialnoEditText);
-        specification = (EditText) findViewById(R.id.specificationEditText);
+        generator = (Button) findViewById(R.id.additem_genbtn);
         supplier_name = (EditText) findViewById(R.id.suppliernameEditText);
         mobile_number = (EditText) findViewById(R.id.mobilenoEditText);
-        storage_location = (EditText) findViewById(R.id.storagelocationEditText);
+
         category = (Spinner) findViewById(R.id.category_spinner);
         category.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
@@ -130,7 +130,7 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
                 oneItem.setMobile_number(mobile_number.getText().toString().trim());
                 oneItem.setSerial_number(serial_number.getText().toString().trim());
                 oneItem.setSpecification(specification.getText().toString().trim());
-                oneItem.setStorage_location(storage_location.getText().toString().trim());
+
                 oneItem.setSupplier_name(supplier_name.getText().toString().trim());
                 if (validateForm(oneItem) && isInternetOn()) {
                     new insertItemToOnlineDB().execute(new ApiConnector());

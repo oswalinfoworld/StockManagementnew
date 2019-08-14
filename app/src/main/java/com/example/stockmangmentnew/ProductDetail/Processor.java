@@ -1,14 +1,16 @@
-package com.example.stockmangmentnew;
+package com.example.stockmangmentnew.ProductDetail;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Repaire extends AppCompatActivity {
+import com.example.stockmangmentnew.R;
+
+public class Processor extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_repaire);
+        setContentView(R.layout.activity_processor);
     }
 }

@@ -1,14 +1,16 @@
-package com.example.stockmangmentnew;
+package com.example.stockmangmentnew.Services.StockOut;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Reject extends AppCompatActivity {
+import com.example.stockmangmentnew.R;
+
+public class Repaire extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reject);
+        setContentView(R.layout.activity_repaire);
     }
 }

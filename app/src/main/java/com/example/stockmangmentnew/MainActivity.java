@@ -142,11 +142,11 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.retun) {
             Intent intent = new Intent(MainActivity.this, customer_List.class);
             startActivity(intent);
-        } else if (id == R.id.damage) {
-            Intent intent = new Intent(MainActivity.this, ForgetPassword.class);
+        } /*else if (id == R.id.damage) {
+            Intent intent = new Intent(MainActivity.this, Damage.class);
             startActivity(intent);
 
-        } else if (id == R.id.qrCode) {
+        }*/ else if (id == R.id.qrCode) {
             Intent intent = new Intent(MainActivity.this, com.example.stockmangmentnew.QRcodeModule.MainActivity.class);
             startActivity(intent);
         }
@@ -234,7 +234,7 @@ public class MainActivity extends AppCompatActivity
             childList.put(menuModel, return_childModelsList);
         }
 
-        menuModel = new MenuModel("Damage", true, true, "damage");
+        /*menuModel = new MenuModel("Damage", true, true, "damage");
         headerList.add(menuModel);
 
         List<MenuModel> damage_childModelsList = new ArrayList<>();
@@ -246,7 +246,7 @@ public class MainActivity extends AppCompatActivity
 
         if (menuModel.hasChildren) {
             childList.put(menuModel, damage_childModelsList);
-        }
+        }*/
 
         menuModel = new MenuModel("QR Code", true, false, "qrCode");
         headerList.add(menuModel);
@@ -300,7 +300,7 @@ public class MainActivity extends AppCompatActivity
 
         if (pageName.contains("item add")) {
             Toast.makeText(getApplicationContext(), "Show Item Page Add ", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(MainActivity.this, com.example.stockmangmentnew.Services.StockIn.stock_in.class);
+            Intent intent = new Intent(MainActivity.this, com.example.stockmangmentnew.Services.Items.Add_Item.class);
             startActivity(intent);
 
         } else if (pageName.contains("item view")) {
@@ -334,7 +334,10 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, Stock_Out_View.class);
             startActivity(intent);
         }else if (pageName.contains("return add")) {
+
             Toast.makeText(getApplicationContext(), "return add ", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, Return.class);
+            startActivity(intent);
 
         } else if (pageName.contains("return view")) {
             Toast.makeText(getApplicationContext(), "return view ", Toast.LENGTH_SHORT).show();
@@ -342,6 +345,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         }else if (pageName.contains("damage add")) {
             Toast.makeText(getApplicationContext(), "damage add ", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, Damage.class);
+            startActivity(intent);
         } else if (pageName.contains("damage view")) {
             Toast.makeText(getApplicationContext(), "damage view ", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(MainActivity.this, Damage.class);

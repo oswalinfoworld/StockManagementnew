@@ -19,7 +19,7 @@ import android.widget.Toast;
 import com.example.stockmangmentnew.MainActivity;
 import com.example.stockmangmentnew.OnlineDBActivity.ApiConnector;
 import com.example.stockmangmentnew.R;
-import com.example.stockmangmentnew.ProductDetail.UPS_activity;
+import com.example.stockmangmentnew.Services.StockOut.Repaire;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -68,7 +68,7 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(LoginPage.this, UPS_activity.class);
+                Intent i = new Intent(LoginPage.this, ForgetPassword.class);
                 startActivity(i);
 
             }

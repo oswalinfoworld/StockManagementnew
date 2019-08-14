@@ -5,9 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.stockmangmentnew.Services.StockOut.Stock_Out_View">
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp">
     <TextView
@@ -17,164 +18,24 @@
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="25dp"
-        android:background="#F77F76"
-        />
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-
-        <TableRow
-            android:background="#ADA8A8"
-            android:padding="8dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Sr.no" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Bill No."/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Date" />
-
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Customer Name"/>
-
-
-
-
-        </TableRow>
-
-        <TableRow
-            android:background="#E7EAEB"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_table"
-                android:layout_weight="1" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_table"
-                android:layout_weight="1"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_table"
-                android:layout_weight="1"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_table"
-                android:layout_weight="1">
-            </TextView>
-
-
-        </TableRow>
-
-        <TableRow
-            android:background="#E7EAEB"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_table"
-                android:layout_weight="1"
-                android:text="" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_table"
-                android:layout_weight="1"
-                android:text=" " />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_table"
-                android:layout_weight="1"
-                android:text="" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_table"
-                android:layout_weight="1"
-                android:text="" />
-
-
-        </TableRow>
-
-        <TableRow
-            android:background="#E7EAEB"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_table"
-                android:layout_weight="1"
-               />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_table"
-                android:layout_weight="1" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_table"
-                android:layout_weight="1" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_table"
-                android:layout_weight="1" />
-
-        </TableRow>
-    </TableLayout>
-        <Button
-            android:layout_width="120dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+        android:background="#F77F76"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
             android:gravity="center"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/border_table"
-            android:text="SHOW">
+            android:text="List of Customer name :"
+            android:layout_marginTop="10dp"/>
+
+        <ListView
+            android:id="@+id/stockIn_listview"
+            android:layout_width="match_parent"
+            android:layout_height="633dp"
+            android:layout_marginTop="0dp"
+            android:divider="#f00"
+            android:dividerHeight="1dp"
+            android:listSelector="#2196F3"></ListView>
 
 
-        </Button>
-    </RelativeLayout>
+
+    </LinearLayout>
 </ScrollView>
