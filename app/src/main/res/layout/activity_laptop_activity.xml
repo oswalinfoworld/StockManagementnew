@@ -63,7 +63,7 @@
             android:layout_width="200dp"
             android:layout_height="45dp"
             android:text="Submit"
-            android:id="@+id/laptop_subbtn1"
+            android:id="@+id/laptop_submitbutton"
             android:layout_marginTop="30dp"
             android:layout_gravity="center"/>
     </LinearLayout>

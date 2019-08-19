@@ -1,0 +1,48 @@
+package com.oswal.stockmangmentnew.Services.StockIn;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import com.oswal.stockmangmentnew.R;
+
+import java.util.ArrayList;
+
+public class Stock_IN_View extends AppCompatActivity {
+    ListView listView;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_stock_in__view);
+        getSupportActionBar().setTitle("Stock IN View");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        listView=(ListView)findViewById(R.id.stockIn_listview);
+        final ArrayList<String>arrayList=new ArrayList<>();
+        arrayList.add("Januery");
+        arrayList.add("February");
+        arrayList.add("March");
+        arrayList.add("April");
+        arrayList.add("May");
+        arrayList.add("June");
+        arrayList.add("July");
+        arrayList.add("August");
+        arrayList.add("Saptembar");
+        arrayList.add("Actomber");
+        arrayList.add("Novmber");
+        arrayList.add("December");
+        ArrayAdapter arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,arrayList);
+        listView.setAdapter(arrayAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(Stock_IN_View.this, "Click item"+i+" "+arrayList.get(i).toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+}
