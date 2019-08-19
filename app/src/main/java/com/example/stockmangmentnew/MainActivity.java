@@ -3,7 +3,6 @@ package com.example.stockmangmentnew;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.stockmangmentnew.ProductDetail.supplier_List;
 import com.example.stockmangmentnew.Services.Items.Add_Item;
 import com.example.stockmangmentnew.Services.Items.view_item;
 import com.example.stockmangmentnew.Services.StockIn.Stock_IN_View;

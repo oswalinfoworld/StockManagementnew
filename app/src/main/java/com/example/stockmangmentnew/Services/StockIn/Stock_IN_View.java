@@ -19,6 +19,8 @@ public class Stock_IN_View extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stock_in__view);
+        getSupportActionBar().setTitle("Stock IN View");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         listView=(ListView)findViewById(R.id.stockIn_listview);
         final ArrayList<String>arrayList=new ArrayList<>();
         arrayList.add("Januery");

@@ -12,5 +12,7 @@ public class view_item extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_item);
+        getSupportActionBar().setTitle("View Item");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

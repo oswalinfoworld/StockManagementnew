@@ -16,15 +16,19 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.stockmangmentnew.ProductDetail.Laptop_activity;
 import com.example.stockmangmentnew.OnlineDBActivity.ApiConnector;
 import com.example.stockmangmentnew.POJO.Item;
 import com.example.stockmangmentnew.ProductDetail.Cables_activity;
 import com.example.stockmangmentnew.ProductDetail.GPS_activity;
 import com.example.stockmangmentnew.ProductDetail.Keyboard_activity;
+import com.example.stockmangmentnew.ProductDetail.Monitor_activity;
 import com.example.stockmangmentnew.ProductDetail.Mouse_activity;
 import com.example.stockmangmentnew.ProductDetail.Printer_activity;
+import com.example.stockmangmentnew.ProductDetail.Processor;
 import com.example.stockmangmentnew.ProductDetail.RAM_activity;
 import com.example.stockmangmentnew.ProductDetail.Router_activity;
+import com.example.stockmangmentnew.ProductDetail.Scanner_activity;
 import com.example.stockmangmentnew.ProductDetail.UPS_activity;
 import com.example.stockmangmentnew.ProductDetail.Wifidongle_activity;
 import com.example.stockmangmentnew.R;
@@ -33,23 +37,28 @@ import org.json.JSONArray;
 
 public class Add_Item extends AppCompatActivity implements OnItemSelectedListener {
 
-    EditText name, model_number, serial_number, specification, supplier_name, mobile_number;
+    EditText name, model_number, serial_number, specification, supplier_name, mobile_number,quantity,date;
     Spinner category;
-    private String nameS, model_numberS, serial_numberS, specificationS, supplier_nameS, mobile_numberS, storage_locationS, categoryS;
+    private String quantitys,dateS,nameS, model_numberS, serial_numberS, specificationS, supplier_nameS, mobile_numberS, storage_locationS, categoryS;
     Button submit,generator;
     private Item oneItem = new Item();
-    String[] categoryList = { "Select","Keyboard","Mouse", "Printer", "Scanner", "UPS","Processor","Router","Wifi-Dongle","RAM","Cables","GPS tracking Machine"};
+    String[] categoryList = { "Select","Laptop","Monitor","Keyboard","Mouse", "Printer", "Scanner", "UPS","Processor","Router","Wifi-Dongle","RAM","Cables","GPS tracking Machine","Xerox-machin"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__item);
+        getSupportActionBar().setTitle("Add Item");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         name = (EditText) findViewById(R.id.itemnameEditText);
         model_number = (EditText) findViewById(R.id.modelnoEditText);
         serial_number = (EditText) findViewById(R.id.serialnoEditText);
         generator = (Button) findViewById(R.id.additem_genbtn);
         supplier_name = (EditText) findViewById(R.id.suppliernameEditText);
         mobile_number = (EditText) findViewById(R.id.mobilenoEditText);
+        quantity = (EditText) findViewById(R.id.additem_quanET);
+        date = (EditText) findViewById(R.id.additem_dateET);
 
         category = (Spinner) findViewById(R.id.category_spinner);
         category.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -62,50 +71,61 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
                   case 0:
                       break;
                   case 1:
-                  intent = new Intent(Add_Item.this, Keyboard_activity.class);
+                  intent = new Intent(Add_Item.this, Laptop_activity.class);
                       startActivity(intent);
                   break;
                   case 2:
-                      intent = new Intent(Add_Item.this, Mouse_activity.class);
+                      intent = new Intent(Add_Item.this, Monitor_activity.class);
                       startActivity(intent);
                       break;
                   case 3:
-                      intent = new Intent(Add_Item.this, Printer_activity.class);
+                      intent = new Intent(Add_Item.this, Keyboard_activity.class);
                       startActivity(intent);
                       break;
                   case 4:
-                      intent = new Intent(Add_Item.this, Printer_activity.class);
+                      intent = new Intent(Add_Item.this, Mouse_activity.class);
                       startActivity(intent);
                       break;
                   case 5:
-                      intent = new Intent(Add_Item.this, UPS_activity.class);
-                      startActivity(intent);
-                      break;
-                  case 6:
                       intent = new Intent(Add_Item.this, Printer_activity.class);
                       startActivity(intent);
                       break;
+                  case 6:
+                      intent = new Intent(Add_Item.this, Scanner_activity.class);
+                      startActivity(intent);
+                      break;
                   case 7:
-                      intent = new Intent(Add_Item.this, Router_activity.class);
+                      intent = new Intent(Add_Item.this, UPS_activity.class);
                       startActivity(intent);
                       break;
                   case 8:
-                      intent = new Intent(Add_Item.this, Wifidongle_activity.class);
+                      intent = new Intent(Add_Item.this, Processor.class);
                       startActivity(intent);
                       break;
                   case 9:
-                      intent = new Intent(Add_Item.this, RAM_activity.class);
+                      intent = new Intent(Add_Item.this, Router_activity.class);
                       startActivity(intent);
                       break;
                   case 10:
-                      intent = new Intent(Add_Item.this, Cables_activity.class);
+                      intent = new Intent(Add_Item.this, Wifidongle_activity.class);
                       startActivity(intent);
                       break;
                   case 11:
+                      intent = new Intent(Add_Item.this, RAM_activity.class);
+                      startActivity(intent);
+                      break;
+                  case 12:
+                      intent = new Intent(Add_Item.this, Cables_activity.class);
+                      startActivity(intent);
+                      break;
+                  case 13:
                       intent = new Intent(Add_Item.this, GPS_activity.class);
                       startActivity(intent);
                       break;
-
+                  case 14:
+                      intent = new Intent(Add_Item.this,com.example.stockmangmentnew.ProductDetail.xerox_activity.class);
+                      startActivity(intent);
+                      break;
 
 
 
@@ -138,6 +158,36 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
 
 
             private boolean validateForm(Item oneItem) {
+                supplier_nameS=supplier_name.getText().toString().trim();
+                mobile_numberS=mobile_number.getText().toString().trim();
+                quantitys=quantity.getText().toString().trim();
+                dateS=date.getText().toString().trim();
+                if (supplier_nameS.length() == 0) {
+                    supplier_name.setError("Username is not enter");
+                    supplier_name.requestFocus();
+                    return false;
+                }
+                if(mobile_numberS.length()==0)
+                {
+                    mobile_number.setError("Mobile no is not enter");
+                    mobile_number.requestFocus();
+                    return false;
+                }
+                if(quantitys.length()==0)
+                {
+                    mobile_number.setError("Enter quantity");
+                    mobile_number.requestFocus();
+                    return false;
+                }
+                if(dateS.length()==0)
+                {
+                    mobile_number.setError("Enter date");
+                    mobile_number.requestFocus();
+                    return false;
+                }
+
+
+
                 //Validation Code
 
                 return true;

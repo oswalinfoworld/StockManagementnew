@@ -44,7 +44,7 @@
             android:layout_marginTop="10dp"
             android:hint="Name"
             android:textSize="13dp"
-            android:id="@+id/gps-compyame"
+            android:id="@+id/gps_compyame"
             android:background="@drawable/border_table" />
 
 
@@ -103,14 +103,14 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="20dp"
             android:hint="Date:"
-            android:id="@+id/gps-validity"
+            android:id="@+id/gps_validity"
             android:textSize="13dp"
             android:background="@drawable/border_table" />
         <Button
             android:layout_width="200dp"
             android:layout_height="45dp"
             android:text="Submit"
-            android:id="@+id/GPS_subbtn1"
+            android:id="@+id/gps_subbtn1"
             android:layout_marginTop="30dp"
             android:layout_gravity="center"/>
 

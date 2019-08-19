@@ -16,6 +16,8 @@ public class new_password extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_password);
+        getSupportActionBar().setTitle("New Password");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Submit=findViewById(R.id.newPass_submit);
         Submit.setOnClickListener(new View.OnClickListener() {
             @Override

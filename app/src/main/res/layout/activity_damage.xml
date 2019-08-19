@@ -39,6 +39,7 @@
             android:layout_marginTop="90dp"
 
             android:gravity="center"
+            android:id="@+id/damage_scan"
             android:text="Scan">
 
 
@@ -67,7 +68,7 @@
                 <EditText
                     android:id="@+id/damage_resonET"
                     android:layout_width="200dp"
-                    android:layout_height="25dp"
+                    android:layout_height="27dp"
                     android:layout_marginRight="5dp"
                     android:gravity="center"
                     android:background="@drawable/border_table"
@@ -98,7 +99,7 @@
                 <EditText
                     android:id="@+id/damage_itmnameET"
                     android:layout_width="200dp"
-                    android:layout_height="25dp"
+                    android:layout_height="27dp"
                     android:layout_marginRight="5dp"
                     android:gravity="center"
                     android:background="@drawable/border_table"
@@ -128,7 +129,7 @@
                 <EditText
                     android:id="@+id/damage_modelnoET"
                     android:layout_width="200dp"
-                    android:layout_height="25dp"
+                    android:layout_height="27dp"
                     android:gravity="center"
 
                     android:background="@drawable/border_table"
@@ -153,7 +154,7 @@
                 <EditText
                     android:id="@+id/damage_billnoET"
                     android:layout_width="200dp"
-                    android:layout_height="25dp"
+                    android:layout_height="27dp"
                     android:gravity="center"
 
                     android:background="@drawable/border_table"
@@ -180,7 +181,7 @@
                 <EditText
                     android:id="@+id/damage_dateET"
                     android:layout_width="200dp"
-                    android:layout_height="25dp"
+                    android:layout_height="27dp"
                     android:gravity="center"
 
                     android:background="@drawable/border_table"
@@ -207,7 +208,7 @@
                 <EditText
                     android:id="@+id/damage_cusnameET"
                     android:layout_width="200dp"
-                    android:layout_height="25dp"
+                    android:layout_height="27dp"
                     android:background="@drawable/border_table"
 
 
@@ -231,7 +232,7 @@
                 <EditText
                     android:id="@+id/damage_storeLocET"
                     android:layout_width="match_parent"
-                    android:layout_height="25dp"
+                    android:layout_height="27dp"
                     android:background="@drawable/border_table"
                     android:textSize="15dp" />
             </TableRow>

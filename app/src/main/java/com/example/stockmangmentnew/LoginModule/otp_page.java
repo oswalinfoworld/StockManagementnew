@@ -17,6 +17,8 @@ public class otp_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp_page);
         Submit=findViewById(R.id.otp_submit);
+        getSupportActionBar().setTitle("OTP Page");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Submit.setOnClickListener(new View.OnClickListener() {
             @Override

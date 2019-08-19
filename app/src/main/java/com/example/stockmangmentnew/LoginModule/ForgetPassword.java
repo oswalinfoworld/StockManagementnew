@@ -19,6 +19,8 @@ public class ForgetPassword extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget_password);
+        getSupportActionBar().setTitle("Forget Password");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Submit=findViewById(R.id.forget_submit);
         username=(EditText)findViewById(R.id.usernameET);
 

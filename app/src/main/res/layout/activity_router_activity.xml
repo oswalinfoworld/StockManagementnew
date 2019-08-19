@@ -73,7 +73,7 @@
             android:textSize="13dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="16dp"
-            android:id="@+id/router_mang"/>
+            android:id="@+id/router_type1"/>
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
             android:textSize="13dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="16dp"
-            android:id="@+id/router_unmang"/>
+            android:id="@+id/router_type2"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -174,7 +174,7 @@
             android:layout_width="200dp"
             android:layout_height="45dp"
             android:text="Submit"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:id="@+id/router_subbtn1"
             android:layout_gravity="center"/>
     </LinearLayout>

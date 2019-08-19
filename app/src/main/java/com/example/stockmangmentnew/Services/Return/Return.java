@@ -16,6 +16,8 @@ public class Return extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_return);
+        getSupportActionBar().setTitle("Return");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         reject = (Button) findViewById(R.id.return_rejbtn);
         repair = (Button) findViewById(R.id.return_repairbtn);
         damage = (Button) findViewById(R.id.return_damgbtn);

@@ -79,6 +79,7 @@
         android:layout_alignRight="@+id/usernameET"
         android:background="@drawable/border_table"
         android:hint="password"
+        app:passwordToggleEnabled="true"
         android:inputType="textPassword" />
     <requestFocus/>
 
@@ -91,7 +92,7 @@
         <Button
             android:id="@+id/loginBtn"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="45dp"
             android:layout_below="@+id/passwordET"
             android:layout_marginTop="90dp"
             android:text="Login"
@@ -102,7 +103,7 @@
         <Button
             android:id="@+id/resetBtn"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="45dp"
             android:layout_below="@+id/passwordET"
             android:layout_marginTop="90dp"
             android:text="Reset"

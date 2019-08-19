@@ -37,7 +37,7 @@
         android:text="Company Name"/>
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="32dp"
 
         android:layout_marginLeft="16dp"
@@ -60,7 +60,7 @@
         android:text="Model no"/>
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="32dp"
         android:id="@+id/xerox-modelno"
 

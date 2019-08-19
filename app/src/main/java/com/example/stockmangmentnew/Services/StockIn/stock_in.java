@@ -13,17 +13,29 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.stockmangmentnew.LoginModule.LoginPage;
-import com.example.stockmangmentnew.LoginModule.sign_UP;
-import com.example.stockmangmentnew.MainActivity;
+import com.example.stockmangmentnew.ProductDetail.Laptop_activity;
 import com.example.stockmangmentnew.OnlineDBActivity.ApiConnector;
 import com.example.stockmangmentnew.POJO.StockIn;
+import com.example.stockmangmentnew.ProductDetail.Cables_activity;
+import com.example.stockmangmentnew.ProductDetail.GPS_activity;
+import com.example.stockmangmentnew.ProductDetail.Keyboard_activity;
+import com.example.stockmangmentnew.ProductDetail.Monitor_activity;
+import com.example.stockmangmentnew.ProductDetail.Mouse_activity;
+import com.example.stockmangmentnew.ProductDetail.Printer_activity;
+import com.example.stockmangmentnew.ProductDetail.Processor;
+import com.example.stockmangmentnew.ProductDetail.RAM_activity;
+import com.example.stockmangmentnew.ProductDetail.Router_activity;
+import com.example.stockmangmentnew.ProductDetail.Scanner_activity;
+import com.example.stockmangmentnew.ProductDetail.UPS_activity;
+import com.example.stockmangmentnew.ProductDetail.Wifidongle_activity;
 import com.example.stockmangmentnew.R;
 
 import org.json.JSONArray;
@@ -34,9 +46,11 @@ import java.util.List;
 
 public class stock_in extends AppCompatActivity {
     EditText supplierID, date, billno, sname, contact, add, itemname, quantity,availableq, openpg,storageloc;
-    Spinner spinner;
-    String supplierIDString, dateString, billnoString, snameString, contactString, addString, itemnameString,quantityString, availableqString, openpgString,model_noString,serial_noString,storagelocString;
+    Spinner category;
+    String categoryS,supplierIDString, dateString, billnoString, snameString, contactString, addString, itemnameString,quantityString, availableqString, openpgString,model_noString,serial_noString,storagelocString;
     Button submit, open,scan;
+    String[] categoryList = {"Select","Laptop","Monitor","Keyboard","Mouse", "Printer", "Scanner", "UPS","Processor","Router","Wifi-Dongle","RAM","Cables","GPS tracking Machine","Xerox-machin"};
+
     List<StockIn> stockInList = new ArrayList<>();
     StockIn stockIn = new StockIn();
     boolean addMultipleStock = false;
@@ -45,6 +59,8 @@ public class stock_in extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stock_in);
+        getSupportActionBar().setTitle("Stock IN");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         supplierID = (EditText) findViewById(R.id.additem_suppID);
         date = (EditText) findViewById(R.id.additem_dateET);
         billno = (EditText) findViewById(R.id.additem_billnoET);
@@ -61,7 +77,88 @@ public class stock_in extends AppCompatActivity {
         submit = (Button) findViewById(R.id.add_item_Submitbtn);
         open = (Button) findViewById(R.id.additem_opnbtn);
         scan = (Button) findViewById(R.id.add_item_scanbtn);
-        spinner = (Spinner) findViewById(R.id.add_item_spinner);
+        category = (Spinner) findViewById(R.id.stockin_spinner);
+        category.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent;
+                switch (i)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        intent = new Intent(stock_in.this, Laptop_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(stock_in.this, Monitor_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 3:
+                        intent = new Intent(stock_in.this, Keyboard_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 4:
+                        intent = new Intent(stock_in.this, Mouse_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 5:
+                        intent = new Intent(stock_in.this, Printer_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 6:
+                        intent = new Intent(stock_in.this, Scanner_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 7:
+                        intent = new Intent(stock_in.this, UPS_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 8:
+                        intent = new Intent(stock_in.this, Processor.class);
+                        startActivity(intent);
+                        break;
+                    case 9:
+                        intent = new Intent(stock_in.this, Router_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 10:
+                        intent = new Intent(stock_in.this, Wifidongle_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 11:
+                        intent = new Intent(stock_in.this, RAM_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 12:
+                        intent = new Intent(stock_in.this, Cables_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 13:
+                        intent = new Intent(stock_in.this, GPS_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 14:
+                        intent = new Intent(stock_in.this,com.example.stockmangmentnew.ProductDetail.xerox_activity.class);
+                        startActivity(intent);
+                        break;
+
+
+
+                }
+
+            }
+
+
+
+
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,6 +175,8 @@ public class stock_in extends AppCompatActivity {
                // startActivity(intent);
             }
         });
+
+
 
         date.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +198,19 @@ public class stock_in extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
+        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, categoryList);
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        category.setAdapter(aa);
+
+    }
+
+    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+        categoryS = categoryList[position];
+        Toast.makeText(getApplicationContext(), categoryList[position], Toast.LENGTH_SHORT).show();
+    }
+
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 
     private boolean emptyvalidate(StockIn passData) {

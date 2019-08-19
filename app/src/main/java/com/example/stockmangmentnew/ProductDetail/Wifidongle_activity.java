@@ -12,5 +12,7 @@ public class Wifidongle_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wifidongle_activity);
+        getSupportActionBar().setTitle("Dongle Details");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

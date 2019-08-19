@@ -52,7 +52,7 @@
         android:layout_width="150dp"
         android:layout_height="45dp"
         android:layout_marginLeft="25dp"
-
+        android:id="@+id/repair_addto_stocinbtn"
         android:layout_marginTop="180dp"
         android:background="@drawable/border_table"
 
@@ -60,6 +60,7 @@
         <Button
             android:layout_width="150dp"
             android:layout_height="45dp"
+            android:id="@+id/repair_goto_custbtn"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="180dp"
@@ -91,9 +92,9 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/damage_resnET"
+                android:id="@+id/repaire_resonET"
                 android:layout_width="200dp"
-                android:layout_height="25dp"
+                android:layout_height="27dp"
                 android:layout_marginRight="5dp"
                 android:background="@drawable/border_table"
                 android:hint="Enter reason for repair"
@@ -121,9 +122,9 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/damage_itmnameET"
+                android:id="@+id/repaire_itmnameET"
                 android:layout_width="200dp"
-                android:layout_height="25dp"
+                android:layout_height="27dp"
                 android:layout_marginRight="5dp"
                 android:background="@drawable/border_table"
                 android:hint=""
@@ -151,9 +152,9 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/damage_modelnoET"
+                android:id="@+id/repaire_modelnoET"
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
+                android:layout_height="27dp"
 
                 android:background="@drawable/border_table"
                 android:hint=""
@@ -177,7 +178,7 @@
             <EditText
                 android:id="@+id/repair_billnoET"
                 android:layout_width="200dp"
-                android:layout_height="25dp"
+                android:layout_height="27dp"
                 android:gravity="center"
 
                 android:background="@drawable/border_table"
@@ -202,9 +203,9 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/damage_dateET"
+                android:id="@+id/repair_dateET"
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
+                android:layout_height="27dp"
 
                 android:background="@drawable/border_table"
 
@@ -228,9 +229,9 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/damage_cusnameET"
+                android:id="@+id/repair_cusnameET"
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
+                android:layout_height="27dp"
                 android:background="@drawable/border_table"
 
                 android:textSize="15dp" />
@@ -252,7 +253,7 @@
             <EditText
                 android:id="@+id/repair_storeLocET"
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
+                android:layout_height="27dp"
                 android:background="@drawable/border_table"
                 android:textSize="15dp" />
         </TableRow>
@@ -265,9 +266,9 @@
         android:layout_height="45dp"
         android:layout_marginLeft="100dp"
         android:text="Submit"
-        android:id="@+id/repair_subbtn"
+        android:id="@+id/repaire_subtn"
         android:gravity="center"
-        android:layout_marginTop="550dp"/>
+        android:layout_marginTop="570dp"/>
 
 
 

@@ -1,4 +1,4 @@
-package com.example.stockmangmentnew.ProductDetail;
+package com.example.stockmangmentnew;
 
 import androidx.appcompat.app.AppCompatActivity;
 

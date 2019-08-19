@@ -21,6 +21,8 @@ public class Stock_Out_View extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stock__out__view);
+        getSupportActionBar().setTitle("Stock Out View");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
             listView = (ListView) findViewById(R.id.stockIn_listview);
             final ArrayList<String> arrayList = new ArrayList<>();

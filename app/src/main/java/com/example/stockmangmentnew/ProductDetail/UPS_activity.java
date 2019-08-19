@@ -12,5 +12,7 @@ public class UPS_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ups_activity);
+        getSupportActionBar().setTitle("UPS Details");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

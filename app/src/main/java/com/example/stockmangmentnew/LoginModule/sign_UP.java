@@ -38,6 +38,8 @@ public class sign_UP extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign__up);
         Submit = findViewById(R.id.signup_submit);
+        getSupportActionBar().setTitle("Sign UP");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         name = findViewById(R.id.nameEditText);
         phone = (EditText) findViewById(R.id.coNoEditText);
         email = (EditText) findViewById(R.id.emailEditText);

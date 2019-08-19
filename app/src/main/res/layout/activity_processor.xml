@@ -37,7 +37,7 @@
                 android:textSize="13dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="16dp"
-                android:id="@+id/router_process1"/>
+                android:id="@+id/processor_type1"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
                 android:textSize="13dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="16dp"
-                android:id="@+id/router_process2"/>
+                android:id="@+id/processor_type2"/>
 
 
             <CheckBox
@@ -55,7 +55,7 @@
                 android:textSize="13dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="16dp"
-                android:id="@+id/router_process4"/>
+                android:id="@+id/processor_type3"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
                 android:textSize="13dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="16dp"
-                android:id="@+id/router_process5"/>
+                android:id="@+id/processor_type4"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
                 android:textSize="13dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="16dp"
-                android:id="@+id/router_process3"/>
+                android:id="@+id/processor_type5"/>
         </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
@@ -91,7 +91,7 @@
                 android:textSize="13dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="16dp"
-                android:id="@+id/router_gen1"/>
+                android:id="@+id/processor_gen1"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
                 android:textSize="13dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="16dp"
-                android:id="@+id/router_gen2"/>
+                android:id="@+id/processor_gen2"/>
 
 
             <CheckBox
@@ -109,7 +109,7 @@
                 android:textSize="13dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="16dp"
-                android:id="@+id/router_gen3"/>
+                android:id="@+id/processor_gen3"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -117,7 +117,7 @@
                 android:textSize="13dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="16dp"
-                android:id="@+id/router_gen4"/>
+                android:id="@+id/processor_gen4"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -125,7 +125,7 @@
                 android:textSize="13dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="16dp"
-                android:id="@+id/router_gen5"/>
+                android:id="@+id/processor_gen5"/>
         </LinearLayout>
 
 

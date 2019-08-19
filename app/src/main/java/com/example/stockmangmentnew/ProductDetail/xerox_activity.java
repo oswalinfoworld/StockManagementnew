@@ -12,5 +12,7 @@ public class xerox_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xerox_activity);
+        getSupportActionBar().setTitle("Xerox Machin Details");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
