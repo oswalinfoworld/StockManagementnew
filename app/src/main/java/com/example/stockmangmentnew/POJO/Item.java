@@ -1,7 +1,8 @@
 package com.example.stockmangmentnew.POJO;
 
 public class Item {
-    String name, model_number, serial_number, specification, supplier_name, mobile_number,storage_location, category;
+    //Specification --> comma separated value of specification
+    String name, model_number, serial_number, specification, supplier_name, mobile_number, storage_location, category;
 
     public String getName() {
         return name;

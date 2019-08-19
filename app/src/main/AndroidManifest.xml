@@ -12,8 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Services.StockOut.Repaire"></activity>
-        <activity android:name=".Services.StockOut.Reject" />
+        <activity android:name=".Services.Return.Repaire"></activity>
+        <activity android:name=".Services.Return.Reject" />
         <activity android:name=".ProductDetail.Processor" />
         <activity android:name=".ProductDetail.xerox_activity" />
         <activity android:name=".ProductDetail.GPS_activity" />
@@ -46,8 +46,8 @@
                 <action android:name="android.intent.action.MainActivity" />
             </intent-filter>
         </activity>
-        <activity android:name=".Services.StockOut.Damage" />
-        <activity android:name=".Services.StockOut.Return" />
+        <activity android:name=".Services.Return.Damage" />
+        <activity android:name=".Services.Return.Return" />
         <activity android:name=".Services.StockIn.Stock_IN_View" />
         <activity android:name=".Services.StockOut.Stock_Out_View" />
         <activity android:name=".Services.StockOut.stock_OUT" />

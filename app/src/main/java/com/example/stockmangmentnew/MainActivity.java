@@ -3,15 +3,13 @@ package com.example.stockmangmentnew;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.stockmangmentnew.LoginModule.ForgetPassword;
-import com.example.stockmangmentnew.POJO.StockIn;
 import com.example.stockmangmentnew.ProductDetail.supplier_List;
 import com.example.stockmangmentnew.Services.Items.Add_Item;
 import com.example.stockmangmentnew.Services.Items.view_item;
 import com.example.stockmangmentnew.Services.StockIn.Stock_IN_View;
 import com.example.stockmangmentnew.Services.StockIn.stock_in;
-import com.example.stockmangmentnew.Services.StockOut.Damage;
-import com.example.stockmangmentnew.Services.StockOut.Return;
+import com.example.stockmangmentnew.Services.Return.Damage;
+import com.example.stockmangmentnew.Services.Return.Return;
 import com.example.stockmangmentnew.Services.StockOut.Stock_Out_View;
 import com.example.stockmangmentnew.Services.StockOut.stock_OUT;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;

@@ -14,16 +14,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.Toast;
 
-import com.example.stockmangmentnew.LoginModule.sign_UP;
 import com.example.stockmangmentnew.OnlineDBActivity.ApiConnector;
 import com.example.stockmangmentnew.POJO.Item;
 import com.example.stockmangmentnew.ProductDetail.Cables_activity;
 import com.example.stockmangmentnew.ProductDetail.GPS_activity;
 import com.example.stockmangmentnew.ProductDetail.Keyboard_activity;
-import com.example.stockmangmentnew.ProductDetail.Monitor_activity;
 import com.example.stockmangmentnew.ProductDetail.Mouse_activity;
 import com.example.stockmangmentnew.ProductDetail.Printer_activity;
 import com.example.stockmangmentnew.ProductDetail.RAM_activity;
@@ -41,7 +38,7 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
     private String nameS, model_numberS, serial_numberS, specificationS, supplier_nameS, mobile_numberS, storage_locationS, categoryS;
     Button submit,generator;
     private Item oneItem = new Item();
-    String[] categoryList = { "Keyboard","Mouse", "Printer", "Scanner", "UPS","Processor","Router","Wifi-Dongle","RAM","Cables","GPS tracking Machine"};
+    String[] categoryList = { "Select","Keyboard","Mouse", "Printer", "Scanner", "UPS","Processor","Router","Wifi-Dongle","RAM","Cables","GPS tracking Machine"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,15 +60,13 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
               switch (i)
               {
                   case 0:
+                      break;
+                  case 1:
                   intent = new Intent(Add_Item.this, Keyboard_activity.class);
                       startActivity(intent);
                   break;
-                  case 1:
-                      intent = new Intent(Add_Item.this, Mouse_activity.class);
-                      startActivity(intent);
-                      break;
                   case 2:
-                      intent = new Intent(Add_Item.this, Printer_activity.class);
+                      intent = new Intent(Add_Item.this, Mouse_activity.class);
                       startActivity(intent);
                       break;
                   case 3:
@@ -79,30 +74,34 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
                       startActivity(intent);
                       break;
                   case 4:
-                      intent = new Intent(Add_Item.this, UPS_activity.class);
-                      startActivity(intent);
-                      break;
-                  case 5:
                       intent = new Intent(Add_Item.this, Printer_activity.class);
                       startActivity(intent);
                       break;
+                  case 5:
+                      intent = new Intent(Add_Item.this, UPS_activity.class);
+                      startActivity(intent);
+                      break;
                   case 6:
-                      intent = new Intent(Add_Item.this, Router_activity.class);
+                      intent = new Intent(Add_Item.this, Printer_activity.class);
                       startActivity(intent);
                       break;
                   case 7:
-                      intent = new Intent(Add_Item.this, Wifidongle_activity.class);
+                      intent = new Intent(Add_Item.this, Router_activity.class);
                       startActivity(intent);
                       break;
                   case 8:
-                      intent = new Intent(Add_Item.this, RAM_activity.class);
+                      intent = new Intent(Add_Item.this, Wifidongle_activity.class);
                       startActivity(intent);
                       break;
                   case 9:
-                      intent = new Intent(Add_Item.this, Cables_activity.class);
+                      intent = new Intent(Add_Item.this, RAM_activity.class);
                       startActivity(intent);
                       break;
                   case 10:
+                      intent = new Intent(Add_Item.this, Cables_activity.class);
+                      startActivity(intent);
+                      break;
+                  case 11:
                       intent = new Intent(Add_Item.this, GPS_activity.class);
                       startActivity(intent);
                       break;

@@ -1,8 +1,8 @@
 package com.example.stockmangmentnew.POJO;
 
-public class StockUser {
+public class ApplicationUser {
 
-
+    //Email Address
     private String userName;
     private String password;
     private String Name;

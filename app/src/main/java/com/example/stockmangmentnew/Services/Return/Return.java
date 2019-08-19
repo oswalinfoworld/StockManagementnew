@@ -1,4 +1,4 @@
-package com.example.stockmangmentnew.Services.StockOut;
+package com.example.stockmangmentnew.Services.Return;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,9 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.stockmangmentnew.ProductDetail.Keyboard_activity;
 import com.example.stockmangmentnew.R;
-import com.example.stockmangmentnew.Services.Items.Add_Item;
 
 public class Return extends AppCompatActivity {
     Button reject,repair,damage;

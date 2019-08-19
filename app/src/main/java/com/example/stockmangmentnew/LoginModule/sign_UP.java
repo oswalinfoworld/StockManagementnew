@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 
 import com.example.stockmangmentnew.OnlineDBActivity.ApiConnector;
-import com.example.stockmangmentnew.POJO.StockUser;
+import com.example.stockmangmentnew.POJO.ApplicationUser;
 import com.example.stockmangmentnew.R;
 
 import org.json.JSONArray;
@@ -31,7 +31,7 @@ public class sign_UP extends AppCompatActivity {
 
     Button Submit, photobtn;
     String nameString, contactNumber, emailString, DOBString,passwordString,confirmPassString;
-    private StockUser user = new StockUser();
+    private ApplicationUser user = new ApplicationUser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +62,7 @@ public class sign_UP extends AppCompatActivity {
                     user.setContactNumber(contactNumber);
                     user.setDOB(DOBString);
                     user.setPassword(passwordString);
-                    user.setPassword(confirmPassString);
+                   // user.setPassword(confirmPassString);
                     if (isInternetOn()) {
                         new insertUserToOnlineDB().execute(new ApiConnector());
                     }

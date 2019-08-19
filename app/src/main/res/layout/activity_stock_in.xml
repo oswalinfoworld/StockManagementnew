@@ -26,6 +26,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:paddingTop="60dp">
+
             <TableRow
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -49,6 +50,7 @@
                     android:onClick="scanQR"
                     android:text="Scan " />
             </TableRow>
+
             <TableRow
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -66,13 +68,10 @@
                     android:id="@+id/add_item_spinner"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
-
-                    android:entries="@array/select"
-                    android:layout_marginLeft="1dp"></Spinner>
+                    android:layout_marginLeft="1dp"
+                    android:entries="@array/select"></Spinner>
 
             </TableRow>
-
-
 
 
             <TableRow
@@ -84,7 +83,6 @@
                     android:id="@+id/additem_name"
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
-
                     android:text="ITEM Name:"
                     android:textSize="15dp"
                     android:textStyle="bold" />
@@ -93,12 +91,12 @@
                     android:id="@+id/additem_nameET"
                     android:layout_width="match_parent"
                     android:layout_height="28dp"
-
                     android:background="@drawable/border_table"
-                    android:hint="Enter supplier uniq ID"
+                    android:hint="Enter Item Name"
                     android:textSize="15dp" />
 
             </TableRow>
+
             <TableRow
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -108,7 +106,6 @@
                     android:id="@+id/additem_modelno"
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
-
                     android:text="Model no:"
                     android:textSize="15dp"
                     android:textStyle="bold" />
@@ -117,17 +114,11 @@
                     android:id="@+id/additem_modelnoET"
                     android:layout_width="match_parent"
                     android:layout_height="28dp"
-
                     android:background="@drawable/border_table"
                     android:hint="Enter model no"
                     android:textSize="15dp" />
 
             </TableRow>
-
-
-
-
-
 
             <TableRow
                 android:layout_width="wrap_content"
@@ -139,7 +130,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:text="Storage Location:"
-
                     android:textSize="15dp"
                     android:textStyle="bold" />
 
@@ -147,13 +137,11 @@
                     android:id="@+id/additem_storageLocaET"
                     android:layout_width="match_parent"
                     android:layout_height="28dp"
-
                     android:background="@drawable/border_table"
                     android:hint="Enter storage location"
-
-
                     android:textSize="15dp" />
             </TableRow>
+
             <TableRow
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -164,7 +152,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:text="Date :"
-
                     android:textSize="15dp"
                     android:textStyle="bold" />
 
@@ -172,7 +159,6 @@
                     android:id="@+id/additem_dateET"
                     android:layout_width="match_parent"
                     android:layout_height="28dp"
-
                     android:background="@drawable/border_table"
                     android:hint="Enter date"
                     android:inputType="number"
@@ -229,6 +215,7 @@
 
                     android:textSize="15dp" />
             </TableRow>
+
             <TableRow
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -273,9 +260,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="28dp"
                     android:width="100px"
-                    android:inputType="number"
                     android:background="@drawable/border_table"
                     android:hint="Enter contact no"
+                    android:inputType="number"
                     android:maxLength="10"
 
                     android:textSize="15dp" />
@@ -303,14 +290,10 @@
                     android:layout_marginRight="5dp"
                     android:background="@drawable/border_table"
                     android:hint="Enter address"
-                    android:textSize="15dp"
-                    />
+                    android:textSize="15dp" />
 
 
             </TableRow>
-
-
-
 
 
             <TableRow
@@ -334,10 +317,8 @@
                     android:layout_marginRight="5dp"
                     android:background="@drawable/border_table"
                     android:hint=""
-                    android:textSize="15dp"
                     android:inputType="number"
-
-
+                    android:textSize="15dp"
                     />
 
 
@@ -354,7 +335,6 @@
                     android:layout_height="wrap_content"
                     android:text="Open Page for edit:"
                     android:textSize="15dp"
-
                     android:textStyle="bold" />
 
                 <EditText
@@ -362,15 +342,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="28dp"
                     android:layout_marginRight="5dp"
-                    android:textSize="15dp"
                     android:background="@drawable/border_table"
                     android:hint="Enter supplier id."
-                    android:inputType="number" />
-
+                    android:inputType="number"
+                    android:textSize="15dp" />
 
 
             </TableRow>
-
 
 
         </TableLayout>
@@ -386,12 +364,11 @@
             android:textSize="10dp" />
 
 
-
         <ImageView
+            android:id="@+id/additem_imgbtn"
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:layout_marginLeft="313dp"
-            android:id="@+id/additem_imgbtn"
             android:layout_marginTop="610dp"
             android:onClick="addStockIn"
             android:src="@drawable/plus_button" />
