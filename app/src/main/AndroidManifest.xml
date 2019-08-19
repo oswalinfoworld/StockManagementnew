@@ -12,33 +12,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.ProductDetail.Scanner_activity"></activity>
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.ProductDetail.Laptop_activity"
-            android:parentActivityName="com.oswal.com.oswal.stockmangmentnew.Services.Items.Add_Item"
+        <activity android:name="com.oswal.stockmangmentnew.ProductDetail.Scanner_activity"></activity>
+        <activity android:name="com.oswal.stockmangmentnew.ProductDetail.Laptop_activity"
+            android:parentActivityName="com.oswal.stockmangmentnew.Services.Items.Add_Item"
 
 
             />
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.Services.Return.Repaire"
-            android:parentActivityName="com.oswal.com.oswal.stockmangmentnew.Services.Return.Return"/>
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.Services.Return.Reject"
-            android:parentActivityName="com.oswal.com.oswal.stockmangmentnew.Services.Return.Return"/>
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.ProductDetail.Processor" />
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.ProductDetail.xerox_activity" />
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.ProductDetail.GPS_activity" />
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.ProductDetail.Wifidongle_activity" />
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.ProductDetail.Router_activity" />
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.ProductDetail.Printer_activity" />
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.ProductDetail.Switches_activity" />
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.ProductDetail.Cables_activity" />
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.ProductDetail.RAM_activity" />
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.ProductDetail.Monitor_activity" />
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.ProductDetail.Mouse_activity" />
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.ProductDetail.Keyboard_activity" />
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.ProductDetail.UPS_activity" />
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.Services.StockIn.stock_in"
-            android:parentActivityName="com.oswal.com.oswal.stockmangmentnew.MainActivity"/>
+        <activity android:name="com.oswal.stockmangmentnew.Services.Return.Repaire"
+            android:parentActivityName="com.oswal.stockmangmentnew.Services.Return.Return"/>
+        <activity android:name="com.oswal.stockmangmentnew.Services.Return.Reject"
+            android:parentActivityName="com.oswal.stockmangmentnew.Services.Return.Return"/>
+        <activity android:name="com.oswal.stockmangmentnew.ProductDetail.Processor" />
+        <activity android:name="com.oswal.stockmangmentnew.ProductDetail.xerox_activity" />
+        <activity android:name="com.oswal.stockmangmentnew.ProductDetail.GPS_activity" />
+        <activity android:name="com.oswal.stockmangmentnew.ProductDetail.Wifidongle_activity" />
+        <activity android:name="com.oswal.stockmangmentnew.ProductDetail.Router_activity" />
+        <activity android:name="com.oswal.stockmangmentnew.ProductDetail.Printer_activity" />
+        <activity android:name="com.oswal.stockmangmentnew.ProductDetail.Switches_activity" />
+        <activity android:name="com.oswal.stockmangmentnew.ProductDetail.Cables_activity" />
+        <activity android:name="com.oswal.stockmangmentnew.ProductDetail.RAM_activity" />
+        <activity android:name="com.oswal.stockmangmentnew.ProductDetail.Monitor_activity" />
+        <activity android:name="com.oswal.stockmangmentnew.ProductDetail.Mouse_activity" />
+        <activity android:name="com.oswal.stockmangmentnew.ProductDetail.Keyboard_activity" />
+        <activity android:name="com.oswal.stockmangmentnew.ProductDetail.UPS_activity" />
+        <activity android:name="com.oswal.stockmangmentnew.Services.StockIn.stock_in"
+            android:parentActivityName="com.oswal.stockmangmentnew.MainActivity"/>
         <activity
-            android:name="com.oswal.com.oswal.stockmangmentnew.LoginModule.LoginPage"
+            android:name="com.oswal.stockmangmentnew.LoginModule.LoginPage"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -48,41 +48,41 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.oswal.com.oswal.stockmangmentnew.MainActivity"
+            android:name="com.oswal.stockmangmentnew.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MainActivity" />
             </intent-filter>
         </activity>
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.Services.Return.Damage"
-            android:parentActivityName="com.oswal.com.oswal.stockmangmentnew.Services.Return.Return"/>
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.Services.Return.Return"
-            android:parentActivityName="com.oswal.com.oswal.stockmangmentnew.MainActivity"/>
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.Services.StockIn.Stock_IN_View"
-            android:parentActivityName="com.oswal.com.oswal.stockmangmentnew.MainActivity"/>
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.Services.StockOut.Stock_Out_View"
-            android:parentActivityName="com.oswal.com.oswal.stockmangmentnew.MainActivity"/>
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.Services.StockOut.stock_OUT"
-            android:parentActivityName="com.oswal.com.oswal.stockmangmentnew.MainActivity"/>
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.customer_List"
-            android:parentActivityName="com.oswal.com.oswal.stockmangmentnew.MainActivity"/>
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.supplier_List"
-            android:parentActivityName="com.oswal.com.oswal.stockmangmentnew.MainActivity"/>
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.Services.Items.view_item"
-            android:parentActivityName="com.oswal.com.oswal.stockmangmentnew.MainActivity"/>
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.Services.Items.Add_Item"
-            android:parentActivityName="com.oswal.com.oswal.stockmangmentnew.MainActivity"/>
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.LoginModule.sign_UP"
-            android:parentActivityName="com.oswal.com.oswal.stockmangmentnew.LoginModule.LoginPage"/>
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.LoginModule.new_password"
-            android:parentActivityName="com.oswal.com.oswal.stockmangmentnew.LoginModule.otp_page"/>
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.LoginModule.otp_page"
-            android:parentActivityName="com.oswal.com.oswal.stockmangmentnew.LoginModule.ForgetPassword" />
-        <activity android:name="com.oswal.com.oswal.stockmangmentnew.LoginModule.ForgetPassword"
-            android:parentActivityName="com.oswal.com.oswal.stockmangmentnew.LoginModule.LoginPage" />
+        <activity android:name="com.oswal.stockmangmentnew.Services.Return.Damage"
+            android:parentActivityName="com.oswal.stockmangmentnew.Services.Return.Return"/>
+        <activity android:name="com.oswal.stockmangmentnew.Services.Return.Return"
+            android:parentActivityName="com.oswal.stockmangmentnew.MainActivity"/>
+        <activity android:name="com.oswal.stockmangmentnew.Services.StockIn.Stock_IN_View"
+            android:parentActivityName="com.oswal.stockmangmentnew.MainActivity"/>
+        <activity android:name="com.oswal.stockmangmentnew.Services.StockOut.Stock_Out_View"
+            android:parentActivityName="com.oswal.stockmangmentnew.MainActivity"/>
+        <activity android:name="com.oswal.stockmangmentnew.Services.StockOut.stock_OUT"
+            android:parentActivityName="com.oswal.stockmangmentnew.MainActivity"/>
+        <activity android:name="com.oswal.stockmangmentnew.customer_List"
+            android:parentActivityName="com.oswal.stockmangmentnew.MainActivity"/>
+        <activity android:name="com.oswal.stockmangmentnew.supplier_List"
+            android:parentActivityName="com.oswal.stockmangmentnew.MainActivity"/>
+        <activity android:name="com.oswal.stockmangmentnew.Services.Items.view_item"
+            android:parentActivityName="com.oswal.stockmangmentnew.MainActivity"/>
+        <activity android:name="com.oswal.stockmangmentnew.Services.Items.Add_Item"
+            android:parentActivityName="com.oswal.stockmangmentnew.MainActivity"/>
+        <activity android:name="com.oswal.stockmangmentnew.LoginModule.sign_UP"
+            android:parentActivityName="com.oswal.stockmangmentnew.LoginModule.LoginPage"/>
+        <activity android:name="com.oswal.stockmangmentnew.LoginModule.new_password"
+            android:parentActivityName="com.oswal.stockmangmentnew.LoginModule.otp_page"/>
+        <activity android:name="com.oswal.stockmangmentnew.LoginModule.otp_page"
+            android:parentActivityName="com.oswal.stockmangmentnew.LoginModule.ForgetPassword" />
+        <activity android:name="com.oswal.stockmangmentnew.LoginModule.ForgetPassword"
+            android:parentActivityName="com.oswal.stockmangmentnew.LoginModule.LoginPage" />
         <activity
-            android:name="com.oswal.com.oswal.stockmangmentnew.QRcodeModule.MainActivity"
+            android:name="com.oswal.stockmangmentnew.QRcodeModule.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
