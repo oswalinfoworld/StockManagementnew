@@ -47,9 +47,9 @@ import java.util.Calendar;
 import java.util.List;
 
 public class stock_OUT extends AppCompatActivity {
-    EditText CustomerID, date, billno, Cname, contact, add, companyname,quantity, availableq, openpg,model_no;
+    EditText CustomerID, date, billno, Cname, contact, add, companyname,availableq, openpg,model_no;
     Spinner category;
-    String categoryS,CustomerIDString, dateString, billnoString, CnameString, contactString, addString, itemnameString,quantityString, availableqString, openpgString,model_nostring;
+    String categoryS,CustomerIDString, dateString, billnoString, CnameString, contactString, addString, itemnameString,availableqString, openpgString,model_nostring;
     Button submit, open;
     String[] categoryList = { "Select","Laptop","Monitor","Keyboard","Mouse", "Printer", "Scanner", "UPS","Processor","Router","Wifi-Dongle","RAM","Cables","GPS tracking Machine","Xerox-machin","Switch"};
 
@@ -65,17 +65,18 @@ public class stock_OUT extends AppCompatActivity {
         setContentView(R.layout.activity_stock__out);
         setContentView(R.layout.activity_stock__out);
         getSupportActionBar().setTitle("Stock Out");
-        CustomerID = (EditText) findViewById(R.id.stockout_uniqIdET);
+
+        companyname = (EditText) findViewById(R.id.stockout_itemnameET);
+        model_no = (EditText) findViewById(R.id.stockout_modelnoET);
         date = (EditText) findViewById(R.id.stockout_dateET);
         billno = (EditText) findViewById(R.id.stockout_billnoET);
+        CustomerID = (EditText) findViewById(R.id.stockout_uniqIdET);
         Cname = (EditText) findViewById(R.id.stockout_CnameET);
         contact = (EditText) findViewById(R.id.stockout_conoET);
         add = (EditText) findViewById(R.id.stockout_addessET);
-        companyname = (EditText) findViewById(R.id.stockout_itemnameET);
-        model_no = (EditText) findViewById(R.id.stockout_modelnoET);
-
         availableq = (EditText) findViewById(R.id.stockout_avilQET);
         openpg = (EditText) findViewById(R.id.stockout_opnET);
+
         submit = (Button) findViewById(R.id.stockout_submitbtn);
         open = (Button) findViewById(R.id.stockout_opnbtn);
         category = (Spinner) findViewById(R.id.stockout_spinner);
@@ -147,13 +148,7 @@ public class stock_OUT extends AppCompatActivity {
                         intent = new Intent(stock_OUT.this, Switches_activity.class);
                         startActivity(intent);
                         break;
-
-
-
-
                 }
-
-
             }
 
             @Override
@@ -175,14 +170,19 @@ public class stock_OUT extends AppCompatActivity {
                     if (emptyvalidate(stockOut)) {
                         //insert value to Online DB
                         new insertStockOutToOnlineDB().execute(new ApiConnector());
+                          Intent intent = new Intent(stock_OUT.this, MainActivity.class);
+                         startActivity(intent);
                     }
                 } else {
                     new insertStockOutToOnlineDB().execute(new ApiConnector());
+                      Intent intent = new Intent(stock_OUT.this, MainActivity.class);
+                    startActivity(intent);
                 }
-                Intent intent = new Intent(stock_OUT.this, MainActivity.class);
-                startActivity(intent);
+
             }
         });
+
+
         date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -196,7 +196,6 @@ public class stock_OUT extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         date.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
-
                     }
                 }, mYear, mMonth, mDay);
 
@@ -224,51 +223,45 @@ public class stock_OUT extends AppCompatActivity {
 
     private void setStockOutFormData(int listNumber) {
         StockOut stockOut = stockOutList.get(listNumber - 1);
-        CustomerID.setText(stockOut.getSupplierID());
-
-
+        CustomerID.setText(stockOut.getCustomer_id());
         date.setText(stockOut.getDate());
-        billno.setText(stockOut.getBillNumber());
-        Cname.setText(stockOut.getSupplierName());
-        contact.setText(stockOut.getContactNumber());
+        billno.setText(stockOut.getBill_number());
+        Cname.setText(stockOut.getCustomer_name());
+        contact.setText(stockOut.getContact_number());
         add.setText(stockOut.getAddress());
-        companyname.setText(stockOut.getItemName());
+        companyname.setText(stockOut.getCompanyName());
+        availableq.setText(stockOut.getQuantity());
+        model_no.setText(stockOut.getModelNumber());
 
-        availableq.setText(stockOut.getAvailableQuantity());
     }
 
     private boolean emptyvalidate(StockOut passData) {
-        if (passData.getItemName().length() == 0) {
+        if (passData.getCompanyName().length() == 0) {
             companyname.setError("Enter item name");
             companyname.requestFocus();
             return false;
-
         }
-        if (passData.getSupplierID().length() == 0) {
+        if (passData.getCustomer_id().length() == 0) {
             CustomerID.setError("Enter Customer ID");
             CustomerID.requestFocus();
             return false;
-
         }
         if (passData.getDate().length() == 0) {
             date.setError("Enter valid Date");
             date.requestFocus();
             return false;
-
         }
-        if (passData.getBillNumber().length() == 0) {
+        if (passData.getBill_number().length() == 0) {
             billno.setError("Enter Bill no");
             billno.requestFocus();
             return false;
-
         }
-        if (passData.getSupplierName().length() == 0) {
+        if (passData.getCustomer_name().length() == 0) {
             Cname.setError("Enter Customer name");
             Cname.requestFocus();
             return false;
-
         }
-        if (passData.getContactNumber().length() != 10) {
+        if (passData.getContact_number().length() != 10) {
             contact.setError("Enter vaild Contact no");
             contact.requestFocus();
             return false;
@@ -278,14 +271,7 @@ public class stock_OUT extends AppCompatActivity {
             add.setError("Enter Address");
             add.requestFocus();
             return false;
-
-        }if (quantityString.length() == 0) {
-            quantity.setError("Enter quantity out");
-            quantity.requestFocus();
-            return false;
-
         }
-
         return true;
     }
 
@@ -316,18 +302,18 @@ public class stock_OUT extends AppCompatActivity {
         contactString = contact.getText().toString().trim();
         addString = add.getText().toString().trim();
         itemnameString = companyname.getText().toString().trim();
-        quantityString=quantity.getText().toString().trim();
         availableqString = availableq.getText().toString().trim();
         openpgString = openpg.getText().toString().trim();
-        stockOut.setSupplierID(CustomerIDString);
 
+        stockOut.setCustomer_id(CustomerIDString);
         stockOut.setDate(dateString);
-        stockOut.setBillNumber(billnoString);
-        stockOut.setSupplierName(CnameString);
-        stockOut.setContactNumber(contactString);
+        stockOut.setBill_number(billnoString);
+        stockOut.setCustomer_name(CnameString);
+        stockOut.setContact_number(contactString);
         stockOut.setAddress(addString);
-        stockOut.setItemName(itemnameString);
-        stockOut.setAvailableQuantity(availableqString);
+        stockOut.setCompanyName(itemnameString);
+        stockOut.setQuantity(availableqString);
+        stockOut.setModelNumber(model_nostring);
         return stockOut;
     }
     public void resetStockOutFormData() {

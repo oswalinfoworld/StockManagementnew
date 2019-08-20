@@ -6,7 +6,7 @@ import android.os.Bundle;
 import com.oswal.stockmangmentnew.Services.Items.Add_Item;
 import com.oswal.stockmangmentnew.Services.Items.view_item;
 import com.oswal.stockmangmentnew.Services.StockIn.Stock_IN_View;
-import com.oswal.stockmangmentnew.Services.StockIn.stock_in;
+import com.oswal.stockmangmentnew.Services.StockIn.Stock_in;
 import com.oswal.stockmangmentnew.Services.Return.Damage;
 import com.oswal.stockmangmentnew.Services.Return.Return;
 import com.oswal.stockmangmentnew.Services.StockOut.Stock_Out_View;
@@ -315,7 +315,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (pageName.contains("stock in add")) {
             Toast.makeText(getApplicationContext(), "stock in add ", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(MainActivity.this, stock_in.class);
+            Intent intent = new Intent(MainActivity.this, Stock_in.class);
             startActivity(intent);
         } else if (pageName.contains("stock in view")) {
             Toast.makeText(getApplicationContext(), "stock in view ", Toast.LENGTH_SHORT).show();

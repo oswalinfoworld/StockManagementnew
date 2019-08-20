@@ -3,23 +3,27 @@ package com.oswal.stockmangmentnew.POJO;
 public class StockOut {
 
 
-    String supplierID, date, billNumber, supplierName, contactNumber, address, itemName, availableQuantity;
+    String companyName,modelNumber,date,bill_number,customer_id,customer_name,contact_number,address,quantity;
     Item item = new Item();
 
     public Item getItem() {
         return item;
     }
 
-    public void setItem(Item item) {
-        this.item = item;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public String getSupplierID() {
-        return supplierID;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
-    public void setSupplierID(String supplierID) {
-        this.supplierID = supplierID;
+    public String getModelNumber() {
+        return modelNumber;
+    }
+
+    public void setModelNumber(String modelNumber) {
+        this.modelNumber = modelNumber;
     }
 
     public String getDate() {
@@ -30,28 +34,36 @@ public class StockOut {
         this.date = date;
     }
 
-    public String getBillNumber() {
-        return billNumber;
+    public String getBill_number() {
+        return bill_number;
     }
 
-    public void setBillNumber(String billNumber) {
-        this.billNumber = billNumber;
+    public void setBill_number(String bill_number) {
+        this.bill_number = bill_number;
     }
 
-    public String getSupplierName() {
-        return supplierName;
+    public String getCustomer_id() {
+        return customer_id;
     }
 
-    public void setSupplierName(String supplierName) {
-        this.supplierName = supplierName;
+    public void setCustomer_id(String customer_id) {
+        this.customer_id = customer_id;
     }
 
-    public String getContactNumber() {
-        return contactNumber;
+    public String getCustomer_name() {
+        return customer_name;
     }
 
-    public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
+    public void setCustomer_name(String customer_name) {
+        this.customer_name = customer_name;
+    }
+
+    public String getContact_number() {
+        return contact_number;
+    }
+
+    public void setContact_number(String contact_number) {
+        this.contact_number = contact_number;
     }
 
     public String getAddress() {
@@ -62,19 +74,15 @@ public class StockOut {
         this.address = address;
     }
 
-    public String getItemName() {
-        return itemName;
+    public String getQuantity() {
+        return quantity;
     }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
     }
 
-    public String getAvailableQuantity() {
-        return availableQuantity;
-    }
-
-    public void setAvailableQuantity(String availableQuantity) {
-        this.availableQuantity = availableQuantity;
+    public void setItem(Item item) {
+        this.item = item;
     }
 }

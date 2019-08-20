@@ -49,7 +49,7 @@
             android:parentActivityName="com.oswal.stockmangmentnew.Services.Items.Add_Item"/>
         <activity android:name="com.oswal.stockmangmentnew.ProductDetail.UPS_activity"
             android:parentActivityName="com.oswal.stockmangmentnew.Services.Items.Add_Item"/>
-        <activity android:name="com.oswal.stockmangmentnew.Services.StockIn.stock_in"
+        <activity android:name="com.oswal.stockmangmentnew.Services.StockIn.Stock_in"
             android:parentActivityName="com.oswal.stockmangmentnew.MainActivity"/>
         <activity
             android:name="com.oswal.stockmangmentnew.LoginModule.LoginPage"

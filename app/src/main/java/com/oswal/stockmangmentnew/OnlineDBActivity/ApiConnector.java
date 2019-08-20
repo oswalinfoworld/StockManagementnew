@@ -179,7 +179,7 @@ public class ApiConnector {
 
                 DefaultHttpClient httpClient = new DefaultHttpClient();  // Default HttpClient
                 //Log.d("abhi", url);
-                System.out.print("***************** URL " + url);
+                System.out.print("Abhi***************** URL " + url);
                 HttpPost httpGet = new HttpPost(url);
 
                 HttpResponse httpResponse = httpClient.execute(httpGet);
@@ -270,15 +270,15 @@ public class ApiConnector {
     public JSONArray insert_stockOut_Record_list(List<StockOut> stockOutList) {
         JSONArray jsonArray = null;
         for (StockOut stockOut : stockOutList) {
-            String supplierID = stockOut.getSupplierID();
+            String customerID = stockOut.getCustomer_id();
             String date = stockOut.getDate().replaceAll("/", "%20");
-            String billNumber = stockOut.getBillNumber();
-            String supplierName = stockOut.getSupplierName().replaceAll(" ", "%20");
-            String contactNumber = stockOut.getContactNumber();
+            String billNumber = stockOut.getBill_number();
+            String companyName = stockOut.getCompanyName().replaceAll(" ", "%20");
+            String contactNumber = stockOut.getContact_number();
             String address = stockOut.getAddress().replaceAll(" ", "%20");
-            String itemName = stockOut.getItemName().replaceAll(" ", "%20");
-            String availableQuantity = stockOut.getAvailableQuantity();
-            String url = ConstantsIdentifier.getDomainName() + "/stockOutRecord.php?supplierID=" + supplierID + "&date=" + date + "&billNumber=" + billNumber + "&supplierName=" + supplierName + "&contactNumber=" + contactNumber + "&address=" + address + "&itemName=" + itemName + "&availableQuantity=" + availableQuantity;
+            String customerName = stockOut.getCustomer_name().replaceAll(" ", "%20");
+            String availableQuantity = stockOut.getQuantity();
+            String url = ConstantsIdentifier.getDomainName() + "/stockOutRecord.php?supplierID=" + customerID + "&date=" + date + "&billNumber=" + billNumber + "&supplierName=" + companyName + "&contactNumber=" + contactNumber + "&address=" + address + "&itemName=" + customerName + "&availableQuantity=" + availableQuantity;
             HttpEntity httpEntity = null;
             try {
 
@@ -322,21 +322,21 @@ public class ApiConnector {
 
     public JSONArray insert_stockOut_Record(StockOut stockOut) {
         JSONArray jsonArray = null;
-        String supplierID = stockOut.getSupplierID();
+        String customerID = stockOut.getCustomer_id();
         String date = stockOut.getDate().replaceAll("/", "%20");
-        String billNumber = stockOut.getBillNumber();
-        String supplierName = stockOut.getSupplierName().replaceAll(" ", "%20");
-        String contactNumber = stockOut.getContactNumber();
+        String billNumber = stockOut.getBill_number();
+        String companyName = stockOut.getCompanyName().replaceAll(" ", "%20");
+        String contactNumber = stockOut.getContact_number();
         String address = stockOut.getAddress().replaceAll(" ", "%20");
-        String itemName = stockOut.getItemName().replaceAll(" ", "%20");
-        String availableQuantity = stockOut.getAvailableQuantity();
-        String url = ConstantsIdentifier.getDomainName() + "/stockOutRecord.php?supplierID=" + supplierID + "&date=" + date + "&billNumber=" + billNumber + "&supplierName=" + supplierName + "&contactNumber=" + contactNumber + "&address=" + address + "&itemName=" + itemName + "&availableQuantity=" + availableQuantity;
+        String customerName = stockOut.getCustomer_name().replaceAll(" ", "%20");
+        String availableQuantity = stockOut.getQuantity();
+        String url = ConstantsIdentifier.getDomainName() + "/stockOutRecord.php?supplierID=" + customerID + "&date=" + date + "&billNumber=" + billNumber + "&supplierName=" + companyName + "&contactNumber=" + contactNumber + "&address=" + address + "&itemName=" + customerName + "&availableQuantity=" + availableQuantity;
         HttpEntity httpEntity = null;
         try {
 
             DefaultHttpClient httpClient = new DefaultHttpClient();  // Default HttpClient
             //Log.d("abhi", url);
-            System.out.print("***************** URL " + url);
+            System.out.print("Abhi***************** URL " + url);
             HttpPost httpGet = new HttpPost(url);
 
             HttpResponse httpResponse = httpClient.execute(httpGet);
