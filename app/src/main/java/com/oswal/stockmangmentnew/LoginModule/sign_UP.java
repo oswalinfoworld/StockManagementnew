@@ -115,6 +115,16 @@ public class sign_UP extends AppCompatActivity {
         }
 
     public boolean validateForm() {
+        if (nameString.length() < 3) {
+            name.setError("Enter Valid name");
+            name.requestFocus();
+            return false;
+        }
+        if (contactNumber.length() != 10) {
+            phone.setError("Enter valid Phone Number");
+            phone.requestFocus();
+            return false;
+        }
 
 
         String validEmailPattern = "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
@@ -169,18 +179,6 @@ public class sign_UP extends AppCompatActivity {
         }
 
 
-
-
-        if (nameString.length() < 3) {
-            name.setError("Enter Valid name");
-            name.requestFocus();
-            return false;
-        }
-        if (contactNumber.length() != 10) {
-            phone.setError("Enter valid Phone Number");
-            phone.requestFocus();
-            return false;
-        }
 
 
         if (emailString.length() == 0) {

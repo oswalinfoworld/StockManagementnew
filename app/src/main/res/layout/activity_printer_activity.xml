@@ -79,7 +79,7 @@
 
             <CheckBox
                 android:id="@+id/printer_type1"
-                android:layout_width="100dp"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="10dp"
@@ -87,11 +87,11 @@
                 android:textSize="13dp" />
             <CheckBox
                 android:id="@+id/printer_type2"
-                android:layout_width="100dp"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="10dp"
-                android:text="Black/White Laser"
+                android:text="Black/White cartridge"
                 android:textSize="13dp" />
 
 
@@ -110,7 +110,7 @@
                 android:layout_height="45dp"
                 android:layout_marginLeft="120dp"
                 android:layout_marginTop="10dp"
-                android:text="Black/White Laser"
+                android:text="color cartridge"
                 android:textSize="13dp" />
 
             <CheckBox
@@ -118,7 +118,7 @@
                 android:layout_width="100dp"
                 android:layout_height="45dp"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:text="Color Laser"
                 android:textSize="13dp" />
         </LinearLayout>

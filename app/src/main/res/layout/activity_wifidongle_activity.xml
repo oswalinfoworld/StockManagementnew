@@ -29,7 +29,7 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="D-Link"
             android:textSize="13dp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="16dp"
@@ -37,7 +37,7 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="Huawei"
             android:textSize="13dp"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="16dp"
@@ -45,7 +45,7 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="JioFi"
             android:textSize="13dp"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="16dp"
@@ -53,7 +53,7 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="iBall"
             android:textSize="13dp"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="16dp"
@@ -102,12 +102,13 @@
 
         <EditText
             android:layout_width="100dp"
-            android:layout_marginTop="10dp"
             android:layout_height="32dp"
             android:layout_marginLeft="16dp"
+            android:id="@+id/dongle_simname"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/border_table"
             android:hint="Name"
-            android:textSize="13dp"
-            android:background="@drawable/border_table" />
+            android:textSize="13dp" />
 
         <TextView
             android:layout_width="90dp"
@@ -123,6 +124,7 @@
             android:layout_height="35dp"
             android:layout_marginLeft="16dp"
             android:hint="RS:"
+            android:id="@+id/dongle_simrecharge"
             android:layout_marginTop="10dp"
             android:textSize="13dp"
             android:background="@drawable/border_table" />
@@ -137,12 +139,13 @@
 
         <EditText
             android:layout_width="100dp"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:hint="Date:"
             android:layout_marginTop="10dp"
-            android:textSize="13dp"
-            android:background="@drawable/border_table" />
+            android:background="@drawable/border_table"
+            android:hint="Date:"
+            android:id="@+id/dongle_simvalidity"
+            android:textSize="13dp" />
         <Button
             android:layout_width="200dp"
             android:layout_height="45dp"

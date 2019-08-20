@@ -34,7 +34,7 @@ public class Repaire extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Repaire Pressed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"data submited", Toast.LENGTH_SHORT).show();
             }
         });
         addto_stockin.setOnClickListener(new View.OnClickListener() {

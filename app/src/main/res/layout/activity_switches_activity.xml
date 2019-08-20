@@ -132,40 +132,41 @@
                 android:text="8"
                 android:textSize="13dp" />
 
+
+
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
             <CheckBox
                 android:id="@+id/switch_port5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="100dp"
                 android:layout_marginTop="20dp"
                 android:text="16"
                 android:textSize="13dp" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="60dp"
-                android:orientation="vertical">
 
-                <CheckBox
-                    android:id="@+id/switch_port6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="47dp"
-                    android:layout_marginTop="60dp"
-                    android:layout_marginRight="1dp"
-                    android:text="24"
-                    android:textSize="13dp" />
 
             <CheckBox
-                android:id="@+id/switch_port7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-
-                android:text="48"
-                android:textSize="13dp" />
-            </LinearLayout>
-
+            android:id="@+id/switch_port6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:text="32"
+            android:textSize="13dp" />
         </LinearLayout>
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="45dp"
+            android:text="Submit"
+            android:layout_marginTop="20dp"
+            android:id="@+id/switch_subbtn1"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
 

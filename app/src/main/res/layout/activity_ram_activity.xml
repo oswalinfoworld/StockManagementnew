@@ -83,6 +83,11 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="16dp"
                 android:id="@+id/RAM_type6"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
             <CheckBox
 
                 android:layout_width="wrap_content"
@@ -92,6 +97,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="16dp"
                 android:id="@+id/RAM_type7"/>
+
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -100,6 +106,9 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="16dp"
                 android:id="@+id/RAM_type8"/>
+
+
+
         </LinearLayout>
         <Button
             android:layout_width="200dp"

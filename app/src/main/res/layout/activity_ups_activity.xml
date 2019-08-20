@@ -34,14 +34,14 @@
         android:textSize="13dp"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="16dp"
-        android:id="@+id/ups_offchckbx"/>
+        android:id="@+id/ups_type1"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Online"
         android:textSize="13dp"
         android:layout_marginLeft="16dp"
-        android:id="@+id/ups_onchckbx"/>
+        android:id="@+id/ups_type2"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,14 +57,14 @@
         android:textSize="13dp"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="16dp"
-        android:id="@+id/ups_compyname1bx"/>
+        android:id="@+id/ups_compyname1"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Genus Power"
         android:textSize="13dp"
         android:layout_marginLeft="16dp"
-        android:id="@+id/ups_compyname2bx"/>
+        android:id="@+id/ups_compyname2"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -72,21 +72,21 @@
         android:textSize="13dp"
 
         android:layout_marginLeft="16dp"
-        android:id="@+id/ups_compyname3bx"/>
+        android:id="@+id/ups_compyname3"/>
     <CheckBox
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="AmaraRaja"
+    android:text="Luminous "
     android:textSize="13dp"
     android:layout_marginLeft="16dp"
-    android:id="@+id/ups_compyname5bx"/>
+    android:id="@+id/ups_compyname4"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="AmaraRaja"
         android:textSize="13dp"
         android:layout_marginLeft="16dp"
-        android:id="@+id/ups_compyname6bx"/>
+        android:id="@+id/ups_compyname5"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -102,14 +102,14 @@
         android:textSize="13dp"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="16dp"
-        android:id="@+id/ups_copacity1bx"/>
+        android:id="@+id/ups_capacity1"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0.650KVA"
         android:textSize="13dp"
         android:layout_marginLeft="16dp"
-        android:id="@+id/ups_capacity2bx"/>
+        android:id="@+id/ups_capacity2"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -117,14 +117,14 @@
         android:textSize="13dp"
 
         android:layout_marginLeft="16dp"
-        android:id="@+id/ups_capacity3bx"/>
+        android:id="@+id/ups_capacity3"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="2KVA"
         android:textSize="13dp"
         android:layout_marginLeft="16dp"
-        android:id="@+id/ups_capacity4bx"/>
+        android:id="@+id/ups_capacity4"/>
     <Button
         android:layout_width="200dp"
         android:layout_height="45dp"

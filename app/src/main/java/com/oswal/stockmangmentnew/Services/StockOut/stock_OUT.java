@@ -35,6 +35,7 @@ import com.oswal.stockmangmentnew.ProductDetail.Processor;
 import com.oswal.stockmangmentnew.ProductDetail.RAM_activity;
 import com.oswal.stockmangmentnew.ProductDetail.Router_activity;
 import com.oswal.stockmangmentnew.ProductDetail.Scanner_activity;
+import com.oswal.stockmangmentnew.ProductDetail.Switches_activity;
 import com.oswal.stockmangmentnew.ProductDetail.UPS_activity;
 import com.oswal.stockmangmentnew.ProductDetail.Wifidongle_activity;
 import com.oswal.stockmangmentnew.R;
@@ -46,11 +47,11 @@ import java.util.Calendar;
 import java.util.List;
 
 public class stock_OUT extends AppCompatActivity {
-    EditText CustomerID, date, billno, Cname, contact, add, itemname,quantity, availableq, openpg;
+    EditText CustomerID, date, billno, Cname, contact, add, companyname,quantity, availableq, openpg,model_no;
     Spinner category;
-    String categoryS,CustomerIDString, dateString, billnoString, CnameString, contactString, addString, itemnameString,quantityString, availableqString, openpgString;
+    String categoryS,CustomerIDString, dateString, billnoString, CnameString, contactString, addString, itemnameString,quantityString, availableqString, openpgString,model_nostring;
     Button submit, open;
-    String[] categoryList = { "Select","Laptop","Monitor","Keyboard","Mouse", "Printer", "Scanner", "UPS","Processor","Router","Wifi-Dongle","RAM","Cables","GPS tracking Machine","Xerox-machin"};
+    String[] categoryList = { "Select","Laptop","Monitor","Keyboard","Mouse", "Printer", "Scanner", "UPS","Processor","Router","Wifi-Dongle","RAM","Cables","GPS tracking Machine","Xerox-machin","Switch"};
 
     List<StockOut> stockOutList = new ArrayList<>();
     StockOut stockOut = new StockOut();
@@ -70,7 +71,8 @@ public class stock_OUT extends AppCompatActivity {
         Cname = (EditText) findViewById(R.id.stockout_CnameET);
         contact = (EditText) findViewById(R.id.stockout_conoET);
         add = (EditText) findViewById(R.id.stockout_addessET);
-        itemname = (EditText) findViewById(R.id.stockout_itemnameET);
+        companyname = (EditText) findViewById(R.id.stockout_itemnameET);
+        model_no = (EditText) findViewById(R.id.stockout_modelnoET);
 
         availableq = (EditText) findViewById(R.id.stockout_avilQET);
         openpg = (EditText) findViewById(R.id.stockout_opnET);
@@ -141,6 +143,11 @@ public class stock_OUT extends AppCompatActivity {
                         intent = new Intent(stock_OUT.this,com.oswal.stockmangmentnew.ProductDetail.xerox_activity.class);
                         startActivity(intent);
                         break;
+                    case 15:
+                        intent = new Intent(stock_OUT.this, Switches_activity.class);
+                        startActivity(intent);
+                        break;
+
 
 
 
@@ -218,20 +225,22 @@ public class stock_OUT extends AppCompatActivity {
     private void setStockOutFormData(int listNumber) {
         StockOut stockOut = stockOutList.get(listNumber - 1);
         CustomerID.setText(stockOut.getSupplierID());
+
+
         date.setText(stockOut.getDate());
         billno.setText(stockOut.getBillNumber());
         Cname.setText(stockOut.getSupplierName());
         contact.setText(stockOut.getContactNumber());
         add.setText(stockOut.getAddress());
-        itemname.setText(stockOut.getItemName());
+        companyname.setText(stockOut.getItemName());
 
         availableq.setText(stockOut.getAvailableQuantity());
     }
 
     private boolean emptyvalidate(StockOut passData) {
         if (passData.getItemName().length() == 0) {
-            itemname.setError("Enter item name");
-            itemname.requestFocus();
+            companyname.setError("Enter item name");
+            companyname.requestFocus();
             return false;
 
         }
@@ -300,16 +309,18 @@ public class stock_OUT extends AppCompatActivity {
     private StockOut getStockOutFormData() {
         StockOut stockOut = new StockOut();
         CustomerIDString = CustomerID.getText().toString().trim();
+        model_nostring=model_no.getText().toString().trim();
         dateString = date.getText().toString().trim();
         billnoString = billno.getText().toString().trim();
         CnameString = Cname.getText().toString().trim();
         contactString = contact.getText().toString().trim();
         addString = add.getText().toString().trim();
-        itemnameString = itemname.getText().toString().trim();
+        itemnameString = companyname.getText().toString().trim();
         quantityString=quantity.getText().toString().trim();
         availableqString = availableq.getText().toString().trim();
         openpgString = openpg.getText().toString().trim();
         stockOut.setSupplierID(CustomerIDString);
+
         stockOut.setDate(dateString);
         stockOut.setBillNumber(billnoString);
         stockOut.setSupplierName(CnameString);
@@ -322,12 +333,13 @@ public class stock_OUT extends AppCompatActivity {
     public void resetStockOutFormData() {
 
         CustomerID.setText("");
+        model_no.setText("");
         date.setText("");
         billno.setText("");
         Cname.setText("");
         contact.setText("");
         add.setText("");
-        itemname.setText("");
+        companyname.setText("");
         availableq.setText("");
         openpg.setText("");
 

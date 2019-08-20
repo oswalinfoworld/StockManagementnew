@@ -34,6 +34,7 @@ import com.oswal.stockmangmentnew.ProductDetail.Processor;
 import com.oswal.stockmangmentnew.ProductDetail.RAM_activity;
 import com.oswal.stockmangmentnew.ProductDetail.Router_activity;
 import com.oswal.stockmangmentnew.ProductDetail.Scanner_activity;
+import com.oswal.stockmangmentnew.ProductDetail.Switches_activity;
 import com.oswal.stockmangmentnew.ProductDetail.UPS_activity;
 import com.oswal.stockmangmentnew.ProductDetail.Wifidongle_activity;
 import com.oswal.stockmangmentnew.R;
@@ -45,11 +46,11 @@ import java.util.Calendar;
 import java.util.List;
 
 public class stock_in extends AppCompatActivity {
-    EditText supplierID, date, billno, sname, contact, add, itemname, quantity,availableq, openpg,storageloc;
+    EditText supplierID, date, billno, sname, contact, add, companyname, quantity,availableq, openpg,storageloc,model_no;
     Spinner category;
     String categoryS,supplierIDString, dateString, billnoString, snameString, contactString, addString, itemnameString,quantityString, availableqString, openpgString,model_noString,serial_noString,storagelocString;
     Button submit, open,scan;
-    String[] categoryList = {"Select","Laptop","Monitor","Keyboard","Mouse", "Printer", "Scanner", "UPS","Processor","Router","Wifi-Dongle","RAM","Cables","GPS tracking Machine","Xerox-machin"};
+    String[] categoryList = {"Select","Laptop","Monitor","Keyboard","Mouse", "Printer", "Scanner", "UPS","Processor","Router","Wifi-Dongle","RAM","Cables","GPS tracking Machine","Xerox-machin","Switch"};
 
     List<StockIn> stockInList = new ArrayList<>();
     StockIn stockIn = new StockIn();
@@ -67,7 +68,8 @@ public class stock_in extends AppCompatActivity {
         sname = (EditText) findViewById(R.id.additem_snameET);
         contact = (EditText) findViewById(R.id.additem_conoET);
         add = (EditText) findViewById(R.id.additem_addET);
-        itemname = (EditText) findViewById(R.id.additem_nameET);
+        companyname = (EditText) findViewById(R.id.additem_nameET);
+        model_no = (EditText) findViewById(R.id.additem_modelnoET);
 
         availableq = (EditText) findViewById(R.id.additem_availbleET);
 
@@ -142,6 +144,11 @@ public class stock_in extends AppCompatActivity {
                         intent = new Intent(stock_in.this,com.oswal.stockmangmentnew.ProductDetail.xerox_activity.class);
                         startActivity(intent);
                         break;
+                    case 15:
+                        intent = new Intent(stock_in.this, Switches_activity.class);
+                        startActivity(intent);
+                        break;
+
 
 
 
@@ -215,8 +222,8 @@ public class stock_in extends AppCompatActivity {
 
     private boolean emptyvalidate(StockIn passData) {
         if (passData.getItemName().length() == 0) {
-            itemname.setError("Enter item name");
-            itemname.requestFocus();
+            companyname.setError("Enter  name");
+            companyname.requestFocus();
             return false;
 
         }
@@ -301,12 +308,13 @@ public class stock_in extends AppCompatActivity {
     private StockIn getStockInFormData() {
         StockIn stockIn = new StockIn();
         supplierIDString = supplierID.getText().toString().trim();
+        model_noString=model_no.getText().toString().trim();
         dateString = date.getText().toString().trim();
         billnoString = billno.getText().toString().trim();
         snameString = sname.getText().toString().trim();
         contactString = contact.getText().toString().trim();
         addString = add.getText().toString().trim();
-        itemnameString = itemname.getText().toString().trim();
+        itemnameString = companyname.getText().toString().trim();
         quantityString=quantity.getText().toString().trim();
         availableqString = availableq.getText().toString().trim();
 
@@ -328,27 +336,29 @@ public class stock_in extends AppCompatActivity {
         StockIn stockIn = stockInList.get(listNumber - 1);
         supplierID.setText(stockIn.getSupplierID());
         date.setText(stockIn.getDate());
+
         billno.setText(stockIn.getBillNumber());
         sname.setText(stockIn.getSupplierName());
         contact.setText(stockIn.getContactNumber());
         add.setText(stockIn.getAddress());
-        itemname.setText(stockIn.getItemName());
+        companyname.setText(stockIn.getItemName());
         availableq.setText(stockIn.getAvailableQuantity());
     }
 
     private void resetStockInFormData() {
+        companyname.setText("");
+        model_no.setText("");
+        storageloc.setText("");
         supplierID.setText("");
         date.setText("");
         billno.setText("");
         sname.setText("");
         contact.setText("");
         add.setText("");
-        itemname.setText("");
-        quantity.setText("");
         availableq.setText("");
         openpg.setText("");
 
-        storageloc.setText("");
+
 
     }
 

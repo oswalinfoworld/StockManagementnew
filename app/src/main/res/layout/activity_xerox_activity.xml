@@ -108,6 +108,13 @@
             android:textSize="13dp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="16dp"
-            android:id="@+id/xreox_ppm4"/>
+            android:id="@+id/xerox_ppm4"/>
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="45dp"
+            android:text="Submit"
+            android:id="@+id/xerox_subbtn1"
+            android:layout_gravity="center"/>
+
     </LinearLayout>
 </ScrollView>

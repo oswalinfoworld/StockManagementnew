@@ -164,7 +164,7 @@
         android:layout_below="@+id/textView2"
         android:layout_marginTop="150dp"
         android:textSize="15dp"
-        android:text="ITEM Name:"
+        android:text="Company Name:"
         android:textStyle="bold"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 

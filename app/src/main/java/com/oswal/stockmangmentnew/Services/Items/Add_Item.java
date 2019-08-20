@@ -30,6 +30,7 @@ import com.oswal.stockmangmentnew.ProductDetail.Processor;
 import com.oswal.stockmangmentnew.ProductDetail.RAM_activity;
 import com.oswal.stockmangmentnew.ProductDetail.Router_activity;
 import com.oswal.stockmangmentnew.ProductDetail.Scanner_activity;
+import com.oswal.stockmangmentnew.ProductDetail.Switches_activity;
 import com.oswal.stockmangmentnew.ProductDetail.UPS_activity;
 import com.oswal.stockmangmentnew.ProductDetail.Wifidongle_activity;
 import com.oswal.stockmangmentnew.R;
@@ -38,12 +39,12 @@ import org.json.JSONArray;
 
 public class Add_Item extends AppCompatActivity implements OnItemSelectedListener {
 
-    EditText name, model_number, serial_number, specification, supplier_name, mobile_number,quantity,date,dom;
+    EditText name, model_number, serial_number, supplier_name, mobile_number,quantity,date,dom;
     Spinner category;
     private String quantitys,dateS,domS,nameS, model_numberS, serial_numberS, specificationS, supplier_nameS, mobile_numberS, storage_locationS, categoryS;
     Button submit,generator;
     private Item oneItem = new Item();
-    String[] categoryList = { "Select","Laptop","Monitor","Keyboard","Mouse", "Printer", "Scanner", "UPS","Processor","Router","Wifi-Dongle","RAM","Cables","GPS tracking Machine","Xerox-machin"};
+    String[] categoryList = { "Select","Laptop","Monitor","Keyboard","Mouse", "Printer", "Scanner", "UPS","Processor","Router","Wifi-Dongle","RAM","Cables","GPS tracking Machine","Xerox-machin","Switch"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +61,6 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
         mobile_number = (EditText) findViewById(R.id.mobilenoEditText);
         quantity = (EditText) findViewById(R.id.additem_quanET);
         date = (EditText) findViewById(R.id.additem_dateET);
-
-
         generator = (Button) findViewById(R.id.additem_genbtn);
         category = (Spinner) findViewById(R.id.category_spinner);
         category.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -129,6 +128,10 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
                       intent = new Intent(Add_Item.this,com.oswal.stockmangmentnew.ProductDetail.xerox_activity.class);
                       startActivity(intent);
                       break;
+                  case 15:
+                      intent = new Intent(Add_Item.this, Switches_activity.class);
+                      startActivity(intent);
+                      break;
               }
             }
             @Override
@@ -143,12 +146,12 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
             public void onClick(View view) {
                 oneItem.setName(name.getText().toString().trim());
                 oneItem.setModel_number(model_number.getText().toString().trim());
+
                 oneItem.setCategory(categoryS);
                 oneItem.setMobile_number(mobile_number.getText().toString().trim());
                 oneItem.setSerial_number(serial_number.getText().toString().trim());
                 oneItem.setDOM(dom.getText().toString().trim());
                 oneItem.setQuantity(quantity.getText().toString().trim());
-              //  oneItem.setSpecification(specification.getText().toString().trim());
 
                 oneItem.setSupplier_name(supplier_name.getText().toString().trim());
                 if (validateForm(oneItem) && isInternetOn()) {
@@ -169,22 +172,22 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
                     supplier_name.requestFocus();
                     return false;
                 }
-                if(mobile_numberS.length()==0)
+                if(mobile_numberS.length()!=10)
                 {
-                    mobile_number.setError("Mobile no is not enter");
+                    mobile_number.setError("Enter valid mobile no.");
                     mobile_number.requestFocus();
                     return false;
                 }
                 if(quantitys.length()==0)
                 {
-                    mobile_number.setError("Enter quantity");
-                    mobile_number.requestFocus();
+                    quantity.setError("Enter quantity");
+                    quantity.requestFocus();
                     return false;
                 }
                 if(dateS.length()==0)
                 {
-                    mobile_number.setError("Enter date");
-                    mobile_number.requestFocus();
+                    date.setError("Enter date");
+                    date.requestFocus();
                     return false;
                 }
                 //Validation Code
