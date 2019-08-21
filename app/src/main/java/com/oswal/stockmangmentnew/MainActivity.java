@@ -3,6 +3,7 @@ package com.oswal.stockmangmentnew;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.oswal.stockmangmentnew.LoginModule.LoginPage;
 import com.oswal.stockmangmentnew.Services.Items.Add_Item;
 import com.oswal.stockmangmentnew.Services.Items.view_item;
 import com.oswal.stockmangmentnew.Services.StockIn.Stock_IN_View;
@@ -98,9 +99,14 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings1) {
             return true;
+        }
+        if (id == R.id.action_settings2) {
+            Intent mainActivity = new Intent(MainActivity.this, LoginPage.class);
+            startActivity(mainActivity);
         }
 
         return super.onOptionsItemSelected(item);

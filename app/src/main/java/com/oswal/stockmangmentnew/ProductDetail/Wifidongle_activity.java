@@ -2,6 +2,7 @@ package com.oswal.stockmangmentnew.ProductDetail;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.oswal.stockmangmentnew.R;
+import com.oswal.stockmangmentnew.Services.Items.Add_Item;
 
 public class Wifidongle_activity extends AppCompatActivity {
     CheckBox companyname1,companyname2,companyname3,companyname4,type1,type2;
@@ -37,6 +39,8 @@ public class Wifidongle_activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(Wifidongle_activity.this, Add_Item.class);
+                startActivity(i);
             }
         });
     }

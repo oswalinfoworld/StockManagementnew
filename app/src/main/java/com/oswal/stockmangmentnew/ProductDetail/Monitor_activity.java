@@ -2,6 +2,7 @@ package com.oswal.stockmangmentnew.ProductDetail;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,7 @@ import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.oswal.stockmangmentnew.R;
+import com.oswal.stockmangmentnew.Services.Items.Add_Item;
 
 public class Monitor_activity extends AppCompatActivity {
     CheckBox companyname1,companyname2,companyname3,companyname4,inches1,inches2,inches3,inches4,inches5,inches6;
@@ -36,6 +38,8 @@ public class Monitor_activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(Monitor_activity.this, Add_Item.class);
+                startActivity(i);
             }
         });
 

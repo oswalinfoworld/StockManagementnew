@@ -5,13 +5,7 @@ public class Item {
     String name, model_number, serial_number, DOM, supplier_name, mobile_number, storage_location, category,quantity;
     ItemSpecification itemSpecification = new ItemSpecification();
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    
 
     public String getModel_number() {
         return model_number;

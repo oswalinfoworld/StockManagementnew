@@ -2,13 +2,17 @@ package com.oswal.stockmangmentnew.ProductDetail;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
+import com.oswal.stockmangmentnew.LoginModule.ForgetPassword;
+import com.oswal.stockmangmentnew.LoginModule.LoginPage;
 import com.oswal.stockmangmentnew.R;
+import com.oswal.stockmangmentnew.Services.Items.Add_Item;
 
 public class Cables_activity extends AppCompatActivity {
     CheckBox chk1,chk2,chk3,chk4;
@@ -30,6 +34,12 @@ public class Cables_activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
+/*
+
+                Intent i = new Intent(Cables_activity.this, Add_Item.class);
+                startActivity(i);
+*/
+
             }
         });
     }

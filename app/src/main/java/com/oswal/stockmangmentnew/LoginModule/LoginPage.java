@@ -141,7 +141,7 @@ public class LoginPage extends AppCompatActivity {
                 alertDialog.setTitle("Error!!");
 
                 // Setting Dialog Message
-                alertDialog.setMessage("You are not Authenticate to View Application");
+                alertDialog.setMessage("User name and Password Inncorrect");
 
                 // Setting Icon to Dialog
                 // alertDialog.setIcon(R.drawable.tick);
@@ -162,7 +162,7 @@ public class LoginPage extends AppCompatActivity {
                 // Showing Alert Message
                 alertDialog.show();
             } else {
-                Toast.makeText(getApplicationContext(), "Welcome User"+userNameString+"", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Welcome User"+" "+userNameString+"", Toast.LENGTH_SHORT).show();
 
                 Intent i = new Intent(LoginPage.this, MainActivity.class);
                 startActivity(i);

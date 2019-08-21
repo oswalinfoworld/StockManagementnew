@@ -2,6 +2,7 @@ package com.oswal.stockmangmentnew.Services.Items;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
@@ -12,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -34,15 +36,19 @@ import com.oswal.stockmangmentnew.ProductDetail.Switches_activity;
 import com.oswal.stockmangmentnew.ProductDetail.UPS_activity;
 import com.oswal.stockmangmentnew.ProductDetail.Wifidongle_activity;
 import com.oswal.stockmangmentnew.R;
+import com.oswal.stockmangmentnew.Services.StockIn.Stock_in;
 
 import org.json.JSONArray;
 
+import java.util.Calendar;
+
 public class Add_Item extends AppCompatActivity implements OnItemSelectedListener {
 
-    EditText name, model_number, serial_number, supplier_name, mobile_number,quantity,date,dom;
+    EditText  model_number, serial_number, supplier_name, mobile_number,quantity,dom;
     Spinner category;
+
     private String quantitys,dateS,domS,nameS, model_numberS, serial_numberS, specificationS, supplier_nameS, mobile_numberS, storage_locationS, categoryS;
-    Button submit,generator;
+    Button submit,date;
     private Item oneItem = new Item();
     String[] categoryList = { "Select","Laptop","Monitor","Keyboard","Mouse", "Printer", "Scanner", "UPS","Processor","Router","Wifi-Dongle","RAM","Cables","GPS tracking Machine","Xerox-machin","Switch"};
 
@@ -53,15 +59,36 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
         getSupportActionBar().setTitle("Add Item");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        name = (EditText) findViewById(R.id.itemnameEditText);
-        model_number = (EditText) findViewById(R.id.modelnoEditText);
-        serial_number = (EditText) findViewById(R.id.serialnoEditText);
+
+        model_number = (EditText)findViewById(R.id.modelnoEditText);
+        serial_number = (EditText)findViewById(R.id.serialnoEditText);
         dom = (EditText) findViewById(R.id.additem_DOM);
-        supplier_name = (EditText) findViewById(R.id.suppliernameEditText);
-        mobile_number = (EditText) findViewById(R.id.mobilenoEditText);
-        quantity = (EditText) findViewById(R.id.additem_quanET);
-        date = (EditText) findViewById(R.id.additem_dateET);
-        generator = (Button) findViewById(R.id.additem_genbtn);
+        supplier_name = (EditText)findViewById(R.id.suppliernameEditText);
+        mobile_number = (EditText)findViewById(R.id.mobilenoEditText);
+        quantity = (EditText)findViewById(R.id.additem_quanET);
+        //date = (EditText) findViewById(R.id.additem_dateET);
+        date=(Button)findViewById(R.id.additem_dateET);
+        date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int mYear, mMonth, mDay;
+                DatePicker datePicker;
+                final Calendar c = Calendar.getInstance();
+                mYear = c.get(Calendar.YEAR);
+                mMonth = c.get(Calendar.MONTH);
+                mDay = c.get(Calendar.DAY_OF_MONTH);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(Add_Item.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        date.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
+
+                    }
+                }, mYear, mMonth, mDay);
+
+                datePickerDialog.show();
+            }
+        });
+
         category = (Spinner) findViewById(R.id.category_spinner);
         category.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
@@ -133,18 +160,23 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
                       startActivity(intent);
                       break;
               }
+
             }
-            @Override
+
+
+          @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
         });
+
+
         submit = (Button) findViewById(R.id.submit_item);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                oneItem.setName(name.getText().toString().trim());
+
                 oneItem.setModel_number(model_number.getText().toString().trim());
 
                 oneItem.setCategory(categoryS);
@@ -159,14 +191,48 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
                     Intent mainPage = new Intent(Add_Item.this, MainActivity.class);
                     startActivity(mainPage);
                 }
+                resetData();
+            }
+            private void resetData() {
+
+                model_number.setText("");
+                serial_number.setText("");
+                dom.setText("");
+                date.setText("");
+                supplier_name.setText("");
+                mobile_number.setText("");
+                quantity.setText("");
+
             }
 
 
+
             private boolean validateForm(Item oneItem) {
+                model_numberS=mobile_number.getText().toString().trim();
+                serial_numberS=serial_number.getText().toString().trim();
+                domS=dom.getText().toString().trim();
                 supplier_nameS=supplier_name.getText().toString().trim();
                 mobile_numberS=mobile_number.getText().toString().trim();
                 quantitys=quantity.getText().toString().trim();
                 dateS=date.getText().toString().trim();
+                if (model_numberS.length()==0)
+                {
+                    model_number.setError("Enter model no");
+                    supplier_name.requestFocus();
+                    return false;
+                }
+                if (serial_numberS.length()==0)
+                {
+                  serial_number.setError("Enter serial no");
+                    serial_number.requestFocus();
+                    return false;
+                }
+                if (domS.length()==0)
+                {
+                    dom.setError("Enter DOM no");
+                    dom.requestFocus();
+                    return false;
+                }
                 if (supplier_nameS.length() == 0) {
                     supplier_name.setError("Username is not enter");
                     supplier_name.requestFocus();
@@ -258,5 +324,6 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
         protected void onPostExecute(JSONArray jsonArray) {
         }
     }
+
 
 }

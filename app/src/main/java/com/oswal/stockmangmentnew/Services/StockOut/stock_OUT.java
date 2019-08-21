@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.oswal.stockmangmentnew.ProductDetail.Laptop_activity;
@@ -47,10 +48,12 @@ import java.util.Calendar;
 import java.util.List;
 
 public class stock_OUT extends AppCompatActivity {
-    EditText CustomerID, date, billno, Cname, contact, add, companyname,availableq, openpg,model_no;
+    EditText CustomerID, billno, Cname, contact, add, companyname,availableq, openpg,model_no;
     Spinner category;
+    int counter=0;
+    TextView textView1;
     String categoryS,CustomerIDString, dateString, billnoString, CnameString, contactString, addString, itemnameString,availableqString, openpgString,model_nostring;
-    Button submit, open;
+    Button submit, open,date;
     String[] categoryList = { "Select","Laptop","Monitor","Keyboard","Mouse", "Printer", "Scanner", "UPS","Processor","Router","Wifi-Dongle","RAM","Cables","GPS tracking Machine","Xerox-machin","Switch"};
 
     List<StockOut> stockOutList = new ArrayList<>();
@@ -66,9 +69,9 @@ public class stock_OUT extends AppCompatActivity {
         setContentView(R.layout.activity_stock__out);
         getSupportActionBar().setTitle("Stock Out");
 
-        companyname = (EditText) findViewById(R.id.stockout_itemnameET);
-        model_no = (EditText) findViewById(R.id.stockout_modelnoET);
-        date = (EditText) findViewById(R.id.stockout_dateET);
+
+
+        date = (Button) findViewById(R.id.stockout_dateET);
         billno = (EditText) findViewById(R.id.stockout_billnoET);
         CustomerID = (EditText) findViewById(R.id.stockout_uniqIdET);
         Cname = (EditText) findViewById(R.id.stockout_CnameET);
@@ -76,10 +79,11 @@ public class stock_OUT extends AppCompatActivity {
         add = (EditText) findViewById(R.id.stockout_addessET);
         availableq = (EditText) findViewById(R.id.stockout_avilQET);
         openpg = (EditText) findViewById(R.id.stockout_opnET);
+        textView1=(TextView)findViewById(R.id.stockout_tx1);
 
         submit = (Button) findViewById(R.id.stockout_submitbtn);
         open = (Button) findViewById(R.id.stockout_opnbtn);
-        category = (Spinner) findViewById(R.id.stockout_spinner);
+        /*category = (Spinner) findViewById(R.id.stockout_spinner);
         category.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, android.view.View view, int i, long l) {
@@ -161,7 +165,7 @@ public class stock_OUT extends AppCompatActivity {
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         category.setAdapter(aa);
-
+*/
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -214,46 +218,32 @@ public class stock_OUT extends AppCompatActivity {
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
-    public void openStockInPage(View v) {
-        //Load value on form as per number
-        int openPage = Integer.parseInt(openpg.getText().toString().trim());
-        Toast.makeText(getApplicationContext(), "Open Page " + openPage, Toast.LENGTH_SHORT).show();
-        setStockOutFormData(openPage);
-    }
 
-    private void setStockOutFormData(int listNumber) {
-        StockOut stockOut = stockOutList.get(listNumber - 1);
-        CustomerID.setText(stockOut.getCustomer_id());
-        date.setText(stockOut.getDate());
-        billno.setText(stockOut.getBill_number());
-        Cname.setText(stockOut.getCustomer_name());
-        contact.setText(stockOut.getContact_number());
-        add.setText(stockOut.getAddress());
-        companyname.setText(stockOut.getCompanyName());
-        availableq.setText(stockOut.getQuantity());
-        model_no.setText(stockOut.getModelNumber());
 
-    }
 
     private boolean emptyvalidate(StockOut passData) {
-        if (passData.getCompanyName().length() == 0) {
-            companyname.setError("Enter item name");
+
+        if(model_nostring.length()==0)
+        {
+            model_no.setError("Enter model no");
             companyname.requestFocus();
             return false;
+
         }
-        if (passData.getCustomer_id().length() == 0) {
-            CustomerID.setError("Enter Customer ID");
-            CustomerID.requestFocus();
-            return false;
-        }
+
         if (passData.getDate().length() == 0) {
-            date.setError("Enter valid Date");
+            date.setError("Enter Date");
             date.requestFocus();
             return false;
         }
         if (passData.getBill_number().length() == 0) {
             billno.setError("Enter Bill no");
             billno.requestFocus();
+            return false;
+        }
+        if (passData.getCustomer_id().length() == 0) {
+            CustomerID.setError("Enter Customer ID");
+            CustomerID.requestFocus();
             return false;
         }
         if (passData.getCustomer_name().length() == 0) {
@@ -267,6 +257,7 @@ public class stock_OUT extends AppCompatActivity {
             return false;
 
         }
+
         if (passData.getAddress().length() == 0) {
             add.setError("Enter Address");
             add.requestFocus();
@@ -292,6 +283,14 @@ public class stock_OUT extends AppCompatActivity {
             resetStockOutFormData();
         }
     }
+    public void openStockInPage(View v) {
+        //Load value on form as per number
+        int openPage = Integer.parseInt(openpg.getText().toString().trim());
+        Toast.makeText(getApplicationContext(), "Open Page " + openPage, Toast.LENGTH_SHORT).show();
+        setStockOutFormData(openPage);
+    }
+
+
     private StockOut getStockOutFormData() {
         StockOut stockOut = new StockOut();
         CustomerIDString = CustomerID.getText().toString().trim();
@@ -301,7 +300,7 @@ public class stock_OUT extends AppCompatActivity {
         CnameString = Cname.getText().toString().trim();
         contactString = contact.getText().toString().trim();
         addString = add.getText().toString().trim();
-        itemnameString = companyname.getText().toString().trim();
+
         availableqString = availableq.getText().toString().trim();
         openpgString = openpg.getText().toString().trim();
 
@@ -311,10 +310,23 @@ public class stock_OUT extends AppCompatActivity {
         stockOut.setCustomer_name(CnameString);
         stockOut.setContact_number(contactString);
         stockOut.setAddress(addString);
-        stockOut.setCompanyName(itemnameString);
+
         stockOut.setQuantity(availableqString);
         stockOut.setModelNumber(model_nostring);
         return stockOut;
+    }
+    private void setStockOutFormData(int listNumber) {
+        StockOut stockOut = stockOutList.get(listNumber - 1);
+        CustomerID.setText(stockOut.getCustomer_id());
+        date.setText(stockOut.getDate());
+        billno.setText(stockOut.getBill_number());
+        Cname.setText(stockOut.getCustomer_name());
+        contact.setText(stockOut.getContact_number());
+        add.setText(stockOut.getAddress());
+
+        availableq.setText(stockOut.getQuantity());
+        model_no.setText(stockOut.getModelNumber());
+
     }
     public void resetStockOutFormData() {
 
@@ -325,11 +337,17 @@ public class stock_OUT extends AppCompatActivity {
         Cname.setText("");
         contact.setText("");
         add.setText("");
-        companyname.setText("");
+
         availableq.setText("");
         openpg.setText("");
-
+       Toast.makeText(getApplicationContext(), "Record submitted successfully" , Toast.LENGTH_SHORT).show();
+        initcounter();
     }
+    private void initcounter() {
+        counter++;
+        textView1.setText("page:"+counter);
+    }
+
 
     private class insertStockOutToOnlineDB extends AsyncTask<ApiConnector, Long, JSONArray> {
         @Override
