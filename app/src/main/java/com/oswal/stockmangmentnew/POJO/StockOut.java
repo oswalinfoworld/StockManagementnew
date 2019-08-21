@@ -3,17 +3,8 @@ package com.oswal.stockmangmentnew.POJO;
 public class StockOut {
 
 
-    String modelNumber,date,bill_number,customer_id,customer_name,contact_number,address,quantity;
+    String date,bill_number,customer_id,customer_name,contact_number,address,quantity;
     Item item = new Item();
-
-
-    public String getModelNumber() {
-        return modelNumber;
-    }
-
-    public void setModelNumber(String modelNumber) {
-        this.modelNumber = modelNumber;
-    }
 
     public String getDate() {
         return date;

@@ -22,9 +22,9 @@
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:paddingTop="30dp"
-            android:id="@+id/stockout_tx1"
+            android:id="@+id/stockout_pageNumber"
             android:layout_marginLeft="300dp"
-            android:text="Page:"/>
+            android:text="Page :1"/>
         <TableLayout
             android:id="@+id/tab1"
             android:layout_width="match_parent"

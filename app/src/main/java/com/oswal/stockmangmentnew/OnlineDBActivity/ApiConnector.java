@@ -110,15 +110,12 @@ public class ApiConnector {
         String model_number = oneItem.getModel_number().replaceAll(" ", "%20");
         String serial_number = oneItem.getSerial_number().replaceAll(" ", "%20");
         String dom = oneItem.getDOM().replaceAll(" ", "%20");
-        //String specification = oneItem.getSpecification().replaceAll(" ", "%20");
         String supplier_name = oneItem.getSupplier_name().replaceAll(" ", "%20");
         String mobile_number = oneItem.getMobile_number();
         String quantity = oneItem.getQuantity();
-        String date = "PENNDING";
-       // String storage_location = oneItem.getStorage_location().replaceAll(" ", "%20");
-       // String category = oneItem.getCategory().replaceAll(" ", "%20");
+        String date = oneItem.getDate().replaceAll(" ", "%20");
 
-        String url = ConstantsIdentifier.getDomainName() + "/stockItemAdd.php?name="  + "&model_number=" + model_number + "&serial_number=" + serial_number + "&dom=" + dom + "&supplier_name=" + supplier_name + "&contact_no=" + mobile_number + "&item_quatity=" + quantity + "&date=" + date;
+        String url = ConstantsIdentifier.getDomainName() + "/stockItemAdd.php?model_number=" + model_number + "&serial_number=" + serial_number + "&dom=" + dom + "&supplier_name=" + supplier_name + "&contact_no=" + mobile_number + "&item_quatity=" + quantity + "&date=" + date;
         // Get HttpResponse Object from url.
         // Get HttpEntity from Http Response Object
         HttpEntity httpEntity = null;
@@ -150,7 +147,7 @@ public class ApiConnector {
             try {
                 String entityResponse = EntityUtils.toString(httpEntity);
 
-                // Log.e("Entity Response  : ", entityResponse);
+                 System.out.println("Entity Response  : "+ entityResponse);
                 jsonArray = new JSONArray(entityResponse);
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -171,9 +168,9 @@ public class ApiConnector {
             String supplierName = stockIn.getSupplierName().replaceAll(" ", "%20");
             String contactNumber = stockIn.getContactNumber();
             String address = stockIn.getAddress().replaceAll(" ", "%20");
-            String itemName = stockIn.getItemName().replaceAll(" ", "%20");
             String availableQuantity = stockIn.getAvailableQuantity();
-            String url = ConstantsIdentifier.getDomainName() + "/stockInRecord.php?supplierID=" + supplierID + "&date=" + date + "&billNumber=" + billNumber + "&supplierName=" + supplierName + "&contactNumber=" + contactNumber + "&address=" + address + "&itemName=" + itemName + "&availableQuantity=" + availableQuantity;
+            String storageLocation = stockIn.getStorageLocation().replaceAll(" ", "%20");
+            String url = ConstantsIdentifier.getDomainName() + "/stockInRecord.php?supplierID=" + supplierID + "&date=" + date + "&billNumber=" + billNumber + "&supplierName=" + supplierName + "&contactNumber=" + contactNumber + "&address=" + address + "&date=" + date + "&availableQuantity=" + availableQuantity+ "&storage_location=" + storageLocation;
             HttpEntity httpEntity = null;
             try {
 
@@ -218,20 +215,20 @@ public class ApiConnector {
     public JSONArray insert_stockIn_Record(StockIn stockIn) {
         JSONArray jsonArray = null;
         String supplierID = stockIn.getSupplierID();
-        String date = stockIn.getDate().replaceAll("/", "%20");
+        String date = stockIn.getDate().replaceAll(" ", "%20");
         String billNumber = stockIn.getBillNumber();
         String supplierName = stockIn.getSupplierName().replaceAll(" ", "%20");
         String contactNumber = stockIn.getContactNumber();
         String address = stockIn.getAddress().replaceAll(" ", "%20");
-        String itemName = stockIn.getItemName().replaceAll(" ", "%20");
         String availableQuantity = stockIn.getAvailableQuantity();
-        String url = ConstantsIdentifier.getDomainName() + "/stockInRecord.php?supplierID=" + supplierID + "&date=" + date + "&billNumber=" + billNumber + "&supplierName=" + supplierName + "&contactNumber=" + contactNumber + "&address=" + address + "&itemName=" + itemName + "&availableQuantity=" + availableQuantity;
+        String storageLocation = stockIn.getStorageLocation().replaceAll(" ", "%20");
+        String url = ConstantsIdentifier.getDomainName() + "/stockInRecord.php?supplierID=" + supplierID + "&date=" + date + "&billNumber=" + billNumber + "&supplierName=" + supplierName + "&contactNumber=" + contactNumber + "&address=" + address + "  &availableQuantity=" + availableQuantity+ "&storage_location=" + storageLocation;
         HttpEntity httpEntity = null;
         try {
 
             DefaultHttpClient httpClient = new DefaultHttpClient();  // Default HttpClient
             //Log.d("abhi", url);
-            System.out.print("***************** URL " + url);
+            System.out.print("abhi***************** URL " + url);
             HttpPost httpGet = new HttpPost(url);
 
             HttpResponse httpResponse = httpClient.execute(httpGet);
@@ -271,14 +268,13 @@ public class ApiConnector {
         JSONArray jsonArray = null;
         for (StockOut stockOut : stockOutList) {
             String customerID = stockOut.getCustomer_id();
-            String date = stockOut.getDate().replaceAll("/", "%20");
+            String date = stockOut.getDate().replaceAll(" ", "%20");
             String billNumber = stockOut.getBill_number();
-
             String contactNumber = stockOut.getContact_number();
             String address = stockOut.getAddress().replaceAll(" ", "%20");
             String customerName = stockOut.getCustomer_name().replaceAll(" ", "%20");
             String availableQuantity = stockOut.getQuantity();
-            String url = ConstantsIdentifier.getDomainName() + "/stockOutRecord.php?supplierID=" + customerID + "&date=" + date + "&billNumber=" + billNumber + "&supplierName="  + "&contactNumber=" + contactNumber + "&address=" + address + "&itemName=" + customerName + "&availableQuantity=" + availableQuantity;
+            String url = ConstantsIdentifier.getDomainName() + "/stockOutRecord.php?customerID=" + customerID + "&date=" + date + "&billNumber=" + billNumber + "&customerName=" + customerName  + "&contactNumber=" + contactNumber + "&address=" + address  + "&availableQuantity=" + availableQuantity;
             HttpEntity httpEntity = null;
             try {
 
@@ -323,14 +319,13 @@ public class ApiConnector {
     public JSONArray insert_stockOut_Record(StockOut stockOut) {
         JSONArray jsonArray = null;
         String customerID = stockOut.getCustomer_id();
-        String date = stockOut.getDate().replaceAll("/", "%20");
+        String date = stockOut.getDate().replaceAll(" ", "%20");
         String billNumber = stockOut.getBill_number();
-
         String contactNumber = stockOut.getContact_number();
         String address = stockOut.getAddress().replaceAll(" ", "%20");
         String customerName = stockOut.getCustomer_name().replaceAll(" ", "%20");
         String availableQuantity = stockOut.getQuantity();
-        String url = ConstantsIdentifier.getDomainName() + "/stockOutRecord.php?supplierID=" + customerID + "&date=" + date + "&billNumber=" + billNumber + "&supplierName="  + "&contactNumber=" + contactNumber + "&address=" + address + "&itemName=" + customerName + "&availableQuantity=" + availableQuantity;
+        String url = ConstantsIdentifier.getDomainName() + "/stockOutRecord.php?customerID=" + customerID + "&date=" + date + "&billNumber=" + billNumber + "&customerName=" + customerName  + "&contactNumber=" + contactNumber + "&address=" + address  + "&availableQuantity=" + availableQuantity;
         HttpEntity httpEntity = null;
         try {
 

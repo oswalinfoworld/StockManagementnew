@@ -18,7 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageView;
+
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,11 +49,10 @@ import java.util.Calendar;
 import java.util.List;
 
 public class Stock_in extends AppCompatActivity {
-    int counter=0;
-    TextView textView1;
-    EditText supplierID,  billno, sname, contact, add,  availableq, openpg, storageloc, model_no;
+    TextView stockin_PageNumber;
+    EditText supplierID,  billno, sname, contact, add,  availableq, openpg, storageloc;
     Spinner category;
-    String categoryS, supplierIDString, dateString, billnoString, snameString, contactString, addString, itemnameString, availableqString, model_noString, storagelocString;
+    String  supplierIDString, dateString, billnoString, snameString, contactString, addString, availableqString, storagelocString;
     Button submit, open, scan,date;
     String[] categoryList = {"Select", "Laptop", "Monitor", "Keyboard", "Mouse", "Printer", "Scanner", "UPS", "Processor", "Router", "Wifi-Dongle", "RAM", "Cables", "GPS tracking Machine", "Xerox-machin", "Switch"};
 
@@ -79,7 +78,9 @@ public class Stock_in extends AppCompatActivity {
         add = (EditText) findViewById(R.id.additem_addET);
         availableq = (EditText) findViewById(R.id.additem_availbleET);
         openpg = (EditText) findViewById(R.id.additem_opnpgET);
-        textView1=(TextView)findViewById(R.id.stockin_tx1);
+
+        stockin_PageNumber=(TextView)findViewById(R.id.stockin_PageNumber);
+
         submit = (Button) findViewById(R.id.add_item_Submitbtn);
         open = (Button) findViewById(R.id.additem_opnbtn);
         scan = (Button) findViewById(R.id.add_item_scanbtn);
@@ -151,12 +152,8 @@ public class Stock_in extends AppCompatActivity {
                         intent = new Intent(Stock_in.this, Switches_activity.class);
                         startActivity(intent);
                         break;
-
-
                 }
-
             }
-
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
@@ -227,13 +224,6 @@ public class Stock_in extends AppCompatActivity {
 */
     private boolean emptyvalidate(StockIn passData) {
 
-        if(model_noString.length()==0)
-        {
-            model_no.setError("Enter model no");
-            model_no.requestFocus();
-            return false;
-
-        }
         if (storagelocString.length() == 0) {
             storageloc.setError("Enter storage location");
             storageloc.requestFocus();
@@ -284,6 +274,7 @@ public class Stock_in extends AppCompatActivity {
     }
 
     public void addStockIn(View v) {
+        pageCounter();
         addMultipleStock = true;
         //add StockIn Page
         this.stockIn = getStockInFormData();
@@ -316,7 +307,6 @@ public class Stock_in extends AppCompatActivity {
     private StockIn getStockInFormData() {
         StockIn stockIn = new StockIn();
         supplierIDString = supplierID.getText().toString().trim();
-        model_noString = model_no.getText().toString().trim();
         dateString = date.getText().toString().trim();
         billnoString = billno.getText().toString().trim();
         snameString = sname.getText().toString().trim();
@@ -332,9 +322,7 @@ public class Stock_in extends AppCompatActivity {
         stockIn.setSupplierName(snameString);
         stockIn.setContactNumber(contactString);
         stockIn.setAddress(addString);
-        stockIn.setModelNumber(model_noString);
         stockIn.setStorageLocation(storagelocString);
-        stockIn.setItemName(itemnameString);
         stockIn.setAvailableQuantity(availableqString);
 
         return stockIn;
@@ -351,13 +339,11 @@ public class Stock_in extends AppCompatActivity {
         add.setText(stockIn.getAddress());
 
         availableq.setText(stockIn.getAvailableQuantity());
-        model_no.setText(stockIn.getModelNumber());
         storageloc.setText(stockIn.getStorageLocation());
     }
 
     private void resetStockInFormData() {
 
-        model_no.setText("");
         storageloc.setText("");
         supplierID.setText("");
         date.setText("");
@@ -368,13 +354,11 @@ public class Stock_in extends AppCompatActivity {
         availableq.setText("");
         openpg.setText("");
         Toast.makeText(getApplicationContext(), "Record submitted successfully" , Toast.LENGTH_SHORT).show();
-        initcounter();
-
-
     }
-    private void initcounter() {
-        counter++;
-        textView1.setText("page:"+counter);
+    private void pageCounter() {
+        String pageNumberString=stockin_PageNumber.getText().toString().trim().split(":")[1];
+        int pageNumber= Integer.parseInt(pageNumberString);
+        stockin_PageNumber.setText("Page :"+(pageNumber+1));
     }
 
 

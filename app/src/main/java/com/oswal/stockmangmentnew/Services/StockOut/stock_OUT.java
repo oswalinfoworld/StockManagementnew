@@ -48,17 +48,14 @@ import java.util.Calendar;
 import java.util.List;
 
 public class stock_OUT extends AppCompatActivity {
-    EditText CustomerID, billno, Cname, contact, add, companyname,availableq, openpg,model_no;
-    Spinner category;
+    EditText CustomerID, billno, Cname, contact, add, companyname,availableq, openpg;
     int counter=0;
-    TextView textView1;
-    String categoryS,CustomerIDString, dateString, billnoString, CnameString, contactString, addString, itemnameString,availableqString, openpgString,model_nostring;
+    TextView pageNumber;
+    String categoryS,CustomerIDString, dateString, billnoString, CnameString, contactString, addString,availableqString, openpgString,model_nostring;
     Button submit, open,date;
-    String[] categoryList = { "Select","Laptop","Monitor","Keyboard","Mouse", "Printer", "Scanner", "UPS","Processor","Router","Wifi-Dongle","RAM","Cables","GPS tracking Machine","Xerox-machin","Switch"};
 
     List<StockOut> stockOutList = new ArrayList<>();
     StockOut stockOut = new StockOut();
-    private Object View;
     boolean addMultipleStock = false;
     static final String ACTION_SCAN = "com.google.zxing.client.android.SCAN";
 
@@ -79,7 +76,7 @@ public class stock_OUT extends AppCompatActivity {
         add = (EditText) findViewById(R.id.stockout_addessET);
         availableq = (EditText) findViewById(R.id.stockout_avilQET);
         openpg = (EditText) findViewById(R.id.stockout_opnET);
-        textView1=(TextView)findViewById(R.id.stockout_tx1);
+        pageNumber=(TextView)findViewById(R.id.stockout_pageNumber);
 
         submit = (Button) findViewById(R.id.stockout_submitbtn);
         open = (Button) findViewById(R.id.stockout_opnbtn);
@@ -208,13 +205,6 @@ public class stock_OUT extends AppCompatActivity {
         });
     }
 
-
-    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-        categoryS = categoryList[position];
-        Toast.makeText(getApplicationContext(), categoryList[position], Toast.LENGTH_SHORT).show();
-    }
-
-
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
@@ -222,14 +212,6 @@ public class stock_OUT extends AppCompatActivity {
 
 
     private boolean emptyvalidate(StockOut passData) {
-
-        if(model_nostring.length()==0)
-        {
-            model_no.setError("Enter model no");
-            companyname.requestFocus();
-            return false;
-
-        }
 
         if (passData.getDate().length() == 0) {
             date.setError("Enter Date");
@@ -268,6 +250,7 @@ public class stock_OUT extends AppCompatActivity {
 
 
     public void addstockOut(View v) {
+        pageCounter();
          addMultipleStock = true;
         //add StockIn Page
         this.stockOut = getStockOutFormData();
@@ -294,13 +277,11 @@ public class stock_OUT extends AppCompatActivity {
     private StockOut getStockOutFormData() {
         StockOut stockOut = new StockOut();
         CustomerIDString = CustomerID.getText().toString().trim();
-        model_nostring=model_no.getText().toString().trim();
         dateString = date.getText().toString().trim();
         billnoString = billno.getText().toString().trim();
         CnameString = Cname.getText().toString().trim();
         contactString = contact.getText().toString().trim();
         addString = add.getText().toString().trim();
-
         availableqString = availableq.getText().toString().trim();
         openpgString = openpg.getText().toString().trim();
 
@@ -310,9 +291,7 @@ public class stock_OUT extends AppCompatActivity {
         stockOut.setCustomer_name(CnameString);
         stockOut.setContact_number(contactString);
         stockOut.setAddress(addString);
-
         stockOut.setQuantity(availableqString);
-        stockOut.setModelNumber(model_nostring);
         return stockOut;
     }
     private void setStockOutFormData(int listNumber) {
@@ -323,15 +302,12 @@ public class stock_OUT extends AppCompatActivity {
         Cname.setText(stockOut.getCustomer_name());
         contact.setText(stockOut.getContact_number());
         add.setText(stockOut.getAddress());
-
         availableq.setText(stockOut.getQuantity());
-        model_no.setText(stockOut.getModelNumber());
 
     }
     public void resetStockOutFormData() {
 
         CustomerID.setText("");
-        model_no.setText("");
         date.setText("");
         billno.setText("");
         Cname.setText("");
@@ -341,11 +317,12 @@ public class stock_OUT extends AppCompatActivity {
         availableq.setText("");
         openpg.setText("");
        Toast.makeText(getApplicationContext(), "Record submitted successfully" , Toast.LENGTH_SHORT).show();
-        initcounter();
     }
-    private void initcounter() {
-        counter++;
-        textView1.setText("page:"+counter);
+
+    private void pageCounter() {
+        String pageNumberString=pageNumber.getText().toString().trim().split(":")[1];
+        int pageno= Integer.parseInt(pageNumberString);
+        pageNumber.setText("Page :"+(pageno+1));
     }
 
 

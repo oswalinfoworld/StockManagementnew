@@ -23,8 +23,8 @@
             android:layout_height="match_parent"
             android:paddingTop="30dp"
             android:layout_marginLeft="300dp"
-            android:id="@+id/stockin_tx1"
-            android:text="Page:"/>
+            android:id="@+id/stockin_PageNumber"
+            android:text="Page :1"/>
 
         <TableLayout
             android:id="@+id/tab1"

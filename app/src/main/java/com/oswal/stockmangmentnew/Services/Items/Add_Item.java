@@ -36,7 +36,6 @@ import com.oswal.stockmangmentnew.ProductDetail.Switches_activity;
 import com.oswal.stockmangmentnew.ProductDetail.UPS_activity;
 import com.oswal.stockmangmentnew.ProductDetail.Wifidongle_activity;
 import com.oswal.stockmangmentnew.R;
-import com.oswal.stockmangmentnew.Services.StockIn.Stock_in;
 
 import org.json.JSONArray;
 
@@ -44,13 +43,13 @@ import java.util.Calendar;
 
 public class Add_Item extends AppCompatActivity implements OnItemSelectedListener {
 
-    EditText  model_number, serial_number, supplier_name, mobile_number,quantity,dom;
+    EditText model_number, serial_number, supplier_name, mobile_number, quantity, dom;
     Spinner category;
 
-    private String quantitys,dateS,domS,nameS, model_numberS, serial_numberS, specificationS, supplier_nameS, mobile_numberS, storage_locationS, categoryS;
-    Button submit,date;
+    private String quantitys, dateS, domS, nameS, model_numberS, serial_numberS, supplier_nameS, mobile_numberS, categoryS;
+    Button submit, date;
     private Item oneItem = new Item();
-    String[] categoryList = { "Select","Laptop","Monitor","Keyboard","Mouse", "Printer", "Scanner", "UPS","Processor","Router","Wifi-Dongle","RAM","Cables","GPS tracking Machine","Xerox-machin","Switch"};
+    String[] categoryList = {"Select", "Laptop", "Monitor", "Keyboard", "Mouse", "Printer", "Scanner", "UPS", "Processor", "Router", "Wifi-Dongle", "RAM", "Cables", "GPS tracking Machine", "Xerox-machin", "Switch"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,14 +59,13 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        model_number = (EditText)findViewById(R.id.modelnoEditText);
-        serial_number = (EditText)findViewById(R.id.serialnoEditText);
+        model_number = (EditText) findViewById(R.id.modelnoEditText);
+        serial_number = (EditText) findViewById(R.id.serialnoEditText);
         dom = (EditText) findViewById(R.id.additem_DOM);
-        supplier_name = (EditText)findViewById(R.id.suppliernameEditText);
-        mobile_number = (EditText)findViewById(R.id.mobilenoEditText);
-        quantity = (EditText)findViewById(R.id.additem_quanET);
-        //date = (EditText) findViewById(R.id.additem_dateET);
-        date=(Button)findViewById(R.id.additem_dateET);
+        supplier_name = (EditText) findViewById(R.id.suppliernameEditText);
+        mobile_number = (EditText) findViewById(R.id.mobilenoEditText);
+        quantity = (EditText) findViewById(R.id.additem_quanET);
+        date = (Button) findViewById(R.id.additem_dateET);
         date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,77 +92,76 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                 Intent intent;
-              switch (i)
-              {
-                  case 0:
-                      break;
-                  case 1:
-                  intent = new Intent(Add_Item.this, Laptop_activity.class);
-                      startActivity(intent);
-                  break;
-                  case 2:
-                      intent = new Intent(Add_Item.this, Monitor_activity.class);
-                      startActivity(intent);
-                      break;
-                  case 3:
-                      intent = new Intent(Add_Item.this, Keyboard_activity.class);
-                      startActivity(intent);
-                      break;
-                  case 4:
-                      intent = new Intent(Add_Item.this, Mouse_activity.class);
-                      startActivity(intent);
-                      break;
-                  case 5:
-                      intent = new Intent(Add_Item.this, Printer_activity.class);
-                      startActivity(intent);
-                      break;
-                  case 6:
-                      intent = new Intent(Add_Item.this, Scanner_activity.class);
-                      startActivity(intent);
-                      break;
-                  case 7:
-                      intent = new Intent(Add_Item.this, UPS_activity.class);
-                      startActivity(intent);
-                      break;
-                  case 8:
-                      intent = new Intent(Add_Item.this, Processor.class);
-                      startActivity(intent);
-                      break;
-                  case 9:
-                      intent = new Intent(Add_Item.this, Router_activity.class);
-                      startActivity(intent);
-                      break;
-                  case 10:
-                      intent = new Intent(Add_Item.this, Wifidongle_activity.class);
-                      startActivity(intent);
-                      break;
-                  case 11:
-                      intent = new Intent(Add_Item.this, RAM_activity.class);
-                      startActivity(intent);
-                      break;
-                  case 12:
-                      intent = new Intent(Add_Item.this, Cables_activity.class);
-                      startActivity(intent);
-                      break;
-                  case 13:
-                      intent = new Intent(Add_Item.this, GPS_activity.class);
-                      startActivity(intent);
-                      break;
-                  case 14:
-                      intent = new Intent(Add_Item.this,com.oswal.stockmangmentnew.ProductDetail.xerox_activity.class);
-                      startActivity(intent);
-                      break;
-                  case 15:
-                      intent = new Intent(Add_Item.this, Switches_activity.class);
-                      startActivity(intent);
-                      break;
-              }
+                Intent intent;
+                switch (i) {
+                    case 0:
+                        break;
+                    case 1:
+                        intent = new Intent(Add_Item.this, Laptop_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(Add_Item.this, Monitor_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 3:
+                        intent = new Intent(Add_Item.this, Keyboard_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 4:
+                        intent = new Intent(Add_Item.this, Mouse_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 5:
+                        intent = new Intent(Add_Item.this, Printer_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 6:
+                        intent = new Intent(Add_Item.this, Scanner_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 7:
+                        intent = new Intent(Add_Item.this, UPS_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 8:
+                        intent = new Intent(Add_Item.this, Processor.class);
+                        startActivity(intent);
+                        break;
+                    case 9:
+                        intent = new Intent(Add_Item.this, Router_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 10:
+                        intent = new Intent(Add_Item.this, Wifidongle_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 11:
+                        intent = new Intent(Add_Item.this, RAM_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 12:
+                        intent = new Intent(Add_Item.this, Cables_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 13:
+                        intent = new Intent(Add_Item.this, GPS_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 14:
+                        intent = new Intent(Add_Item.this, com.oswal.stockmangmentnew.ProductDetail.xerox_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 15:
+                        intent = new Intent(Add_Item.this, Switches_activity.class);
+                        startActivity(intent);
+                        break;
+                }
 
             }
 
 
-          @Override
+            @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
@@ -178,14 +175,14 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
             public void onClick(View view) {
 
                 oneItem.setModel_number(model_number.getText().toString().trim());
-
                 oneItem.setCategory(categoryS);
                 oneItem.setMobile_number(mobile_number.getText().toString().trim());
                 oneItem.setSerial_number(serial_number.getText().toString().trim());
                 oneItem.setDOM(dom.getText().toString().trim());
                 oneItem.setQuantity(quantity.getText().toString().trim());
-
+                oneItem.setDate(date.getText().toString().trim());
                 oneItem.setSupplier_name(supplier_name.getText().toString().trim());
+
                 if (validateForm(oneItem) && isInternetOn()) {
                     new insertItemToOnlineDB().execute(new ApiConnector());
                     Intent mainPage = new Intent(Add_Item.this, MainActivity.class);
@@ -193,6 +190,7 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
                 }
                 resetData();
             }
+
             private void resetData() {
 
                 model_number.setText("");
@@ -206,29 +204,25 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
             }
 
 
-
             private boolean validateForm(Item oneItem) {
-                model_numberS=mobile_number.getText().toString().trim();
-                serial_numberS=serial_number.getText().toString().trim();
-                domS=dom.getText().toString().trim();
-                supplier_nameS=supplier_name.getText().toString().trim();
-                mobile_numberS=mobile_number.getText().toString().trim();
-                quantitys=quantity.getText().toString().trim();
-                dateS=date.getText().toString().trim();
-                if (model_numberS.length()==0)
-                {
+                model_numberS = mobile_number.getText().toString().trim();
+                serial_numberS = serial_number.getText().toString().trim();
+                domS = dom.getText().toString().trim();
+                supplier_nameS = supplier_name.getText().toString().trim();
+                mobile_numberS = mobile_number.getText().toString().trim();
+                quantitys = quantity.getText().toString().trim();
+                dateS = date.getText().toString().trim();
+                if (model_numberS.length() == 0) {
                     model_number.setError("Enter model no");
                     supplier_name.requestFocus();
                     return false;
                 }
-                if (serial_numberS.length()==0)
-                {
-                  serial_number.setError("Enter serial no");
+                if (serial_numberS.length() == 0) {
+                    serial_number.setError("Enter serial no");
                     serial_number.requestFocus();
                     return false;
                 }
-                if (domS.length()==0)
-                {
+                if (domS.length() == 0) {
                     dom.setError("Enter DOM no");
                     dom.requestFocus();
                     return false;
@@ -238,20 +232,17 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
                     supplier_name.requestFocus();
                     return false;
                 }
-                if(mobile_numberS.length()!=10)
-                {
+                if (mobile_numberS.length() != 10) {
                     mobile_number.setError("Enter valid mobile no.");
                     mobile_number.requestFocus();
                     return false;
                 }
-                if(quantitys.length()==0)
-                {
+                if (quantitys.length() == 0) {
                     quantity.setError("Enter quantity");
                     quantity.requestFocus();
                     return false;
                 }
-                if(dateS.length()==0)
-                {
+                if (dateS.length() == 0) {
                     date.setError("Enter date");
                     date.requestFocus();
                     return false;
@@ -262,16 +253,12 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
             }
         });
 
-
         //Creating the ArrayAdapter instance having the categoryList
         ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, categoryList);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         category.setAdapter(aa);
     }
-
-
-
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
@@ -313,7 +300,6 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
     private class insertItemToOnlineDB extends AsyncTask<ApiConnector, Long, JSONArray> {
         @Override
         protected JSONArray doInBackground(ApiConnector... params) {
-
             // it is executed on Background thread
             //Toast.makeText(getApplicationContext(),"Saving Data Online ",Toast.LENGTH_LONG).show();
             Log.d("Abhishek", "Saving Data Online ");

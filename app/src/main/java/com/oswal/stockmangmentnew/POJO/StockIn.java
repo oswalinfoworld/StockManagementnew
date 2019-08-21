@@ -2,7 +2,7 @@ package com.oswal.stockmangmentnew.POJO;
 
 public class StockIn {
 
-    String supplierID, date, billNumber, supplierName, contactNumber, address, itemName, availableQuantity,modelNumber,storageLocation;
+    String supplierID, date, billNumber, supplierName, contactNumber, address, availableQuantity,storageLocation;
     Item item = new Item();
 
     public Item getItem() {
@@ -61,28 +61,12 @@ public class StockIn {
         this.address = address;
     }
 
-    public String getItemName() {
-        return itemName;
-    }
-
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
-
     public String getAvailableQuantity() {
         return availableQuantity;
     }
 
     public void setAvailableQuantity(String availableQuantity) {
         this.availableQuantity = availableQuantity;
-    }
-
-    public String getModelNumber() {
-        return modelNumber;
-    }
-
-    public void setModelNumber(String modelNumber) {
-        this.modelNumber = modelNumber;
     }
 
     public String getStorageLocation() {

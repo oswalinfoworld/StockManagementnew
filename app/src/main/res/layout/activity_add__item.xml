@@ -209,10 +209,8 @@
             android:layout_marginLeft="130dp"
             android:layout_marginTop="450dp"
             android:text="Select"
-
             android:inputType="number"
             android:background="@drawable/border_table"
-
             android:textSize="15dp" />
 
 
