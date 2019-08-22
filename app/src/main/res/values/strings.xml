@@ -33,4 +33,6 @@
         <item>wifi Dongle</item>
         <item>Switches</item>
     </string-array>
+
+    <string name="action_search" translatable="false">Search</string>
 </resources>

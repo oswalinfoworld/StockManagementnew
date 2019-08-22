@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.oswal.stockmangmentnew.LoginModule.LoginPage;
+import com.oswal.stockmangmentnew.Services.Customer.CustomerMainActivity;
 import com.oswal.stockmangmentnew.Services.Items.Add_Item;
 import com.oswal.stockmangmentnew.Services.Items.view_item;
 import com.oswal.stockmangmentnew.Services.StockIn.Stock_IN_View;
@@ -23,6 +24,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
+import com.oswal.stockmangmentnew.Services.Supplier.DistrictMainActivity;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -312,11 +314,13 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (pageName.contains("supplier")) {
-            Intent intent = new Intent(MainActivity.this, supplier_List.class);
+            //Intent intent = new Intent(MainActivity.this, supplier_List.class);
+            Intent intent = new Intent(MainActivity.this, DistrictMainActivity.class);
             startActivity(intent);
 
         } else if (pageName.contains("customer")) {
-            Intent intent = new Intent(MainActivity.this, customer_List.class);
+            //Intent intent = new Intent(MainActivity.this, customer_List.class);
+            Intent intent = new Intent(MainActivity.this, CustomerMainActivity.class);
             startActivity(intent);
 
         } else if (pageName.contains("stock in add")) {

@@ -103,6 +103,10 @@
                 <action android:name="android.intent.action.QRcodeModule.MainActivity" />
             </intent-filter>
         </activity>
+        <activity android:name="com.oswal.stockmangmentnew.Services.Supplier.DistrictMainActivity"
+        android:parentActivityName="com.oswal.stockmangmentnew.MainActivity"/>
+        <activity android:name="com.oswal.stockmangmentnew.Services.Customer.CustomerMainActivity"
+            android:parentActivityName="com.oswal.stockmangmentnew.MainActivity"/>
     </application>
 
 </manifest>

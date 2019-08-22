@@ -366,4 +366,53 @@ public class ApiConnector {
 
         return jsonArray;
     }
+
+    public JSONArray GetListOfSupplierJson() {
+        String url = ConstantsIdentifier.getDomainName() +"/getAllSupplierList.php";
+        // Get HttpResponse Object from url.
+        // Get HttpEntity from Http Response Object
+
+        HttpEntity httpEntity = null;
+
+        try {
+
+            DefaultHttpClient httpClient = new DefaultHttpClient();  // Default HttpClient
+            //Log.d("abhi", url);
+            System.out.print("Abhishek***************** URL " + url);
+            HttpPost httpGet = new HttpPost(url);
+
+            HttpResponse httpResponse = httpClient.execute(httpGet);
+
+            httpEntity = httpResponse.getEntity();
+
+//            HashMap<String, Object> hashMap = new HashMap<>(Utility.jsonToMap(httpResponse)) ;
+
+
+        }  catch (IOException e) {
+            System.out.print("Abhishek Error " + e.getMessage());
+            e.printStackTrace();
+        }
+        // Convert HttpEntity into JSON Array
+        JSONArray jsonArray = null;
+        // List<EVBUser> users=new ArrayList<EVBUser>() ;
+        if (httpEntity != null) {
+            try {
+                String entityResponse = EntityUtils.toString(httpEntity);
+                System.out.println("Abhishek123 SupplierJson------>Entity Response  : "+entityResponse);
+                jsonArray = new JSONArray(entityResponse);
+               /* System.out.println("Abhishek ------jsonArray  : "+jsonArray.getJSONObject(0));
+                Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+                users= gson.fromJson(entityResponse, ArrayList.class);
+                System.out.println("Abhishek List of Users APIConnector---------------> "+users.get(0));
+                System.out.println("Abhishek Size of User List APIConnector"+users.size());*/
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return jsonArray;
+
+    }
 }
