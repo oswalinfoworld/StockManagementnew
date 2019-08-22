@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Services.Return.Repaire">
+    tools:context="com.oswal.stockmangmentnew.Services.Return.Repaire">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -39,48 +39,17 @@
 
 
     </Button>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="00dp"
-
-        android:orientation="horizontal">
-
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="45dp"
-        android:layout_marginLeft="25dp"
-        android:id="@+id/repair_addto_stocinbtn"
-        android:layout_marginTop="180dp"
-        android:background="@drawable/border_table"
-
-        android:text="ADD StockIN" />
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="45dp"
-            android:id="@+id/repair_goto_custbtn"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="180dp"
-            android:background="@drawable/border_table"
-
-            android:text="Go to customoer" />
-
-    </LinearLayout>
-
-    <TableLayout
-        android:layout_width="400dp"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:gravity="center"
-        android:layout_marginTop="150dp"
-        android:paddingTop="100dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="130dp"
+            android:paddingTop="13dp">
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:paddingTop="13dp">
+            android:paddingTop="13dp"
+            android:gravity="center"
+            android:layout_marginLeft="25dp">
 
             <TextView
                 android:id="@+id/damage_resn"
@@ -105,12 +74,52 @@
 
 
         </TableRow>
+        </LinearLayout>
+
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="00dp"
+
+        android:orientation="horizontal">
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="25dp"
+        android:id="@+id/repair_addto_stocinbtn"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/border_table"
+
+        android:text="ADD StockIN" />
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:id="@+id/repair_goto_custbtn"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="200dp"
+            android:background="@drawable/border_table"
+
+            android:text="Go to customoer" />
+
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="400dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:layout_marginTop="160dp"
+        android:paddingTop="100dp">
 
 
         <TableRow
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="35dp"
-            android:paddingTop="13dp">
+            android:paddingTop="15dp">
 
             <TextView
                 android:id="@+id/damage_itmname"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProductDetail.Printer_activity">
+    tools:context="com.oswal.stockmangmentnew.ProductDetail.Printer_activity">
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"

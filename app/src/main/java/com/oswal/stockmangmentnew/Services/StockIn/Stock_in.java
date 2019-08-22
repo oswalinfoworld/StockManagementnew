@@ -84,7 +84,7 @@ public class Stock_in extends AppCompatActivity {
         submit = (Button) findViewById(R.id.add_item_Submitbtn);
         open = (Button) findViewById(R.id.additem_opnbtn);
         scan = (Button) findViewById(R.id.add_item_scanbtn);
-        category = (Spinner) findViewById(R.id.stockin_spinner);
+       /* category = (Spinner) findViewById(R.id.stockin_spinner);
         category.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -159,7 +159,7 @@ public class Stock_in extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
-        });
+        });*/
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override

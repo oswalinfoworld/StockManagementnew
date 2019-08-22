@@ -51,8 +51,11 @@ public class stock_OUT extends AppCompatActivity {
     EditText CustomerID, billno, Cname, contact, add, companyname,availableq, openpg;
     int counter=0;
     TextView pageNumber;
+    Spinner category;
     String categoryS,CustomerIDString, dateString, billnoString, CnameString, contactString, addString,availableqString, openpgString,model_nostring;
     Button submit, open,date;
+    String[] categoryList = {"Select", "Laptop", "Monitor", "Keyboard", "Mouse", "Printer", "Scanner", "UPS", "Processor", "Router", "Wifi-Dongle", "RAM", "Cables", "GPS tracking Machine", "Xerox-machin", "Switch"};
+
 
     List<StockOut> stockOutList = new ArrayList<>();
     StockOut stockOut = new StockOut();
@@ -80,7 +83,7 @@ public class stock_OUT extends AppCompatActivity {
 
         submit = (Button) findViewById(R.id.stockout_submitbtn);
         open = (Button) findViewById(R.id.stockout_opnbtn);
-        /*category = (Spinner) findViewById(R.id.stockout_spinner);
+       /* category = (Spinner) findViewById(R.id.stockout_spinner);
         category.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, android.view.View view, int i, long l) {
@@ -161,8 +164,8 @@ public class stock_OUT extends AppCompatActivity {
         ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, categoryList);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
-        category.setAdapter(aa);
-*/
+        category.setAdapter(aa);*/
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
