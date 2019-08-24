@@ -1,9 +1,12 @@
 package com.oswal.stockmangmentnew;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import com.oswal.stockmangmentnew.LoginModule.LoginPage;
+import com.oswal.stockmangmentnew.OflineDBActivity.DatabaseHelper;
+import com.oswal.stockmangmentnew.OnlineDBSync.GetSupplierDetailsSync;
 import com.oswal.stockmangmentnew.Services.Customer.CustomerMainActivity;
 import com.oswal.stockmangmentnew.Services.Items.Add_Item;
 import com.oswal.stockmangmentnew.Services.Items.view_item;
@@ -18,6 +21,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 import android.view.View;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 
@@ -38,10 +43,16 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.RECORD_AUDIO;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    int write_EXTERNAL_STORAGE ;
+    int read_EXTERNAL_STORAGE ;
+    private static final int PERMISSION_REQUEST_CODE = 200;
+    DatabaseHelper db =null;
     ExpandableListAdapter expandableListAdapter;
     ExpandableListView expandableListView;
     List<MenuModel> headerList = new ArrayList<>();
@@ -53,6 +64,17 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        write_EXTERNAL_STORAGE = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
+        read_EXTERNAL_STORAGE = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);
+        db = new DatabaseHelper(this);
+        if(!(PackageManager.PERMISSION_GRANTED == write_EXTERNAL_STORAGE))
+        {
+            ActivityCompat.requestPermissions(this, new String[]{ WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
+        }
+        if(!(PackageManager.PERMISSION_GRANTED == read_EXTERNAL_STORAGE))
+        {
+            ActivityCompat.requestPermissions(this, new String[]{ READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
+        }
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -109,6 +131,19 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.action_settings2) {
             Intent mainActivity = new Intent(MainActivity.this, LoginPage.class);
             startActivity(mainActivity);
+        }
+        else if(id== R.id.refreshContact){
+            //Sync Contact List
+              GetSupplierDetailsSync syncList= new GetSupplierDetailsSync();
+            Toast.makeText(getApplicationContext(),"Refreshing Please hold on ",Toast.LENGTH_LONG).show();
+            //syncContactList.startFunction(db,getApplicationContext());
+            syncList.startSyncyContact(db);
+
+            //End
+        }
+        else if(id== R.id.homeActionmenu){
+            Toast.makeText(getApplicationContext(),"Home Sweet Home",Toast.LENGTH_LONG).show();
+
         }
 
         return super.onOptionsItemSelected(item);

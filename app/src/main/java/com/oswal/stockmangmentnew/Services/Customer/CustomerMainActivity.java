@@ -18,7 +18,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.oswal.stockmangmentnew.MainActivity;
+import com.oswal.stockmangmentnew.OflineDBActivity.DatabaseHelper;
+import com.oswal.stockmangmentnew.POJO.Customer;
 import com.oswal.stockmangmentnew.POJO.Districts;
+import com.oswal.stockmangmentnew.POJO.Supplier;
 import com.oswal.stockmangmentnew.R;
 import com.oswal.stockmangmentnew.UtilityClass.DistrictAdapter;
 import com.oswal.stockmangmentnew.UtilityClass.MyDividerItemDecoration;
@@ -36,7 +39,7 @@ public class CustomerMainActivity extends AppCompatActivity implements DistrictA
     private List<Districts> contactList;
     private DistrictAdapter mAdapter;
     private SearchView searchView;
-
+    DatabaseHelper db =null;
     // url to fetch contacts json
     private static final String URL = "https://api.androidhive.info/json/contacts.json";
 
@@ -46,7 +49,7 @@ public class CustomerMainActivity extends AppCompatActivity implements DistrictA
         setContentView(R.layout.activity_main_recycle_search);
        // Toolbar toolbar = findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
-
+        db = new DatabaseHelper(this);
         // toolbar fancy stuff
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Customer List");
@@ -65,8 +68,14 @@ public class CustomerMainActivity extends AppCompatActivity implements DistrictA
         recyclerView.setAdapter(mAdapter);
 
         //fetchContacts();
-
-        Districts contact = new Districts();
+        List<Customer> customerList= db.getAllCustomerDetails();
+        for (Customer customer : customerList) {
+            Districts contact = new Districts();
+            contact.setName(customer.getName());
+            contact.setOtherInfo(customer.getAddress());
+            contactList.add(contact);
+        }
+        /*Districts contact = new Districts();
         contact.setName("Shrikant Iyer");
         contact.setOtherInfo("123456789");
         contactList.add(contact);
@@ -75,7 +84,7 @@ public class CustomerMainActivity extends AppCompatActivity implements DistrictA
         Districts contact1 = new Districts();
         contact1.setName("Ashwin Bawankar");
         contact1.setOtherInfo("123456789");
-        contactList.add(contact1);
+        contactList.add(contact1);*/
 
     }
 

@@ -60,9 +60,9 @@ public class ApiConnector {
         String contactNumber = userProfile.getContactNumber();
         String userName = userProfile.getUserName();
         String DOB = userProfile.getDOB();
-        String password=userProfile.getPassword();
+        String password = userProfile.getPassword();
 
-        String url = ConstantsIdentifier.getDomainName() + "/stockUserAdd.php?name=" + name + "&contactNumber=" + contactNumber + "&username=" + userName + "&DOB=" + DOB+ "&password=" + password;
+        String url = ConstantsIdentifier.getDomainName() + "/stockUserAdd.php?name=" + name + "&contactNumber=" + contactNumber + "&username=" + userName + "&DOB=" + DOB + "&password=" + password;
         // Get HttpResponse Object from url.
         // Get HttpEntity from Http Response Object
         HttpEntity httpEntity = null;
@@ -147,7 +147,7 @@ public class ApiConnector {
             try {
                 String entityResponse = EntityUtils.toString(httpEntity);
 
-                 System.out.println("Entity Response  : "+ entityResponse);
+                System.out.println("Entity Response  : " + entityResponse);
                 jsonArray = new JSONArray(entityResponse);
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -170,7 +170,7 @@ public class ApiConnector {
             String address = stockIn.getAddress().replaceAll(" ", "%20");
             String availableQuantity = stockIn.getAvailableQuantity();
             String storageLocation = stockIn.getStorageLocation().replaceAll(" ", "%20");
-            String url = ConstantsIdentifier.getDomainName() + "/stockInRecord.php?supplierID=" + supplierID + "&date=" + date + "&billNumber=" + billNumber + "&supplierName=" + supplierName + "&contactNumber=" + contactNumber + "&address=" + address + "&date=" + date + "&availableQuantity=" + availableQuantity+ "&storage_location=" + storageLocation;
+            String url = ConstantsIdentifier.getDomainName() + "/stockInRecord.php?supplierID=" + supplierID + "&date=" + date + "&billNumber=" + billNumber + "&supplierName=" + supplierName + "&contactNumber=" + contactNumber + "&address=" + address + "&date=" + date + "&availableQuantity=" + availableQuantity + "&storage_location=" + storageLocation;
             HttpEntity httpEntity = null;
             try {
 
@@ -222,7 +222,7 @@ public class ApiConnector {
         String address = stockIn.getAddress().replaceAll(" ", "%20");
         String availableQuantity = stockIn.getAvailableQuantity();
         String storageLocation = stockIn.getStorageLocation().replaceAll(" ", "%20");
-        String url = ConstantsIdentifier.getDomainName() + "/stockInRecord.php?supplierID=" + supplierID + "&date=" + date + "&billNumber=" + billNumber + "&supplierName=" + supplierName + "&contactNumber=" + contactNumber + "&address=" + address + "  &availableQuantity=" + availableQuantity+ "&storage_location=" + storageLocation;
+        String url = ConstantsIdentifier.getDomainName() + "/stockInRecord.php?supplierID=" + supplierID + "&date=" + date + "&billNumber=" + billNumber + "&supplierName=" + supplierName + "&contactNumber=" + contactNumber + "&address=" + address + "  &availableQuantity=" + availableQuantity + "&storage_location=" + storageLocation;
         HttpEntity httpEntity = null;
         try {
 
@@ -274,7 +274,7 @@ public class ApiConnector {
             String address = stockOut.getAddress().replaceAll(" ", "%20");
             String customerName = stockOut.getCustomer_name().replaceAll(" ", "%20");
             String availableQuantity = stockOut.getQuantity();
-            String url = ConstantsIdentifier.getDomainName() + "/stockOutRecord.php?customerID=" + customerID + "&date=" + date + "&billNumber=" + billNumber + "&customerName=" + customerName  + "&contactNumber=" + contactNumber + "&address=" + address  + "&availableQuantity=" + availableQuantity;
+            String url = ConstantsIdentifier.getDomainName() + "/stockOutRecord.php?customerID=" + customerID + "&date=" + date + "&billNumber=" + billNumber + "&customerName=" + customerName + "&contactNumber=" + contactNumber + "&address=" + address + "&availableQuantity=" + availableQuantity;
             HttpEntity httpEntity = null;
             try {
 
@@ -325,7 +325,7 @@ public class ApiConnector {
         String address = stockOut.getAddress().replaceAll(" ", "%20");
         String customerName = stockOut.getCustomer_name().replaceAll(" ", "%20");
         String availableQuantity = stockOut.getQuantity();
-        String url = ConstantsIdentifier.getDomainName() + "/stockOutRecord.php?customerID=" + customerID + "&date=" + date + "&billNumber=" + billNumber + "&customerName=" + customerName  + "&contactNumber=" + contactNumber + "&address=" + address  + "&availableQuantity=" + availableQuantity;
+        String url = ConstantsIdentifier.getDomainName() + "/stockOutRecord.php?customerID=" + customerID + "&date=" + date + "&billNumber=" + billNumber + "&customerName=" + customerName + "&contactNumber=" + contactNumber + "&address=" + address + "&availableQuantity=" + availableQuantity;
         HttpEntity httpEntity = null;
         try {
 
@@ -368,7 +368,7 @@ public class ApiConnector {
     }
 
     public JSONArray GetListOfSupplierJson() {
-        String url = ConstantsIdentifier.getDomainName() +"/getAllSupplierList.php";
+        String url = ConstantsIdentifier.getDomainName() + "/getAllSupplierList.php";
         // Get HttpResponse Object from url.
         // Get HttpEntity from Http Response Object
 
@@ -388,7 +388,7 @@ public class ApiConnector {
 //            HashMap<String, Object> hashMap = new HashMap<>(Utility.jsonToMap(httpResponse)) ;
 
 
-        }  catch (IOException e) {
+        } catch (IOException e) {
             System.out.print("Abhishek Error " + e.getMessage());
             e.printStackTrace();
         }
@@ -398,7 +398,7 @@ public class ApiConnector {
         if (httpEntity != null) {
             try {
                 String entityResponse = EntityUtils.toString(httpEntity);
-                System.out.println("Abhishek123 SupplierJson------>Entity Response  : "+entityResponse);
+                System.out.println("Abhishek123 SupplierJson------>Entity Response  : " + entityResponse);
                 jsonArray = new JSONArray(entityResponse);
                /* System.out.println("Abhishek ------jsonArray  : "+jsonArray.getJSONObject(0));
                 Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
@@ -414,5 +414,198 @@ public class ApiConnector {
 
         return jsonArray;
 
+    }
+
+    public JSONArray GetListOfCustomerJson() {
+        String url = ConstantsIdentifier.getDomainName() + "/getCustomerList.php";
+        // Get HttpResponse Object from url.
+        // Get HttpEntity from Http Response Object
+
+        HttpEntity httpEntity = null;
+
+        try {
+
+            DefaultHttpClient httpClient = new DefaultHttpClient();  // Default HttpClient
+            //Log.d("abhi", url);
+            System.out.print("Abhishek***************** URL " + url);
+            HttpPost httpGet = new HttpPost(url);
+
+            HttpResponse httpResponse = httpClient.execute(httpGet);
+
+            httpEntity = httpResponse.getEntity();
+
+//            HashMap<String, Object> hashMap = new HashMap<>(Utility.jsonToMap(httpResponse)) ;
+
+
+        } catch (IOException e) {
+            System.out.print("Abhishek Error " + e.getMessage());
+            e.printStackTrace();
+        }
+        // Convert HttpEntity into JSON Array
+        JSONArray jsonArray = null;
+        // List<EVBUser> users=new ArrayList<EVBUser>() ;
+        if (httpEntity != null) {
+            try {
+                String entityResponse = EntityUtils.toString(httpEntity);
+                System.out.println("Abhishek123 SupplierJson------>Entity Response  : " + entityResponse);
+                jsonArray = new JSONArray(entityResponse);
+               /* System.out.println("Abhishek ------jsonArray  : "+jsonArray.getJSONObject(0));
+                Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+                users= gson.fromJson(entityResponse, ArrayList.class);
+                System.out.println("Abhishek List of Users APIConnector---------------> "+users.get(0));
+                System.out.println("Abhishek Size of User List APIConnector"+users.size());*/
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return jsonArray;
+
+    }
+
+    public JSONArray insert_reject_item(String itemUniqueID, String reason_string) {
+        String itemUniqueID1=itemUniqueID.replaceAll(" ", "%20");
+        String reasonS1=reason_string.replaceAll(" ", "%20");
+        String url = ConstantsIdentifier.getDomainName() + "/StockRejectitem.php?itemId=" + itemUniqueID1 + "&reason=" + reasonS1;
+        // Get HttpResponse Object from url.
+        // Get HttpEntity from Http Response Object
+
+        HttpEntity httpEntity = null;
+
+        try {
+
+            DefaultHttpClient httpClient = new DefaultHttpClient();  // Default HttpClient
+            //Log.d("abhi", url);
+            System.out.print("Abhishek***************** URL " + url);
+            HttpPost httpGet = new HttpPost(url);
+
+            HttpResponse httpResponse = httpClient.execute(httpGet);
+
+            httpEntity = httpResponse.getEntity();
+
+//            HashMap<String, Object> hashMap = new HashMap<>(Utility.jsonToMap(httpResponse)) ;
+
+
+        } catch (IOException e) {
+            System.out.print("Abhishek Error " + e.getMessage());
+            e.printStackTrace();
+        }
+        // Convert HttpEntity into JSON Array
+        JSONArray jsonArray = null;
+        // List<EVBUser> users=new ArrayList<EVBUser>() ;
+        if (httpEntity != null) {
+            try {
+                String entityResponse = EntityUtils.toString(httpEntity);
+                System.out.println("Abhishek123 SupplierJson------>Entity Response  : " + entityResponse);
+                jsonArray = new JSONArray(entityResponse);
+               /* System.out.println("Abhishek ------jsonArray  : "+jsonArray.getJSONObject(0));
+                Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+                users= gson.fromJson(entityResponse, ArrayList.class);
+                System.out.println("Abhishek List of Users APIConnector---------------> "+users.get(0));
+                System.out.println("Abhishek Size of User List APIConnector"+users.size());*/
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return jsonArray;
+    }
+
+    public JSONArray insert_damage_item(String itemUniqueID, String reasonS, String item_nameS, String model_noS, String bill_noS, String dateS, String customer_nameS, String store_locS) {
+        String itemUniqueID1=itemUniqueID.replaceAll(" ", "%20");
+        String reasonS1=reasonS.replaceAll(" ", "%20");
+        String item_nameS1=item_nameS.replaceAll(" ", "%20");
+        String model_noS1=model_noS.replaceAll(" ", "%20");
+        String bill_noS1=bill_noS.replaceAll(" ", "%20");
+        String dateS1=dateS.replaceAll(" ", "%20");
+        String customer_nameS1=customer_nameS.replaceAll(" ", "%20");
+        String store_locS1=store_locS.replaceAll(" ", "%20");
+        String url = ConstantsIdentifier.getDomainName() + "/StockDamageItem.php?itemId=" + itemUniqueID1 + "&reason=" + reasonS1 + "&itemName=" + item_nameS1 + "&modelNumber=" + model_noS1 + "&billNumber=" + bill_noS1 + "&date=" + dateS1 + "&customerName=" + customer_nameS1 + "&storageLocation=" + store_locS1;
+        // Get HttpResponse Object from url.
+        // Get HttpEntity from Http Response Object
+
+        HttpEntity httpEntity = null;
+
+        try {
+
+            DefaultHttpClient httpClient = new DefaultHttpClient();  // Default HttpClient
+            //Log.d("abhi", url);
+            System.out.print("Abhishek***************** URL " + url);
+            HttpPost httpGet = new HttpPost(url);
+
+            HttpResponse httpResponse = httpClient.execute(httpGet);
+            httpEntity = httpResponse.getEntity();
+//            HashMap<String, Object> hashMap = new HashMap<>(Utility.jsonToMap(httpResponse)) ;
+        } catch (IOException e) {
+            System.out.print("Abhishek Error " + e.getMessage());
+            e.printStackTrace();
+        }
+        // Convert HttpEntity into JSON Array
+        JSONArray jsonArray = null;
+        // List<EVBUser> users=new ArrayList<EVBUser>() ;
+        if (httpEntity != null) {
+            try {
+                String entityResponse = EntityUtils.toString(httpEntity);
+                System.out.println("Abhishek123 SupplierJson------>Entity Response  : " + entityResponse);
+                jsonArray = new JSONArray(entityResponse);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return jsonArray;
+    }
+
+    public JSONArray insert_Repair_item(String itemUniqueID, String reasonS, String item_nameS, String model_noS, String bill_noS, String dateS, String customer_nameS, String store_locS) {
+        String itemUniqueID1=itemUniqueID.replaceAll(" ", "%20");
+        String reasonS1=reasonS.replaceAll(" ", "%20");
+        String item_nameS1=item_nameS.replaceAll(" ", "%20");
+        String model_noS1=model_noS.replaceAll(" ", "%20");
+        String bill_noS1=bill_noS.replaceAll(" ", "%20");
+        String dateS1=dateS.replaceAll(" ", "%20");
+        String customer_nameS1=customer_nameS.replaceAll(" ", "%20");
+        String store_locS1=store_locS.replaceAll(" ", "%20");
+        String url = ConstantsIdentifier.getDomainName() + "/StockRepaireItem.php?itemId=" + itemUniqueID1 + "&reason=" + reasonS1 + "&itemName=" + item_nameS1 + "&modelNumber=" + model_noS1 + "&billNumber=" + bill_noS1 + "&date=" + dateS1 + "&customerName=" + customer_nameS1 + "&storageLocation=" + store_locS1;
+        // Get HttpResponse Object from url.
+        // Get HttpEntity from Http Response Object
+
+        HttpEntity httpEntity = null;
+
+        try {
+
+            DefaultHttpClient httpClient = new DefaultHttpClient();  // Default HttpClient
+            //Log.d("abhi", url);
+            System.out.print("Abhishek***************** URL " + url);
+            HttpPost httpGet = new HttpPost(url);
+
+            HttpResponse httpResponse = httpClient.execute(httpGet);
+            httpEntity = httpResponse.getEntity();
+//            HashMap<String, Object> hashMap = new HashMap<>(Utility.jsonToMap(httpResponse)) ;
+        } catch (IOException e) {
+            System.out.print("Abhishek Error " + e.getMessage());
+            e.printStackTrace();
+        }
+        // Convert HttpEntity into JSON Array
+        JSONArray jsonArray = null;
+        // List<EVBUser> users=new ArrayList<EVBUser>() ;
+        if (httpEntity != null) {
+            try {
+                String entityResponse = EntityUtils.toString(httpEntity);
+                System.out.println("Abhishek123 SupplierJson------>Entity Response  : " + entityResponse);
+                jsonArray = new JSONArray(entityResponse);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return jsonArray;
     }
 }

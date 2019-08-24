@@ -11,6 +11,7 @@ import com.oswal.stockmangmentnew.R;
 
 public class Return extends AppCompatActivity {
     Button reject,repair,damage;
+    static final String ACTION_SCAN = "com.google.zxing.client.android.SCAN";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

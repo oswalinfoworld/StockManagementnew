@@ -22,7 +22,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.oswal.stockmangmentnew.MainActivity;
+import com.oswal.stockmangmentnew.OflineDBActivity.DatabaseHelper;
 import com.oswal.stockmangmentnew.OnlineDBActivity.ApiConnector;
+import com.oswal.stockmangmentnew.OnlineDBSync.GetSupplierDetailsSync;
 import com.oswal.stockmangmentnew.POJO.Districts;
 import com.oswal.stockmangmentnew.POJO.Supplier;
 import com.oswal.stockmangmentnew.R;
@@ -46,6 +48,7 @@ public class DistrictMainActivity extends AppCompatActivity implements DistrictA
     private List<Districts> contactList;
     private DistrictAdapter mAdapter;
     private SearchView searchView;
+    DatabaseHelper db =null;
 
     // url to fetch contacts json
     private static final String URL = "https://api.androidhive.info/json/contacts.json";
@@ -60,9 +63,8 @@ public class DistrictMainActivity extends AppCompatActivity implements DistrictA
         // toolbar fancy stuff
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Supplier List");
-        new GetListOfSupplier().execute(new ApiConnector());
-
-
+        db = new DatabaseHelper(this);
+        Toast.makeText(getApplicationContext(),"Spplier Count "+db.getSupplierCount(),Toast.LENGTH_LONG).show();
         recyclerView = findViewById(R.id.recycler_view_search);
         contactList = new ArrayList<>();
         mAdapter = new DistrictAdapter(this, contactList, this);
@@ -78,13 +80,16 @@ public class DistrictMainActivity extends AppCompatActivity implements DistrictA
 
         //fetchContacts();
 
-        /*for (Supplier supplier : ConstantsIdentifier.getSupplierList()) {
+
+
+        List<Supplier> supplierList= db.getAllSupplierDetails();
+        for (Supplier supplier : supplierList) {
             Districts contact = new Districts();
             contact.setName(supplier.getName());
             contact.setOtherInfo(supplier.getAddress());
             contactList.add(contact);
-        }*/
-        Districts contact = new Districts();
+        }
+        /*Districts contact = new Districts();
         contact.setName("Shrikant Iyer");
         contact.setOtherInfo("123456789");
         contactList.add(contact);
@@ -93,7 +98,7 @@ public class DistrictMainActivity extends AppCompatActivity implements DistrictA
         Districts contact1 = new Districts();
         contact1.setName("Ashwin Bawankar");
         contact1.setOtherInfo("123456789");
-        contactList.add(contact1);
+        contactList.add(contact1);*/
 
     }
 
@@ -213,51 +218,5 @@ public class DistrictMainActivity extends AppCompatActivity implements DistrictA
 
     }
 
-    class GetListOfSupplier extends AsyncTask<ApiConnector, Long, JSONArray> {
-        List<Supplier> usersList = new ArrayList<Supplier>();
-
-        @Override
-        protected JSONArray doInBackground(ApiConnector... params) {
-            Log.d("Abhishek", "District_wise_list_of_members ");
-            return params[0].GetListOfSupplierJson();
-        }
-
-        public List<Supplier> getUsersList() {
-            return usersList;
-        }
-
-        @Override
-        protected void onPostExecute(JSONArray jsonArray) {
-            try {
-                System.out.println(" Abhishek GetListOfSupplier onPostExecute imp jsonArray.size() --------------------------------------------------------------------" + jsonArray.getJSONObject(0).getString("supplier_name"));
-                System.out.println(" Abhishek GetListOfSupplier jsonArray.length()--------------------------------------------" + jsonArray.length());
-
-
-                System.out.println("-------------------------------------------------Supplier-----------------------------------------");
-                if (jsonArray != null && jsonArray.length() > 0) {
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject childJsonArray = jsonArray.getJSONObject(i);
-                        if (childJsonArray != null && childJsonArray.length() > 0) {
-                            Supplier tempUser = new Supplier();
-                            tempUser.setName(childJsonArray.getString("supplier_name"));
-                            tempUser.setAddress(childJsonArray.getString("supplier_address"));
-                            tempUser.setContact_number(childJsonArray.getString("supplier_contact"));
-                            usersList.add(tempUser);
-                        }
-                    }
-                }
-
-                ConstantsIdentifier.setSupplierList(usersList);
-               /* Toast.makeText(MainActivity.this, jsonArray.getInt(0) + "",
-                        Toast.LENGTH_SHORT).show();*/
-                /*Gson gson = new Gson();
-                List<EVBUser> users= gson.fromJson(String.valueOf(jsonArray), ArrayList.class);
-                System.out.println("Abhishek List of Users ---------------> "+users.get(0));
-                System.out.println("Abhishek Size of User List "+users.size());*/
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
 }
