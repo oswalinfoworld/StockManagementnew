@@ -163,7 +163,7 @@ public class ApiConnector {
         JSONArray jsonArray = null;
         for (StockIn stockIn : stockInList) {
             String supplierID = stockIn.getSupplierID();
-            String date = stockIn.getDate().replaceAll("/", "%20");
+            String date = stockIn.getDate().replaceAll(" ", "%20");
             String billNumber = stockIn.getBillNumber();
             String supplierName = stockIn.getSupplierName().replaceAll(" ", "%20");
             String contactNumber = stockIn.getContactNumber();
@@ -222,7 +222,7 @@ public class ApiConnector {
         String address = stockIn.getAddress().replaceAll(" ", "%20");
         String availableQuantity = stockIn.getAvailableQuantity();
         String storageLocation = stockIn.getStorageLocation().replaceAll(" ", "%20");
-        String url = ConstantsIdentifier.getDomainName() + "/stockInRecord.php?supplierID=" + supplierID + "&date=" + date + "&billNumber=" + billNumber + "&supplierName=" + supplierName + "&contactNumber=" + contactNumber + "&address=" + address + "  &availableQuantity=" + availableQuantity + "&storage_location=" + storageLocation;
+        String url = ConstantsIdentifier.getDomainName() + "/stockInRecord.php?supplierID=" + supplierID + "&date=" + date + "&billNumber=" + billNumber + "&supplierName=" + supplierName + "&contactNumber=" + contactNumber + "&address=" + address + "&availableQuantity=" + availableQuantity + "&storage_location=" + storageLocation;
         HttpEntity httpEntity = null;
         try {
 

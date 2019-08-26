@@ -51,10 +51,8 @@ import java.util.List;
 public class Stock_in extends AppCompatActivity {
     TextView stockin_PageNumber;
     EditText supplierID,  billno, sname, contact, add,  availableq, openpg, storageloc;
-    Spinner category;
     String  supplierIDString, dateString, billnoString, snameString, contactString, addString, availableqString, storagelocString;
     Button submit, open, scan,date;
-    String[] categoryList = {"Select", "Laptop", "Monitor", "Keyboard", "Mouse", "Printer", "Scanner", "UPS", "Processor", "Router", "Wifi-Dongle", "RAM", "Cables", "GPS tracking Machine", "Xerox-machin", "Switch"};
 
     List<StockIn> stockInList = new ArrayList<>();
     StockIn stockIn = new StockIn();
@@ -84,87 +82,12 @@ public class Stock_in extends AppCompatActivity {
         submit = (Button) findViewById(R.id.add_item_Submitbtn);
         open = (Button) findViewById(R.id.additem_opnbtn);
         scan = (Button) findViewById(R.id.add_item_scanbtn);
-       /* category = (Spinner) findViewById(R.id.stockin_spinner);
-        category.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent;
-                switch (i) {
-                    case 0:
-                        break;
-                    case 1:
-                        intent = new Intent(Stock_in.this, Laptop_activity.class);
-                        startActivity(intent);
-                        break;
-                    case 2:
-                        intent = new Intent(Stock_in.this, Monitor_activity.class);
-                        startActivity(intent);
-                        break;
-                    case 3:
-                        intent = new Intent(Stock_in.this, Keyboard_activity.class);
-                        startActivity(intent);
-                        break;
-                    case 4:
-                        intent = new Intent(Stock_in.this, Mouse_activity.class);
-                        startActivity(intent);
-                        break;
-                    case 5:
-                        intent = new Intent(Stock_in.this, Printer_activity.class);
-                        startActivity(intent);
-                        break;
-                    case 6:
-                        intent = new Intent(Stock_in.this, Scanner_activity.class);
-                        startActivity(intent);
-                        break;
-                    case 7:
-                        intent = new Intent(Stock_in.this, UPS_activity.class);
-                        startActivity(intent);
-                        break;
-                    case 8:
-                        intent = new Intent(Stock_in.this, Processor.class);
-                        startActivity(intent);
-                        break;
-                    case 9:
-                        intent = new Intent(Stock_in.this, Router_activity.class);
-                        startActivity(intent);
-                        break;
-                    case 10:
-                        intent = new Intent(Stock_in.this, Wifidongle_activity.class);
-                        startActivity(intent);
-                        break;
-                    case 11:
-                        intent = new Intent(Stock_in.this, RAM_activity.class);
-                        startActivity(intent);
-                        break;
-                    case 12:
-                        intent = new Intent(Stock_in.this, Cables_activity.class);
-                        startActivity(intent);
-                        break;
-                    case 13:
-                        intent = new Intent(Stock_in.this, GPS_activity.class);
-                        startActivity(intent);
-                        break;
-                    case 14:
-                        intent = new Intent(Stock_in.this, com.oswal.stockmangmentnew.ProductDetail.xerox_activity.class);
-                        startActivity(intent);
-                        break;
-                    case 15:
-                        intent = new Intent(Stock_in.this, Switches_activity.class);
-                        startActivity(intent);
-                        break;
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });*/
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (!addMultipleStock) {
+                    Toast.makeText(getApplicationContext(),"Single Stock ",Toast.LENGTH_LONG).show();
                     stockIn = getStockInFormData();
                     if (emptyvalidate(stockIn)) {
                         //insert value to Online DB
@@ -172,6 +95,8 @@ public class Stock_in extends AppCompatActivity {
                         goToMainActivity();
                     }
                 } else {
+                    Toast.makeText(getApplicationContext(),"Single Stock  List",Toast.LENGTH_LONG).show();
+
                     new insertStockInToOnlineDB().execute(new ApiConnector());
                     goToMainActivity();
                 }
@@ -202,9 +127,7 @@ public class Stock_in extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
-        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, categoryList);
-        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        category.setAdapter(aa);
+
 
     }
 
@@ -213,15 +136,6 @@ public class Stock_in extends AppCompatActivity {
         startActivity(mainActivity);
     }
 
-   /* public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-        categoryS = categoryList[position];
-        Toast.makeText(getApplicationContext(), categoryList[position], Toast.LENGTH_SHORT).show();
-    }
-
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
-*/
     private boolean emptyvalidate(StockIn passData) {
 
         if (storagelocString.length() == 0) {
@@ -279,18 +193,16 @@ public class Stock_in extends AppCompatActivity {
         //add StockIn Page
         this.stockIn = getStockInFormData();
         if (emptyvalidate(this.stockIn)) {
-            this.stockIn = getStockInFormData();
+           // this.stockIn = getStockInFormData();
             String openPage = openpg.getText().toString().trim();
             if (openPage.length() != 0) {
                 int insertDataAt = Integer.parseInt(openpg.getText().toString().trim());
                 stockInList.add(insertDataAt - 1, stockIn);
-            } else {
+            }
+            else {
                 stockInList.add(stockIn);
             }
             resetStockInFormData();
-
-
-
         }
 
 
@@ -312,7 +224,6 @@ public class Stock_in extends AppCompatActivity {
         snameString = sname.getText().toString().trim();
         contactString = contact.getText().toString().trim();
         addString = add.getText().toString().trim();
-
         availableqString = availableq.getText().toString().trim();
         storagelocString = storageloc.getText().toString().trim();
 
@@ -343,7 +254,6 @@ public class Stock_in extends AppCompatActivity {
     }
 
     private void resetStockInFormData() {
-
         storageloc.setText("");
         supplierID.setText("");
         date.setText("");
