@@ -43,13 +43,13 @@ import java.util.Calendar;
 
 public class Add_Item extends AppCompatActivity implements OnItemSelectedListener {
 
-    EditText model_number, serial_number, supplier_name, mobile_number, quantity, dom;
+    EditText model_number, serial_number,  quantity, dom;
     Spinner category;
 
     private String quantitys, dateS, domS, nameS, model_numberS, serial_numberS, supplier_nameS, mobile_numberS, categoryS;
     Button submit, date;
     private Item oneItem = new Item();
-    String[] categoryList = {"Select", "Laptop", "Monitor", "Keyboard", "Mouse", "Printer", "Scanner", "UPS", "Processor", "Router", "Wifi-Dongle", "RAM", "Cables", "GPS tracking Machine", "Xerox-machin", "Switch"};
+    String[] categoryList = {"Select", "Laptop", "Monitor", "Keyboard", "Mouse", "Printer", "Scanner", "UPS", "CPU", "Router", "Wifi-Dongle", "RAM", "Cables", "GPS tracking Machine", "Xerox-machin", "Switch","Tablet","TV","Wifi-LAN-card"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,10 +61,8 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
 
         model_number = (EditText) findViewById(R.id.modelnoEditText);
         serial_number = (EditText) findViewById(R.id.serialnoEditText);
-        dom = (EditText) findViewById(R.id.additem_DOM);
-        supplier_name = (EditText) findViewById(R.id.suppliernameEditText);
-        mobile_number = (EditText) findViewById(R.id.mobilenoEditText);
-        quantity = (EditText) findViewById(R.id.additem_quanET);
+
+      /*  quantity = (EditText) findViewById(R.id.additem_quanET);*/
         date = (Button) findViewById(R.id.additem_dateET);
         date.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,6 +154,21 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
                         intent = new Intent(Add_Item.this, Switches_activity.class);
                         startActivity(intent);
                         break;
+
+                    case 16:
+                        intent = new Intent(Add_Item.this, com.oswal.stockmangmentnew.ProductDetail.tablet_activity.class);
+                        startActivity(intent);
+                        break;
+
+                    case 17:
+                        intent = new Intent(Add_Item.this, com.oswal.stockmangmentnew.ProductDetail.tv_activity.class);
+                        startActivity(intent);
+                        break;
+
+                    case 18:
+                        intent = new Intent(Add_Item.this, com.oswal.stockmangmentnew.ProductDetail.wifi_LAN_card.class);
+                        startActivity(intent);
+                        break;
                 }
 
             }
@@ -176,12 +189,11 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
 
                 oneItem.setModel_number(model_number.getText().toString().trim());
                 oneItem.setCategory(categoryS);
-                oneItem.setMobile_number(mobile_number.getText().toString().trim());
+
                 oneItem.setSerial_number(serial_number.getText().toString().trim());
                 oneItem.setDOM(dom.getText().toString().trim());
                 oneItem.setQuantity(quantity.getText().toString().trim());
                 oneItem.setDate(date.getText().toString().trim());
-                oneItem.setSupplier_name(supplier_name.getText().toString().trim());
 
                 if (validateForm(oneItem) && isInternetOn()) {
                     new insertItemToOnlineDB().execute(new ApiConnector());
@@ -197,24 +209,22 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
                 serial_number.setText("");
                 dom.setText("");
                 date.setText("");
-                supplier_name.setText("");
-                mobile_number.setText("");
+
                 quantity.setText("");
 
             }
 
 
             private boolean validateForm(Item oneItem) {
-                model_numberS = mobile_number.getText().toString().trim();
+                model_numberS = model_number.getText().toString().trim();
                 serial_numberS = serial_number.getText().toString().trim();
                 domS = dom.getText().toString().trim();
-                supplier_nameS = supplier_name.getText().toString().trim();
-                mobile_numberS = mobile_number.getText().toString().trim();
+
                 quantitys = quantity.getText().toString().trim();
                 dateS = date.getText().toString().trim();
                 if (model_numberS.length() == 0) {
                     model_number.setError("Enter model no");
-                    supplier_name.requestFocus();
+                    model_number.requestFocus();
                     return false;
                 }
                 if (serial_numberS.length() == 0) {
@@ -227,16 +237,8 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
                     dom.requestFocus();
                     return false;
                 }
-                if (supplier_nameS.length() == 0) {
-                    supplier_name.setError("Username is not enter");
-                    supplier_name.requestFocus();
-                    return false;
-                }
-                if (mobile_numberS.length() != 10) {
-                    mobile_number.setError("Enter valid mobile no.");
-                    mobile_number.requestFocus();
-                    return false;
-                }
+
+
                 if (quantitys.length() == 0) {
                     quantity.setError("Enter quantity");
                     quantity.requestFocus();

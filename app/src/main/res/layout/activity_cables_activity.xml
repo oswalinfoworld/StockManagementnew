@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.oswal.stockmangmentnew.ProductDetail.Cables_activity">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
@@ -14,10 +16,59 @@
             android:layout_height="wrap_content"
             android:text="Cables details "
             android:gravity="center"
+
             android:textStyle="bold"
             android:textSize="20dp"
             android:background="#F77F76"
             />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:text="Brand :"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+            <Spinner
+                android:id="@+id/cabels_spinner"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="10dp" />
+
+
+            <!-- <RadioButton
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="SRAM"
+                 android:textSize="13dp"
+                 android:layout_marginTop="10dp"
+                 android:layout_marginLeft="16dp"
+                 android:id="@+id/cabelsB_type1"/>
+             <RadioButton
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="DRAM"
+                 android:textSize="13dp"
+                 android:layout_marginTop="10dp"
+                 android:layout_marginLeft="16dp"
+                 android:id="@+id/cablesB_type2"/>
+             <RadioButton
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textSize="13dp"
+                 android:layout_marginTop="10dp"
+                 android:text="SDRAM"
+                 android:layout_marginLeft="16dp"
+                 android:id="@+id/cablesB_type3"/>-->
+
+        </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,7 +77,15 @@
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="16dp"/>
-        <CheckBox
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/cables_radiogrp2">
+
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CAT6 LAN"
@@ -34,29 +93,278 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="16dp"
             android:id="@+id/cable_type1"/>
-        <CheckBox
+
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="25dp"
+            android:hint="Length"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border_table"
+            android:textSize="13dp"
+            android:id="@+id/cableL_type1"
+            android:layout_marginLeft="16dp"
+            />
+            </RadioGroup>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/cable_radiogrp3">
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CAT6 Patch cord"
             android:textSize="13dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="16dp"
-            android:id="@+id/cable_type2"/>
-        <CheckBox
+            android:id="@+id/cable_type2"
+           />
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="25dp"
+            android:hint="Length"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border_table"
+            android:textSize="13dp"
+            android:id="@+id/cableL_type2"
+            android:layout_marginLeft="16dp"
+            />
+            </RadioGroup>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CCA LAN cable"
+            >
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/cable_radiogrp4">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VGA cable"
             android:textSize="13dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="16dp"
             android:id="@+id/cable_type3"/>
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="25dp"
+            android:hint="Length"
+            android:background="@drawable/border_table"
+            android:textSize="13dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/cableL_type3"
+            android:layout_marginLeft="16dp"
+            />
+            </RadioGroup>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/cable_radiogrp5">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CAT6 Molex"
+            android:textSize="13dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="16dp"
+            android:id="@+id/cable_type4"/>
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="25dp"
+            android:hint="Length"
+            android:background="@drawable/border_table"
+            android:textSize="13dp"
+            android:id="@+id/cableL_type4"
+            android:layout_marginLeft="16dp"
+            />
+            </RadioGroup>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/cable_radiogrp6">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HDMA cables"
+            android:textSize="13dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="16dp"
+            android:id="@+id/cable_type5"
+            />
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="25dp"
+            android:hint="Length"
+            android:background="@drawable/border_table"
+            android:textSize="13dp"
+            android:id="@+id/cableL_type5"
+            android:layout_marginLeft="16dp"
+            />
+            </RadioGroup>
+        </LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/cable_radiogrp7">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HDMI 4k/HD cable"
+            android:textSize="13dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="16dp"
+            android:id="@+id/cable_type6"/>
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="25dp"
+            android:hint="Length"
+            android:background="@drawable/border_table"
+            android:textSize="13dp"
+            android:id="@+id/cableL_type6"
+            android:layout_marginLeft="16dp"
+            />
+    </RadioGroup>
+</LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/cable_radiogrp8">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Power cable"
+            android:textSize="13dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="16dp"
+            android:id="@+id/cable_type7"/>
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="25dp"
+            android:hint="Length"
+            android:background="@drawable/border_table"
+            android:textSize="13dp"
+            android:id="@+id/cableL_type7"
+            android:layout_marginLeft="16dp"
+            />
+            </RadioGroup>
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/cableL_radiogrp9">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="audio cable"
+            android:textSize="13dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="16dp"
+            android:id="@+id/cable_type8"/>
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="25dp"
+            android:hint="Length"
+            android:background="@drawable/border_table"
+            android:textSize="13dp"
+            android:id="@+id/cableL_type8"
+            android:layout_marginLeft="16dp"
+            />
+        </RadioGroup>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cable_radiogrp10">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Telephone cable"
+            android:textSize="13dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="16dp"
+            android:id="@+id/cable_type9"/>
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="25dp"
+            android:hint="Length"
+            android:background="@drawable/border_table"
+            android:textSize="13dp"
+            android:id="@+id/cableL_type9"
+            android:layout_marginLeft="16dp"
+            />
+            </RadioGroup>
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/cableL_radiogrp11">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Electrical cable"
+            android:textSize="13dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="16dp"
+            android:id="@+id/cable_type10"/>
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="25dp"
+            android:hint="Length"
+            android:background="@drawable/border_table"
+            android:textSize="13dp"
+            android:id="@+id/cableL_type10"
+            android:layout_marginLeft="16dp"
+            />
+            </RadioGroup>
+            </LinearLayout>
         <Button
             android:layout_width="200dp"
             android:layout_height="45dp"
             android:text="Submit"
-            android:id="@+id/cables_subbtn1"
+            android:layout_marginTop="20dp"
+            android:id="@+id/cabels_subbtn1"
             android:layout_gravity="center"/>
+
+
+
     </LinearLayout>
+
+
+
+
+
+
+
 
 
 </ScrollView>

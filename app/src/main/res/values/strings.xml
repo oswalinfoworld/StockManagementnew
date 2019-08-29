@@ -15,10 +15,12 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="action_search" translatable="false">Search</string>
     <string-array name="text">
         <item>add</item>
         <item>View</item>
     </string-array>
+
     <string-array name="select">
         <item>Computer</item>
         <item>Laptop</item>
@@ -33,6 +35,4 @@
         <item>wifi Dongle</item>
         <item>Switches</item>
     </string-array>
-
-    <string name="action_search" translatable="false">Search</string>
 </resources>

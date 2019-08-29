@@ -39,11 +39,42 @@
 
 
     </Button>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="130dp">
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="105dp"
+                android:id="@+id/repaire_radiogrp1"
+                android:layout_marginTop="10dp">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Repair"
+                android:textSize="13dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="80dp"
+                android:id="@+id/printer_brand1"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UN-Repair"
+                android:textSize="13dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/printer_brand2"/>
+            </RadioGroup>
+
+        </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginTop="130dp"
-            android:paddingTop="13dp">
+            android:layout_marginTop="160dp"
+            android:paddingTop="40dp">
+
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="35dp"
@@ -56,6 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Reason:"
+
                 android:textSize="15dp"
 
                 android:textStyle="bold" />
@@ -63,7 +95,8 @@
             <EditText
                 android:id="@+id/repaire_resonET"
                 android:layout_width="200dp"
-                android:layout_height="27dp"
+                android:layout_height="35dp"
+
                 android:layout_marginRight="5dp"
                 android:background="@drawable/border_table"
                 android:hint="Enter reason for repair"
@@ -81,7 +114,7 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="00dp"
+        android:layout_marginTop="80dp"
 
         android:orientation="horizontal">
 
@@ -90,7 +123,7 @@
         android:layout_height="45dp"
         android:layout_marginLeft="25dp"
         android:id="@+id/repair_addto_stocinbtn"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="205dp"
         android:background="@drawable/border_table"
 
         android:text="ADD StockIN" />
@@ -100,7 +133,7 @@
             android:id="@+id/repair_goto_custbtn"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="205dp"
             android:background="@drawable/border_table"
 
             android:text="Go to customoer" />
@@ -112,8 +145,8 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
         android:gravity="center"
-        android:layout_marginTop="160dp"
-        android:paddingTop="100dp">
+        android:layout_marginTop="180dp"
+        android:paddingTop="150dp">
 
 
         <TableRow

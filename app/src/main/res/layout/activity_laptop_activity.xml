@@ -18,6 +18,32 @@
             android:textSize="20dp"
             android:background="#F77F76"
             />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brand:"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"
+                />
+            <Spinner
+                android:id="@+id/lap_spinner1"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,43 +52,425 @@
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="16dp"/>
-        <CheckBox
+            <Spinner
+                android:id="@+id/lap_spinner10"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_alignBottom="@+id/textView2"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Microsoft"
-            android:textSize="13dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="16dp"
-            android:id="@+id/laptop_compyname1"/>
-        <CheckBox
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type :"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"/>
+            <Spinner
+                android:id="@+id/lap_spinner2"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Logitech"
-            android:textSize="13dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="16dp"
-            android:id="@+id/laptop_compyname2"/>
-        <CheckBox
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Generation:"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"/>
+            <Spinner
+                android:id="@+id/lap_spinner3"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RAM:"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"/>
+            <Spinner
+                android:id="@+id/lap_spinner4"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inches :"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"/>
+            <Spinner
+                android:id="@+id/lap_spinner5"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp" />
+          <!--  <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lap_radiogrp6">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10.5"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lap_inches1"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lap_inches2"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12.5"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lap_inches3"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lap_inches4"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15.6"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lap_inches5"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="17"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lap_inches6"/>
+            </RadioGroup>-->
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Zebronics"
-            android:textSize="13dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="16dp"
-            android:id="@+id/laptop_compyname3"/>
-        <CheckBox
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HDD:"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"/>
+            <Spinner
+                android:id="@+id/lap_spinner6"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="16dp" />
+           <!-- <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lap_radiogrp7">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0GB"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/processor_HDD1"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="250GB"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lap_HDD2"/>
+
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="320GB"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lap_HDD3"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500GB"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lap_HDD4"/>
+            </RadioGroup>-->
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="HP"
-            android:textSize="13dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="16dp"
-            android:id="@+id/laptop_compyname4"/>
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SHDD:"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"/>
+            <Spinner
+                android:id="@+id/lap_spinner7"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="16dp" />
+           <!-- <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lap_radiogrp9">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="80GB"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lap_SHDD1"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="250GB"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lap_SHDD2"/>
+
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="320GB"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lap_SHDD3"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500GB"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lap_SHDD4"/>
+            </RadioGroup>-->
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OS :"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"/>
+            <Spinner
+                android:id="@+id/lap_spinner8"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="16dp" />
+            <!--<RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lap_radiogrp11">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DOS"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lap_os1"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Win10home"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lap_os2"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Win10pro"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lap_os3"/>
+            </RadioGroup>-->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Graphic card:"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"/>
+            <Spinner
+                android:id="@+id/lap_spinner9"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp" />
+           <!-- <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lap_radiogrp12">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lap_gc1"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Onboard"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lap_gc2"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2GB"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lap_gc3"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4GB"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lapgc4"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8GB"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/Lap_gc5"/>
+            </RadioGroup>
+-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DVD writer:"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"/>
+
+            <Spinner
+                android:id="@+id/lap_spinner11"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+
+
+
+
 
         <Button
             android:layout_width="200dp"
             android:layout_height="45dp"
             android:text="Submit"
+
             android:id="@+id/laptop_submitbutton"
             android:layout_marginTop="30dp"
             android:layout_gravity="center"/>

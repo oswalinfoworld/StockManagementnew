@@ -18,76 +18,80 @@
         android:textSize="20dp"
         android:background="#F77F76"
         />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brand:"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                />
+            <Spinner
+                android:id="@+id/monitor_spinner1"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Company Name :"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"/>
+            <Spinner
+                android:id="@+id/monitor_spinner2"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Company Name :"
+            android:text="Mouse Type :"
             android:textSize="15dp"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="16dp"/>
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Logitech"
-            android:textSize="13dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="16dp"
-            android:id="@+id/mouse_compyname1"/>
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="A4Tech"
-            android:textSize="13dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="16dp"
-            android:id="@+id/mouse_compyname2"/>
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Zebronics"
-            android:textSize="13dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="16dp"
-            android:id="@+id/mouse_compyname3"/>
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="HP"
-            android:textSize="13dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="16dp"
-            android:id="@+id/mouse_compyname4"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mouse Type :"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="16dp"/>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wire"
-        android:textSize="13dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="16dp"
-        android:id="@+id/mouse_wire"/>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wireless"
-        android:textSize="13dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="16dp"
-        android:id="@+id/mouse_wireless"/>
+            <Spinner
+                android:id="@+id/monitor_spinner3"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp" />
+
+
+        </LinearLayout>
         <Button
             android:layout_width="200dp"
             android:layout_height="45dp"
             android:text="Submit"
+            android:layout_marginTop="30dp"
             android:id="@+id/mouse_subbtn1"
             android:layout_gravity="center"/>
-</LinearLayout>
+
+    </LinearLayout>
+
+
 
 </ScrollView>

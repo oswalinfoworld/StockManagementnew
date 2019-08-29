@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.oswal.stockmangmentnew.LoginModule.ForgetPassword;
@@ -15,8 +19,12 @@ import com.oswal.stockmangmentnew.R;
 import com.oswal.stockmangmentnew.Services.Items.Add_Item;
 
 public class Cables_activity extends AppCompatActivity {
-    CheckBox chk1,chk2,chk3,chk4;
+
     Button submit;
+    Spinner Brandcat;
+    String[] brandList = {"Select","HP","DEll" };
+
+
 
 
     @Override
@@ -26,10 +34,48 @@ public class Cables_activity extends AppCompatActivity {
 
         getSupportActionBar().setTitle("Cabels Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        chk1=(CheckBox)findViewById(R.id.cable_type1);
-        chk2=(CheckBox)findViewById(R.id.cable_type2);
-        chk3=(CheckBox)findViewById(R.id.cable_type3);
-        submit=(Button)findViewById(R.id.cables_subbtn1);
+        Brandcat=(Spinner)findViewById(R.id.cabels_spinner);
+        Brandcat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent;
+                switch(i){
+                    case 0:
+                        break;
+                    case 1:
+                        Toast.makeText(getApplicationContext(),"HP Selected", Toast.LENGTH_SHORT).show();
+                       /* intent = new Intent(Cables_activity.this, Cables_activity.class);
+                        startActivity(intent);*/
+                        break;
+                    case 2:
+                        Toast.makeText(getApplicationContext(),"DEll Selected", Toast.LENGTH_SHORT).show();
+                       /* intent = new Intent(Cables_activity.this, Cables_activity.class);
+                        startActivity(intent);*/
+                        break;
+                    case 3:
+                        Toast.makeText(getApplicationContext(),"DEll Selected", Toast.LENGTH_SHORT).show();
+
+                        break;
+                    case 4:
+                        Toast.makeText(getApplicationContext(),"DEll Selected", Toast.LENGTH_SHORT).show();
+
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, brandList);
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        Brandcat.setAdapter(aa);
+
+
+        submit=(Button)findViewById(R.id.cabels_subbtn1);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

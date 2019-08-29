@@ -5,16 +5,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.oswal.stockmangmentnew.R;
 import com.oswal.stockmangmentnew.Services.Items.Add_Item;
 
 public class Keyboard_activity extends AppCompatActivity {
-    CheckBox companyname1,companyname2,companyname3,companyname4,keyboardtype1,keyboardtype2;
     Button submit;
+    Spinner Brandcat,companynamecat,Typecat;
+    String[] brandList = {"Select","Logitech","InfyTone","Razer","HP","Ducky" };
+    String[] companyList = {"Select","Microsoft","Logitech","Zebronics","HP" };
+    String[] typeList = {"Select","Wire","Wireless" };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,13 +31,127 @@ public class Keyboard_activity extends AppCompatActivity {
         setContentView(R.layout.activity_keyboard_activity);
         getSupportActionBar().setTitle("Keyboard Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        companyname1=(CheckBox)findViewById(R.id.keyboard_compyname1);
-        companyname2=(CheckBox)findViewById(R.id.keyboard_compyname2);
-        companyname3=(CheckBox)findViewById(R.id.keyboard_compyname3);
-        companyname4=(CheckBox)findViewById(R.id.keyboard_compyname4);
+        Brandcat=(Spinner)findViewById(R.id.keyboard_sipnner1);
+        companynamecat=(Spinner)findViewById(R.id.keyboard_sipnner2) ;
+        Typecat=(Spinner)findViewById(R.id.keyboard_sipnner3) ;
 
-        keyboardtype1=(CheckBox)findViewById(R.id.keyboard_wire);
-        keyboardtype2=(CheckBox)findViewById(R.id.keyboard_wireless);
+        Brandcat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent;
+                switch(i){
+                    case 0:
+                        break;
+                    case 1:
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
+
+                        break;
+                    case 2:
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
+
+                        break;
+                    case 3:
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
+
+
+                        break;
+                    case 4:
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
+
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        companynamecat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent;
+                switch(i){
+                    case 0:
+                        break;
+                    case 1:
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
+                        break;
+                    case 2:
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
+
+                        break;
+                    case 3:
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
+
+                        break;
+                    case 4:
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
+
+                        break;
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        Typecat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent;
+                switch(i){
+                    case 0:
+                        break;
+                    case 1:
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
+
+                        break;
+                    case 2:
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
+                        break;
+
+
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, brandList);
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        Brandcat.setAdapter(aa);
+
+        ArrayAdapter aa1 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, companyList);
+        aa1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        companynamecat.setAdapter(aa1);
+
+        ArrayAdapter aa2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, typeList);
+        aa2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        Typecat.setAdapter(aa2);
+
+
         submit=(Button)findViewById(R.id.keyboard_subbtn1);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -5,16 +5,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.oswal.stockmangmentnew.R;
 import com.oswal.stockmangmentnew.Services.Items.Add_Item;
 
 public class UPS_activity extends AppCompatActivity {
-    CheckBox companyname1,companyname2,companyname3,companyname4,companyname5,type1,type2,capacity1,capacity2,capacity3,capacity4;
     Button submit;
+    Spinner Brandcat,companynamecat,typecat,capacitycat;
+    String[] brandList = {"Select","HP","DEll" };
+    String[] companyList = {"Select","Su-Kam","Genus Power","Microtek","Luminous","AmaraRaja"};
+    String[] typeList = {"Select","Online","Offline" };
+    String[] capacityList = {"Select","0.6KVA","0.650KVA" ,"1KVA","2KVA"};
 
 
     @Override
@@ -23,17 +30,152 @@ public class UPS_activity extends AppCompatActivity {
         setContentView(R.layout.activity_ups_activity);
         getSupportActionBar().setTitle("UPS Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        companyname1=(CheckBox)findViewById(R.id.ups_compyname1);
-        companyname2=(CheckBox)findViewById(R.id.ups_compyname2);
-        companyname3=(CheckBox)findViewById(R.id.ups_compyname3);
-        companyname4=(CheckBox)findViewById(R.id.ups_compyname4);
-        companyname5=(CheckBox)findViewById(R.id.ups_compyname5);
-        type1=(CheckBox)findViewById(R.id.ups_type1);
-        type2=(CheckBox)findViewById(R.id.ups_type2);
-        capacity1=(CheckBox)findViewById(R.id.ups_capacity1);
-        capacity2=(CheckBox)findViewById(R.id.ups_capacity2);
-        capacity3=(CheckBox)findViewById(R.id.ups_capacity3);
-        capacity4=(CheckBox)findViewById(R.id.ups_capacity4);
+        Brandcat=(Spinner)findViewById(R.id.ups_spinner1);
+        companynamecat=(Spinner)findViewById(R.id.ups_spinner2) ;
+        typecat=(Spinner)findViewById(R.id.ups_spinner3) ;
+        capacitycat=(Spinner)findViewById(R.id.ups_spinner4) ;
+        Brandcat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent;
+                switch(i){
+                    case 0:
+                        break;
+                    case 1:
+                        intent = new Intent(UPS_activity.this, UPS_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(UPS_activity.this, UPS_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 3:
+                        intent = new Intent(UPS_activity.this, UPS_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 4:
+                        intent = new Intent(UPS_activity.this, UPS_activity.class);
+                        startActivity(intent);
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        companynamecat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent;
+                switch(i){
+                    case 0:
+                        break;
+                    case 1:
+                        intent = new Intent(UPS_activity.this, UPS_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(UPS_activity.this, UPS_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 3:
+                        intent = new Intent(UPS_activity.this, UPS_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 4:
+                        intent = new Intent(UPS_activity.this, UPS_activity.class);
+                        startActivity(intent);
+                        break;
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        typecat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent;
+                switch(i){
+                    case 0:
+                        break;
+                    case 1:
+                        intent = new Intent(UPS_activity.this, UPS_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(UPS_activity.this, UPS_activity.class);
+                        startActivity(intent);
+                        break;
+
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+       capacitycat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent;
+                switch(i){
+                    case 0:
+                        break;
+                    case 1:
+                        intent = new Intent(UPS_activity.this, UPS_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(UPS_activity.this, UPS_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 3:
+                        intent = new Intent(UPS_activity.this, UPS_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 4:
+                        intent = new Intent(UPS_activity.this, UPS_activity.class);
+                        startActivity(intent);
+                        break;
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, brandList);
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        Brandcat.setAdapter(aa);
+
+        ArrayAdapter aa1 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, companyList);
+        aa1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        companynamecat.setAdapter(aa1);
+
+
+        ArrayAdapter aa3 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, capacityList);
+        aa3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        capacitycat.setAdapter(aa3);
+
+
+        ArrayAdapter aa4 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, typeList);
+        aa4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        typecat.setAdapter(aa4);
+
         submit=(Button)findViewById(R.id.ups_subbtn1);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override

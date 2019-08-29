@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.oswal.stockmangmentnew.ProductDetail.Router_activity">
+    tools:context=".ProductDetail.tablet_activity">
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
@@ -12,7 +12,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Router details "
+            android:text="Tablet details "
             android:gravity="center"
             android:textStyle="bold"
             android:textSize="20dp"
@@ -33,13 +33,34 @@
                 android:layout_marginTop="10dp"
                 />
             <Spinner
-                android:id="@+id/router_spinner1"
+                android:id="@+id/tablet_spinner1"
                 android:layout_width="200dp"
                 android:layout_height="25dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="10dp" />
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Company Name :"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"/>
+        <Spinner
+            android:id="@+id/tablet_spinner2"
+            android:layout_width="200dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="16dp" />
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,88 +69,64 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Company Name :"
+                android:text="Inches :"
                 android:textSize="15dp"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="16dp"/>
             <Spinner
-                android:id="@+id/routerspinner2"
+                android:id="@+id/tablet_spinner3"
                 android:layout_width="200dp"
                 android:layout_height="25dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="50dp"
                 android:layout_marginTop="16dp" />
 
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp" >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Router Type :"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="16dp"/>
-            <Spinner
-                android:id="@+id/routerspinner3"
-                android:layout_width="200dp"
-                android:layout_height="25dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="16dp" />
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp" >
-            <TextView
+           <!-- <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tablet_radiogrp2">
+            <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No.of Port :"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="16dp"/>
-            <Spinner
-                android:id="@+id/router_spinner4"
-                android:layout_width="200dp"
-                android:layout_height="25dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="16dp" />
+                android:text="22"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/tablet_inches1"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="32"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/tablet_inches2"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="43"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/tablet_inches3"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="49"
+                android:textSize="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/tablet_inches4"/>
+            </RadioGroup>-->
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp" >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="MBPS :"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="16dp"/>
-            <Spinner
-                android:id="@+id/router_spinner5"
-                android:layout_width="200dp"
-                android:layout_height="25dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="16dp" />
-
-        </LinearLayout>
-
 
         <Button
+            android:id="@+id/tablet_subbtn1"
             android:layout_width="200dp"
             android:layout_height="45dp"
             android:text="Submit"
             android:layout_marginTop="40dp"
-            android:id="@+id/router_subbtn1"
             android:layout_gravity="center"/>
     </LinearLayout>
 

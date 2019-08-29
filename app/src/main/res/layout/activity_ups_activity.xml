@@ -19,6 +19,53 @@
         android:textSize="20dp"
         android:background="#F77F76"
         />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brand:"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                />
+            <Spinner
+                android:id="@+id/ups_spinner1"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Company Name :"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"/>
+            <Spinner
+                android:id="@+id/ups_spinner2"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp" >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,75 +74,41 @@
         android:textStyle="bold"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="16dp"/>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Offline"
-        android:textSize="13dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="16dp"
-        android:id="@+id/ups_type1"/>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Online"
-        android:textSize="13dp"
-        android:layout_marginLeft="16dp"
-        android:id="@+id/ups_type2"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Company Name :"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="16dp"/>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Su-Kam"
-        android:textSize="13dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="16dp"
-        android:id="@+id/ups_compyname1"/>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Genus Power"
-        android:textSize="13dp"
-        android:layout_marginLeft="16dp"
-        android:id="@+id/ups_compyname2"/>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Microtek"
-        android:textSize="13dp"
+            <Spinner
+                android:id="@+id/ups_spinner3"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="16dp" />
 
-        android:layout_marginLeft="16dp"
-        android:id="@+id/ups_compyname3"/>
-    <CheckBox
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Luminous "
-    android:textSize="13dp"
-    android:layout_marginLeft="16dp"
-    android:id="@+id/ups_compyname4"/>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="AmaraRaja"
-        android:textSize="13dp"
-        android:layout_marginLeft="16dp"
-        android:id="@+id/ups_compyname5"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Capacity:"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="16dp"/>
-    <CheckBox
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Capacity:"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"/>
+            <Spinner
+                android:id="@+id/ups_spinner4"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="16dp" />
+           <!-- <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ups_radiogrp3">
+    <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0.6KVA"
@@ -103,31 +116,37 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="16dp"
         android:id="@+id/ups_capacity1"/>
-    <CheckBox
+    <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0.650KVA"
         android:textSize="13dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="16dp"
         android:id="@+id/ups_capacity2"/>
-    <CheckBox
+    <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="-1KVA"
+        android:layout_marginTop="20dp"
         android:textSize="13dp"
 
         android:layout_marginLeft="16dp"
         android:id="@+id/ups_capacity3"/>
-    <CheckBox
+    <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="2KVA"
+        android:layout_marginTop="20dp"
         android:textSize="13dp"
         android:layout_marginLeft="16dp"
         android:id="@+id/ups_capacity4"/>
+            </RadioGroup>-->
+        </LinearLayout>
     <Button
         android:layout_width="200dp"
         android:layout_height="45dp"
+        android:layout_marginTop="40dp"
         android:text="Submit"
         android:id="@+id/ups_subbtn1"
        android:layout_gravity="center"/>

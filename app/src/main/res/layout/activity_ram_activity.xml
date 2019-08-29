@@ -19,97 +19,83 @@
             android:background="#F77F76"
             />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="16dp"
-            android:text="Types Of RAM:"
-            android:textSize="15dp"
-            android:textStyle="bold" />
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brand:"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                />
+            <Spinner
+                android:id="@+id/ram_spinner1"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp" />
 
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="SRAM"
-                android:textSize="13dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="16dp"
-                android:id="@+id/RAM_type1"/>
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="DRAM"
-                android:textSize="13dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="16dp"
-                android:id="@+id/RAM_type2"/>
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="13dp"
-                android:layout_marginTop="10dp"
-                android:text="SDRAM"
-                android:layout_marginLeft="16dp"
-                android:id="@+id/RAM_type3"/>
+
         </LinearLayout>
+
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <CheckBox
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="DDR"
-                android:textSize="13dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="16dp"
-                android:id="@+id/RAM_type4"/>
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="13dp"
-                android:layout_marginTop="10dp"
-                android:text="SDRAM"
-                android:layout_marginLeft="16dp"
-                android:id="@+id/RAM_type5"/>
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="DDR2"
-                android:textSize="13dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="16dp"
-                android:id="@+id/RAM_type6"/>
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"
+                android:text="Types Of RAM:"
+
+                android:textSize="15dp"
+                android:textStyle="bold" />
+            <Spinner
+                android:id="@+id/ram_spinner2"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp" />
+
 
         </LinearLayout>
+
+
+
+
+
+
+
+
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <CheckBox
-
-                android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="44dp"
                 android:layout_height="wrap_content"
-                android:text="DDR3"
-                android:textSize="13dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="16dp"
-                android:id="@+id/RAM_type7"/>
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="DDR4"
-                android:textSize="13dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="16dp"
-                android:id="@+id/RAM_type8"/>
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"
+                android:text="GB:"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+            <Spinner
+                android:id="@+id/ram_spinner3"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="16dp" />
 
 
 
         </LinearLayout>
+
         <Button
             android:layout_width="200dp"
             android:layout_height="45dp"

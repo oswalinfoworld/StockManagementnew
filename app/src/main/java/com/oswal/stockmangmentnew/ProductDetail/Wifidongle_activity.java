@@ -5,35 +5,154 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.oswal.stockmangmentnew.R;
 import com.oswal.stockmangmentnew.Services.Items.Add_Item;
 
 public class Wifidongle_activity extends AppCompatActivity {
-    CheckBox companyname1,companyname2,companyname3,companyname4,type1,type2;
     EditText simname,simrecharge,simvalidity;
     Button submit;
+    Spinner Brandcat,companynamecat,Typecat;
+    String[] brandList = {"Select","HP","DEll" };
+    String[] companyList = {"Select","D-Link","Huawei","JioFi","iBall" };
+    String[] typeList = {"Select","Prepaid","Postpaid" };
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wifidongle_activity);
+        setContentView(R.layout.activity_wifi_internet_dongle_activity);
         getSupportActionBar().setTitle("Dongle Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        companyname1=(CheckBox)findViewById(R.id.dongle_compyname1);
-        companyname2=(CheckBox)findViewById(R.id.dongle_compyname2);
-        companyname3=(CheckBox)findViewById(R.id.dongle_compyname3);
-        companyname4=(CheckBox)findViewById(R.id.dongle_compyname4);
-        type1=(CheckBox)findViewById(R.id.dongle_type1);
-        type2=(CheckBox)findViewById(R.id.dongle_type2);
+
         simname=(EditText)findViewById(R.id.dongle_simname);
         simrecharge=(EditText)findViewById(R.id.dongle_simrecharge);
         simvalidity=(EditText)findViewById(R.id.dongle_simvalidity);
+        Brandcat=(Spinner)findViewById(R.id.wifiinternet_spinner1);
+        companynamecat=(Spinner)findViewById(R.id.wifiinternet_spinner2) ;
+        Typecat=(Spinner)findViewById(R.id.keyboard_sipnner3) ;
+
+        Brandcat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent;
+                switch(i){
+                    case 0:
+                        break;
+                    case 1:
+                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 3:
+                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 4:
+                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
+                        startActivity(intent);
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        companynamecat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent;
+                switch(i){
+                    case 0:
+                        break;
+                    case 1:
+                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 3:
+                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 4:
+                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 5:
+                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 6:
+                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
+                        startActivity(intent);
+                        break;
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        Typecat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent;
+                switch(i){
+                    case 0:
+                        break;
+                    case 1:
+                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
+                        startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
+                        startActivity(intent);
+                        break;
+
+
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, brandList);
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        Brandcat.setAdapter(aa);
+
+        ArrayAdapter aa1 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, companyList);
+        aa1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        companynamecat.setAdapter(aa1);
+
+        ArrayAdapter aa2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, typeList);
+        aa2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        Typecat.setAdapter(aa2);
         submit=(Button)findViewById(R.id.dongle_subbtn1);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override

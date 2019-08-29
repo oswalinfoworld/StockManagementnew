@@ -18,6 +18,34 @@
             android:textSize="20dp"
             android:background="#F77F76"
             />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+       >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brand:"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            />
+        <Spinner
+            android:id="@+id/scanner_spinner2"
+            android:layout_width="200dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,44 +54,69 @@
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="16dp"/>
-        <CheckBox
+        <Spinner
+            android:id="@+id/scanner_spinner1"
+            android:layout_width="200dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp" />
+        <!--<RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scanner_radiogrp2">
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Epson"
+            android:text="Microsoft"
             android:textSize="13dp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="16dp"
             android:id="@+id/scanner_compyname1"/>
-        <CheckBox
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Canon"
+            android:text="Logitech"
             android:textSize="13dp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="16dp"
             android:id="@+id/scanner_compyname2"/>
-        <CheckBox
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Samsung"
+            android:text="Zebronics"
             android:textSize="13dp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="16dp"
             android:id="@+id/scanner_compyname3"/>
-        <CheckBox
+        </RadioGroup>-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Brother"
-            android:textSize="13dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="16dp"
-            android:id="@+id/scanner_compyname4"/>
+            android:text="Type :"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"/>
+        <Spinner
+            android:id="@+id/scanner_spinner3"
+            android:layout_width="200dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
         <Button
             android:layout_width="200dp"
             android:layout_height="45dp"
             android:text="Submit"
-            android:layout_marginTop="20dp"
-            android:id="@+id/scanner_subbtn1"
+            android:layout_marginTop="50dp"
+            android:id="@+id/scanner_subtbn"
             android:layout_gravity="center"/>
     </LinearLayout>
 

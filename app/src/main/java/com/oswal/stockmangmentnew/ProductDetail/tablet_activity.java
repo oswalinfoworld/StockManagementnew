@@ -7,36 +7,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.oswal.stockmangmentnew.R;
-import com.oswal.stockmangmentnew.Services.Items.Add_Item;
 
-public class Printer_activity extends AppCompatActivity {
-    CheckBox companyname1,companyname2,companyname3,companyname4,type1,type2,type3,type4;
-    Button submit;
-    Spinner Brandcat,companynamecat;
+public class tablet_activity extends AppCompatActivity {
+    Spinner Brandcat,companynamecat,inchescat,portcat;
     String[] brandList = {"Select","HP","DEll" };
-    String[] companyList = {"Select","Canon","Samsung","HP","Brother" };
+    String[] companyList = {"Select","HP","DELL" };
+    String[] inchesList = {"Select","10.5", "12", "12.5", "14", "15.6", "17"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_printer_activity);
-        getSupportActionBar().setTitle("Printer Details");
+        setContentView(R.layout.activity_tablet_activity);
+        getSupportActionBar().setTitle("Tablet Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        Brandcat=(Spinner)findViewById(R.id.printer_spinner1);
-        companynamecat=(Spinner)findViewById(R.id.printer_spinner2) ;
+        Brandcat=(Spinner)findViewById(R.id.keyboard_sipnner1);
+        companynamecat=(Spinner)findViewById(R.id.keyboard_sipnner2) ;
+        inchescat=(Spinner)findViewById(R.id.keyboard_sipnner2) ;
 
-        type1=(CheckBox)findViewById(R.id.printer_type1);
-        type2=(CheckBox)findViewById(R.id.printer_type2);
-        type3=(CheckBox)findViewById(R.id.printer_type3);
-        type4=(CheckBox)findViewById(R.id.printer_type4);
-
-        submit=(Button)findViewById(R.id.printer_subbtn1);
         Brandcat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -46,7 +37,6 @@ public class Printer_activity extends AppCompatActivity {
                         break;
                     case 1:
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-
 
                         break;
                     case 2:
@@ -101,6 +91,39 @@ public class Printer_activity extends AppCompatActivity {
 
             }
         });
+        inchescat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent;
+                switch(i){
+                    case 0:
+                        break;
+                    case 1:
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
+                        break;
+                    case 2:
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
+                        break;
+                    case 3:
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
+                        break;
+                    case 4:
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
+
+                        break;
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, brandList);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -112,14 +135,11 @@ public class Printer_activity extends AppCompatActivity {
         //Setting the ArrayAdapter data on the Spinner
         companynamecat.setAdapter(aa1);
 
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
-               Intent i = new Intent(Printer_activity.this, Add_Item.class);
-                startActivity(i);
-            }
-        });
+        ArrayAdapter aa3 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, inchesList);
+        aa3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        inchescat.setAdapter(aa3);
+
 
     }
 }
