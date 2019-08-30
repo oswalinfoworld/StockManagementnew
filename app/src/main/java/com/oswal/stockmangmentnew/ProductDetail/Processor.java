@@ -61,20 +61,19 @@ public class Processor extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(com.oswal.stockmangmentnew.ProductDetail.Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
-                        break;
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                     case 3:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 4:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                 }
             }
@@ -92,20 +91,20 @@ public class Processor extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 3:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 4:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                 }
 
@@ -124,24 +123,24 @@ public class Processor extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 3:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 4:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 5:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                 }
 
@@ -160,40 +159,40 @@ public class Processor extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 3:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 4:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 5:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 6:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 7:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 8:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 9:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                 }
 
@@ -212,36 +211,36 @@ public class Processor extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 3:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 4:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 5:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 6:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 7:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 8:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
 
                 }
@@ -265,28 +264,28 @@ public class Processor extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 3:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 4:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 5:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 6:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                 }
 
@@ -306,32 +305,32 @@ public class Processor extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(Processor.this, Laptop_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                                intent = new Intent(Processor.this, Laptop_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 3:
-                        intent = new Intent(Processor.this, Laptop_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 4:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 5:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 6:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 7:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                 }
 
@@ -351,20 +350,20 @@ public class Processor extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 3:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 4:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                 }
 
@@ -384,28 +383,28 @@ public class Processor extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 3:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 4:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 5:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 6:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                 }
 
@@ -425,12 +424,12 @@ public class Processor extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(Processor.this, Processor.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                 }
 

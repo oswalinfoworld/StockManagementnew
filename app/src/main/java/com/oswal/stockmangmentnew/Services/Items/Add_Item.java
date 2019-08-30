@@ -46,7 +46,7 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
     EditText model_number, serial_number,  quantity, dom;
     Spinner category;
 
-    private String quantitys, dateS, domS, nameS, model_numberS, serial_numberS, supplier_nameS, mobile_numberS, categoryS;
+    private String quantitys, dateS, domS, nameS, model_numberS, serial_numberS, categoryS;
     Button submit, date;
     private Item oneItem = new Item();
     String[] categoryList = {"Select", "Laptop", "Monitor", "Keyboard", "Mouse", "Printer", "Scanner", "UPS", "CPU", "Router", "Wifi-Dongle", "RAM", "Cables", "GPS tracking Machine", "Xerox-machin", "Switch","Tablet","TV","Wifi-LAN-card"};
@@ -180,6 +180,11 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
             }
         });
 
+        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, categoryList);
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        category.setAdapter(aa);
+
 
         submit = (Button) findViewById(R.id.submit_item);
 
@@ -191,8 +196,8 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
                 oneItem.setCategory(categoryS);
 
                 oneItem.setSerial_number(serial_number.getText().toString().trim());
-                oneItem.setDOM(dom.getText().toString().trim());
-                oneItem.setQuantity(quantity.getText().toString().trim());
+              /*  oneItem.setDOM(dom.getText().toString().trim());
+                oneItem.setQuantity(quantity.getText().toString().trim());*/
                 oneItem.setDate(date.getText().toString().trim());
 
                 if (validateForm(oneItem) && isInternetOn()) {
@@ -216,11 +221,13 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
 
 
             private boolean validateForm(Item oneItem) {
+
+
                 model_numberS = model_number.getText().toString().trim();
                 serial_numberS = serial_number.getText().toString().trim();
-                domS = dom.getText().toString().trim();
+              /*  domS = dom.getText().toString().trim();
 
-                quantitys = quantity.getText().toString().trim();
+                quantitys = quantity.getText().toString().trim();*/
                 dateS = date.getText().toString().trim();
                 if (model_numberS.length() == 0) {
                     model_number.setError("Enter model no");
@@ -232,7 +239,7 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
                     serial_number.requestFocus();
                     return false;
                 }
-                if (domS.length() == 0) {
+                /*if (domS.length() == 0) {
                     dom.setError("Enter DOM no");
                     dom.requestFocus();
                     return false;
@@ -243,7 +250,7 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
                     quantity.setError("Enter quantity");
                     quantity.requestFocus();
                     return false;
-                }
+                }*/
                 if (dateS.length() == 0) {
                     date.setError("Enter date");
                     date.requestFocus();
@@ -255,11 +262,8 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
             }
         });
 
-        //Creating the ArrayAdapter instance having the categoryList
-        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, categoryList);
-        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        category.setAdapter(aa);
+
+
     }
 
     @Override

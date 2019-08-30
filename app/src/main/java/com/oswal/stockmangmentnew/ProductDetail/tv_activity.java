@@ -102,34 +102,33 @@ public class tv_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(tv_activity.this, tv_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(tv_activity.this, tv_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                     case 3:
-                        intent = new Intent(tv_activity.this, tv_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 4:
-                        intent = new Intent(tv_activity.this, tv_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
 
 
                     case 5:
-                        intent = new Intent(tv_activity.this, tv_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 6:
-                        intent = new Intent(tv_activity.this, tv_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 7:
-                        intent = new Intent(tv_activity.this, tv_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
 
 

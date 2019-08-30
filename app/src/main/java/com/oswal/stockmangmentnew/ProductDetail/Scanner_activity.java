@@ -41,20 +41,20 @@ public class Scanner_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(Scanner_activity.this, Scanner_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(Scanner_activity.this, Scanner_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 3:
-                        intent = new Intent(Scanner_activity.this, Scanner_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 4:
-                        intent = new Intent(Scanner_activity.this, Scanner_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                 }
             }
@@ -72,20 +72,20 @@ public class Scanner_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(Scanner_activity.this, Scanner_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(Scanner_activity.this, Scanner_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 3:
-                        intent = new Intent(Scanner_activity.this, Scanner_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 4:
-                        intent = new Intent(Scanner_activity.this, Scanner_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                 }
 
@@ -105,16 +105,16 @@ public class Scanner_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(Scanner_activity.this, Scanner_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(Scanner_activity.this, Scanner_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 3:
-                        intent = new Intent(Scanner_activity.this, Scanner_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
 
 

@@ -45,20 +45,20 @@ public class Router_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(Router_activity.this, Router_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(Router_activity.this, Router_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 3:
-                        intent = new Intent(Router_activity.this, Router_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 4:
-                        intent = new Intent(Router_activity.this, Router_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                 }
             }
@@ -76,20 +76,20 @@ public class Router_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(Router_activity.this, Router_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(Router_activity.this, Router_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 3:
-                        intent = new Intent(Router_activity.this, Router_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 4:
-                        intent = new Intent(Router_activity.this, Router_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                 }
 
@@ -109,12 +109,12 @@ public class Router_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(Router_activity.this, Router_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(Router_activity.this, Router_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
 
 
@@ -135,24 +135,24 @@ public class Router_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(Router_activity.this, Router_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(Router_activity.this, Router_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 3:
-                        intent = new Intent(Router_activity.this, Router_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 4:
-                        intent = new Intent(Router_activity.this, Router_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 6:
-                        intent = new Intent(Router_activity.this, Router_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                 }
 
@@ -171,20 +171,20 @@ public class Router_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(Router_activity.this, Router_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(Router_activity.this, Router_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 3:
-                        intent = new Intent(Router_activity.this, Router_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 4:
-                        intent = new Intent(Router_activity.this, Router_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                 }
 

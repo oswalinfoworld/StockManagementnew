@@ -27,9 +27,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class sign_UP extends AppCompatActivity {
-    EditText name, phone,dob, email,password,confmpass;
+    EditText name, phone, email,password,confmpass;
 
-    Button Submit, photobtn;
+    Button Submit, photobtn,dob;
     String nameString, contactNumber, emailString, DOBString,passwordString,confirmPassString;
     private ApplicationUser user = new ApplicationUser();
 
@@ -43,7 +43,7 @@ public class sign_UP extends AppCompatActivity {
         name = findViewById(R.id.nameEditText);
         phone = (EditText) findViewById(R.id.coNoEditText);
         email = (EditText) findViewById(R.id.emailEditText);
-        dob = (EditText) findViewById(R.id.dobEditText);
+        dob = (Button) findViewById(R.id.dobEditText);
         password = (EditText) findViewById(R.id.passwordEditText);
         confmpass = (EditText) findViewById(R.id.confim_passEditText);
         photobtn = (Button) findViewById(R.id.photobtn);

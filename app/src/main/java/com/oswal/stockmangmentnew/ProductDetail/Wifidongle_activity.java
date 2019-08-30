@@ -47,20 +47,20 @@ public class Wifidongle_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 3:
-                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 4:
-                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                 }
             }
@@ -78,28 +78,28 @@ public class Wifidongle_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 3:
-                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 4:
-                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 5:
-                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 6:
-                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                 }
 
@@ -119,12 +119,12 @@ public class Wifidongle_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(Wifidongle_activity.this, Wifidongle_activity.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
 
 

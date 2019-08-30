@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.oswal.stockmangmentnew.R;
 
@@ -36,20 +37,20 @@ public class wifi_LAN_card extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(wifi_LAN_card.this, wifi_LAN_card.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(wifi_LAN_card.this, wifi_LAN_card.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 3:
-                        intent = new Intent(wifi_LAN_card.this, wifi_LAN_card.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 4:
-                        intent = new Intent(wifi_LAN_card.this, wifi_LAN_card.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                 }
             }
@@ -67,20 +68,20 @@ public class wifi_LAN_card extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(wifi_LAN_card.this, wifi_LAN_card.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(wifi_LAN_card.this, wifi_LAN_card.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 3:
-                        intent = new Intent(wifi_LAN_card.this, wifi_LAN_card.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 4:
-                        intent = new Intent(wifi_LAN_card.this, wifi_LAN_card.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                 }
 
@@ -100,12 +101,12 @@ public class wifi_LAN_card extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        intent = new Intent(wifi_LAN_card.this, wifi_LAN_card.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        intent = new Intent(wifi_LAN_card.this, wifi_LAN_card.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
                         break;
 
 

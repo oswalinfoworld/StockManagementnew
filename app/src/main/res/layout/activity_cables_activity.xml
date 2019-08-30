@@ -25,7 +25,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -79,7 +80,8 @@
             android:layout_marginTop="16dp"/>
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -104,16 +106,16 @@
             android:id="@+id/cableL_type1"
             android:layout_marginLeft="16dp"
             />
-            </RadioGroup>
+          <!--  </RadioGroup>
         </LinearLayout>
-        <LinearLayout
+       <<LinearLayout&ndash;&gt;
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             >
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/cable_radiogrp3">
+                android:id="@+id/cable_radiogrp3">-->
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -133,16 +135,16 @@
             android:id="@+id/cableL_type2"
             android:layout_marginLeft="16dp"
             />
-            </RadioGroup>
-        </LinearLayout>
-        <LinearLayout
+      <!--  &lt;!&ndash;   &lt;!&ndash; </RadioGroup>
+        </LinearLayout>&ndash;&gt;
+        <LinearLayout&ndash;&gt;
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             >
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/cable_radiogrp4">
+                android:id="@+id/cable_radiogrp4">-->
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -161,15 +163,15 @@
             android:id="@+id/cableL_type3"
             android:layout_marginLeft="16dp"
             />
-            </RadioGroup>
+        <!--  &lt;!&ndash;  </RadioGroup>
         </LinearLayout>
-        <LinearLayout
+        <LinearLayout&ndash;&gt;
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/cable_radiogrp5">
+                android:id="@+id/cable_radiogrp5">-->
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -187,15 +189,15 @@
             android:id="@+id/cableL_type4"
             android:layout_marginLeft="16dp"
             />
-            </RadioGroup>
+        <!--   &lt;!&ndash; </RadioGroup>
         </LinearLayout>
-        <LinearLayout
+        <LinearLayout&ndash;&gt;
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/cable_radiogrp6">
+                android:id="@+id/cable_radiogrp6">-->
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -214,15 +216,15 @@
             android:id="@+id/cableL_type5"
             android:layout_marginLeft="16dp"
             />
-            </RadioGroup>
+         <!--  &lt;!&ndash; </RadioGroup>
         </LinearLayout>
-<LinearLayout
+<LinearLayout&ndash;&gt;
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/cable_radiogrp7">
+        android:id="@+id/cable_radiogrp7">-->
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -240,15 +242,15 @@
             android:id="@+id/cableL_type6"
             android:layout_marginLeft="16dp"
             />
-    </RadioGroup>
+ <!--  &lt;!&ndash; </RadioGroup>
 </LinearLayout>
-        <LinearLayout
+        <LinearLayout&ndash;&gt;
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/cable_radiogrp8">
+                android:id="@+id/cable_radiogrp8">-->
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -266,15 +268,15 @@
             android:id="@+id/cableL_type7"
             android:layout_marginLeft="16dp"
             />
-            </RadioGroup>
-        </LinearLayout>
-    <LinearLayout
+          <!--  </RadioGroup>
+       &lt;!&ndash; </LinearLayout>
+    <LinearLayout&ndash;&gt;
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/cableL_radiogrp9">
+            android:id="@+id/cableL_radiogrp9">-->
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -292,16 +294,16 @@
             android:id="@+id/cableL_type8"
             android:layout_marginLeft="16dp"
             />
-        </RadioGroup>
+     <!--&lt;!&ndash;   </RadioGroup>
     </LinearLayout>
-        <LinearLayout
+        <LinearLayout&ndash;&gt;
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cable_radiogrp10">
-
+-->
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -319,15 +321,15 @@
             android:id="@+id/cableL_type9"
             android:layout_marginLeft="16dp"
             />
-            </RadioGroup>
+        <!-- &lt;!&ndash;   </RadioGroup>
         </LinearLayout>
-            <LinearLayout
+            <LinearLayout&ndash;&gt;
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/cableL_radiogrp11">
+                android:id="@+id/cableL_radiogrp11">-->
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

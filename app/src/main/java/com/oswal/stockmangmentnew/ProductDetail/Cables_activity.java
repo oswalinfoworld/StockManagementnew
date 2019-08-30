@@ -23,6 +23,7 @@ public class Cables_activity extends AppCompatActivity {
     Button submit;
     Spinner Brandcat;
     String[] brandList = {"Select","HP","DEll" };
+    RadioGroup radioGroup1;
 
 
 
