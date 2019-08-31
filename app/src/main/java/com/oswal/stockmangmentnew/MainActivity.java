@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
+import com.oswal.stockmangmentnew.AdminActivity.AddItemSpinner;
 import com.oswal.stockmangmentnew.LoginModule.LoginPage;
 import com.oswal.stockmangmentnew.OflineDBActivity.DatabaseHelper;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.KeyboardProfile;
 import com.oswal.stockmangmentnew.OnlineDBSync.GetSupplierDetailsSync;
 import com.oswal.stockmangmentnew.Services.Customer.CustomerMainActivity;
 import com.oswal.stockmangmentnew.Services.Items.Add_Item;
@@ -40,19 +42,24 @@ import android.view.Menu;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
-import static android.Manifest.permission.RECORD_AUDIO;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    int write_EXTERNAL_STORAGE ;
-    int read_EXTERNAL_STORAGE ;
+    int write_EXTERNAL_STORAGE;
+    int read_EXTERNAL_STORAGE;
     private static final int PERMISSION_REQUEST_CODE = 200;
-    DatabaseHelper db =null;
+    DatabaseHelper db = null;
     ExpandableListAdapter expandableListAdapter;
     ExpandableListView expandableListView;
     List<MenuModel> headerList = new ArrayList<>();
@@ -67,14 +74,14 @@ public class MainActivity extends AppCompatActivity
         write_EXTERNAL_STORAGE = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
         read_EXTERNAL_STORAGE = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);
         db = new DatabaseHelper(this);
-        if(!(PackageManager.PERMISSION_GRANTED == write_EXTERNAL_STORAGE))
-        {
-            ActivityCompat.requestPermissions(this, new String[]{ WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
+        if (!(PackageManager.PERMISSION_GRANTED == write_EXTERNAL_STORAGE)) {
+            ActivityCompat.requestPermissions(this, new String[]{WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
         }
-        if(!(PackageManager.PERMISSION_GRANTED == read_EXTERNAL_STORAGE))
-        {
-            ActivityCompat.requestPermissions(this, new String[]{ READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
+        if (!(PackageManager.PERMISSION_GRANTED == read_EXTERNAL_STORAGE)) {
+            ActivityCompat.requestPermissions(this, new String[]{READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
         }
+
+        insertCommonDataToDB();
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -97,6 +104,33 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    private void insertCommonDataToDB() {
+        Toast.makeText(getApplicationContext(),"insertCommonDataToDB",Toast.LENGTH_LONG).show();
+        JSONObject json = new JSONObject();
+        String brandListarrayList = null, companyListarrayList = null, typeListarrayList = null;
+        try {
+            json.put("brandList", new JSONArray(getResources().getStringArray(R.array.keyboard_brandList)));
+            brandListarrayList = json.toString();
+            json.put("companyList", new JSONArray(getResources().getStringArray(R.array.keyboard_companyList)));
+            companyListarrayList = json.toString();
+            json.put("typeList", new JSONArray(getResources().getStringArray(R.array.keyboard_typeList)));
+            typeListarrayList = json.toString();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        KeyboardProfile keyboardProfile = new KeyboardProfile();
+        keyboardProfile.setBrandList(brandListarrayList);
+        keyboardProfile.setCompanyList(companyListarrayList);
+        keyboardProfile.setTypeList(typeListarrayList);
+
+        if(db.getKeyboardProfileCount()>0){
+            db.deleteKeyboardProfileList();
+        }
+            db.insertKeyboardDetails(keyboardProfile);
+
     }
 
     @Override
@@ -131,18 +165,16 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.action_settings2) {
             Intent mainActivity = new Intent(MainActivity.this, LoginPage.class);
             startActivity(mainActivity);
-        }
-        else if(id== R.id.refreshContact){
+        } else if (id == R.id.refreshContact) {
             //Sync Contact List
-              GetSupplierDetailsSync syncList= new GetSupplierDetailsSync();
-            Toast.makeText(getApplicationContext(),"Refreshing Please hold on ",Toast.LENGTH_LONG).show();
+            GetSupplierDetailsSync syncList = new GetSupplierDetailsSync();
+            Toast.makeText(getApplicationContext(), "Refreshing Please hold on ", Toast.LENGTH_LONG).show();
             //syncContactList.startFunction(db,getApplicationContext());
             syncList.startSyncyContact(db);
 
             //End
-        }
-        else if(id== R.id.homeActionmenu){
-            Toast.makeText(getApplicationContext(),"Home Sweet Home",Toast.LENGTH_LONG).show();
+        } else if (id == R.id.homeActionmenu) {
+            Toast.makeText(getApplicationContext(), "Home Sweet Home", Toast.LENGTH_LONG).show();
 
         }
 
@@ -176,7 +208,6 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, view_item.class);
             startActivity(intent);
         } else if (id == R.id.logout) {
-
             Intent intent = new Intent(MainActivity.this, Add_Item.class);
             startActivity(intent);
         } else if (id == R.id.retun) {
@@ -190,7 +221,10 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, com.oswal.stockmangmentnew.QRcodeModule.MainActivity.class);
             startActivity(intent);
         }
-
+        else if (id == R.id.adminActivty) {
+            Intent intent = new Intent(MainActivity.this, AddItemSpinner.class);
+            startActivity(intent);
+        }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -294,6 +328,13 @@ public class MainActivity extends AppCompatActivity
         if (!menuModel.hasChildren) {
             childList.put(menuModel, null);
         }
+
+        menuModel = new MenuModel("Admin Acitivity", true, false, "adminActivity");
+        headerList.add(menuModel);
+
+        if (!menuModel.hasChildren) {
+            childList.put(menuModel, null);
+        }
     }
 
     private void populateExpandableList() {
@@ -375,7 +416,7 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(getApplicationContext(), "stock out view ", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(MainActivity.this, Stock_Out_View.class);
             startActivity(intent);
-        }else if (pageName.contains("return add")) {
+        } else if (pageName.contains("return add")) {
 
             Toast.makeText(getApplicationContext(), "return add ", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(MainActivity.this, Return.class);
@@ -385,7 +426,7 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(getApplicationContext(), "return view ", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(MainActivity.this, Return.class);
             startActivity(intent);
-        }else if (pageName.contains("damage add")) {
+        } else if (pageName.contains("damage add")) {
             Toast.makeText(getApplicationContext(), "damage add ", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(MainActivity.this, Damage.class);
             startActivity(intent);
@@ -395,6 +436,10 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         } else if (pageName.contains("qrCode")) {
             Intent intent = new Intent(MainActivity.this, com.oswal.stockmangmentnew.QRcodeModule.MainActivity.class);
+            startActivity(intent);
+        }
+        else if (pageName.contains("adminActivity")) {
+            Intent intent = new Intent(MainActivity.this, AddItemSpinner.class);
             startActivity(intent);
         }
     }

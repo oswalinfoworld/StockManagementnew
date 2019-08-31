@@ -20,8 +20,8 @@ public class GPS_activity extends AppCompatActivity {
     EditText companyname,simname,simrecharge,simvalidity;
     Button submit;
     Spinner Brandcat,companynamecat;
-    String[] brandList = {"Select","HP","DEll" };
-    String[] companyList = {"Select","HP","DELL" };
+   // String[] brandList = {"Select","HP","DEll" };
+    //String[] companyList = {"Select","HP","DELL" };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,12 +94,12 @@ public class GPS_activity extends AppCompatActivity {
 
             }
         });
-        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, brandList);
+        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.gps_activity_brandList));
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         Brandcat.setAdapter(aa);
 
-        ArrayAdapter aa1 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, companyList);
+        ArrayAdapter aa1 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.gps_company));
         aa1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         companynamecat.setAdapter(aa1);

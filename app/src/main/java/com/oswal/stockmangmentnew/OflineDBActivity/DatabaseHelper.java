@@ -14,6 +14,7 @@ import android.os.Environment;
 import android.util.Log;
 
 import com.oswal.stockmangmentnew.OflineDBActivity.model.CustomerProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.KeyboardProfile;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.SupplierProfile;
 import com.oswal.stockmangmentnew.POJO.Customer;
 import com.oswal.stockmangmentnew.POJO.Supplier;
@@ -68,6 +69,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         try {
             db.execSQL(SupplierProfile.CREATE_TABLE);
             db.execSQL(CustomerProfile.CREATE_TABLE);
+            db.execSQL(KeyboardProfile.CREATE_TABLE);
         } catch (Exception e) {
             e.printStackTrace();
             Log.d("Error------------>", e.getMessage());
@@ -80,6 +82,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // Drop older table if existed
         db.execSQL("DROP TABLE IF EXISTS " + SupplierProfile.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + CustomerProfile.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + KeyboardProfile.TABLE_NAME);
         System.out.println("Abhishek Droping All TAble------------------------------");
         onCreate(db);
     }
@@ -219,6 +222,64 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void deleteCustomerList() {
         // Select All Query
         String deleteQuery = "DELETE FROM " + CustomerProfile.TABLE_NAME;
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL(deleteQuery);
+    }
+
+
+//KeyBoard Profile
+
+    public long insertKeyboardDetails(KeyboardProfile temp) {
+        // get writable database as we want to write data
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KeyboardProfile.COLUMN_Brand_Name, temp.getBrandList());
+        values.put(KeyboardProfile.COLUMN_Company_List, temp.getCompanyList());
+        values.put(KeyboardProfile.COLUMN_TypeList, temp.getTypeList());
+
+        // insert row
+        long id = db.insert(KeyboardProfile.TABLE_NAME, null, values);
+
+        // close db connection
+        db.close();
+
+        // return newly inserted row id
+        return id;
+    }
+
+    //Creating Function For Supplier
+    public KeyboardProfile getAllKeyboardProfileDetails() {
+
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + KeyboardProfile.TABLE_NAME;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        KeyboardProfile KeyboardProfileDetails = new KeyboardProfile();
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            KeyboardProfileDetails.setBrandList(cursor.getString(cursor.getColumnIndex(KeyboardProfile.COLUMN_Brand_Name)));
+            KeyboardProfileDetails.setCompanyList(cursor.getString(cursor.getColumnIndex(KeyboardProfile.COLUMN_Company_List)));
+            KeyboardProfileDetails.setTypeList(cursor.getString(cursor.getColumnIndex(KeyboardProfile.COLUMN_TypeList)));
+        }
+        // close db connection
+        db.close();
+
+        // return notes list
+        return KeyboardProfileDetails;
+    }
+
+    public long getKeyboardProfileCount() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        long count = DatabaseUtils.queryNumEntries(db, KeyboardProfile.TABLE_NAME);
+        db.close();
+        return count;
+    }
+
+    //Creating Function For deleteSupplierList
+    public void deleteKeyboardProfileList() {
+        // Select All Query
+        String deleteQuery = "DELETE FROM " + KeyboardProfile.TABLE_NAME;
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL(deleteQuery);
     }

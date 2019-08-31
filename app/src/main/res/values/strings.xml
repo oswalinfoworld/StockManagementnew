@@ -35,4 +35,47 @@
         <item>wifi Dongle</item>
         <item>Switches</item>
     </string-array>
+
+    <string-array
+        name="cabel_brandList">
+        <item>Select</item>
+        <item>HP</item>
+        <item>DEll</item>
+    </string-array>
+
+    <string-array
+        name="gps_activity_brandList">
+        <item>Select</item>
+        <item>HP</item>
+        <item>DEll</item>
+    </string-array>
+
+    <string-array
+        name="gps_company">
+        <item>Select</item>
+        <item>HP</item>
+        <item>DEll</item>
+    </string-array>
+
+    <string-array
+        name="keyboard_brandList">
+        <item>Select</item>
+        <item>HP</item>
+        <item>DEll</item>
+    </string-array>
+    <string-array
+        name="keyboard_companyList">
+        <item>Select</item>
+        <item>Microsoft</item>
+        <item>Logitech</item>
+        <item>Zebronics</item>
+        <item>HP</item>
+    </string-array>
+
+    <string-array
+        name="keyboard_typeList">
+        <item>Select</item>
+        <item>Wire</item>
+        <item>Wireless</item>
+    </string-array>
 </resources>

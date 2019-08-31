@@ -36,7 +36,10 @@
             android:icon="@drawable/ic_keyboard_return_black_24dp"
             android:title="Return" />
 
-
+        <item
+            android:id="@+id/adminActivty"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Admin" />
         <item
             android:id="@+id/qrCode"
             android:icon="@drawable/ic_menu_share"

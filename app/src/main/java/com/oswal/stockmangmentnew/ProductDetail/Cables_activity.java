@@ -22,7 +22,7 @@ public class Cables_activity extends AppCompatActivity {
 
     Button submit;
     Spinner Brandcat;
-    String[] brandList = {"Select","HP","DEll" };
+    //String[] brandList = {"Select","HP","DEll" };
     RadioGroup radioGroup1;
 
 
@@ -70,7 +70,7 @@ public class Cables_activity extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, brandList);
+        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.cabel_brandList));
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         Brandcat.setAdapter(aa);
