@@ -76,7 +76,7 @@ public class Keyboard_activity extends AppCompatActivity {
 
             if (jArraycompanyList != null) {
                 for (int i=0;i<jArraycompanyList.length();i++){
-                    brandListArray.add(jArraycompanyList.getString(i));
+                    companyListArray.add(jArraycompanyList.getString(i));
                 }
             }
             JSONObject jsontypeList = new JSONObject(keyboardProfile.getTypeList().toString());
@@ -84,7 +84,7 @@ public class Keyboard_activity extends AppCompatActivity {
 
             if (jArraytypeList != null) {
                 for (int i=0;i<jArraytypeList.length();i++){
-                    brandListArray.add(jArraytypeList.getString(i));
+                    typeListArray.add(jArraytypeList.getString(i));
                 }
             }
 
