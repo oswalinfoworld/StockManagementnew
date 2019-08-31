@@ -129,7 +129,34 @@ public class MainActivity extends AppCompatActivity
         if(db.getKeyboardProfileCount()>0){
             db.deleteKeyboardProfileList();
         }
-            db.insertKeyboardDetails(keyboardProfile);
+        db.insertKeyboardDetails(keyboardProfile);
+
+
+        //Cabel
+        Toast.makeText(getApplicationContext(),"insertCommonDataToDB",Toast.LENGTH_LONG).show();
+        JSONObject json = new JSONObject();
+        String brandListarrayList = null, companyListarrayList = null, typeListarrayList = null;
+        try {
+            json.put("brandList", new JSONArray(getResources().getStringArray(R.array.keyboard_brandList)));
+            brandListarrayList = json.toString();
+            json.put("companyList", new JSONArray(getResources().getStringArray(R.array.keyboard_companyList)));
+            companyListarrayList = json.toString();
+            json.put("typeList", new JSONArray(getResources().getStringArray(R.array.keyboard_typeList)));
+            typeListarrayList = json.toString();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        KeyboardProfile keyboardProfile = new KeyboardProfile();
+        keyboardProfile.setBrandList(brandListarrayList);
+        keyboardProfile.setCompanyList(companyListarrayList);
+        keyboardProfile.setTypeList(typeListarrayList);
+
+        if(db.getKeyboardProfileCount()>0){
+            db.deleteKeyboardProfileList();
+        }
+        db.insertKeyboardDetails(keyboardProfile);
+        //Cabel End
 
     }
 

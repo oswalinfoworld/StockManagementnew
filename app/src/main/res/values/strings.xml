@@ -78,4 +78,163 @@
         <item>Wire</item>
         <item>Wireless</item>
     </string-array>
+
+    <string-array name="mouse_brandList">
+        <item>Select</item>
+        <item>HP</item>
+        <item>HP</item>
+    </string-array>
+
+    <string-array
+        name="mouse_typeList">
+        <item>Select</item>
+        <item>Wire</item>
+        <item>Wireless</item>
+    </string-array>
+
+
+    <string-array name="Mouse_brandList">
+        <item>Select</item>
+
+        <item>HP</item>
+        <item>Dell</item>
+    </string-array>
+
+
+    <string-array name="Mouse_InchesList">
+
+        <item>Select</item>
+        <item>14</item>
+        <item>16</item>
+        <item>18.5</item>
+        <item>19.5</item>
+        <item>20</item>
+        <item>21.5</item>
+        <item>23.8</item>
+        <item>28</item>
+    </string-array>
+
+    <string-array name="Mouse_PortList">
+        <item>Select</item>
+
+
+        <item>HDMI</item>
+        <item>VGA</item>
+        <item>DVI</item>
+    </string-array>
+
+
+    <string-array name="Laptop_brandList">
+        <item>Select</item>
+        <item>HP</item>
+        <item>Dell</item>
+    </string-array>
+
+    <string-array name="Laptop_typeList">
+        <item>Select</item>
+        <item>C2D</item>
+        <item>DC</item>
+        <item>i3</item>
+        <item>i5</item>
+        <item>i7</item>
+    </string-array>
+
+    <string-array name="Laptop_genrationList">
+        <item>Select</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+
+    <string-array name="Laptop_ramList">
+        <item>Select</item>
+        <item>2GB</item>
+        <item>4GB</item>
+        <item>6GB</item>
+        <item>8Gb</item>
+        <item>16GB</item>
+        <item>32GB</item>
+        <item>64GB</item>
+        <item>128GB</item>
+
+    </string-array>
+
+    <string-array name="Laptop_inchesList">
+        <item>Select</item>
+        <item>10.5</item>
+        <item>12</item>
+        <item>12.5</item>
+        <item>14</item>
+        <item>15.6</item>
+        <item>17</item>
+
+
+    </string-array>
+
+
+    <string-array name="Laptop_HDDList">
+        <item>Select</item>
+        <item>0</item>
+        <item>250</item>
+        <item>320</item>
+        <item>500</item>
+        <item>1TB</item>
+        <item>2TB</item>
+        <item>4TB</item>
+
+
+    </string-array>
+
+    <string-array name="Laptop_SHDDList">
+        <item>Select</item>
+        <item>80</item>
+        <item>250</item>
+        <item>320</item>
+        <item>500</item>
+        <item>1TB</item>
+        <item>2TB</item>
+        <item>4TB</item>
+
+
+    </string-array>
+
+    <string-array name="Laptop_osList">
+        <item>Select</item>
+        <item>DOS</item>
+        <item>Win10home</item>
+        <item>win10pro</item>
+
+
+    </string-array>
+
+    <string-array name="Laptop_GraphiccardList">
+        <item>Select</item>
+        <item>0</item>
+        <item>onboard</item>
+        <item>2GB</item>
+        <item>4GB</item>
+        <item>8GB</item>
+
+
+    </string-array>
+
+    <string-array name="Laptop_DVDList">
+        <item>Select</item>
+        <item>YeS</item>
+        <item>NO</item>
+
+
+    </string-array>
+
+
+
+
+
+
 </resources>

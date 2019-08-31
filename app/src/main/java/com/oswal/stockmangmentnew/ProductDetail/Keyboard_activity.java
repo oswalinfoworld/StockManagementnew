@@ -113,9 +113,9 @@ public class Keyboard_activity extends AppCompatActivity {
 
 
 
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
                         break;
                     case 4:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
 
                         break;
