@@ -43,10 +43,10 @@ import java.util.Calendar;
 
 public class Add_Item extends AppCompatActivity implements OnItemSelectedListener {
 
-    EditText model_number, serial_number,  quantity, dom;
+    EditText model_number, serial_number,  quantity;
     Spinner category;
 
-    private String quantitys, dateS, domS, nameS, model_numberS, serial_numberS, categoryS;
+    private String quantitys, dateS, nameS, model_numberS, serial_numberS, categoryS;
     Button submit, date;
     private Item oneItem = new Item();
     String[] categoryList = {"Select", "Laptop", "Monitor", "Keyboard", "Mouse", "Printer", "Scanner", "UPS", "CPU", "Router", "Wifi-Dongle", "RAM", "Cables", "GPS tracking Machine", "Xerox-machin", "Switch","Tablet","TV","Wifi-LAN-card"};
@@ -212,23 +212,21 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
 
                 model_number.setText("");
                 serial_number.setText("");
-                dom.setText("");
+                //dom.setText("");
                 date.setText("");
-
-                quantity.setText("");
+//                quantity.setText("");
 
             }
 
 
             private boolean validateForm(Item oneItem) {
-
-
-                model_numberS = model_number.getText().toString().trim();
-                serial_numberS = serial_number.getText().toString().trim();
+                model_numberS = oneItem.getModel_number().toString().trim();
+                serial_numberS = oneItem.getSerial_number().toString().trim();
+                dateS = oneItem.getDate().toString().trim();
               /*  domS = dom.getText().toString().trim();
 
                 quantitys = quantity.getText().toString().trim();*/
-                dateS = date.getText().toString().trim();
+
                 if (model_numberS.length() == 0) {
                     model_number.setError("Enter model no");
                     model_number.requestFocus();

@@ -23,8 +23,7 @@ public class RAMProfile implements Serializable {
                     + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COLUMN_Brand_Name + " TEXT,"
                     + COLUMN_COLUMN_GBList + " TEXT,"
-
-                    + COLUMN_TypeList + " TEXT,"
+                    + COLUMN_TypeList + " TEXT"
                     + ")";
 
     public static String getTableName() {

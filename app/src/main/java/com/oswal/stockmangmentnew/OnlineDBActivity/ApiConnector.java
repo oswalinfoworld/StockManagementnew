@@ -109,13 +109,15 @@ public class ApiConnector {
 
         String model_number = oneItem.getModel_number().replaceAll(" ", "%20");
         String serial_number = oneItem.getSerial_number().replaceAll(" ", "%20");
-        String dom = oneItem.getDOM().replaceAll(" ", "%20");
-        String supplier_name = oneItem.getSupplier_name().replaceAll(" ", "%20");
-        String mobile_number = oneItem.getMobile_number();
-        String quantity = oneItem.getQuantity();
+        //String dom = oneItem.getDOM().replaceAll(" ", "%20");
+       // String supplier_name = oneItem.getSupplier_name().replaceAll(" ", "%20");
+       // String mobile_number = oneItem.getMobile_number();
+       // String quantity = oneItem.getQuantity();
         String date = oneItem.getDate().replaceAll(" ", "%20");
 
-        String url = ConstantsIdentifier.getDomainName() + "/stockItemAdd.php?model_number=" + model_number + "&serial_number=" + serial_number + "&dom=" + dom + "&supplier_name=" + supplier_name + "&contact_no=" + mobile_number + "&item_quatity=" + quantity + "&date=" + date;
+      //  String url = ConstantsIdentifier.getDomainName() + "/stockItemAdd.php?model_number=" + model_number + "&serial_number=" + serial_number + "&dom=" + dom + "&supplier_name=" + supplier_name + "&contact_no=" + mobile_number + "&item_quatity=" + quantity + "&date=" + date;
+        String url = ConstantsIdentifier.getDomainName() + "/stockItemAdd.php?model_number=" + model_number + "&serial_number=" + serial_number + "&date=" + date;
+
         // Get HttpResponse Object from url.
         // Get HttpEntity from Http Response Object
         HttpEntity httpEntity = null;

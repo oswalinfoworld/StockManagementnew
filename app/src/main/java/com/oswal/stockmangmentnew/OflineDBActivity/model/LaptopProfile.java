@@ -41,7 +41,7 @@ public class LaptopProfile implements Serializable {
                     + COLUMN_SHDDList   + " TEXT,"
                     + COLUMN_osList  + " TEXT,"
                     + COLUMN_GraphiccardList  + " TEXT,"
-                    + COLUMN_DVDwriterList + " TEXT,"
+                    + COLUMN_DVDwriterList + " TEXT"
                     + ")";
 
 

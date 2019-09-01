@@ -36,7 +36,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="130dp"
             android:layout_marginTop="90dp"
-            android:onClick="scanQR"
+            android:onClick="scanBar"
             android:gravity="center"
             android:id="@+id/damage_scan"
             android:text="Scan">

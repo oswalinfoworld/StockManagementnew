@@ -17,8 +17,7 @@ public class XeroxProfile implements Serializable {
             "CREATE TABLE " + TABLE_NAME + "("
                     + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COLUMN_Brand_Name + " TEXT,"
-                    + COLUMN_PPM + " TEXT,"
-
+                    + COLUMN_PPM + " TEXT"
                     + ")";
 
     public static String getTableName() {

@@ -20,8 +20,7 @@ public class SwitchProfile implements Serializable {
                     + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COLUMN_Brand_Name + " TEXT,"
                     + COLUMN_TypeList + " TEXT,"
-                    + COLUMN_PortList + " TEXT,"
-
+                    + COLUMN_PortList + " TEXT"
                     + ")";
 
     public static String getTableName() {

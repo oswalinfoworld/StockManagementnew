@@ -17,8 +17,7 @@ public class TVProfile implements Serializable {
             "CREATE TABLE " + TABLE_NAME + "("
                     + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COLUMN_Brand_Name + " TEXT,"
-                    + COLUMN_Inches_List + " TEXT,"
-
+                    + COLUMN_Inches_List + " TEXT"
                     + ")";
 
     public static String getTableName() {

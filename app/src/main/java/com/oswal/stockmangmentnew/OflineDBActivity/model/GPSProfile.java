@@ -15,8 +15,7 @@ public class GPSProfile implements Serializable {
     public static final String CREATE_TABLE =
             "CREATE TABLE " + TABLE_NAME + "("
                     + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                    + COLUMN_Brand_Name + " TEXT,"
-
+                    + COLUMN_Brand_Name + " TEXT"
                     + ")";
 
     public static String getTableName() {
@@ -46,6 +45,4 @@ public class GPSProfile implements Serializable {
     public void setBrandName(String brandName) {
         this.brandName = brandName;
     }
-
-
 }

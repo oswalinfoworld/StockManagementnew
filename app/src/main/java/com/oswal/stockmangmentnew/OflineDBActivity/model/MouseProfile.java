@@ -18,7 +18,7 @@ public class MouseProfile implements Serializable {
             "CREATE TABLE " + TABLE_NAME + "("
                     + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COLUMN_Brand_Name + " TEXT,"
-                    + COLUMN_TypeList + " TEXT,"
+                    + COLUMN_TypeList + " TEXT"
                     + ")";
 
     public static String getTableName() {

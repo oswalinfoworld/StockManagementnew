@@ -53,7 +53,7 @@
                     android:layout_marginTop="0dp"
                     android:layout_marginRight="90dp"
                     android:gravity="center"
-                    android:onClick="scanQR"
+                    android:onClick="scanBar"
                     android:text="Scan " />
             </TableRow>
            <!-- <TableRow

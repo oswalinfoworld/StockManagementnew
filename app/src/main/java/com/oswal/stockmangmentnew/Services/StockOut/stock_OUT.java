@@ -40,6 +40,7 @@ import com.oswal.stockmangmentnew.ProductDetail.Switches_activity;
 import com.oswal.stockmangmentnew.ProductDetail.UPS_activity;
 import com.oswal.stockmangmentnew.ProductDetail.Wifidongle_activity;
 import com.oswal.stockmangmentnew.R;
+import com.oswal.stockmangmentnew.Services.StockIn.Stock_in;
 
 import org.json.JSONArray;
 
@@ -65,7 +66,6 @@ public class stock_OUT extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_stock__out);
         setContentView(R.layout.activity_stock__out);
         getSupportActionBar().setTitle("Stock Out");
 
@@ -351,11 +351,11 @@ public class stock_OUT extends AppCompatActivity {
 
     }
 
-    //QR CODE
-    public void scanQR(View v) {
+    //scanBar CODE
+    public void scanBar(View v) {
         try {
             Intent intent = new Intent(ACTION_SCAN);
-            intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
+            intent.putExtra("SCAN_MODE", "PRODUCT_MODE");
             startActivityForResult(intent, 0);
         } catch (ActivityNotFoundException anfe) {
             showDialog(stock_OUT.this, "No Scanner Found", "Download a scanner code activity?", "Yes", "No").show();

@@ -20,7 +20,7 @@ public class MonitorProfile implements Serializable {
                     + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COLUMN_Brand_Name + " TEXT,"
                     + COLUMN_InchesList + " TEXT,"
-                    + COLUMN_PortList + " TEXT,"
+                    + COLUMN_PortList + " TEXT"
                     + ")";
 
     public static String getTableName() {

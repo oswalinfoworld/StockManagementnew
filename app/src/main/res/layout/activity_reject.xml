@@ -33,7 +33,7 @@
         android:layout_marginLeft="120dp"
         android:id="@+id/reject_scan"
         android:layout_marginTop="90dp"
-        android:onClick="scanQR"
+        android:onClick="scanBar"
         android:gravity="center"
         android:text="Scan">
 

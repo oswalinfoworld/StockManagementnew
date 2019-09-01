@@ -7,6 +7,7 @@ import android.os.Bundle;
 import com.oswal.stockmangmentnew.AdminActivity.AddItemSpinner;
 import com.oswal.stockmangmentnew.LoginModule.LoginPage;
 import com.oswal.stockmangmentnew.OflineDBActivity.DatabaseHelper;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.CPUProfile;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.KeyboardProfile;
 import com.oswal.stockmangmentnew.OnlineDBSync.GetSupplierDetailsSync;
 import com.oswal.stockmangmentnew.Services.Customer.CustomerMainActivity;
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void insertCommonDataToDB() {
-        Toast.makeText(getApplicationContext(),"insertCommonDataToDB",Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "insertCommonDataToDB", Toast.LENGTH_LONG).show();
         JSONObject json = new JSONObject();
         String brandListarrayList = null, companyListarrayList = null, typeListarrayList = null;
         try {
@@ -126,36 +127,61 @@ public class MainActivity extends AppCompatActivity
         keyboardProfile.setCompanyList(companyListarrayList);
         keyboardProfile.setTypeList(typeListarrayList);
 
-        if(db.getKeyboardProfileCount()>0){
+        if (db.getKeyboardProfileCount() > 0) {
             db.deleteKeyboardProfileList();
         }
         db.insertKeyboardDetails(keyboardProfile);
 
 
-        //Cabel
-        Toast.makeText(getApplicationContext(),"insertCommonDataToDB",Toast.LENGTH_LONG).show();
-        JSONObject json = new JSONObject();
-        String brandListarrayList = null, companyListarrayList = null, typeListarrayList = null;
+        //CPUProfile
+        JSONObject jsonCPUProfile = new JSONObject();
+        String brandListCPUProfile = null, processortypeListCPUProfile = null, genrationListCPUProfile = null, RAMListCPUProfile = null, HDDListCPUProfile = null, SHDDListCPUProfile = null, osListCPUProfile = null, GraphiccardListCPUProfile = null, DVDwriterListtCPUProfile = null;
         try {
-            json.put("brandList", new JSONArray(getResources().getStringArray(R.array.keyboard_brandList)));
-            brandListarrayList = json.toString();
-            json.put("companyList", new JSONArray(getResources().getStringArray(R.array.keyboard_companyList)));
-            companyListarrayList = json.toString();
-            json.put("typeList", new JSONArray(getResources().getStringArray(R.array.keyboard_typeList)));
-            typeListarrayList = json.toString();
+            jsonCPUProfile.put("brandListCPUProfile", new JSONArray(getResources().getStringArray(R.array.keyboard_brandList)));
+            brandListCPUProfile = jsonCPUProfile.toString();
+
+            jsonCPUProfile.put("processortypeListCPUProfile", new JSONArray(getResources().getStringArray(R.array.keyboard_companyList)));
+            processortypeListCPUProfile = jsonCPUProfile.toString();
+
+            jsonCPUProfile.put("genrationListCPUProfile", new JSONArray(getResources().getStringArray(R.array.keyboard_typeList)));
+            genrationListCPUProfile = jsonCPUProfile.toString();
+
+            jsonCPUProfile.put("RAMListCPUProfile", new JSONArray(getResources().getStringArray(R.array.keyboard_typeList)));
+            RAMListCPUProfile = jsonCPUProfile.toString();
+
+            jsonCPUProfile.put("HDDListCPUProfile", new JSONArray(getResources().getStringArray(R.array.keyboard_typeList)));
+            HDDListCPUProfile = jsonCPUProfile.toString();
+
+            jsonCPUProfile.put("SHDDListCPUProfile", new JSONArray(getResources().getStringArray(R.array.keyboard_typeList)));
+            SHDDListCPUProfile = jsonCPUProfile.toString();
+
+            jsonCPUProfile.put("osListCPUProfile", new JSONArray(getResources().getStringArray(R.array.keyboard_typeList)));
+            osListCPUProfile = jsonCPUProfile.toString();
+
+            jsonCPUProfile.put("GraphiccardListCPUProfile", new JSONArray(getResources().getStringArray(R.array.keyboard_typeList)));
+            GraphiccardListCPUProfile = jsonCPUProfile.toString();
+
+            jsonCPUProfile.put("DVDwriterListtCPUProfile", new JSONArray(getResources().getStringArray(R.array.keyboard_typeList)));
+            DVDwriterListtCPUProfile = jsonCPUProfile.toString();
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        KeyboardProfile keyboardProfile = new KeyboardProfile();
-        keyboardProfile.setBrandList(brandListarrayList);
-        keyboardProfile.setCompanyList(companyListarrayList);
-        keyboardProfile.setTypeList(typeListarrayList);
+        CPUProfile cpuProfile = new CPUProfile();
+        cpuProfile.setBrandName(brandListCPUProfile);
+        cpuProfile.setProtypeList(processortypeListCPUProfile);
+        cpuProfile.setGen(genrationListCPUProfile);
+        cpuProfile.setRam(RAMListCPUProfile);
+        cpuProfile.setHdd(HDDListCPUProfile);
+        cpuProfile.setShdd(SHDDListCPUProfile);
+        cpuProfile.setOs(osListCPUProfile);
+        cpuProfile.setGrapcard(GraphiccardListCPUProfile);
+        cpuProfile.setDvd(DVDwriterListtCPUProfile);
 
-        if(db.getKeyboardProfileCount()>0){
-            db.deleteKeyboardProfileList();
+        if (db.getCPUProfileCount() > 0) {
+            db.deleteCPUProfileList();
         }
-        db.insertKeyboardDetails(keyboardProfile);
+        db.insertCPUDetails(cpuProfile);
         //Cabel End
 
     }
@@ -247,8 +273,7 @@ public class MainActivity extends AppCompatActivity
         }*/ else if (id == R.id.qrCode) {
             Intent intent = new Intent(MainActivity.this, com.oswal.stockmangmentnew.QRcodeModule.MainActivity.class);
             startActivity(intent);
-        }
-        else if (id == R.id.adminActivty) {
+        } else if (id == R.id.adminActivty) {
             Intent intent = new Intent(MainActivity.this, AddItemSpinner.class);
             startActivity(intent);
         }
@@ -464,8 +489,7 @@ public class MainActivity extends AppCompatActivity
         } else if (pageName.contains("qrCode")) {
             Intent intent = new Intent(MainActivity.this, com.oswal.stockmangmentnew.QRcodeModule.MainActivity.class);
             startActivity(intent);
-        }
-        else if (pageName.contains("adminActivity")) {
+        } else if (pageName.contains("adminActivity")) {
             Intent intent = new Intent(MainActivity.this, AddItemSpinner.class);
             startActivity(intent);
         }

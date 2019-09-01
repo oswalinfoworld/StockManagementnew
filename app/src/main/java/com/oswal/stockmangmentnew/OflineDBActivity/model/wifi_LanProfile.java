@@ -18,7 +18,7 @@ public class wifi_LanProfile implements Serializable {
             "CREATE TABLE " + TABLE_NAME + "("
                     + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COLUMN_Brand_Name + " TEXT,"
-                    + COLUMN_MBPS_List + " TEXT,"
+                    + COLUMN_MBPS_List + " TEXT"
                     + ")";
 
     public static String getTableName() {

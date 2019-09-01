@@ -23,7 +23,7 @@ public class UPSProfile implements Serializable {
                     + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COLUMN_Brand_Name + " TEXT,"
                     + COLUMN_CapacityList + " TEXT,"
-                    + COLUMN_UPSTypeList + " TEXT,"
+                    + COLUMN_UPSTypeList + " TEXT"
                     + ")";
 
     public static String getTableName() {

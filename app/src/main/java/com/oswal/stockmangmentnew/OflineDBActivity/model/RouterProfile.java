@@ -24,7 +24,7 @@ public class RouterProfile implements Serializable {
                     + COLUMN_Brand_Name + " TEXT,"
                     + COLUMN_TypeList + " TEXT,"
                     + COLUMN_PortList + " TEXT,"
-                    + COLUMN_mbpsList + " TEXT,"
+                    + COLUMN_mbpsList + " TEXT"
                     + ")";
 
     public static String getTableName() {

@@ -296,11 +296,11 @@ public class Stock_in extends AppCompatActivity {
 
     }
 
-    //QR CODE
-    public void scanQR(View v) {
+    //scanBar CODE
+    public void scanBar(View v) {
         try {
             Intent intent = new Intent(ACTION_SCAN);
-            intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
+            intent.putExtra("SCAN_MODE", "PRODUCT_MODE");
             startActivityForResult(intent, 0);
         } catch (ActivityNotFoundException anfe) {
             showDialog(Stock_in.this, "No Scanner Found", "Download a scanner code activity?", "Yes", "No").show();
