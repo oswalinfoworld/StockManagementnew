@@ -584,7 +584,64 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(deleteQuery);
     }
 
+//Mouse Profile
+
+    public long insertMouseDetails(MouseProfile temp) {
+        // get writable database as we want to write data
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(MouseProfile .COLUMN_Brand_Name, temp.getBrandName());
+        values.put(MouseProfile.COLUMN_TypeList, temp.getTypeList());
+
+        // insert row
+        long id = db.insert(MouseProfile.TABLE_NAME, null, values);
+
+        // close db connection
+        db.close();
+
+        // return newly inserted row id
+        return id;
+    }
+
+    //Creating Function For getAllMouseProfileDetails
+    public MouseProfile getAllMouseProfileDetails() {
+
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + MouseProfile.TABLE_NAME;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        MouseProfile MouseProfileDetails = new MouseProfile();
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            MouseProfileDetails.setBrandName(cursor.getString(cursor.getColumnIndex(MouseProfile.COLUMN_Brand_Name)));
+            MouseProfileDetails.setTypeList(cursor.getString(cursor.getColumnIndex(MouseProfile.COLUMN_TypeList)));
+        }
+        // close db connection
+        db.close();
+
+        // return notes list
+        return MouseProfileDetails;
+    }
+
+    public long getMouseProfileCount() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        long count = DatabaseUtils.queryNumEntries(db, MouseProfile.TABLE_NAME);
+        db.close();
+        return count;
+    }
+
+    //Creating Function For deleteSupplierList
+    public void deleteMouseProfileList() {
+        // Select All Query
+        String deleteQuery = "DELETE FROM " + KeyboardProfile.TABLE_NAME;
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL(deleteQuery);
+    }
+
+
     //start Printer  Profile
+
 
     public long insertPrinterDetails(PrinterProfile temp) {
         // get writable database as we want to write data
@@ -640,7 +697,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //start RAM  Profile
 
-    public long insertPrinterDetails(RAMProfile temp) {
+    public long insertRamDetails(RAMProfile temp) {
         // get writable database as we want to write data
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -810,7 +867,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //start SwitchProfile
 
-    public long insertScannerProfileDetails(SwitchProfile temp) {
+    public long insertSwitchProfileDetails(SwitchProfile temp) {
         // get writable database as we want to write data
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -1079,7 +1136,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //start wifi_LanProfile
 
-    public long insertwifi_dongleProfileDetails(wifi_LanProfile temp) {
+    public long insertwifi_LanProfileDetails(wifi_LanProfile temp) {
         // get writable database as we want to write data
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -1182,4 +1239,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL(deleteQuery);
     }
+
+
+    public void insertRAMProfileDetails(RAMProfile ramProfile) {
+    }
+
+
+
 }

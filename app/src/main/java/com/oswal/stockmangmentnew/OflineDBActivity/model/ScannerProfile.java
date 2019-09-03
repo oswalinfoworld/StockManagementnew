@@ -63,4 +63,6 @@ public class ScannerProfile implements Serializable {
     public void setTypeList(String typeList) {
         this.typeList = typeList;
     }
+
+
 }

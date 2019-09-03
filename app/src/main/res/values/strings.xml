@@ -93,7 +93,7 @@
     </string-array>
 
 
-    <string-array name="Mouse_brandList">
+    <string-array name="Monitor_brandList">
         <item>Select</item>
 
         <item>HP</item>
@@ -101,7 +101,7 @@
     </string-array>
 
 
-    <string-array name="Mouse_InchesList">
+    <string-array name="Monitor_InchesList">
 
         <item>Select</item>
         <item>14</item>
@@ -114,13 +114,111 @@
         <item>28</item>
     </string-array>
 
-    <string-array name="Mouse_PortList">
+    <string-array name="Monitor_PortList">
         <item>Select</item>
 
 
         <item>HDMI</item>
         <item>VGA</item>
         <item>DVI</item>
+    </string-array>
+
+
+    <string-array name="Cpu_brandList">
+        <item>Select</item>
+        <item>HP</item>
+        <item>Dell</item>
+    </string-array>
+
+    <string-array name="Cpu_typeList">
+        <item>Select</item>
+        <item>C2D</item>
+        <item>DC</item>
+        <item>i3</item>
+        <item>i5</item>
+        <item>i7</item>
+    </string-array>
+
+    <string-array name="Cpu_genrationList">
+        <item>Select</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+
+    <string-array name="Cpu_ramList">
+        <item>Select</item>
+        <item>2GB</item>
+        <item>4GB</item>
+        <item>6GB</item>
+        <item>8Gb</item>
+        <item>16GB</item>
+        <item>32GB</item>
+        <item>64GB</item>
+        <item>128GB</item>
+
+    </string-array>
+
+
+
+    <string-array name="Cpu_HDDList">
+        <item>Select</item>
+        <item>0</item>
+        <item>250</item>
+        <item>320</item>
+        <item>500</item>
+        <item>1TB</item>
+        <item>2TB</item>
+        <item>4TB</item>
+
+
+    </string-array>
+
+    <string-array name="Cpu_SHDDList">
+        <item>Select</item>
+        <item>80</item>
+        <item>250</item>
+        <item>320</item>
+        <item>500</item>
+        <item>1TB</item>
+        <item>2TB</item>
+        <item>4TB</item>
+
+
+    </string-array>
+
+    <string-array name="Cpu_osList">
+        <item>Select</item>
+        <item>DOS</item>
+        <item>Win10home</item>
+        <item>win10pro</item>
+
+
+    </string-array>
+
+    <string-array name="Cpu_GraphiccardList">
+        <item>Select</item>
+        <item>0</item>
+        <item>onboard</item>
+        <item>2GB</item>
+        <item>4GB</item>
+        <item>8GB</item>
+
+
+    </string-array>
+
+    <string-array name="Cpu_DVDList">
+        <item>Select</item>
+        <item>YeS</item>
+        <item>NO</item>
+
+
     </string-array>
 
 
@@ -232,6 +330,237 @@
 
     </string-array>
 
+    <string-array name="Printer_brandList">
+        <item>Select</item>
+        <item>HP</item>
+        <item>DELL</item>
+    </string-array>
+
+
+    <string-array name="Scanner_brandList">
+        <item>Select</item>
+        <item>HP</item>
+        <item>DELL</item>
+    </string-array>
+
+    <string-array
+        name="Scanner_typeList">
+        <item>Select</item>
+        <item>Flatbed</item>
+        <item>HighSpeed</item>
+        <item>Topcammera</item>
+    </string-array>
+
+
+    <string-array name="UPS_brandList">
+        <item>Select</item>
+        <item>HP</item>
+        <item>DELL</item>
+    </string-array>
+
+    <string-array
+        name="UPS_typeList">
+        <item>Select</item>
+        <item>Flatbed</item>
+        <item>HighSpeed</item>
+        <item>Topcammera</item>
+    </string-array>
+
+       <string-array
+        name="UPS_capacityList">
+        <item>Select</item>
+        <item>0.6KVA</item>
+        <item>0.650KVA</item>
+        <item>1KVA</item>
+        <item>2KVA</item>
+    </string-array>
+
+
+    <string-array name="Router_brandList">
+        <item>Select</item>
+        <item>TP-Link</item>
+        <item>DGSOL</item>
+        <item>Dlink</item>
+        <item>LinkSYS</item>
+        <item>Tenda</item>
+    </string-array>
+
+    <string-array
+        name="Router_typeList">
+        <item>Select</item>
+        <item>Managed</item>
+        <item>Un_Managed</item>
+
+    </string-array>
+
+    <string-array
+        name="Router_portList">
+        <item>Select</item>
+        <item>4</item>
+        <item>8</item>
+        <item>16</item>
+        <item>24</item>
+        <item>48</item>
+    </string-array>
+
+    <string-array
+        name="Router_mbpsList">
+        <item>Select</item>
+        <item>150</item>
+        <item>300</item>
+    </string-array>
+
+    <string-array name="RAM_brandList">
+        <item>Select</item>
+        <item>HP</item>
+        <item>DELL</item>
+    </string-array>
+
+    <string-array
+        name="RAM_typeList">
+        <item>Select</item>
+        <item>SDRAM</item>
+        <item>DDR</item>
+        <item>DDR1</item>
+        <item>DDR4</item>
+
+    </string-array>
+
+
+    <string-array name="RAM_GBList">
+        <item>Select</item>
+        <item>2GB</item>
+        <item>4GB</item>
+        <item>8GB</item>
+        <item>16GB</item>
+        <item>32GB</item>
+        <item>64GB</item>
+        <item>128GB</item>
+    </string-array>
+
+    <string-array name="Cables_brandList">
+        <item>Select</item>
+        <item>HP</item>
+        <item>DELL</item>
+    </string-array>
+
+    <string-array name="GPS_brandList">
+        <item>Select</item>
+        <item>HP</item>
+        <item>DELL</item>
+    </string-array>
+
+    <string-array name="Switch_brandList">
+        <item>Select</item>
+        <item>DGSOL</item>
+        <item>Dlink</item>
+    </string-array>
+
+    <string-array
+        name="Switch_typeList">
+        <item>Select</item>
+        <item>Managed</item>
+        <item>Un-Managed</item>
+
+
+    </string-array>
+
+    <string-array
+        name="Switch_portList">
+        <item>Select</item>
+        <item>4</item>
+        <item>8</item>
+        <item>16</item>
+        <item>24</item>
+        <item>48</item>
+
+    </string-array>
+
+
+    <string-array name="TV_brandList">
+        <item>Select</item>
+        <item>HP</item>
+        <item>DELL</item>
+    </string-array>
+
+    <string-array name="TV_inchesList">
+        <item>Select</item>
+        <item>22</item>
+        <item>32</item>
+        <item>43</item>
+        <item>49</item>
+        <item>55</item>
+        <item>65</item>
+    </string-array>
+
+
+    <string-array name="WifiLan_brandList">
+        <item>Select</item>
+        <item>HP</item>
+        <item>DELL</item>
+    </string-array>
+
+    <string-array
+        name="WifiLan_mbpsList">
+        <item>Select</item>
+        <item>150</item>
+        <item>300</item>
+    </string-array>
+
+
+
+    <string-array name="Tablet_brandList">
+        <item>Select</item>
+        <item>HP</item>
+        <item>DELL</item>
+    </string-array>
+
+
+    <string-array name="Tablet_inchesList">
+        <item>Select</item>
+        <item>10.5</item>
+        <item>12</item>
+        <item>12.5</item>
+        <item>14</item>
+        <item>15.6</item>
+        <item>17</item>
+
+
+    </string-array>
+
+
+    <string-array name="Xerox_brandList">
+        <item>Select</item>
+        <item>HP</item>
+        <item>DELL</item>
+    </string-array>
+
+
+    <string-array name="Xerox_ppmList">
+        <item>Select</item>
+        <item>20</item>
+        <item>23</item>
+        <item>25</item>
+        <item>28</item>
+
+    </string-array>
+
+
+    <string-array name="Wifidongle_brandList">
+        <item>Select</item>
+        <item>Huawei</item>
+        <item>D-Link</item>
+        <item>JioFi</item>
+        <item>iBall</item>
+    </string-array>
+
+    <string-array
+        name="Wifidongle_typeList">
+        <item>Select</item>
+        <item>Prepaid</item>
+        <item>Postpaid</item>
+
+    </string-array>
 
 
 

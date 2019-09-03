@@ -105,7 +105,7 @@ public class LaptopProfile implements Serializable {
         return brandName;
     }
 
-    public void setBrandName(String brandName) {
+    public static void setBrandName(String brandName) {
         this.brandName = brandName;
     }
 
@@ -113,7 +113,7 @@ public class LaptopProfile implements Serializable {
         return protypeList;
     }
 
-    public void setProtypeList(String protypeList) {
+    public static void setProtypeList(String protypeList) {
         this.protypeList = protypeList;
     }
 
@@ -121,7 +121,7 @@ public class LaptopProfile implements Serializable {
         return gen;
     }
 
-    public void setGen(String gen) {
+    public static void setGen(String gen) {
         this.gen = gen;
     }
 
@@ -129,7 +129,7 @@ public class LaptopProfile implements Serializable {
         return ram;
     }
 
-    public void setRam(String ram) {
+    public static void setRam(String ram) {
         this.ram = ram;
     }
 
@@ -145,7 +145,7 @@ public class LaptopProfile implements Serializable {
         return hdd;
     }
 
-    public void setHdd(String hdd) {
+    public static void setHdd(String hdd) {
         this.hdd = hdd;
     }
 
@@ -153,7 +153,7 @@ public class LaptopProfile implements Serializable {
         return shdd;
     }
 
-    public void setShdd(String shdd) {
+    public static void setShdd(String shdd) {
         this.shdd = shdd;
     }
 
@@ -161,7 +161,7 @@ public class LaptopProfile implements Serializable {
         return os;
     }
 
-    public void setOs(String os) {
+    public static void setOs(String os) {
         this.os = os;
     }
 
@@ -169,7 +169,7 @@ public class LaptopProfile implements Serializable {
         return grapcard;
     }
 
-    public void setGrapcard(String grapcard) {
+    public static void setGrapcard(String grapcard) {
         this.grapcard = grapcard;
     }
 
@@ -177,7 +177,7 @@ public class LaptopProfile implements Serializable {
         return dvd;
     }
 
-    public void setDvd(String dvd) {
+    public static void setDvd(String dvd) {
         this.dvd = dvd;
     }
 
