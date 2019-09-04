@@ -19,7 +19,7 @@ public class UPSProfile implements Serializable {
 
     // Create table SQL query
     public static final String CREATE_TABLE =
-            "CREATE TABLE " + TABLE_NAME + "("
+            "CREATE TABLE " + TABLE_NAME + " ("
                     + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COLUMN_Brand_Name + " TEXT,"
                     + COLUMN_CapacityList + " TEXT,"

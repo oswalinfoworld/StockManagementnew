@@ -73,9 +73,7 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    int write_EXTERNAL_STORAGE;
-    int read_EXTERNAL_STORAGE;
-    private static final int PERMISSION_REQUEST_CODE = 200;
+
     DatabaseHelper db = null;
     ExpandableListAdapter expandableListAdapter;
     ExpandableListView expandableListView;
@@ -89,17 +87,11 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        write_EXTERNAL_STORAGE = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
-        read_EXTERNAL_STORAGE = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);
-        db = new DatabaseHelper(this);
-        if (!(PackageManager.PERMISSION_GRANTED == write_EXTERNAL_STORAGE)) {
-            ActivityCompat.requestPermissions(this, new String[]{WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
-        }
-        if (!(PackageManager.PERMISSION_GRANTED == read_EXTERNAL_STORAGE)) {
-            ActivityCompat.requestPermissions(this, new String[]{READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
-        }
 
-        insertCommonDataToDB();
+        db = new DatabaseHelper(this);
+
+
+        insertCommonDataToDB(db);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -126,7 +118,7 @@ public class MainActivity extends AppCompatActivity
 
 
     //KeyboardProfile
-    private void insertCommonDataToDB() {
+    private void insertCommonDataToDB(DatabaseHelper db) {
         Toast.makeText(getApplicationContext(), "insertCommonDataToDB", Toast.LENGTH_LONG).show();
         JSONObject json = new JSONObject();
         String brandListarrayList = null,  typeListarrayList = null;
@@ -341,7 +333,7 @@ public class MainActivity extends AppCompatActivity
 
             //printer end
 
-       /* //Scanner Profile
+        //Scanner Profile
         JSONObject jsonScannerProfile= new JSONObject();
         String brandListScannerProfile = null,  typeListScannerProfile = null;
         try {
@@ -363,7 +355,7 @@ public class MainActivity extends AppCompatActivity
         }
         db.insertScannerProfileDetails(scannerProfile);
 
-        //Scanner end*/
+        //Scanner end
 
 
         //UPS Profile

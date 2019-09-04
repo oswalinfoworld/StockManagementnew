@@ -2,11 +2,14 @@ package com.oswal.stockmangmentnew.LoginModule;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -23,6 +26,9 @@ import com.oswal.stockmangmentnew.R;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+
 
 public class LoginPage extends AppCompatActivity {
 
@@ -30,6 +36,9 @@ public class LoginPage extends AppCompatActivity {
     String userNameString, passwordString;
     private TextView forgetPassword, register;
     Button login, reset;
+    int write_EXTERNAL_STORAGE;
+    int read_EXTERNAL_STORAGE;
+    private static final int PERMISSION_REQUEST_CODE = 200;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +52,14 @@ public class LoginPage extends AppCompatActivity {
         forgetPassword = (TextView) findViewById(R.id.TVforgetPass);
         register = (TextView) findViewById(R.id.TVregistration);
 
+        write_EXTERNAL_STORAGE = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
+        read_EXTERNAL_STORAGE = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);
+        if (!(PackageManager.PERMISSION_GRANTED == write_EXTERNAL_STORAGE)) {
+            ActivityCompat.requestPermissions(this, new String[]{WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
+        }
+        if (!(PackageManager.PERMISSION_GRANTED == read_EXTERNAL_STORAGE)) {
+            ActivityCompat.requestPermissions(this, new String[]{READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
+        }
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

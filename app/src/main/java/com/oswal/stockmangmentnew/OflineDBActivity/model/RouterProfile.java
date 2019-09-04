@@ -19,12 +19,12 @@ public class RouterProfile implements Serializable {
 
     // Create table SQL query
     public static final String CREATE_TABLE =
-            "CREATE TABLE " + TABLE_NAME + "("
+            "CREATE TABLE " + TABLE_NAME + " ("
                     + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COLUMN_Brand_Name + " TEXT,"
                     + COLUMN_TypeList + " TEXT,"
                     + COLUMN_PortList + " TEXT,"
-                    + COLUMN_mbpsList + " TEXT"
+                    + COLUMN_mbpsList + " TEXT "
                     + ")";
 
     public static String getTableName() {

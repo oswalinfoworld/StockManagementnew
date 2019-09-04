@@ -16,13 +16,12 @@ public class RAMProfile implements Serializable {
     private String gb;
     private String typeList;
 
-    private static String COLUMN_COLUMN_GBList;
     // Create table SQL query
     public static final String CREATE_TABLE =
             "CREATE TABLE " + TABLE_NAME + "("
                     + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COLUMN_Brand_Name + " TEXT,"
-                    + COLUMN_COLUMN_GBList + " TEXT,"
+                    + COLUMN_GBList + " TEXT,"
                     + COLUMN_TypeList + " TEXT"
                     + ")";
 
@@ -80,13 +79,7 @@ public class RAMProfile implements Serializable {
         this.typeList = typeList;
     }
 
-    public static String getCOLUMN_COLUMN_GBList() {
-        return COLUMN_COLUMN_GBList;
-    }
 
-    public static void setCOLUMN_COLUMN_GBList(String COLUMN_COLUMN_GBList) {
-        RAMProfile.COLUMN_COLUMN_GBList = COLUMN_COLUMN_GBList;
-    }
 
 
 
