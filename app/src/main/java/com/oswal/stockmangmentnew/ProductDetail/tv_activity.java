@@ -11,14 +11,30 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.oswal.stockmangmentnew.OflineDBActivity.DatabaseHelper;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.TVProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.TabletProfile;
 import com.oswal.stockmangmentnew.R;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class tv_activity extends AppCompatActivity {
     Button submit;
     Spinner Brandcat,companynamecat,inchescat;
-    String[] brandList = {"Select","HP","DEll" };
+    /*String[] brandList = {"Select","HP","DEll" };
     String[] companyList = {"Select","HP","DELL" };
     String[] inchesList = {"Select","22","32","43","49","55","65"};
+*/
+    DatabaseHelper db =null;
+    TVProfile tvProfile= new   TVProfile();
+    ArrayList<String> brandListArray = new ArrayList<String>();
+    ArrayList<String> inchesListArray = new ArrayList<String>();
+
+
+
 
 
     @Override
@@ -30,6 +46,58 @@ public class tv_activity extends AppCompatActivity {
         Brandcat=(Spinner)findViewById(R.id.tv_spinner1);
         companynamecat=(Spinner)findViewById(R.id.tv_spinner2) ;
         inchescat=(Spinner)findViewById(R.id.tv_spinner3) ;
+
+
+        db = new DatabaseHelper(this);
+        if (db.getTVProfileCount() > 0) {
+            tvProfile = db.getAllTVProfileDetails();
+            Toast.makeText(getApplicationContext(), "Tablet brand List " + tvProfile.getBrandName(), Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "I dont find any Data Laptop Details", Toast.LENGTH_LONG).show();
+            // Intent home = new Intent(Keyboard_activity.this, MainActivity.class);
+            // startActivity(home);
+        }
+
+
+        try {
+            Toast.makeText(getApplicationContext(), "Here" + tvProfile.getBrandName(), Toast.LENGTH_LONG).show();
+            JSONObject jsonbrandList = new JSONObject(tvProfile.getBrandName().toString());
+            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
+
+            if (jArraybrandList != null) {
+                for (int i = 0; i < jArraybrandList.length(); i++) {
+                    brandListArray.add(jArraybrandList.getString(i));
+                }
+            }
+
+            JSONObject jsoninchesList = new JSONObject(tvProfile.getInchesList().toString());
+            JSONArray jArrayinchesList = jsoninchesList.optJSONArray("InchesList");
+
+            if (jArrayinchesList != null) {
+                for (int i = 0; i < jArrayinchesList.length(); i++) {
+                    inchesListArray.add(jArrayinchesList.getString(i));
+                }
+            }
+
+
+
+
+
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
+
+
+
+
+
+
         Brandcat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -61,38 +129,7 @@ public class tv_activity extends AppCompatActivity {
 
             }
         });
-        companynamecat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent;
-                switch(i){
-                    case 0:
-                        break;
-                    case 1:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
-                        break;
-                    case 2:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-
-                        break;
-                    case 3:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-
-                        break;
-                    case 4:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-
-                        break;
-                }
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
 
       inchescat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -146,17 +183,12 @@ public class tv_activity extends AppCompatActivity {
         });
 
 
-        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, brandList);
+        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, brandListArray);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         Brandcat.setAdapter(aa);
 
-        ArrayAdapter aa1 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, companyList);
-        aa1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        companynamecat.setAdapter(aa1);
-
-        ArrayAdapter aa2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, inchesList);
+        ArrayAdapter aa2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, inchesListArray);
         aa2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         inchescat.setAdapter(aa2);

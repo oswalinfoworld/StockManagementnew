@@ -12,18 +12,33 @@ package com.oswal.stockmangmentnew.ProductDetail;
         import android.widget.Spinner;
         import android.widget.Toast;
 
+        import com.oswal.stockmangmentnew.OflineDBActivity.DatabaseHelper;
+        import com.oswal.stockmangmentnew.OflineDBActivity.model.KeyboardProfile;
+        import com.oswal.stockmangmentnew.OflineDBActivity.model.RAMProfile;
         import com.oswal.stockmangmentnew.R;
         import com.oswal.stockmangmentnew.Services.Items.Add_Item;
+
+        import org.json.JSONArray;
+        import org.json.JSONObject;
+
+        import java.util.ArrayList;
 
 public class RAM_activity extends AppCompatActivity {
 
     Button submit;
     Spinner Brandcat,GBcat,Typecat;
-    String[] brandList = {"Select","HP","DEll" };
+  /*  String[] brandList = {"Select","HP","DEll" };
     String[] GBList = {"Select","2GB","4GB","8GB","16GB","32GB","64GB","128" };
     String[] typeList = {"Select","SRAM","DRAM","DDR2","DDR3","DDR4","SDRAM" };
+*/
 
+    DatabaseHelper db =null;
+   RAMProfile ramProfile= new   RAMProfile();
+    ArrayList<String> brandListArray = new ArrayList<String>();
+    ArrayList<String> GBListArray = new ArrayList<String>();
+    ArrayList<String> typeListArray = new ArrayList<String>();
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ram_activity);
@@ -32,6 +47,57 @@ public class RAM_activity extends AppCompatActivity {
         Brandcat=(Spinner)findViewById(R.id.ram_spinner1);
         GBcat=(Spinner)findViewById(R.id.ram_spinner3) ;
         Typecat=(Spinner)findViewById(R.id.ram_spinner2) ;
+
+        db = new DatabaseHelper(this);
+        if(db.getRAMProfileCount()>0){
+            ramProfile=db.getAllRAMProfileDetails();
+            Toast.makeText(getApplicationContext()," keyBoard brand List "+ramProfile.getBrandName(),Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(),"I dont find any Data Keyboard Details",Toast.LENGTH_LONG).show();
+            // Intent home = new Intent(Keyboard_activity.this, MainActivity.class);
+            // startActivity(home);
+        }
+
+
+
+        try {
+            Toast.makeText(getApplicationContext(),"Here"+ramProfile.getBrandName(),Toast.LENGTH_LONG ).show();
+            JSONObject jsonbrandList = new JSONObject(ramProfile.getBrandName().toString());
+            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
+
+            if (jArraybrandList != null) {
+                for (int i=0;i<jArraybrandList.length();i++){
+                    brandListArray.add(jArraybrandList.getString(i));
+                }
+            }
+            JSONObject jsonGBList = new JSONObject(ramProfile.getGb().toString());
+            JSONArray jArrayGBList = jsonGBList.optJSONArray("GBList");
+
+            if (jArrayGBList != null) {
+                for (int i=0;i<jArrayGBList.length();i++){
+                 GBListArray.add(jArrayGBList.getString(i));
+                }
+            }
+            JSONObject jsontypeList = new JSONObject(RAMProfile.getTypeList().toString());
+            JSONArray jArraytypeList = jsontypeList.optJSONArray("typeList");
+
+            if (jArraytypeList != null) {
+                for (int i=0;i<jArraytypeList.length();i++){
+                    typeListArray.add(jArraytypeList.getString(i));
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
+
+
+
         Brandcat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -150,17 +216,17 @@ public class RAM_activity extends AppCompatActivity {
 
             }
         });
-        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, brandList);
+        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, brandListArray);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         Brandcat.setAdapter(aa);
 
-        ArrayAdapter aa2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, GBList);
+        ArrayAdapter aa2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, GBListArray);
         aa2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         GBcat.setAdapter(aa2);
 
-        ArrayAdapter aa3 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, typeList);
+        ArrayAdapter aa3 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, typeListArray);
         aa2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         Typecat.setAdapter(aa2);

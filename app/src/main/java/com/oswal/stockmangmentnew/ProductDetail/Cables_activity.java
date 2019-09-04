@@ -15,8 +15,16 @@ import android.widget.Toast;
 
 import com.oswal.stockmangmentnew.LoginModule.ForgetPassword;
 import com.oswal.stockmangmentnew.LoginModule.LoginPage;
+import com.oswal.stockmangmentnew.OflineDBActivity.DatabaseHelper;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.CablesProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.GPSProfile;
 import com.oswal.stockmangmentnew.R;
 import com.oswal.stockmangmentnew.Services.Items.Add_Item;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class Cables_activity extends AppCompatActivity {
 
@@ -25,6 +33,9 @@ public class Cables_activity extends AppCompatActivity {
     //String[] brandList = {"Select","HP","DEll" };
     RadioGroup radioGroup1;
 
+    DatabaseHelper db =null;
+ CablesProfile cablesProfile= new   CablesProfile ();
+    ArrayList<String> brandListArray = new ArrayList<String>();
 
 
 
@@ -36,6 +47,39 @@ public class Cables_activity extends AppCompatActivity {
         getSupportActionBar().setTitle("Cabels Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Brandcat=(Spinner)findViewById(R.id.cabels_spinner);
+
+        db = new DatabaseHelper(this);
+        if(db.getCablesProfileCount()>0){
+            cablesProfile=db.getAllCablesProfileDetails();
+            Toast.makeText(getApplicationContext()," Cables brand List "+cablesProfile.getBrandName(),Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(),"I dont find any Data Cables Details",Toast.LENGTH_LONG).show();
+            // Intent home = new Intent(Keyboard_activity.this, MainActivity.class);
+            // startActivity(home);
+        }
+
+
+
+        try {
+            Toast.makeText(getApplicationContext(),"Here"+cablesProfile.getBrandName(),Toast.LENGTH_LONG ).show();
+            JSONObject jsonbrandList = new JSONObject(cablesProfile.getBrandName().toString());
+            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
+
+            if (jArraybrandList != null) {
+                for (int i=0;i<jArraybrandList.length();i++){
+                    brandListArray.add(jArraybrandList.getString(i));
+                }
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
         Brandcat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {

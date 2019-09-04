@@ -8,6 +8,7 @@ import com.oswal.stockmangmentnew.AdminActivity.AddItemSpinner;
 import com.oswal.stockmangmentnew.LoginModule.LoginPage;
 import com.oswal.stockmangmentnew.OflineDBActivity.DatabaseHelper;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.CPUProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.CablesProfile;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.GPSProfile;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.KeyboardProfile;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.LaptopProfile;
@@ -128,12 +129,11 @@ public class MainActivity extends AppCompatActivity
     private void insertCommonDataToDB() {
         Toast.makeText(getApplicationContext(), "insertCommonDataToDB", Toast.LENGTH_LONG).show();
         JSONObject json = new JSONObject();
-        String brandListarrayList = null, companyListarrayList = null, typeListarrayList = null;
+        String brandListarrayList = null,  typeListarrayList = null;
         try {
             json.put("brandList", new JSONArray(getResources().getStringArray(R.array.keyboard_brandList)));
             brandListarrayList = json.toString();
-            json.put("companyList", new JSONArray(getResources().getStringArray(R.array.keyboard_companyList)));
-            companyListarrayList = json.toString();
+
             json.put("typeList", new JSONArray(getResources().getStringArray(R.array.keyboard_typeList)));
             typeListarrayList = json.toString();
         } catch (JSONException e) {
@@ -142,7 +142,6 @@ public class MainActivity extends AppCompatActivity
 
         KeyboardProfile keyboardProfile = new KeyboardProfile();
         keyboardProfile.setBrandList(brandListarrayList);
-        keyboardProfile.setCompanyList(companyListarrayList);
         keyboardProfile.setTypeList(typeListarrayList);
 
         if (db.getKeyboardProfileCount() > 0) {
@@ -342,7 +341,7 @@ public class MainActivity extends AppCompatActivity
 
             //printer end
 
-        //Scanner Profile
+       /* //Scanner Profile
         JSONObject jsonScannerProfile= new JSONObject();
         String brandListScannerProfile = null,  typeListScannerProfile = null;
         try {
@@ -364,7 +363,7 @@ public class MainActivity extends AppCompatActivity
         }
         db.insertScannerProfileDetails(scannerProfile);
 
-        //Scanner end
+        //Scanner end*/
 
 
         //UPS Profile
@@ -409,7 +408,7 @@ public class MainActivity extends AppCompatActivity
             jsonRouterProfile.put("capacityList", new JSONArray(getResources().getStringArray(R.array.Router_portList)));
             portListRouterProfile = jsonRouterProfile.toString();
 
-            jsonRouterProfile.put("capacityList", new JSONArray(getResources().getStringArray(R.array.Router_mbpsList)));
+            jsonRouterProfile.put("MbpsList", new JSONArray(getResources().getStringArray(R.array.Router_mbpsList)));
             mbpsListRouterProfile = jsonRouterProfile.toString();
         } catch (JSONException e) {
             e.printStackTrace();
@@ -444,7 +443,7 @@ public class MainActivity extends AppCompatActivity
             e.printStackTrace();
         }
 
-wifi_dongleProfile wifidongleProfile = new      wifi_dongleProfile ();
+wifi_dongleProfile wifidongleProfile = new wifi_dongleProfile ();
         wifidongleProfile.setBrandName(brandListWifidongleProfile);
         wifidongleProfile.setTypeList(typeListWifidongleProfile);
 
@@ -547,7 +546,7 @@ XeroxProfile xeroxProfile = new XeroxProfile ();
             jsonSwitchProfile.put("typeList", new JSONArray(getResources().getStringArray(R.array.Switch_typeList)));
             typeListSwitchProfile = jsonSwitchProfile.toString();
 
-            jsonSwitchProfile.put("capacityList", new JSONArray(getResources().getStringArray(R.array.Switch_portList)));
+            jsonSwitchProfile.put("PortList", new JSONArray(getResources().getStringArray(R.array.Switch_portList)));
             portListSwitchProfile = jsonSwitchProfile.toString();
 
 
@@ -558,7 +557,7 @@ XeroxProfile xeroxProfile = new XeroxProfile ();
         SwitchProfile switchProfile = new     SwitchProfile();
         switchProfile.setBrandName(brandListSwitchProfile);
         switchProfile.setType(typeListSwitchProfile);
-        switchProfile.setPort(portListRouterProfile);
+        switchProfile.setPort(portListSwitchProfile);
 
 
         if (db.getSwitchProfileCount() > 0) {
@@ -649,7 +648,7 @@ XeroxProfile xeroxProfile = new XeroxProfile ();
             e.printStackTrace();
         }
 
-wifi_LanProfile wifiLanProfile = new  wifi_LanProfile ();
+        wifi_LanProfile wifiLanProfile = new  wifi_LanProfile ();
         wifiLanProfile.setBrandName(brandListWifiLanProfile);
 
         wifiLanProfile.setMbps(mbpsListWifiLanProfile);
@@ -661,6 +660,33 @@ wifi_LanProfile wifiLanProfile = new  wifi_LanProfile ();
         db.insertwifi_LanProfileDetails(wifiLanProfile);
 
         //WifiLan end
+
+
+        //Cables Start
+        JSONObject jsonCablesProfile= new JSONObject();
+        String brandListCablesProfile = null;
+        try {
+            jsonCablesProfile.put("brandList", new JSONArray(getResources().getStringArray(R.array.Cables_brandList)));
+            brandListCablesProfile = jsonCablesProfile.toString();
+
+
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        CablesProfile cablesProfile = new CablesProfile();
+        cablesProfile.setBrandName(brandListCablesProfile);
+
+
+
+        if (db.getCablesProfileCount() > 0) {
+            db.deleteCablesProfileList();
+        }
+        db.insertCablesProfileDetails(cablesProfile);
+
+        //Cabels ends
+
 
 
 

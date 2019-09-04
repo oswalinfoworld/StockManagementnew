@@ -13,17 +13,29 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.oswal.stockmangmentnew.OflineDBActivity.DatabaseHelper;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.wifi_LanProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.wifi_dongleProfile;
 import com.oswal.stockmangmentnew.R;
 import com.oswal.stockmangmentnew.Services.Items.Add_Item;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class Wifidongle_activity extends AppCompatActivity {
     EditText simname,simrecharge,simvalidity;
     Button submit;
     Spinner Brandcat,companynamecat,Typecat;
-    String[] brandList = {"Select","HP","DEll" };
+   /* String[] brandList = {"Select","HP","DEll" };
     String[] companyList = {"Select","D-Link","Huawei","JioFi","iBall" };
-    String[] typeList = {"Select","Prepaid","Postpaid" };
+    String[] typeList = {"Select","Prepaid","Postpaid" };*/
 
+    DatabaseHelper db =null;
+    wifi_dongleProfile wifi_dongleProfile= new wifi_dongleProfile();
+    ArrayList<String> brandListArray = new ArrayList<String>();
+    ArrayList<String>typeListArray = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +50,46 @@ public class Wifidongle_activity extends AppCompatActivity {
         Brandcat=(Spinner)findViewById(R.id.wifiinternet_spinner1);
         companynamecat=(Spinner)findViewById(R.id.wifiinternet_spinner2) ;
         Typecat=(Spinner)findViewById(R.id.keyboard_sipnner3) ;
+
+        if(db.getwifi_dongleProfileCount()>0){
+            wifi_dongleProfile=db.getAllwifi_dongleProfileDetails();
+            Toast.makeText(getApplicationContext()," keyBoard brand List "+wifi_dongleProfile.getBrandName(),Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(),"I dont find any Data Keyboard Details",Toast.LENGTH_LONG).show();
+            // Intent home = new Intent(Keyboard_activity.this, MainActivity.class);
+            // startActivity(home);
+        }
+
+
+
+        try {
+            Toast.makeText(getApplicationContext(),"Here"+wifi_dongleProfile.getBrandName(),Toast.LENGTH_LONG ).show();
+            JSONObject jsonbrandList = new JSONObject(wifi_dongleProfile.getBrandName().toString());
+            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
+
+            if (jArraybrandList != null) {
+                for (int i=0;i<jArraybrandList.length();i++){
+                    brandListArray.add(jArraybrandList.getString(i));
+                }
+            }
+            JSONObject jsontypeList = new JSONObject(wifi_dongleProfile.getTypeList().toString());
+            JSONArray jArraytypeList = jsontypeList.optJSONArray("TypeList");
+
+            if (jArraytypeList != null) {
+                for (int i=0;i<jArraytypeList.length();i++){
+                  typeListArray.add(jArraytypeList.getString(i));
+                }
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
 
         Brandcat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -70,46 +122,7 @@ public class Wifidongle_activity extends AppCompatActivity {
 
             }
         });
-        companynamecat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent;
-                switch(i){
-                    case 0:
-                        break;
-                    case 1:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
-                        break;
-                    case 2:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-
-                        break;
-                    case 3:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-
-                        break;
-                    case 4:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-
-                        break;
-                    case 5:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-
-                        break;
-                    case 6:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-
-                        break;
-                }
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
 
         Typecat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -139,17 +152,13 @@ public class Wifidongle_activity extends AppCompatActivity {
         });
 
 
-        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, brandList);
+        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, brandListArray);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         Brandcat.setAdapter(aa);
 
-        ArrayAdapter aa1 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, companyList);
-        aa1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        companynamecat.setAdapter(aa1);
 
-        ArrayAdapter aa2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, typeList);
+        ArrayAdapter aa2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, typeListArray);
         aa2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         Typecat.setAdapter(aa2);

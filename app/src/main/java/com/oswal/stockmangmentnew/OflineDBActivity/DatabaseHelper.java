@@ -14,6 +14,7 @@ import android.os.Environment;
 import android.util.Log;
 
 import com.oswal.stockmangmentnew.OflineDBActivity.model.CPUProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.CablesProfile;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.CustomerProfile;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.GPSProfile;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.KeyboardProfile;
@@ -87,6 +88,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.execSQL(CustomerProfile.CREATE_TABLE);
             db.execSQL(KeyboardProfile.CREATE_TABLE);
             db.execSQL(CPUProfile.CREATE_TABLE);
+            db.execSQL(CablesProfile.CREATE_TABLE);
             db.execSQL(GPSProfile.CREATE_TABLE);
             db.execSQL(LaptopProfile.CREATE_TABLE);
             db.execSQL(MonitorProfile.CREATE_TABLE);
@@ -117,6 +119,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + KeyboardProfile.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + CPUProfile.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + GPSProfile.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + CablesProfile.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + LaptopProfile.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + MonitorProfile.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + MouseProfile.TABLE_NAME);
@@ -454,6 +457,61 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL(deleteQuery);
     }
+
+    //Start Cables Profile
+
+    public long insertCablesProfileDetails(CablesProfile temp) {
+        // get writable database as we want to write data
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(CablesProfile.COLUMN_Brand_Name, temp.getBrandName());
+
+        // insert row
+        long id = db.insert(CablesProfile.TABLE_NAME, null, values);
+
+        // close db connection
+        db.close();
+
+        // return newly inserted row id
+        return id;
+    }
+
+    //Creating Function For getAllGPSProfileDetails
+    public CablesProfile getAllCablesProfileDetails() {
+
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + CablesProfile.TABLE_NAME;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+      CablesProfile CablesProfileDetails = new CablesProfile();
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            CablesProfileDetails.setBrandName(cursor.getString(cursor.getColumnIndex(CablesProfile.COLUMN_Brand_Name)));
+        }
+        // close db connection
+        db.close();
+
+        // return notes list
+        return CablesProfileDetails;
+    }
+
+    public long getCablesProfileCount() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        long count = DatabaseUtils.queryNumEntries(db, CablesProfile.TABLE_NAME);
+        db.close();
+        return count;
+    }
+
+    //Creating Function For deleteSupplierList
+    public void deleteCablesProfileList() {
+        // Select All Query
+        String deleteQuery = "DELETE FROM " + CablesProfile.TABLE_NAME;
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL(deleteQuery);
+    }
+
+
 
     //start Laptop  Profile
 
