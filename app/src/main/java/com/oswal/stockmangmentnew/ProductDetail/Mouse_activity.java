@@ -59,7 +59,7 @@ public class Mouse_activity extends AppCompatActivity {
         try {
   Toast.makeText(getApplicationContext(), "Here" + mouseProfile.getBrandName(), Toast.LENGTH_LONG).show();
             JSONObject jsonbrandList = new JSONObject(mouseProfile.getBrandName().toString());
-            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
+            JSONArray jArraybrandList = jsonbrandList.optJSONArray("MouseProfile_brandList");
 
             if (jArraybrandList != null) {
                 for (int i = 0; i < jArraybrandList.length(); i++) {
@@ -69,7 +69,7 @@ public class Mouse_activity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Here" + mouseProfile.getTypeList(), Toast.LENGTH_LONG).show();
 
             JSONObject jsontypeList = new JSONObject(mouseProfile.getTypeList().toString());
-            JSONArray jArraytypeList = jsontypeList.optJSONArray("TypeList");
+            JSONArray jArraytypeList = jsontypeList.optJSONArray("MouseProfile_typeList");
 
             if (jArraytypeList != null) {
                 for (int i = 0; i < jArraytypeList.length(); i++) {

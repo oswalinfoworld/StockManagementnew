@@ -69,18 +69,11 @@ public class RAMProfile implements Serializable {
         this.gb = gb;
     }
 
-
-
-    public static String getTypeList() {
-        return getTypeList();
+    public String getTypeList() {
+        return typeList;
     }
 
     public void setTypeList(String typeList) {
         this.typeList = typeList;
     }
-
-
-
-
-
 }

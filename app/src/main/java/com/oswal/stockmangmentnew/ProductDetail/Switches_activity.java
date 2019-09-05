@@ -25,14 +25,14 @@ import java.util.ArrayList;
 
 public class Switches_activity extends AppCompatActivity {
     Button submit;
-    Spinner Brandcat,companynamecat,Typecat,portcat;
+    Spinner Brandcat, companynamecat, Typecat, portcat;
    /* String[] brandList = {"Select","HP","DEll" };
     String[] companyList = {"Select","DGSOL","Dlink" };
     String[] typeList = {"Select","Wire","Wireless" };
     String[ ]PortsList = {"Select","4", "8","16","24","48"};*/
 
-    DatabaseHelper db =null;
-SwitchProfile switchProfile= new  SwitchProfile();
+    DatabaseHelper db = null;
+    SwitchProfile switchProfile = new SwitchProfile();
     ArrayList<String> brandListArray = new ArrayList<String>();
     ArrayList<String> typeListArray = new ArrayList<String>();
     ArrayList<String> portListArray = new ArrayList<String>();
@@ -44,86 +44,75 @@ SwitchProfile switchProfile= new  SwitchProfile();
         setContentView(R.layout.activity_switches_activity);
         getSupportActionBar().setTitle("Switch Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        Brandcat=(Spinner)findViewById(R.id.switch_spinner1) ;
-        companynamecat=(Spinner)findViewById(R.id.switch_spinner2) ;
-        Typecat=(Spinner)findViewById(R.id.switch_spinner3) ;
-        portcat=(Spinner)findViewById(R.id.switch_spinner4) ;
+        Brandcat = (Spinner) findViewById(R.id.switch_spinner1);
+        companynamecat = (Spinner) findViewById(R.id.switch_spinner2);
+        Typecat = (Spinner) findViewById(R.id.switch_spinner3);
+        portcat = (Spinner) findViewById(R.id.switch_spinner4);
 
         db = new DatabaseHelper(this);
-        if(db.getSwitchProfileCount()>0){
-            switchProfile=db.getAllSwitchProfileDetails();
-            Toast.makeText(getApplicationContext(),"Switch brand List "+   switchProfile.getBrandName(),Toast.LENGTH_LONG).show();
-        }
-        else
-        {
-            Toast.makeText(getApplicationContext(),"I dont find any Data Keyboard Details",Toast.LENGTH_LONG).show();
+        if (db.getSwitchProfileCount() > 0) {
+            switchProfile = db.getAllSwitchProfileDetails();
+            Toast.makeText(getApplicationContext(), "Switch brand List " + switchProfile.getBrandName(), Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "I dont find any Data Keyboard Details", Toast.LENGTH_LONG).show();
             // Intent home = new Intent(Keyboard_activity.this, MainActivity.class);
             // startActivity(home);
         }
 
 
-
         try {
-            Toast.makeText(getApplicationContext(),"Here"+   switchProfile.getBrandName(),Toast.LENGTH_LONG ).show();
-            JSONObject jsonbrandList = new JSONObject(   switchProfile.getBrandName().toString());
-            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
+            Toast.makeText(getApplicationContext(), "Here" + switchProfile.getBrandName(), Toast.LENGTH_LONG).show();
+            JSONObject jsonbrandList = new JSONObject(switchProfile.getBrandName().toString());
+            JSONArray jArraybrandList = jsonbrandList.optJSONArray("SwitchProfile_brandList");
 
             if (jArraybrandList != null) {
-                for (int i=0;i<jArraybrandList.length();i++){
+                for (int i = 0; i < jArraybrandList.length(); i++) {
                     brandListArray.add(jArraybrandList.getString(i));
                 }
             }
-            JSONObject jsonportList = new JSONObject(   switchProfile.getPort().toString());
-            JSONArray jArrayportList = jsonportList.optJSONArray("portList");
+            JSONObject jsonportList = new JSONObject(switchProfile.getPort().toString());
+            JSONArray jArrayportList = jsonportList.optJSONArray("SwitchProfile_PortList");
 
             if (jArrayportList != null) {
-                for (int i=0;i<jArrayportList.length();i++){
+                for (int i = 0; i < jArrayportList.length(); i++) {
                     portListArray.add(jArrayportList.getString(i));
                 }
             }
-            JSONObject jsontypeList = new JSONObject(   switchProfile.getType().toString());
-            JSONArray jArraytypeList = jsontypeList.optJSONArray("typeList");
+            JSONObject jsontypeList = new JSONObject(switchProfile.getType().toString());
+            JSONArray jArraytypeList = jsontypeList.optJSONArray("SwitchProfile_typeList");
 
             if (jArraytypeList != null) {
-                for (int i=0;i<jArraytypeList.length();i++){
+                for (int i = 0; i < jArraytypeList.length(); i++) {
                     typeListArray.add(jArraytypeList.getString(i));
                 }
             }
-
-
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
 
-
-
-
-
-
-
         Brandcat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent;
-                switch(i){
+                switch (i) {
                     case 0:
                         break;
                     case 1:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                 }
@@ -140,15 +129,15 @@ SwitchProfile switchProfile= new  SwitchProfile();
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent;
-                switch(i){
+                switch (i) {
                     case 0:
                         break;
                     case 1:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
 
@@ -166,27 +155,27 @@ SwitchProfile switchProfile= new  SwitchProfile();
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent;
-                switch(i){
+                switch (i) {
                     case 0:
                         break;
                     case 1:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 6:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                 }
@@ -216,11 +205,11 @@ SwitchProfile switchProfile= new  SwitchProfile();
         portcat.setAdapter(aa3);
 
 
-        submit=(Button)findViewById(R.id.switch_subbtn1);
+        submit = (Button) findViewById(R.id.switch_subbtn1);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(Switches_activity.this, Add_Item.class);
                 startActivity(i);
             }

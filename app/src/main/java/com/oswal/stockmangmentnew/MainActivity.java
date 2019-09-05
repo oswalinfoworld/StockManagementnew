@@ -121,12 +121,12 @@ public class MainActivity extends AppCompatActivity
     private void insertCommonDataToDB(DatabaseHelper db) {
         Toast.makeText(getApplicationContext(), "insertCommonDataToDB", Toast.LENGTH_LONG).show();
         JSONObject json = new JSONObject();
-        String brandListarrayList = null,  typeListarrayList = null;
+        String brandListarrayList = null, typeListarrayList = null;
         try {
-            json.put("brandList", new JSONArray(getResources().getStringArray(R.array.keyboard_brandList)));
+            json.put("KeyboardProfile_brandList", new JSONArray(getResources().getStringArray(R.array.keyboard_brandList)));
             brandListarrayList = json.toString();
 
-            json.put("typeList", new JSONArray(getResources().getStringArray(R.array.keyboard_typeList)));
+            json.put("KeyboardProfile_typeList", new JSONArray(getResources().getStringArray(R.array.keyboard_typeList)));
             typeListarrayList = json.toString();
         } catch (JSONException e) {
             e.printStackTrace();
@@ -195,15 +195,14 @@ public class MainActivity extends AppCompatActivity
         //Cpu End
 
 
-
         //Mouse Profile
-        JSONObject jsonMouseProfile= new JSONObject();
-        String brandListMouseProfile = null,  typeListMouseProfile = null;
+        JSONObject jsonMouseProfile = new JSONObject();
+        String brandListMouseProfile = null, typeListMouseProfile = null;
         try {
-            jsonMouseProfile.put("brandList", new JSONArray(getResources().getStringArray(R.array.mouse_brandList)));
+            jsonMouseProfile.put("MouseProfile_brandList", new JSONArray(getResources().getStringArray(R.array.mouse_brandList)));
             brandListMouseProfile = jsonMouseProfile.toString();
 
-            jsonMouseProfile.put("typeList", new JSONArray(getResources().getStringArray(R.array.mouse_typeList)));
+            jsonMouseProfile.put("MouseProfile_typeList", new JSONArray(getResources().getStringArray(R.array.mouse_typeList)));
             typeListMouseProfile = jsonMouseProfile.toString();
         } catch (JSONException e) {
             e.printStackTrace();
@@ -223,7 +222,7 @@ public class MainActivity extends AppCompatActivity
 
         //Laptop Profile
         JSONObject jsonLaptopProfile = new JSONObject();
-        String brandListLaptopProfile = null, processortypeListLaptopProfile = null, genrationListLaptopProfile = null, RAMListLaptopProfile = null,InchesLaptopProfile=null, HDDListLaptopProfile = null, SHDDListLaptopProfile = null, osListLaptopProfile = null, GraphiccardListLaptopProfile = null, DVDwriterListtLaptopProfile = null;
+        String brandListLaptopProfile = null, processortypeListLaptopProfile = null, genrationListLaptopProfile = null, RAMListLaptopProfile = null, InchesLaptopProfile = null, HDDListLaptopProfile = null, SHDDListLaptopProfile = null, osListLaptopProfile = null, GraphiccardListLaptopProfile = null, DVDwriterListtLaptopProfile = null;
         try {
             jsonLaptopProfile.put("brandListLaptopProfile", new JSONArray(getResources().getStringArray(R.array.Laptop_brandList)));
             brandListLaptopProfile = jsonLaptopProfile.toString();
@@ -262,16 +261,16 @@ public class MainActivity extends AppCompatActivity
             e.printStackTrace();
         }
 
-     LaptopProfile laptopProfile= new  LaptopProfile();
+        LaptopProfile laptopProfile = new LaptopProfile();
         laptopProfile.setBrandName(brandListLaptopProfile);
         laptopProfile.setProtypeList(processortypeListLaptopProfile);
         laptopProfile.setGen(genrationListLaptopProfile);
         laptopProfile.setRam(RAMListLaptopProfile);
-        laptopProfile.setHdd(InchesLaptopProfile);
-        laptopProfile.setShdd(HDDListLaptopProfile);
-        laptopProfile.setOs(SHDDListLaptopProfile);
-        laptopProfile.setGrapcard(osListLaptopProfile);
-        laptopProfile.setDvd(GraphiccardListLaptopProfile);
+        laptopProfile.setInches(InchesLaptopProfile);
+        laptopProfile.setHdd(HDDListLaptopProfile);
+        laptopProfile.setShdd(SHDDListLaptopProfile);
+        laptopProfile.setOs(osListLaptopProfile);
+        laptopProfile.setGrapcard(GraphiccardListLaptopProfile);
         laptopProfile.setDvd(DVDwriterListtLaptopProfile);
 
 
@@ -282,18 +281,17 @@ public class MainActivity extends AppCompatActivity
         //Laptop End
 
 
-
         //Monitor Profile
-        JSONObject jsonMonitoProfile= new JSONObject();
-        String brandListMonitoProfile = null,  ichesListMonitorProfile = null,portListMonitorProfile=null;
+        JSONObject jsonMonitoProfile = new JSONObject();
+        String brandListMonitoProfile = null, ichesListMonitorProfile = null, portListMonitorProfile = null;
         try {
-            jsonMonitoProfile.put("brandList", new JSONArray(getResources().getStringArray(R.array.Monitor_brandList)));
+            jsonMonitoProfile.put("Monitor_brandList", new JSONArray(getResources().getStringArray(R.array.Monitor_brandList)));
             brandListMonitoProfile = jsonMonitoProfile.toString();
 
-            jsonMonitoProfile.put("portList", new JSONArray(getResources().getStringArray(R.array.Monitor_PortList)));
+            jsonMonitoProfile.put("Monitor_portList", new JSONArray(getResources().getStringArray(R.array.Monitor_PortList)));
             ichesListMonitorProfile = jsonMonitoProfile.toString();
 
-            jsonMonitoProfile.put("inchesList", new JSONArray(getResources().getStringArray(R.array.Monitor_InchesList)));
+            jsonMonitoProfile.put("Monitor_inchesList", new JSONArray(getResources().getStringArray(R.array.Monitor_InchesList)));
             portListMonitorProfile = jsonMonitoProfile.toString();
         } catch (JSONException e) {
             e.printStackTrace();
@@ -313,10 +311,10 @@ public class MainActivity extends AppCompatActivity
 
 
         //Printer Profile
-        JSONObject jsonPrinterProfile= new JSONObject();
+        JSONObject jsonPrinterProfile = new JSONObject();
         String brandListPrinterProfile = null;
         try {
-            jsonPrinterProfile.put("brandList", new JSONArray(getResources().getStringArray(R.array.Printer_brandList)));
+            jsonPrinterProfile.put("PrinterProfile_brandList", new JSONArray(getResources().getStringArray(R.array.Printer_brandList)));
             brandListPrinterProfile = jsonPrinterProfile.toString();
         } catch (JSONException e) {
             e.printStackTrace();
@@ -324,29 +322,29 @@ public class MainActivity extends AppCompatActivity
 
 
         PrinterProfile printerProfile = new PrinterProfile();
-            printerProfile.setBrandName(brandListPrinterProfile);
+        printerProfile.setBrandName(brandListPrinterProfile);
 
-            if (db.getprinterProfileCount()> 0) {
-                db.deletePrinterProfileList();
-            }
-            db.insertPrinterDetails(printerProfile);
+        if (db.getprinterProfileCount() > 0) {
+            db.deletePrinterProfileList();
+        }
+        db.insertPrinterDetails(printerProfile);
 
-            //printer end
+        //printer end
 
         //Scanner Profile
-        JSONObject jsonScannerProfile= new JSONObject();
-        String brandListScannerProfile = null,  typeListScannerProfile = null;
+        JSONObject jsonScannerProfile = new JSONObject();
+        String brandListScannerProfile = null, typeListScannerProfile = null;
         try {
-            jsonScannerProfile.put("brandList", new JSONArray(getResources().getStringArray(R.array.Scanner_brandList)));
+            jsonScannerProfile.put("ScannerProfile_brandList", new JSONArray(getResources().getStringArray(R.array.Scanner_brandList)));
             brandListScannerProfile = jsonScannerProfile.toString();
 
-            jsonScannerProfile.put("typeList", new JSONArray(getResources().getStringArray(R.array.Scanner_typeList)));
+            jsonScannerProfile.put("ScannerProfile_typeList", new JSONArray(getResources().getStringArray(R.array.Scanner_typeList)));
             typeListScannerProfile = jsonScannerProfile.toString();
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-       ScannerProfile scannerProfile = new ScannerProfile();
+        ScannerProfile scannerProfile = new ScannerProfile();
         scannerProfile.setBrandList(brandListScannerProfile);
         scannerProfile.setTypeList(typeListScannerProfile);
 
@@ -359,22 +357,22 @@ public class MainActivity extends AppCompatActivity
 
 
         //UPS Profile
-        JSONObject jsonUPSProfile= new JSONObject();
-        String brandListUPSProfile = null,  typeListUPSProfile = null,capacityListUPSProfile=null;
+        JSONObject jsonUPSProfile = new JSONObject();
+        String brandListUPSProfile = null, typeListUPSProfile = null, capacityListUPSProfile = null;
         try {
-            jsonUPSProfile.put("brandList", new JSONArray(getResources().getStringArray(R.array.UPS_brandList)));
+            jsonUPSProfile.put("UPSProfile_brandList", new JSONArray(getResources().getStringArray(R.array.UPS_brandList)));
             brandListUPSProfile = jsonUPSProfile.toString();
 
-            jsonUPSProfile.put("typeList", new JSONArray(getResources().getStringArray(R.array.UPS_typeList)));
+            jsonUPSProfile.put("UPSProfile_typeList", new JSONArray(getResources().getStringArray(R.array.UPS_typeList)));
             typeListUPSProfile = jsonUPSProfile.toString();
 
-            jsonUPSProfile.put("capacityList", new JSONArray(getResources().getStringArray(R.array.UPS_capacityList)));
+            jsonUPSProfile.put("UPSProfile_capacityList", new JSONArray(getResources().getStringArray(R.array.UPS_capacityList)));
             capacityListUPSProfile = jsonUPSProfile.toString();
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-      UPSProfile upsProfile = new UPSProfile();
+        UPSProfile upsProfile = new UPSProfile();
         upsProfile.setBrandName(brandListUPSProfile);
         upsProfile.setUpstype(typeListUPSProfile);
         upsProfile.setUpstype(capacityListUPSProfile);
@@ -388,25 +386,25 @@ public class MainActivity extends AppCompatActivity
 
 
         //Router Profile
-        JSONObject jsonRouterProfile= new JSONObject();
-        String brandListRouterProfile = null,  typeListRouterProfile = null,portListRouterProfile=null,mbpsListRouterProfile=null;
+        JSONObject jsonRouterProfile = new JSONObject();
+        String brandListRouterProfile = null, typeListRouterProfile = null, portListRouterProfile = null, mbpsListRouterProfile = null;
         try {
-            jsonRouterProfile.put("brandList", new JSONArray(getResources().getStringArray(R.array.Router_brandList)));
+            jsonRouterProfile.put("RouterProfile_brandList", new JSONArray(getResources().getStringArray(R.array.Router_brandList)));
             brandListRouterProfile = jsonRouterProfile.toString();
 
-            jsonRouterProfile.put("typeList", new JSONArray(getResources().getStringArray(R.array.Router_typeList)));
+            jsonRouterProfile.put("RouterProfile_typeList", new JSONArray(getResources().getStringArray(R.array.Router_typeList)));
             typeListRouterProfile = jsonRouterProfile.toString();
 
-            jsonRouterProfile.put("capacityList", new JSONArray(getResources().getStringArray(R.array.Router_portList)));
+            jsonRouterProfile.put("RouterProfile_PortList", new JSONArray(getResources().getStringArray(R.array.Router_portList)));
             portListRouterProfile = jsonRouterProfile.toString();
 
-            jsonRouterProfile.put("MbpsList", new JSONArray(getResources().getStringArray(R.array.Router_mbpsList)));
+            jsonRouterProfile.put("RouterProfile_MbpsList", new JSONArray(getResources().getStringArray(R.array.Router_mbpsList)));
             mbpsListRouterProfile = jsonRouterProfile.toString();
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-       RouterProfile routerProfile = new RouterProfile();
+        RouterProfile routerProfile = new RouterProfile();
         routerProfile.setBrandName(brandListRouterProfile);
         routerProfile.setType(typeListRouterProfile);
         routerProfile.setPort(portListRouterProfile);
@@ -421,21 +419,20 @@ public class MainActivity extends AppCompatActivity
         //Router end
 
 
-
         //Wifidongle Profile
-        JSONObject jsonWifidongleProfile= new JSONObject();
-        String brandListWifidongleProfile = null,  typeListWifidongleProfile = null;
+        JSONObject jsonWifidongleProfile = new JSONObject();
+        String brandListWifidongleProfile = null, typeListWifidongleProfile = null;
         try {
-            jsonWifidongleProfile.put("brandList", new JSONArray(getResources().getStringArray(R.array.Wifidongle_brandList)));
+            jsonWifidongleProfile.put("WifidongleProfile_brandList", new JSONArray(getResources().getStringArray(R.array.Wifidongle_brandList)));
             brandListWifidongleProfile = jsonWifidongleProfile.toString();
 
-            jsonWifidongleProfile.put("typeList", new JSONArray(getResources().getStringArray(R.array.Wifidongle_typeList)));
+            jsonWifidongleProfile.put("WifidongleProfile_typeList", new JSONArray(getResources().getStringArray(R.array.Wifidongle_typeList)));
             typeListWifidongleProfile = jsonWifidongleProfile.toString();
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        wifi_dongleProfile wifidongleProfile = new wifi_dongleProfile ();
+        wifi_dongleProfile wifidongleProfile = new wifi_dongleProfile();
         wifidongleProfile.setBrandName(brandListWifidongleProfile);
         wifidongleProfile.setTypeList(typeListWifidongleProfile);
 
@@ -448,28 +445,25 @@ public class MainActivity extends AppCompatActivity
 
 
         //RAM Profile
-        JSONObject jsonRAmProfile= new JSONObject();
-        String brandListRAMProfile = null,  typeListRAMProfile = null,GBListRAMProfile=null;
+        JSONObject jsonRAmProfile = new JSONObject();
+        String brandListRAMProfile = null, typeListRAMProfile = null, GBListRAMProfile = null;
         try {
-            jsonRAmProfile.put("brandList", new JSONArray(getResources().getStringArray(R.array.RAM_brandList)));
+            jsonRAmProfile.put("RAmProfile_brandList", new JSONArray(getResources().getStringArray(R.array.RAM_brandList)));
             brandListRAMProfile = jsonRAmProfile.toString();
 
-            jsonRAmProfile.put("typeList", new JSONArray(getResources().getStringArray(R.array.RAM_typeList)));
+            jsonRAmProfile.put("RAmProfile_typeList", new JSONArray(getResources().getStringArray(R.array.RAM_typeList)));
             typeListRAMProfile = jsonRAmProfile.toString();
 
-            jsonRAmProfile.put("GBList", new JSONArray(getResources().getStringArray(R.array.RAM_GBList)));
+            jsonRAmProfile.put("RAmProfile_GBList", new JSONArray(getResources().getStringArray(R.array.RAM_GBList)));
             GBListRAMProfile = jsonRAmProfile.toString();
-
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-   RAMProfile ramProfile = new   RAMProfile();
+        RAMProfile ramProfile = new RAMProfile();
         ramProfile.setBrandName(brandListRAMProfile);
         ramProfile.setTypeList(typeListRAMProfile);
         ramProfile.setGb(GBListRAMProfile);
-
 
 
         if (db.getRAMProfileCount() > 0) {
@@ -481,20 +475,20 @@ public class MainActivity extends AppCompatActivity
 
 
         //GPS-tracking Profile
-        JSONObject jsonGPSProfile= new JSONObject();
+        JSONObject jsonGPSProfile = new JSONObject();
         String brandListGPSProfile = null;
         try {
-            jsonGPSProfile.put("brandList", new JSONArray(getResources().getStringArray(R.array.GPS_brandList)));
+            jsonGPSProfile.put("GPSProfile_brandList", new JSONArray(getResources().getStringArray(R.array.GPS_brandList)));
             brandListGPSProfile = jsonGPSProfile.toString();
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
 
-  GPSProfile gpsProfile = new GPSProfile();
+        GPSProfile gpsProfile = new GPSProfile();
         gpsProfile.setBrandName(brandListGPSProfile);
 
-        if (db.getGPSProfileCount()> 0) {
+        if (db.getGPSProfileCount() > 0) {
             db.deleteGPSProfileList();
         }
         db.insertGPSDetails(gpsProfile);
@@ -502,24 +496,24 @@ public class MainActivity extends AppCompatActivity
         //GPS end
 
         //Xerox Profile
-        JSONObject jsonXeroxProfile= new JSONObject();
-        String brandListXeroxProfile = null,ppmListXeroxProfile=null;
+        JSONObject jsonXeroxProfile = new JSONObject();
+        String brandListXeroxProfile = null, ppmListXeroxProfile = null;
         try {
-            jsonXeroxProfile.put("brandList", new JSONArray(getResources().getStringArray(R.array.Xerox_brandList)));
+            jsonXeroxProfile.put("XeroxProfile_brandList", new JSONArray(getResources().getStringArray(R.array.Xerox_brandList)));
             brandListXeroxProfile = jsonXeroxProfile.toString();
 
-            jsonXeroxProfile.put("brandList", new JSONArray(getResources().getStringArray(R.array.Xerox_ppmList)));
+            jsonXeroxProfile.put("XeroxProfile_portList", new JSONArray(getResources().getStringArray(R.array.Xerox_ppmList)));
             ppmListXeroxProfile = jsonXeroxProfile.toString();
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-XeroxProfile xeroxProfile = new XeroxProfile ();
+        XeroxProfile xeroxProfile = new XeroxProfile();
         xeroxProfile.setBrandName(brandListXeroxProfile);
-        xeroxProfile.setBrandName(ppmListXeroxProfile);
+        xeroxProfile.setPPMList(ppmListXeroxProfile);
 
-        if (db.getXeroxProfileCount()> 0) {
+        if (db.getXeroxProfileCount() > 0) {
             db.deleteXeroxProfileList();
         }
         db.insertXeroxProfileDetails(xeroxProfile);
@@ -527,18 +521,18 @@ XeroxProfile xeroxProfile = new XeroxProfile ();
         //Xerox end
 
 
-              //Switch Profile
+        //Switch Profile
 
-        JSONObject jsonSwitchProfile= new JSONObject();
-        String brandListSwitchProfile = null,  typeListSwitchProfile = null,portListSwitchProfile=null;
+        JSONObject jsonSwitchProfile = new JSONObject();
+        String brandListSwitchProfile = null, typeListSwitchProfile = null, portListSwitchProfile = null;
         try {
-            jsonSwitchProfile.put("brandList", new JSONArray(getResources().getStringArray(R.array.Switch_brandList)));
+            jsonSwitchProfile.put("SwitchProfile_brandList", new JSONArray(getResources().getStringArray(R.array.Switch_brandList)));
             brandListSwitchProfile = jsonSwitchProfile.toString();
 
-            jsonSwitchProfile.put("typeList", new JSONArray(getResources().getStringArray(R.array.Switch_typeList)));
+            jsonSwitchProfile.put("SwitchProfile_typeList", new JSONArray(getResources().getStringArray(R.array.Switch_typeList)));
             typeListSwitchProfile = jsonSwitchProfile.toString();
 
-            jsonSwitchProfile.put("PortList", new JSONArray(getResources().getStringArray(R.array.Switch_portList)));
+            jsonSwitchProfile.put("SwitchProfile_PortList", new JSONArray(getResources().getStringArray(R.array.Switch_portList)));
             portListSwitchProfile = jsonSwitchProfile.toString();
 
 
@@ -546,7 +540,7 @@ XeroxProfile xeroxProfile = new XeroxProfile ();
             e.printStackTrace();
         }
 
-        SwitchProfile switchProfile = new     SwitchProfile();
+        SwitchProfile switchProfile = new SwitchProfile();
         switchProfile.setBrandName(brandListSwitchProfile);
         switchProfile.setType(typeListSwitchProfile);
         switchProfile.setPort(portListSwitchProfile);
@@ -562,24 +556,22 @@ XeroxProfile xeroxProfile = new XeroxProfile ();
 
         //Tablet Profile
 
-        JSONObject jsonTabletProfile= new JSONObject();
+        JSONObject jsonTabletProfile = new JSONObject();
         String brandListTabletProfile = null, inchesListTabletProfile = null;
         try {
-            jsonTabletProfile.put("brandList", new JSONArray(getResources().getStringArray(R.array.Tablet_brandList)));
+            jsonTabletProfile.put("TabletProfile_brandList", new JSONArray(getResources().getStringArray(R.array.Tablet_brandList)));
             brandListTabletProfile = jsonTabletProfile.toString();
 
-            jsonTabletProfile.put("inchesList", new JSONArray(getResources().getStringArray(R.array.Tablet_inchesList)));
+            jsonTabletProfile.put("TabletProfile_inchesList", new JSONArray(getResources().getStringArray(R.array.Tablet_inchesList)));
             inchesListTabletProfile = jsonTabletProfile.toString();
-
 
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        TabletProfile tabletProfile = new     TabletProfile ();
+        TabletProfile tabletProfile = new TabletProfile();
         tabletProfile.setBrandName(brandListTabletProfile);
-
         tabletProfile.setInchesList(inchesListTabletProfile);
 
 
@@ -593,26 +585,23 @@ XeroxProfile xeroxProfile = new XeroxProfile ();
 
         //TV Profile
 
-        JSONObject jsonTVtProfile= new JSONObject();
+        JSONObject jsonTVtProfile = new JSONObject();
         String brandListTVtProfile = null, inchesListTVProfile = null;
         try {
-            jsonTVtProfile.put("brandList", new JSONArray(getResources().getStringArray(R.array.TV_brandList)));
+            jsonTVtProfile.put("TVtProfile_brandList", new JSONArray(getResources().getStringArray(R.array.TV_brandList)));
             brandListTVtProfile = jsonTVtProfile.toString();
 
-            jsonTVtProfile.put("inchesList", new JSONArray(getResources().getStringArray(R.array.TV_inchesList)));
+            jsonTVtProfile.put("TVtProfile_inchesList", new JSONArray(getResources().getStringArray(R.array.TV_inchesList)));
             inchesListTVProfile = jsonTVtProfile.toString();
-
 
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-  TVProfile tvProfile = new TVProfile ();
+        TVProfile tvProfile = new TVProfile();
         tvProfile.setBrandName(brandListTVtProfile);
-
         tvProfile.setInchesList(inchesListTVProfile);
-
 
         if (db.getTVProfileCount() > 0) {
             db.deleteTVProfileList();
@@ -622,25 +611,23 @@ XeroxProfile xeroxProfile = new XeroxProfile ();
         //TV ends
 
 
-
         //WifiLan Profile
 
-        JSONObject jsonWifiLanProfile= new JSONObject();
+        JSONObject jsonWifiLanProfile = new JSONObject();
         String brandListWifiLanProfile = null, mbpsListWifiLanProfile = null;
         try {
-            jsonWifiLanProfile.put("brandList", new JSONArray(getResources().getStringArray(R.array.WifiLan_brandList)));
+            jsonWifiLanProfile.put("WifiLanProfile_brandList", new JSONArray(getResources().getStringArray(R.array.WifiLan_brandList)));
             brandListWifiLanProfile = jsonWifiLanProfile.toString();
 
-            jsonWifiLanProfile.put("MbpsList", new JSONArray(getResources().getStringArray(R.array.WifiLan_mbpsList)));
+            jsonWifiLanProfile.put("WifiLanProfile_MbpsList", new JSONArray(getResources().getStringArray(R.array.WifiLan_mbpsList)));
             mbpsListWifiLanProfile = jsonWifiLanProfile.toString();
-
 
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        wifi_LanProfile wifiLanProfile = new  wifi_LanProfile ();
+        wifi_LanProfile wifiLanProfile = new wifi_LanProfile();
         wifiLanProfile.setBrandName(brandListWifiLanProfile);
 
         wifiLanProfile.setMbps(mbpsListWifiLanProfile);
@@ -655,22 +642,16 @@ XeroxProfile xeroxProfile = new XeroxProfile ();
 
 
         //Cables Start
-        JSONObject jsonCablesProfile= new JSONObject();
+        JSONObject jsonCablesProfile = new JSONObject();
         String brandListCablesProfile = null;
         try {
-            jsonCablesProfile.put("brandList", new JSONArray(getResources().getStringArray(R.array.Cables_brandList)));
+            jsonCablesProfile.put("CablesProfile_brandList", new JSONArray(getResources().getStringArray(R.array.Cables_brandList)));
             brandListCablesProfile = jsonCablesProfile.toString();
-
-
-
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
         CablesProfile cablesProfile = new CablesProfile();
         cablesProfile.setBrandName(brandListCablesProfile);
-
-
 
         if (db.getCablesProfileCount() > 0) {
             db.deleteCablesProfileList();
@@ -679,12 +660,7 @@ XeroxProfile xeroxProfile = new XeroxProfile ();
 
         //Cabels ends
 
-
-
-
     }
-
-
 
 
     @Override

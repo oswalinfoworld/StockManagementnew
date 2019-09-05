@@ -59,7 +59,7 @@ wifi_LanProfile wifiLanProfile= new wifi_LanProfile();
         try {
             Toast.makeText(getApplicationContext(), "Here" + wifiLanProfile.getBrandName(), Toast.LENGTH_LONG).show();
             JSONObject jsonbrandList = new JSONObject(wifiLanProfile.getBrandName().toString());
-            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
+            JSONArray jArraybrandList = jsonbrandList.optJSONArray("WifiLanProfile_brandList");
 
             if (jArraybrandList != null) {
                 for (int i = 0; i < jArraybrandList.length(); i++) {
@@ -68,7 +68,7 @@ wifi_LanProfile wifiLanProfile= new wifi_LanProfile();
             }
 
             JSONObject jsonmbpsList = new JSONObject(wifiLanProfile.getMbps().toString());
-            JSONArray jArraymbpsList = jsonmbpsList.optJSONArray("TypeList");
+            JSONArray jArraymbpsList = jsonmbpsList.optJSONArray("WifiLanProfile_MbpsList");
 
             if (jArraymbpsList != null) {
                 for (int i = 0; i < jArraymbpsList.length(); i++) {

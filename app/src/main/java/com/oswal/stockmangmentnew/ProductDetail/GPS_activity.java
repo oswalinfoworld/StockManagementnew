@@ -62,7 +62,7 @@ public class GPS_activity extends AppCompatActivity {
         try {
             Toast.makeText(getApplicationContext(),"Here"+gpsProfile.getBrandName(),Toast.LENGTH_LONG ).show();
             JSONObject jsonbrandList = new JSONObject(gpsProfile.getBrandName().toString());
-            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
+            JSONArray jArraybrandList = jsonbrandList.optJSONArray("GPSProfile_brandList");
 
             if (jArraybrandList != null) {
                 for (int i=0;i<jArraybrandList.length();i++){

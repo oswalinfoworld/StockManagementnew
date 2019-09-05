@@ -62,7 +62,7 @@ public class Scanner_activity extends AppCompatActivity {
         try {
             Toast.makeText(getApplicationContext(), "Here" + scannerProfile.getBrandList(), Toast.LENGTH_LONG).show();
             JSONObject jsonbrandList = new JSONObject(scannerProfile.getBrandList().toString());
-            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
+            JSONArray jArraybrandList = jsonbrandList.optJSONArray("ScannerProfile_brandList");
 
             if (jArraybrandList != null) {
                 for (int i = 0; i < jArraybrandList.length(); i++) {
@@ -71,7 +71,7 @@ public class Scanner_activity extends AppCompatActivity {
             }
 
             JSONObject jsontypeList = new JSONObject(scannerProfile.getTypeList().toString());
-            JSONArray jArraytypeList = jsontypeList.optJSONArray("TypeList");
+            JSONArray jArraytypeList = jsontypeList.optJSONArray("ScannerProfile_typeList");
 
             if (jArraytypeList != null) {
                 for (int i = 0; i < jArraytypeList.length(); i++) {

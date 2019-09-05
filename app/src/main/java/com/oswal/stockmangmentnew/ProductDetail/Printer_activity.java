@@ -69,7 +69,7 @@ public class Printer_activity extends AppCompatActivity {
         try {
             Toast.makeText(getApplicationContext(),"Here"+printerProfile.getBrandName(),Toast.LENGTH_LONG ).show();
             JSONObject jsonprinterList = new JSONObject(printerProfile.getBrandName().toString());
-            JSONArray jArrayprinterList = jsonprinterList.optJSONArray("brandList");
+            JSONArray jArrayprinterList = jsonprinterList.optJSONArray("PrinterProfile_brandList");
 
             if (jArrayprinterList != null) {
                 for (int i=0;i<jArrayprinterList.length();i++){

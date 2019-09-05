@@ -87,14 +87,12 @@
 
     <string-array name="Monitor_brandList">
         <item>Select</item>
-
         <item>HP</item>
         <item>Dell</item>
     </string-array>
 
 
     <string-array name="Monitor_InchesList">
-
         <item>Select</item>
         <item>14</item>
         <item>16</item>
@@ -108,8 +106,6 @@
 
     <string-array name="Monitor_PortList">
         <item>Select</item>
-
-
         <item>HDMI</item>
         <item>VGA</item>
         <item>DVI</item>
@@ -263,8 +259,6 @@
         <item>14</item>
         <item>15.6</item>
         <item>17</item>
-
-
     </string-array>
 
 

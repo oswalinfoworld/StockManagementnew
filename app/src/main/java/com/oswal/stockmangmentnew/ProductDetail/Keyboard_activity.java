@@ -64,7 +64,7 @@ public class Keyboard_activity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Here"+keyboardProfile.getBrandList(),Toast.LENGTH_LONG ).show();
 
             JSONObject jsonbrandList = new JSONObject(keyboardProfile.getBrandList().toString());
-            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
+            JSONArray jArraybrandList = jsonbrandList.optJSONArray("KeyboardProfile_brandList");
 
             if (jArraybrandList != null) {
                 for (int i=0;i<jArraybrandList.length();i++){
@@ -73,7 +73,7 @@ public class Keyboard_activity extends AppCompatActivity {
             }
 
             JSONObject jsontypeList = new JSONObject(keyboardProfile.getTypeList().toString());
-            JSONArray jArraytypeList = jsontypeList.optJSONArray("typeList");
+            JSONArray jArraytypeList = jsontypeList.optJSONArray("KeyboardProfile_typeList");
 
             if (jArraytypeList != null) {
                 for (int i=0;i<jArraytypeList.length();i++){

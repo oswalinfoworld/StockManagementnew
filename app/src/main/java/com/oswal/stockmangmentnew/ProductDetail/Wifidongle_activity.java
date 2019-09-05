@@ -49,7 +49,7 @@ public class Wifidongle_activity extends AppCompatActivity {
         simvalidity=(EditText)findViewById(R.id.dongle_simvalidity);
         Brandcat=(Spinner)findViewById(R.id.wifiinternet_spinner1);
         Typecat=(Spinner)findViewById(R.id.wifiinternet_spinner2) ;
-
+        db = new DatabaseHelper(this);
         if(db.getwifi_dongleProfileCount()>0){
             wifi_dongleProfile=db.getAllwifi_dongleProfileDetails();
             Toast.makeText(getApplicationContext(),"dongle brand List "+wifi_dongleProfile.getBrandName(),Toast.LENGTH_LONG).show();
@@ -66,7 +66,7 @@ public class Wifidongle_activity extends AppCompatActivity {
         try {
             Toast.makeText(getApplicationContext(),"Here"+wifi_dongleProfile.getBrandName(),Toast.LENGTH_LONG ).show();
             JSONObject jsonbrandList = new JSONObject(wifi_dongleProfile.getBrandName().toString());
-            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
+            JSONArray jArraybrandList = jsonbrandList.optJSONArray("WifidongleProfile_brandList");
 
             if (jArraybrandList != null) {
                 for (int i=0;i<jArraybrandList.length();i++){
@@ -74,7 +74,7 @@ public class Wifidongle_activity extends AppCompatActivity {
                 }
             }
             JSONObject jsontypeList = new JSONObject(wifi_dongleProfile.getTypeList().toString());
-            JSONArray jArraytypeList = jsontypeList.optJSONArray("TypeList");
+            JSONArray jArraytypeList = jsontypeList.optJSONArray("WifidongleProfile_typeList");
 
             if (jArraytypeList != null) {
                 for (int i=0;i<jArraytypeList.length();i++){

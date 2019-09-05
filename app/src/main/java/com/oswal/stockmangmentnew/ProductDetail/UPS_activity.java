@@ -64,7 +64,7 @@ public class UPS_activity extends AppCompatActivity {
         try {
             Toast.makeText(getApplicationContext(), "Here" +  upsProfile.getBrandName(), Toast.LENGTH_LONG).show();
             JSONObject jsonbrandList = new JSONObject( upsProfile.getBrandName().toString());
-            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
+            JSONArray jArraybrandList = jsonbrandList.optJSONArray("UPSProfile_brandList");
 
             if (jArraybrandList != null) {
                 for (int i = 0; i < jArraybrandList.length(); i++) {
@@ -73,7 +73,7 @@ public class UPS_activity extends AppCompatActivity {
             }
 
             JSONObject jsontypeList = new JSONObject(upsProfile.getUpstype().toString());
-            JSONArray jArraytypeList = jsontypeList.optJSONArray("TypeList");
+            JSONArray jArraytypeList = jsontypeList.optJSONArray("UPSProfile_typeList");
 
             if (jArraytypeList != null) {
                 for (int i = 0; i < jArraytypeList.length(); i++) {
@@ -84,18 +84,13 @@ public class UPS_activity extends AppCompatActivity {
 
 
             JSONObject jsoncapacityList = new JSONObject( upsProfile.getCapacityList().toString());
-            JSONArray jArraycapacityList = jsoncapacityList.optJSONArray("InchesList");
+            JSONArray jArraycapacityList = jsoncapacityList.optJSONArray("UPSProfile_capacityList");
 
             if (jArraycapacityList != null) {
                 for (int i = 0; i < jArraycapacityList.length(); i++) {
                 capacityListArray.add(jArraycapacityList.getString(i));
                 }
             }
-
-
-
-
-
 
 
 

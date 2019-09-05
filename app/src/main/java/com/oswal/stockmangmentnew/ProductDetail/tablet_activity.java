@@ -55,7 +55,7 @@ public class tablet_activity extends AppCompatActivity {
         try {
             Toast.makeText(getApplicationContext(), "Here" + tabletProfile.getBrandName(), Toast.LENGTH_LONG).show();
             JSONObject jsonbrandList = new JSONObject(tabletProfile.getBrandName().toString());
-            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
+            JSONArray jArraybrandList = jsonbrandList.optJSONArray("TabletProfile_brandList");
 
             if (jArraybrandList != null) {
                 for (int i = 0; i < jArraybrandList.length(); i++) {
@@ -64,7 +64,7 @@ public class tablet_activity extends AppCompatActivity {
             }
 
             JSONObject jsoninchesList = new JSONObject(tabletProfile.getInchesList().toString());
-            JSONArray jArrayinchesList = jsoninchesList.optJSONArray("InchesList");
+            JSONArray jArrayinchesList = jsoninchesList.optJSONArray("TabletProfile_inchesList");
 
             if (jArrayinchesList != null) {
                 for (int i = 0; i < jArrayinchesList.length(); i++) {

@@ -62,7 +62,7 @@ public class tv_activity extends AppCompatActivity {
         try {
             Toast.makeText(getApplicationContext(), "Here" + tvProfile.getBrandName(), Toast.LENGTH_LONG).show();
             JSONObject jsonbrandList = new JSONObject(tvProfile.getBrandName().toString());
-            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
+            JSONArray jArraybrandList = jsonbrandList.optJSONArray("TVtProfile_brandList");
 
             if (jArraybrandList != null) {
                 for (int i = 0; i < jArraybrandList.length(); i++) {
@@ -71,7 +71,7 @@ public class tv_activity extends AppCompatActivity {
             }
 
             JSONObject jsoninchesList = new JSONObject(tvProfile.getInchesList().toString());
-            JSONArray jArrayinchesList = jsoninchesList.optJSONArray("InchesList");
+            JSONArray jArrayinchesList = jsoninchesList.optJSONArray("TVtProfile_inchesList");
 
             if (jArrayinchesList != null) {
                 for (int i = 0; i < jArrayinchesList.length(); i++) {

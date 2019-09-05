@@ -51,21 +51,20 @@ public class RAM_activity extends AppCompatActivity {
         db = new DatabaseHelper(this);
         if(db.getRAMProfileCount()>0){
             ramProfile=db.getAllRAMProfileDetails();
-            Toast.makeText(getApplicationContext()," keyBoard brand List "+ramProfile.getBrandName(),Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext()," ramProfile brand List "+ramProfile.getBrandName(),Toast.LENGTH_LONG).show();
         }
         else
         {
-            Toast.makeText(getApplicationContext(),"I dont find any Data Keyboard Details",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"I dont find any Data ramProfile Details",Toast.LENGTH_LONG).show();
             // Intent home = new Intent(Keyboard_activity.this, MainActivity.class);
             // startActivity(home);
         }
 
 
-
         try {
             Toast.makeText(getApplicationContext(),"Here"+ramProfile.getBrandName(),Toast.LENGTH_LONG ).show();
             JSONObject jsonbrandList = new JSONObject(ramProfile.getBrandName().toString());
-            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
+            JSONArray jArraybrandList = jsonbrandList.optJSONArray("RAmProfile_brandList");
 
             if (jArraybrandList != null) {
                 for (int i=0;i<jArraybrandList.length();i++){
@@ -73,15 +72,15 @@ public class RAM_activity extends AppCompatActivity {
                 }
             }
             JSONObject jsonGBList = new JSONObject(ramProfile.getGb().toString());
-            JSONArray jArrayGBList = jsonGBList.optJSONArray("GBList");
+            JSONArray jArrayGBList = jsonGBList.optJSONArray("RAmProfile_GBList");
 
             if (jArrayGBList != null) {
                 for (int i=0;i<jArrayGBList.length();i++){
                  GBListArray.add(jArrayGBList.getString(i));
                 }
             }
-            JSONObject jsontypeList = new JSONObject(RAMProfile.getTypeList().toString());
-            JSONArray jArraytypeList = jsontypeList.optJSONArray("typeList");
+            JSONObject jsontypeList = new JSONObject(ramProfile.getTypeList().toString());
+            JSONArray jArraytypeList = jsontypeList.optJSONArray("RAmProfile_typeList");
 
             if (jArraytypeList != null) {
                 for (int i=0;i<jArraytypeList.length();i++){

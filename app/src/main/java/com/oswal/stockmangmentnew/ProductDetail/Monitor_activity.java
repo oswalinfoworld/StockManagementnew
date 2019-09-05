@@ -53,7 +53,7 @@ public class Monitor_activity extends AppCompatActivity {
         db = new DatabaseHelper(this);
         if (db.getMonitorProfileCount() > 0) {
             monitorProfile = db.getAllmonitorProfileDetails();
-            Toast.makeText(getApplicationContext(), " Monitor brand List " + monitorProfile.getBrandName(), Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), " Monitor getInches List " + monitorProfile.getInches(), Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(getApplicationContext(), "I dont find any Data Laptop Details", Toast.LENGTH_LONG).show();
             // Intent home = new Intent(Keyboard_activity.this, MainActivity.class);
@@ -64,7 +64,7 @@ public class Monitor_activity extends AppCompatActivity {
         try {
             Toast.makeText(getApplicationContext(), "Here" + monitorProfile.getBrandName(), Toast.LENGTH_LONG).show();
             JSONObject jsonbrandList = new JSONObject(monitorProfile.getBrandName().toString());
-            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
+            JSONArray jArraybrandList = jsonbrandList.optJSONArray("Monitor_brandList");
 
             if (jArraybrandList != null) {
                 for (int i = 0; i < jArraybrandList.length(); i++) {
@@ -73,7 +73,7 @@ public class Monitor_activity extends AppCompatActivity {
             }
 
             JSONObject jsoninchesList = new JSONObject(monitorProfile.getInches().toString());
-            JSONArray jArrayinchesList = jsoninchesList.optJSONArray("InchesList");
+            JSONArray jArrayinchesList = jsoninchesList.optJSONArray("Monitor_InchesList");
 
             if (jArrayinchesList != null) {
                 for (int i = 0; i < jArrayinchesList.length(); i++) {
@@ -82,7 +82,7 @@ public class Monitor_activity extends AppCompatActivity {
             }
 
             JSONObject jsongportList = new JSONObject(monitorProfile.getPort().toString());
-            JSONArray jArrayportList = jsongportList.optJSONArray("PortList");
+            JSONArray jArrayportList = jsongportList.optJSONArray("Monitor_PortList");
 
             if (jArrayportList != null) {
                 for (int i = 0; i < jArrayportList.length(); i++) {

@@ -65,7 +65,7 @@ public class xerox_activity extends AppCompatActivity {
         try {
             Toast.makeText(getApplicationContext(),"Here"+   xeroxProfile.getBrandName(),Toast.LENGTH_LONG ).show();
             JSONObject jsonbrandList = new JSONObject(   xeroxProfile.getBrandName().toString());
-            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
+            JSONArray jArraybrandList = jsonbrandList.optJSONArray("XeroxProfile_brandList");
 
             if (jArraybrandList != null) {
                 for (int i=0;i<jArraybrandList.length();i++){
@@ -73,7 +73,7 @@ public class xerox_activity extends AppCompatActivity {
                 }
             }
             JSONObject jsonpmpList = new JSONObject(   xeroxProfile.getPPMList().toString());
-            JSONArray jArrayppmList = jsonpmpList.optJSONArray("portList");
+            JSONArray jArrayppmList = jsonpmpList.optJSONArray("XeroxProfile_portList");
 
             if (jArrayppmList != null) {
                 for (int i=0;i<jArrayppmList.length();i++){

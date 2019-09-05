@@ -91,7 +91,7 @@ public class Laptop_activity extends AppCompatActivity {
         try {
             Toast.makeText(getApplicationContext(),"Here"+laptopProfile.getBrandName(),Toast.LENGTH_LONG ).show();
             JSONObject jsonbrandList = new JSONObject(laptopProfile.getBrandName().toString());
-            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
+            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandListLaptopProfile");
 
             if (jArraybrandList != null) {
                 for (int i=0;i<jArraybrandList.length();i++){
@@ -100,7 +100,7 @@ public class Laptop_activity extends AppCompatActivity {
             }
 
             JSONObject jsontypeList = new JSONObject(laptopProfile.getProtypeList().toString());
-            JSONArray jArraytypeList = jsontypeList.optJSONArray("typeList");
+            JSONArray jArraytypeList = jsontypeList.optJSONArray("processortypeLaptopProfile");
 
             if (jArraytypeList != null) {
                 for (int i=0;i<jArraytypeList.length();i++){
@@ -109,7 +109,7 @@ public class Laptop_activity extends AppCompatActivity {
             }
 
             JSONObject jsongenList = new JSONObject(laptopProfile.getGen().toString());
-            JSONArray jArraygenList = jsongenList.optJSONArray("GenList");
+            JSONArray jArraygenList = jsongenList.optJSONArray("genrationListLaptopProfile");
 
             if (jArraygenList != null) {
                 for (int i=0;i<jArraygenList.length();i++){
@@ -119,7 +119,7 @@ public class Laptop_activity extends AppCompatActivity {
 
 
             JSONObject jsonramList = new JSONObject(laptopProfile.getRam().toString());
-            JSONArray jArrayramList = jsonramList.optJSONArray("RamList");
+            JSONArray jArrayramList = jsonramList.optJSONArray("RamListLaptopProfile");
 
             if (jArrayramList != null) {
                 for (int i=0;i<jArrayramList.length();i++){
@@ -129,7 +129,7 @@ public class Laptop_activity extends AppCompatActivity {
 
 
             JSONObject jsoninchesList = new JSONObject(laptopProfile.getInches().toString());
-            JSONArray jArrayinchesList = jsoninchesList.optJSONArray("InchesList");
+            JSONArray jArrayinchesList = jsoninchesList.optJSONArray("InchesListLaptopProfile");
 
             if (jArrayinchesList != null) {
                 for (int i=0;i<jArrayinchesList.length();i++){
@@ -139,7 +139,7 @@ public class Laptop_activity extends AppCompatActivity {
 
 
             JSONObject jsonHDDList = new JSONObject(laptopProfile.getHdd().toString());
-            JSONArray jArrayHDDList = jsonHDDList.optJSONArray("HDDList");
+            JSONArray jArrayHDDList = jsonHDDList.optJSONArray("HDDListLaptopProfile");
 
             if (jArrayHDDList != null) {
                 for (int i=0;i<jArrayHDDList.length();i++){
@@ -149,7 +149,7 @@ public class Laptop_activity extends AppCompatActivity {
 
 
             JSONObject jsonSHDDList = new JSONObject(laptopProfile.getShdd().toString());
-            JSONArray jArraySHDDList = jsonSHDDList.optJSONArray("SHDDList");
+            JSONArray jArraySHDDList = jsonSHDDList.optJSONArray("SHDDListLaptopProfile");
 
             if (jArraySHDDList != null) {
                 for (int i=0;i<jArraySHDDList.length();i++){
@@ -159,7 +159,7 @@ public class Laptop_activity extends AppCompatActivity {
 
 
             JSONObject jsonosList = new JSONObject(laptopProfile.getOs().toString());
-            JSONArray jArrayosList = jsonosList.optJSONArray("OSList");
+            JSONArray jArrayosList = jsonosList.optJSONArray("OsListLaptopProfile");
 
             if (jArrayosList != null) {
                 for (int i=0;i<jArrayosList.length();i++){
@@ -169,7 +169,7 @@ public class Laptop_activity extends AppCompatActivity {
 
 
             JSONObject jsongraphicList = new JSONObject(laptopProfile.getGrapcard().toString());
-            JSONArray jArraygraphicList = jsongraphicList.optJSONArray("GraphiccardList");
+            JSONArray jArraygraphicList = jsongraphicList.optJSONArray("GraphiccardListLaptopProfile");
 
             if (jArraygraphicList != null) {
                 for (int i=0;i<jArraygraphicList.length();i++){
@@ -179,7 +179,7 @@ public class Laptop_activity extends AppCompatActivity {
 
 
             JSONObject jsonDVDList = new JSONObject(laptopProfile.getDvd().toString());
-            JSONArray jArrayDVDList = jsonDVDList.optJSONArray("DVDList");
+            JSONArray jArrayDVDList = jsonDVDList.optJSONArray("DVDwriterListLaptopProfile");
 
             if (jArrayDVDList != null) {
                 for (int i=0;i<jArrayDVDList.length();i++){
@@ -690,12 +690,12 @@ public class Laptop_activity extends AppCompatActivity {
         //Setting the ArrayAdapter data on the Spinner
         oscat.setAdapter(aa8);
 
-        ArrayAdapter aa9 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, graphicsListArray);
+        ArrayAdapter aa9 = new ArrayAdapter(this, android.R.layout.simple_spinner_item,graphicsListArray);
         aa9.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         graphiccardcat.setAdapter(aa9);
 
-        ArrayAdapter aa10 = new ArrayAdapter(this, android.R.layout.simple_spinner_item,   dvdListArray);
+        ArrayAdapter aa10 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, dvdListArray);
         aa10.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         dvdcat.setAdapter(aa10);

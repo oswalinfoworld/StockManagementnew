@@ -94,7 +94,7 @@ public class Processor extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Here"+cpuProfile.getBrandName(),Toast.LENGTH_LONG ).show();
 
             JSONObject jsonbrandList = new JSONObject(cpuProfile.getBrandName().toString());
-            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
+            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandListCPUProfile");
 
             if (jArraybrandList != null) {
                 for (int i=0;i<jArraybrandList.length();i++){
@@ -103,7 +103,7 @@ public class Processor extends AppCompatActivity {
             }
 
             JSONObject jsontypeList = new JSONObject(cpuProfile.getProtypeList().toString());
-            JSONArray jArraytypeList = jsontypeList.optJSONArray("typeList");
+            JSONArray jArraytypeList = jsontypeList.optJSONArray("processortypeListCPUProfile");
 
             if (jArraytypeList != null) {
                 for (int i=0;i<jArraytypeList.length();i++){
@@ -112,7 +112,7 @@ public class Processor extends AppCompatActivity {
             }
 
             JSONObject jsongenList = new JSONObject(cpuProfile.getGen().toString());
-            JSONArray jArraygenList = jsongenList.optJSONArray("GenList");
+            JSONArray jArraygenList = jsongenList.optJSONArray("genrationListCPUProfile");
 
             if (jArraygenList != null) {
                 for (int i=0;i<jArraygenList.length();i++){
@@ -122,7 +122,7 @@ public class Processor extends AppCompatActivity {
 
 
             JSONObject jsonramList = new JSONObject(cpuProfile.getRam().toString());
-            JSONArray jArrayramList = jsonramList.optJSONArray("RamList");
+            JSONArray jArrayramList = jsonramList.optJSONArray("RAMListCPUProfile");
 
             if (jArrayramList != null) {
                 for (int i=0;i<jArrayramList.length();i++){
@@ -135,7 +135,7 @@ public class Processor extends AppCompatActivity {
 
 
             JSONObject jsonHDDList = new JSONObject(cpuProfile.getHdd().toString());
-            JSONArray jArrayHDDList = jsonHDDList.optJSONArray("HDDList");
+            JSONArray jArrayHDDList = jsonHDDList.optJSONArray("HDDListCPUProfile");
 
             if (jArrayHDDList != null) {
                 for (int i=0;i<jArrayHDDList.length();i++){
@@ -145,7 +145,7 @@ public class Processor extends AppCompatActivity {
 
 
             JSONObject jsonSHDDList = new JSONObject(cpuProfile.getShdd().toString());
-            JSONArray jArraySHDDList = jsonSHDDList.optJSONArray("SHDDList");
+            JSONArray jArraySHDDList = jsonSHDDList.optJSONArray("SHDDListCPUProfile");
 
             if (jArraySHDDList != null) {
                 for (int i=0;i<jArraySHDDList.length();i++){
@@ -155,7 +155,7 @@ public class Processor extends AppCompatActivity {
 
 
             JSONObject jsonosList = new JSONObject(cpuProfile.getOs().toString());
-            JSONArray jArrayosList = jsonosList.optJSONArray("OSList");
+            JSONArray jArrayosList = jsonosList.optJSONArray("OsListCPUProfile");
 
             if (jArrayosList != null) {
                 for (int i=0;i<jArrayosList.length();i++){
@@ -165,7 +165,7 @@ public class Processor extends AppCompatActivity {
 
 
             JSONObject jsongraphicList = new JSONObject(cpuProfile.getGrapcard().toString());
-            JSONArray jArraygraphicList = jsongraphicList.optJSONArray("GraphiccardList");
+            JSONArray jArraygraphicList = jsongraphicList.optJSONArray("GraphiccardListCPUProfile");
 
             if (jArraygraphicList != null) {
                 for (int i=0;i<jArraygraphicList.length();i++){
@@ -175,7 +175,7 @@ public class Processor extends AppCompatActivity {
 
 
             JSONObject jsonDVDList = new JSONObject(cpuProfile.getDvd().toString());
-            JSONArray jArrayDVDList = jsonDVDList.optJSONArray("DVDList");
+            JSONArray jArrayDVDList = jsonDVDList.optJSONArray("DVDwriterListtCPUProfile");
 
             if (jArrayDVDList != null) {
                 for (int i=0;i<jArrayDVDList.length();i++){
@@ -186,13 +186,6 @@ public class Processor extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-
-
-
-
-
 
 
 

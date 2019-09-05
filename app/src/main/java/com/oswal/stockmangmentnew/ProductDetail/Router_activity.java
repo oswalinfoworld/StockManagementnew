@@ -68,7 +68,7 @@ RouterProfile routerProfile= new RouterProfile ();
         try {
             Toast.makeText(getApplicationContext(),"Here"+routerProfile.getBrandName(),Toast.LENGTH_LONG ).show();
             JSONObject jsonbrandList = new JSONObject(routerProfile.getBrandName().toString());
-            JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
+            JSONArray jArraybrandList = jsonbrandList.optJSONArray("RouterProfile_brandList");
 
             if (jArraybrandList != null) {
                 for (int i=0;i<jArraybrandList.length();i++){
@@ -76,7 +76,7 @@ RouterProfile routerProfile= new RouterProfile ();
                 }
             }
             JSONObject jsonportList = new JSONObject(routerProfile.getPort().toString());
-            JSONArray jArrayportList = jsonportList.optJSONArray("portList");
+            JSONArray jArrayportList = jsonportList.optJSONArray("RouterProfile_PortList");
 
             if (jArrayportList != null) {
                 for (int i=0;i<jArrayportList.length();i++){
@@ -84,7 +84,7 @@ RouterProfile routerProfile= new RouterProfile ();
                 }
             }
             JSONObject jsontypeList = new JSONObject(routerProfile.getType().toString());
-            JSONArray jArraytypeList = jsontypeList.optJSONArray("typeList");
+            JSONArray jArraytypeList = jsontypeList.optJSONArray("RouterProfile_typeList");
 
             if (jArraytypeList != null) {
                 for (int i=0;i<jArraytypeList.length();i++){
@@ -93,7 +93,7 @@ RouterProfile routerProfile= new RouterProfile ();
             }
 
             JSONObject jsonmbpsList = new JSONObject(routerProfile.getMbps().toString());
-            JSONArray jArraymbpsList = jsonmbpsList.optJSONArray("MBPSList");
+            JSONArray jArraymbpsList = jsonmbpsList.optJSONArray("RouterProfile_MbpsList");
 
             if (jArraymbpsList != null) {
                 for (int i=0;i<jArraymbpsList.length();i++){
@@ -104,13 +104,6 @@ RouterProfile routerProfile= new RouterProfile ();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-
-
-
-
-
 
 
         Brandcat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

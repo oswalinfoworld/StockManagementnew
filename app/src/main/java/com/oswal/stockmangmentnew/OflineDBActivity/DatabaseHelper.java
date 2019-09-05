@@ -808,6 +808,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(deleteQuery);
     }
 
+    public long insertRAMProfileDetails(RAMProfile ramProfile) {
+        // get writable database as we want to write data
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(RAMProfile.COLUMN_Brand_Name, ramProfile.getBrandName());
+        values.put(RAMProfile.COLUMN_TypeList,ramProfile.getTypeList());
+        values.put(RAMProfile.COLUMN_GBList,ramProfile.getGb());
+
+        // insert row
+        long id = db.insert(RouterProfile.TABLE_NAME, null, values);
+
+        // close db connection
+        db.close();
+
+        // return newly inserted row id
+        return id;
+    }
+
 
     //start RouterProfile
 
@@ -1297,8 +1316,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public void insertRAMProfileDetails(RAMProfile ramProfile) {
-    }
 
 
 
