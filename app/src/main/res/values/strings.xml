@@ -63,14 +63,6 @@
         <item>HP</item>
         <item>DEll</item>
     </string-array>
-    <string-array
-        name="keyboard_companyList">
-        <item>Select</item>
-        <item>Microsoft</item>
-        <item>Logitech</item>
-        <item>Zebronics</item>
-        <item>HP</item>
-    </string-array>
 
     <string-array
         name="keyboard_typeList">
@@ -82,7 +74,7 @@
     <string-array name="mouse_brandList">
         <item>Select</item>
         <item>HP</item>
-        <item>HP</item>
+        <item>Dell</item>
     </string-array>
 
     <string-array

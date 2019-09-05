@@ -47,6 +47,7 @@ public class Monitor_activity extends AppCompatActivity {
         companynamecat = (Spinner) findViewById(R.id.monitor_spinner2);
         inchescat = (Spinner) findViewById(R.id.monitor_spinner3);
         portcat = (Spinner) findViewById(R.id.monitor_spinner4);
+        submit=(Button)findViewById(R.id.monitor_subbtn1);
 
 
         db = new DatabaseHelper(this);
@@ -274,6 +275,7 @@ public class Monitor_activity extends AppCompatActivity {
         aa3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         portcat.setAdapter(aa3);
+
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -33,7 +33,7 @@
                 android:layout_marginTop="10dp"
                 />
             <Spinner
-                android:id="@+id/monitor_spinner1"
+                android:id="@+id/mouse_spinner1"
                 android:layout_width="200dp"
                 android:layout_height="25dp"
                 android:layout_marginLeft="50dp"
@@ -74,7 +74,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="16dp"/>
             <Spinner
-                android:id="@+id/monitor_spinner3"
+                android:id="@+id/mouse_spinner2"
                 android:layout_width="200dp"
                 android:layout_height="25dp"
                 android:layout_marginLeft="20dp"

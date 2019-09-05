@@ -48,12 +48,11 @@ public class Wifidongle_activity extends AppCompatActivity {
         simrecharge=(EditText)findViewById(R.id.dongle_simrecharge);
         simvalidity=(EditText)findViewById(R.id.dongle_simvalidity);
         Brandcat=(Spinner)findViewById(R.id.wifiinternet_spinner1);
-        companynamecat=(Spinner)findViewById(R.id.wifiinternet_spinner2) ;
-        Typecat=(Spinner)findViewById(R.id.keyboard_sipnner3) ;
+        Typecat=(Spinner)findViewById(R.id.wifiinternet_spinner2) ;
 
         if(db.getwifi_dongleProfileCount()>0){
             wifi_dongleProfile=db.getAllwifi_dongleProfileDetails();
-            Toast.makeText(getApplicationContext()," keyBoard brand List "+wifi_dongleProfile.getBrandName(),Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"dongle brand List "+wifi_dongleProfile.getBrandName(),Toast.LENGTH_LONG).show();
         }
         else
         {

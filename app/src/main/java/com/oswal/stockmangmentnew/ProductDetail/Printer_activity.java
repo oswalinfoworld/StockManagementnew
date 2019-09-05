@@ -84,16 +84,6 @@ public class Printer_activity extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
-
         Brandcat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {

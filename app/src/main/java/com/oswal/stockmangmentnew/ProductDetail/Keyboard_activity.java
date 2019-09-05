@@ -36,7 +36,6 @@ public class Keyboard_activity extends AppCompatActivity {
     DatabaseHelper db =null;
     KeyboardProfile keyboardProfile= new KeyboardProfile();
     ArrayList<String> brandListArray = new ArrayList<String>();
-    ArrayList<String> companyListArray = new ArrayList<String>();
     ArrayList<String> typeListArray = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +44,6 @@ public class Keyboard_activity extends AppCompatActivity {
         getSupportActionBar().setTitle("Keyboard Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Brandcat=(Spinner)findViewById(R.id.keyboard_sipnner1);
-        companynamecat=(Spinner)findViewById(R.id.keyboard_sipnner2) ;
         Typecat=(Spinner)findViewById(R.id.keyboard_sipnner3) ;
         db = new DatabaseHelper(this);
         if(db.getKeyboardProfileCount()>0){
@@ -62,7 +60,9 @@ public class Keyboard_activity extends AppCompatActivity {
 
 
         try {
+
             Toast.makeText(getApplicationContext(),"Here"+keyboardProfile.getBrandList(),Toast.LENGTH_LONG ).show();
+
             JSONObject jsonbrandList = new JSONObject(keyboardProfile.getBrandList().toString());
             JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
 
@@ -71,14 +71,7 @@ public class Keyboard_activity extends AppCompatActivity {
                     brandListArray.add(jArraybrandList.getString(i));
                 }
             }
-            JSONObject jsoncompanyList = new JSONObject(keyboardProfile.getCompanyList().toString());
-            JSONArray jArraycompanyList = jsoncompanyList.optJSONArray("companyList");
 
-            if (jArraycompanyList != null) {
-                for (int i=0;i<jArraycompanyList.length();i++){
-                    companyListArray.add(jArraycompanyList.getString(i));
-                }
-            }
             JSONObject jsontypeList = new JSONObject(keyboardProfile.getTypeList().toString());
             JSONArray jArraytypeList = jsontypeList.optJSONArray("typeList");
 
@@ -127,41 +120,7 @@ public class Keyboard_activity extends AppCompatActivity {
 
             }
         });
-        companynamecat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent;
-                switch(i){
-                    case 0:
-                        break;
-                    case 1:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
-                        break;
-                    case 2:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-
-
-                        break;
-                    case 3:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-
-
-                        break;
-                    case 4:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-
-
-                        break;
-                }
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
 
         Typecat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -198,10 +157,6 @@ public class Keyboard_activity extends AppCompatActivity {
         //Setting the ArrayAdapter data on the Spinner
         Brandcat.setAdapter(aa);
 
-        ArrayAdapter aa1 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, companyListArray);
-        aa1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        companynamecat.setAdapter(aa1);
 
         ArrayAdapter aa2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, typeListArray);
         aa2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

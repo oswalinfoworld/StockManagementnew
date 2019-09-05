@@ -286,7 +286,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
         values.put(KeyboardProfile.COLUMN_Brand_Name, temp.getBrandList());
-        values.put(KeyboardProfile.COLUMN_Company_List, temp.getCompanyList());
         values.put(KeyboardProfile.COLUMN_TypeList, temp.getTypeList());
 
         // insert row
@@ -306,18 +305,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String selectQuery = "SELECT  * FROM " + KeyboardProfile.TABLE_NAME;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
-        KeyboardProfile KeyboardProfileDetails = new KeyboardProfile();
+        KeyboardProfile keyboardProfileDetails = new KeyboardProfile();
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
-            KeyboardProfileDetails.setBrandList(cursor.getString(cursor.getColumnIndex(KeyboardProfile.COLUMN_Brand_Name)));
-            KeyboardProfileDetails.setCompanyList(cursor.getString(cursor.getColumnIndex(KeyboardProfile.COLUMN_Company_List)));
-            KeyboardProfileDetails.setTypeList(cursor.getString(cursor.getColumnIndex(KeyboardProfile.COLUMN_TypeList)));
+            keyboardProfileDetails.setBrandList(cursor.getString(cursor.getColumnIndex(KeyboardProfile.COLUMN_Brand_Name)));
+            keyboardProfileDetails.setTypeList(cursor.getString(cursor.getColumnIndex(KeyboardProfile.COLUMN_TypeList)));
         }
         // close db connection
         db.close();
 
         // return notes list
-        return KeyboardProfileDetails;
+        return keyboardProfileDetails;
     }
 
     public long getKeyboardProfileCount() {
@@ -669,17 +667,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String selectQuery = "SELECT  * FROM " + MouseProfile.TABLE_NAME;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
-        MouseProfile MouseProfileDetails = new MouseProfile();
+        MouseProfile mouseProfile = new MouseProfile();
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
-            MouseProfileDetails.setBrandName(cursor.getString(cursor.getColumnIndex(MouseProfile.COLUMN_Brand_Name)));
-            MouseProfileDetails.setTypeList(cursor.getString(cursor.getColumnIndex(MouseProfile.COLUMN_TypeList)));
+            mouseProfile.setBrandName(cursor.getString(cursor.getColumnIndex(MouseProfile.COLUMN_Brand_Name)));
+            mouseProfile.setTypeList(cursor.getString(cursor.getColumnIndex(MouseProfile.COLUMN_TypeList)));
         }
         // close db connection
         db.close();
 
         // return notes list
-        return MouseProfileDetails;
+        return mouseProfile;
     }
 
     public long getMouseProfileCount() {

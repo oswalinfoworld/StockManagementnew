@@ -285,24 +285,24 @@ public class MainActivity extends AppCompatActivity
 
         //Monitor Profile
         JSONObject jsonMonitoProfile= new JSONObject();
-        String brandListMonitoProfile = null,  ichesListMouseProfile = null,portListMouseProfile=null;
+        String brandListMonitoProfile = null,  ichesListMonitorProfile = null,portListMonitorProfile=null;
         try {
             jsonMonitoProfile.put("brandList", new JSONArray(getResources().getStringArray(R.array.Monitor_brandList)));
             brandListMonitoProfile = jsonMonitoProfile.toString();
 
             jsonMonitoProfile.put("portList", new JSONArray(getResources().getStringArray(R.array.Monitor_PortList)));
-            ichesListMouseProfile = jsonMonitoProfile.toString();
+            ichesListMonitorProfile = jsonMonitoProfile.toString();
 
             jsonMonitoProfile.put("inchesList", new JSONArray(getResources().getStringArray(R.array.Monitor_InchesList)));
-            portListMouseProfile = jsonMonitoProfile.toString();
+            portListMonitorProfile = jsonMonitoProfile.toString();
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
         MonitorProfile monitorProfile = new MonitorProfile();
         monitorProfile.setBrandName(brandListMonitoProfile);
-        monitorProfile.setPort(portListMouseProfile);
-        monitorProfile.setInches(ichesListMouseProfile);
+        monitorProfile.setPort(ichesListMonitorProfile);
+        monitorProfile.setInches(portListMonitorProfile);
 
         if (db.getMonitorProfileCount() > 0) {
             db.deleteMonitorProfileList();
@@ -435,7 +435,7 @@ public class MainActivity extends AppCompatActivity
             e.printStackTrace();
         }
 
-wifi_dongleProfile wifidongleProfile = new wifi_dongleProfile ();
+        wifi_dongleProfile wifidongleProfile = new wifi_dongleProfile ();
         wifidongleProfile.setBrandName(brandListWifidongleProfile);
         wifidongleProfile.setTypeList(typeListWifidongleProfile);
 

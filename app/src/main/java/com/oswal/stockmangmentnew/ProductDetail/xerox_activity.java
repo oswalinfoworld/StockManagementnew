@@ -45,8 +45,8 @@ public class xerox_activity extends AppCompatActivity {
         setContentView(R.layout.activity_xerox_activity);
         getSupportActionBar().setTitle("Xerox Machin Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        Brandcat=(Spinner)findViewById(R.id.keyboard_sipnner1);
-        PPMcat=(Spinner)findViewById(R.id.keyboard_sipnner2) ;
+        Brandcat=(Spinner)findViewById(R.id.xerox_spinner1);
+        PPMcat=(Spinner)findViewById(R.id.xerox_spinner2) ;
 
         db = new DatabaseHelper(this);
         if(db.getXeroxProfileCount()>0){

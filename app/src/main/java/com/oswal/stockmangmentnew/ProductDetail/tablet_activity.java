@@ -37,9 +37,9 @@ public class tablet_activity extends AppCompatActivity {
         setContentView(R.layout.activity_tablet_activity);
         getSupportActionBar().setTitle("Tablet Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        Brandcat=(Spinner)findViewById(R.id.keyboard_sipnner1);
-        companynamecat=(Spinner)findViewById(R.id.keyboard_sipnner2) ;
-        inchescat=(Spinner)findViewById(R.id.keyboard_sipnner2) ;
+        Brandcat=(Spinner)findViewById(R.id.tablet_spinner1);
+        companynamecat=(Spinner)findViewById(R.id.tablet_spinner2) ;
+        inchescat=(Spinner)findViewById(R.id.tablet_spinner3) ;
 
         db = new DatabaseHelper(this);
         if (db.getTabletProfileCount() > 0) {

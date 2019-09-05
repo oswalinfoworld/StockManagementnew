@@ -90,7 +90,9 @@ public class Processor extends AppCompatActivity {
 
 
         try {
+
             Toast.makeText(getApplicationContext(),"Here"+cpuProfile.getBrandName(),Toast.LENGTH_LONG ).show();
+
             JSONObject jsonbrandList = new JSONObject(cpuProfile.getBrandName().toString());
             JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
 

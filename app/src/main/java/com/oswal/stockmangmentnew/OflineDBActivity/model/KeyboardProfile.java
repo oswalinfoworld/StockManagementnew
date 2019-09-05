@@ -7,13 +7,11 @@ public class KeyboardProfile implements Serializable {
     public static final String TABLE_NAME = "KeyboardProfile";
     public static final String COLUMN_ID = "ID";
     public static final String COLUMN_Brand_Name = "brandList";
-    public static final String COLUMN_Company_List = "companyList";
     public static final String COLUMN_TypeList = "typeList";
 
 
     private int ProfileID;
     private String brandName;
-    private String companyList;
     private String typeList;
 
     // Create table SQL query
@@ -21,7 +19,6 @@ public class KeyboardProfile implements Serializable {
             "CREATE TABLE " + TABLE_NAME + "("
                     + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COLUMN_Brand_Name + " TEXT,"
-                    + COLUMN_Company_List + " TEXT,"
                     + COLUMN_TypeList + " TEXT"
                     + ")";
 
@@ -37,9 +34,6 @@ public class KeyboardProfile implements Serializable {
         return COLUMN_Brand_Name;
     }
 
-    public static String getCOLUMN_Company_List() {
-        return COLUMN_Company_List;
-    }
 
     public static String getCOLUMN_TypeList() {
         return COLUMN_TypeList;
@@ -61,13 +55,7 @@ public class KeyboardProfile implements Serializable {
         this.brandName = brandList;
     }
 
-    public String getCompanyList() {
-        return companyList;
-    }
 
-    public void setCompanyList(String companyList) {
-        this.companyList = companyList;
-    }
 
     public String getTypeList() {
         return typeList;

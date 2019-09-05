@@ -43,23 +43,21 @@ public class Mouse_activity extends AppCompatActivity {
         setContentView(R.layout.activity_mouse_activity);
         getSupportActionBar().setTitle("Mouse Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        Brandcat=(Spinner)findViewById(R.id.keyboard_sipnner1);
-        companynamecat=(Spinner)findViewById(R.id.keyboard_sipnner2) ;
-        Typecat=(Spinner)findViewById(R.id.keyboard_sipnner3) ;
+        Brandcat=(Spinner)findViewById(R.id.mouse_spinner1);
+        Typecat=(Spinner)findViewById(R.id.mouse_spinner2) ;
 
         db = new DatabaseHelper(this);
         if (db.getMouseProfileCount() > 0) {
             mouseProfile = db.getAllMouseProfileDetails();
             Toast.makeText(getApplicationContext(), " Mouse brand List " + mouseProfile.getBrandName(), Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(getApplicationContext(), "I dont find any Data Laptop Details", Toast.LENGTH_LONG).show();
-            // Intent home = new Intent(Keyboard_activity.this, MainActivity.class);
-            // startActivity(home);
+            Toast.makeText(getApplicationContext(), "I dont find any Data MOUSE Details", Toast.LENGTH_LONG).show();
+
         }
 
 
         try {
-            Toast.makeText(getApplicationContext(), "Here" + mouseProfile.getBrandName(), Toast.LENGTH_LONG).show();
+  Toast.makeText(getApplicationContext(), "Here" + mouseProfile.getBrandName(), Toast.LENGTH_LONG).show();
             JSONObject jsonbrandList = new JSONObject(mouseProfile.getBrandName().toString());
             JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandList");
 
@@ -68,6 +66,7 @@ public class Mouse_activity extends AppCompatActivity {
                     brandListArray.add(jArraybrandList.getString(i));
                 }
             }
+            Toast.makeText(getApplicationContext(), "Here" + mouseProfile.getTypeList(), Toast.LENGTH_LONG).show();
 
             JSONObject jsontypeList = new JSONObject(mouseProfile.getTypeList().toString());
             JSONArray jArraytypeList = jsontypeList.optJSONArray("TypeList");
@@ -77,12 +76,6 @@ public class Mouse_activity extends AppCompatActivity {
                  typeListArray.add(jArraytypeList.getString(i));
                 }
             }
-
-
-
-
-
-
 
 
         } catch (Exception e) {
