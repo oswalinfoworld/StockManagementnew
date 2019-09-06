@@ -45,8 +45,7 @@ public class Scanner_activity extends AppCompatActivity {
         getSupportActionBar().setTitle("Scanner Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Brandcat=(Spinner)findViewById(R.id.scanner_spinner1);
-        companynamecat=(Spinner)findViewById(R.id.scanner_spinner2) ;
-        Typecat=(Spinner)findViewById(R.id.scanner_spinner3) ;
+        Typecat=(Spinner)findViewById(R.id.scanner_spinner2) ;
 
         db = new DatabaseHelper(this);
         if (db.getScannerProfileCount() > 0) {

@@ -44,7 +44,6 @@ public class Monitor_activity extends AppCompatActivity {
         getSupportActionBar().setTitle("Monitor Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Brandcat = (Spinner) findViewById(R.id.monitor_spinner1);
-        companynamecat = (Spinner) findViewById(R.id.monitor_spinner2);
         inchescat = (Spinner) findViewById(R.id.monitor_spinner3);
         portcat = (Spinner) findViewById(R.id.monitor_spinner4);
         submit=(Button)findViewById(R.id.monitor_subbtn1);
@@ -56,8 +55,7 @@ public class Monitor_activity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), " Monitor getInches List " + monitorProfile.getInches(), Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(getApplicationContext(), "I dont find any Data Laptop Details", Toast.LENGTH_LONG).show();
-            // Intent home = new Intent(Keyboard_activity.this, MainActivity.class);
-            // startActivity(home);
+
         }
 
 
@@ -102,10 +100,6 @@ public class Monitor_activity extends AppCompatActivity {
 
 
 
-
-
-
-
         Brandcat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -137,38 +131,7 @@ public class Monitor_activity extends AppCompatActivity {
 
             }
         });
-        companynamecat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent;
-                switch(i){
-                    case 0:
-                        break;
-                    case 1:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
-                        break;
-                    case 2:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-
-                        break;
-                    case 3:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-
-                        break;
-                    case 4:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-
-                        break;
-                }
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
 
         inchescat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

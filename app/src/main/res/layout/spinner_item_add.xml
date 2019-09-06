@@ -875,7 +875,7 @@
                     android:text="Router-MBPS" />
 
                 <EditText
-                    android:id="@+id/spinner_routembps"
+                    android:id="@+id/spinner_routermbps"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
@@ -898,7 +898,7 @@
                     android:text="RAM-Brandname" />
 
                 <EditText
-                    android:id="@+id/spinner_rrambrand"
+                    android:id="@+id/spinner_rambrand"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
@@ -921,7 +921,7 @@
                     android:text="RAM-TYPE" />
 
                 <EditText
-                    android:id="@+id/spinner_rramtyp"
+                    android:id="@+id/spinner_ramtyp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
@@ -944,7 +944,7 @@
                     android:text="RAM-GB" />
 
                 <EditText
-                    android:id="@+id/spinner_rramgb"
+                    android:id="@+id/spinner_ramgb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
@@ -1108,7 +1108,7 @@
                     android:text="Swtich-Port" />
 
                 <EditText
-                    android:id="@+id/spinner_switcport"
+                    android:id="@+id/spinner_swithport"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
@@ -1316,7 +1316,7 @@
             android:layout_width="200dp"
             android:layout_height="45dp"
             android:text="Submit"
-            android:layout_marginTop="3100dp"
+            android:layout_marginTop="3090dp"
             android:layout_marginLeft="90dp"
             android:gravity="center"/>
 

@@ -41,7 +41,6 @@ wifi_LanProfile wifiLanProfile= new wifi_LanProfile();
         getSupportActionBar().setTitle("Wifi_LAN Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Brandcat=(Spinner)findViewById(R.id.wifilan_spinner1);
-        companynamecat=(Spinner)findViewById(R.id.wifilan_spinner2) ;
         MBPScat=(Spinner)findViewById(R.id.wifilan_spinner3) ;
 
 

@@ -65,7 +65,6 @@ public class Processor extends AppCompatActivity {
 
 
         Brandcat=(Spinner)findViewById(R.id.cpu_spinner1) ;
-        companynamecat=(Spinner)findViewById(R.id.cpu_spinner2) ;
         Typecat=(Spinner)findViewById(R.id.cpu_spinner3) ;
         genrationcat=(Spinner)findViewById(R.id.cpu_spinner4) ;
         ramcat=(Spinner)findViewById(R.id.cpu_spinner5) ;

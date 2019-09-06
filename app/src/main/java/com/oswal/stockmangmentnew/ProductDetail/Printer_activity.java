@@ -44,7 +44,6 @@ public class Printer_activity extends AppCompatActivity {
         getSupportActionBar().setTitle("Printer Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Brandcat=(Spinner)findViewById(R.id.printer_spinner1);
-        companynamecat=(Spinner)findViewById(R.id.printer_spinner2) ;
 
         type1=(CheckBox)findViewById(R.id.printer_type1);
         type2=(CheckBox)findViewById(R.id.printer_type2);

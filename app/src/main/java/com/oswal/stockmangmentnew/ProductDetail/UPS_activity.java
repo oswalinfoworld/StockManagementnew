@@ -46,7 +46,6 @@ public class UPS_activity extends AppCompatActivity {
         getSupportActionBar().setTitle("UPS Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Brandcat=(Spinner)findViewById(R.id.ups_spinner1);
-        companynamecat=(Spinner)findViewById(R.id.ups_spinner2) ;
         typecat=(Spinner)findViewById(R.id.ups_spinner3) ;
         capacitycat=(Spinner)findViewById(R.id.ups_spinner4) ;
 

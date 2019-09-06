@@ -46,7 +46,6 @@ RouterProfile routerProfile= new RouterProfile ();
         getSupportActionBar().setTitle("Router Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Brandcat=(Spinner)findViewById(R.id.router_spinner1) ;
-        companynamecat=(Spinner)findViewById(R.id.routerspinner2) ;
         Typecat=(Spinner)findViewById(R.id.routerspinner3) ;
         portcat=(Spinner)findViewById(R.id.router_spinner4) ;
         mbpscat=(Spinner)findViewById(R.id.router_spinner5) ;

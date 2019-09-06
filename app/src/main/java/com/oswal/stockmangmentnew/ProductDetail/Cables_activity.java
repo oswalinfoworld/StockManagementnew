@@ -34,7 +34,7 @@ public class Cables_activity extends AppCompatActivity {
     RadioGroup radioGroup1;
 
     DatabaseHelper db =null;
- CablesProfile cablesProfile= new   CablesProfile ();
+    CablesProfile cablesProfile= new   CablesProfile ();
     ArrayList<String> brandListArray = new ArrayList<String>();
 
 

@@ -44,7 +44,6 @@ public class tv_activity extends AppCompatActivity {
         getSupportActionBar().setTitle("TV Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Brandcat=(Spinner)findViewById(R.id.tv_spinner1);
-        companynamecat=(Spinner)findViewById(R.id.tv_spinner2) ;
         inchescat=(Spinner)findViewById(R.id.tv_spinner3) ;
 
 

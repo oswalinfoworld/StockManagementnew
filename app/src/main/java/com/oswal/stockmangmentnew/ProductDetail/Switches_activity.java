@@ -45,7 +45,6 @@ public class Switches_activity extends AppCompatActivity {
         getSupportActionBar().setTitle("Switch Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Brandcat = (Spinner) findViewById(R.id.switch_spinner1);
-        companynamecat = (Spinner) findViewById(R.id.switch_spinner2);
         Typecat = (Spinner) findViewById(R.id.switch_spinner3);
         portcat = (Spinner) findViewById(R.id.switch_spinner4);
 
