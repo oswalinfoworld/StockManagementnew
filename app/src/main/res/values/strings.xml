@@ -16,6 +16,8 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
     <string name="action_search" translatable="false">Search</string>
+    <string name="Stock">StockManagement</string>
+
     <string-array name="text">
         <item>add</item>
         <item>View</item>

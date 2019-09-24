@@ -10,7 +10,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.oswal.stockmangmentnew.OflineDBActivity.DatabaseHelper;
-import com.oswal.stockmangmentnew.OflineDBActivity.model.KeyboardProfile;
 import com.oswal.stockmangmentnew.R;
 
 public class AddItemSpinner extends AppCompatActivity {
@@ -59,17 +58,17 @@ public class AddItemSpinner extends AppCompatActivity {
         router_brandname=(EditText)findViewById(R.id.spinner_routerbrand);
         router_type=(EditText)findViewById(R.id.spinner_routertyp);
         router_port=(EditText)findViewById(R.id.spinner_routerport);
-        router_mbps=(EditText)findViewById(R.id.spinner_routermbps);
+       /* router_mbps=(EditText)findViewById(R.id.spinner_routermbps);
         ram_brandname=(EditText)findViewById(R.id.spinner_rambrand);
         ram_type=(EditText)findViewById(R.id.spinner_ramtyp);
-        ram_gb=(EditText)findViewById(R.id.spinner_ramgb);
+        ram_gb=(EditText)findViewById(R.id.spinner_ramgb);*/
         cables_brandname=(EditText)findViewById(R.id.spinner_cablesbrand);
         gps_brandname=(EditText)findViewById(R.id.spinner_gpsbrand);
         xerox_brandname=(EditText)findViewById(R.id.spinner_xeroxbrand);
         switch_brandname=(EditText)findViewById(R.id.spinner_switchbrand);
         xerox_ppm=(EditText)findViewById(R.id.spinner_xeroxppm);
         switch_type=(EditText)findViewById(R.id.spinner_switctyp);
-        switch_port=(EditText)findViewById(R.id.spinner_swithport);
+       // switch_port=(EditText)findViewById(R.id.spinner_swithport);
         tv_brandname=(EditText)findViewById(R.id.spinner_tvbrand);
         tv_inches=(EditText)findViewById(R.id.spinner_tvinches);
         wifiLan_brandname=(EditText)findViewById(R.id.spinner_wifilanbrand);

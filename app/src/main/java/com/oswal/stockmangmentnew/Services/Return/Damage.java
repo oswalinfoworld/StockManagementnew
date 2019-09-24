@@ -65,37 +65,37 @@ public class Damage extends AppCompatActivity {
             }
 
             private boolean validateForm() {
-                if (reasonS.length() == 0) {
+                if (reasonS.isEmpty()) {
                     reason.setError("Enter Reason");
                     reason.requestFocus();
                     return false;
                 }
-                if (item_nameS.length() == 0) {
+                if (item_nameS.isEmpty()) {
                     reason.setError("Enter item_name");
                     reason.requestFocus();
                     return false;
                 }
-                if (model_noS.length() == 0) {
+                if (model_noS.isEmpty()) {
                     reason.setError("Enter model_no");
                     reason.requestFocus();
                     return false;
                 }
-                if (bill_noS.length() == 0) {
+                if (bill_noS.isEmpty()) {
                     reason.setError("Enter bill_no");
                     reason.requestFocus();
                     return false;
                 }
-                if (dateS.length() == 0) {
+                if (dateS.isEmpty()) {
                     reason.setError("Enter date");
                     reason.requestFocus();
                     return false;
                 }
-                if (customer_nameS.length() == 0) {
+                if (customer_nameS.isEmpty()) {
                     reason.setError("Enter customer_name");
                     reason.requestFocus();
                     return false;
                 }
-                if (store_locS.length() == 0) {
+                if (store_locS.isEmpty()) {
                     reason.setError("Enter store_loc");
                     reason.requestFocus();
                     return false;
