@@ -7,15 +7,7 @@
     tools:context="com.oswal.stockmangmentnew.LoginModule.LoginPage"
     android:layout_gravity="center"
     >
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:text="Stock Management System "
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="25dp"
-        android:background="#F77F76"
-        />
+
 
 
     <TextView
@@ -82,6 +74,7 @@
         app:passwordToggleEnabled="true"
         android:inputType="textPassword" />
     <requestFocus/>
+
 
     <LinearLayout
         android:layout_width="wrap_content"

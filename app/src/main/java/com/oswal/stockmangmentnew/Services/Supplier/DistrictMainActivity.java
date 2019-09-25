@@ -61,8 +61,9 @@ public class DistrictMainActivity extends AppCompatActivity implements DistrictA
 //        setSupportActionBar(toolbar);
 
         // toolbar fancy stuff
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Supplier List");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         db = new DatabaseHelper(this);
         Toast.makeText(getApplicationContext(),"Spplier Count "+db.getSupplierCount(),Toast.LENGTH_LONG).show();
         recyclerView = findViewById(R.id.recycler_view_search);

@@ -9,15 +9,6 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Wifi-Dongle Details "
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:background="#F77F76"
-            />
 
 
         <LinearLayout

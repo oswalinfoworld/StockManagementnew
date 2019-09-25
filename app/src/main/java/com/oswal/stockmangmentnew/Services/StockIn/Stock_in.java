@@ -63,10 +63,8 @@ public class Stock_in extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stock_in);
-        getSupportActionBar().setTitle("Stock IN");
+        getSupportActionBar().setTitle("Stock IN" );
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
         storageloc = (EditText) findViewById(R.id.additem_storageLocaET);
         date = (Button) findViewById(R.id.additem_dateET);
         billno = (EditText) findViewById(R.id.additem_billnoET);

@@ -818,7 +818,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(RAMProfile.COLUMN_GBList,ramProfile.getGb());
 
         // insert row
-        long id = db.insert(RouterProfile.TABLE_NAME, null, values);
+        long id = db.insert(RAMProfile.TABLE_NAME, null, values);
 
         // close db connection
         db.close();

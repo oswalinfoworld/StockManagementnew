@@ -44,6 +44,8 @@ public class LoginPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loginpg);
+
+
         userName = (EditText) findViewById(R.id.usernameET);
         password = (EditText) findViewById(R.id.passwordET);
         login = findViewById(R.id.loginBtn);
