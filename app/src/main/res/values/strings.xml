@@ -38,36 +38,31 @@
         <item>Switches</item>
     </string-array>
 
-    <string-array
-        name="cabel_brandList">
+    <string-array name="cabel_brandList">
         <item>Select</item>
         <item>HP</item>
         <item>DEll</item>
     </string-array>
 
-    <string-array
-        name="gps_activity_brandList">
+    <string-array name="gps_activity_brandList">
         <item>Select</item>
         <item>HP</item>
         <item>DEll</item>
     </string-array>
 
-    <string-array
-        name="gps_company">
+    <string-array name="gps_company">
         <item>Select</item>
         <item>HP</item>
         <item>DEll</item>
     </string-array>
 
-    <string-array
-        name="keyboard_brandList">
+    <string-array name="keyboard_brandList">
         <item>Select</item>
         <item>HP</item>
         <item>DEll</item>
     </string-array>
 
-    <string-array
-        name="keyboard_typeList">
+    <string-array name="keyboard_typeList">
         <item>Select</item>
         <item>Wire</item>
         <item>Wireless</item>
@@ -79,8 +74,7 @@
         <item>Dell</item>
     </string-array>
 
-    <string-array
-        name="mouse_typeList">
+    <string-array name="mouse_typeList">
         <item>Select</item>
         <item>Wire</item>
         <item>Wireless</item>
@@ -154,7 +148,6 @@
         <item>128GB</item>
 
     </string-array>
-
 
 
     <string-array name="Cpu_HDDList">
@@ -331,8 +324,7 @@
         <item>DELL</item>
     </string-array>
 
-    <string-array
-        name="Scanner_typeList">
+    <string-array name="Scanner_typeList">
         <item>Select</item>
         <item>Flatbed</item>
         <item>HighSpeed</item>
@@ -346,16 +338,14 @@
         <item>DELL</item>
     </string-array>
 
-    <string-array
-        name="UPS_typeList">
+    <string-array name="UPS_typeList">
         <item>Select</item>
         <item>Flatbed</item>
         <item>HighSpeed</item>
         <item>Topcammera</item>
     </string-array>
 
-       <string-array
-        name="UPS_capacityList">
+    <string-array name="UPS_capacityList">
         <item>Select</item>
         <item>0.6KVA</item>
         <item>0.650KVA</item>
@@ -373,16 +363,14 @@
         <item>Tenda</item>
     </string-array>
 
-    <string-array
-        name="Router_typeList">
+    <string-array name="Router_typeList">
         <item>Select</item>
         <item>Managed</item>
         <item>Un_Managed</item>
 
     </string-array>
 
-    <string-array
-        name="Router_portList">
+    <string-array name="Router_portList">
         <item>Select</item>
         <item>4</item>
         <item>8</item>
@@ -391,8 +379,7 @@
         <item>48</item>
     </string-array>
 
-    <string-array
-        name="Router_mbpsList">
+    <string-array name="Router_mbpsList">
         <item>Select</item>
         <item>150</item>
         <item>300</item>
@@ -404,8 +391,7 @@
         <item>DELL</item>
     </string-array>
 
-    <string-array
-        name="RAM_typeList">
+    <string-array name="RAM_typeList">
         <item>Select</item>
         <item>SDRAM</item>
         <item>DDR</item>
@@ -444,8 +430,7 @@
         <item>Dlink</item>
     </string-array>
 
-    <string-array
-        name="Switch_typeList">
+    <string-array name="Switch_typeList">
         <item>Select</item>
         <item>Managed</item>
         <item>Un-Managed</item>
@@ -453,8 +438,7 @@
 
     </string-array>
 
-    <string-array
-        name="Switch_portList">
+    <string-array name="Switch_portList">
         <item>Select</item>
         <item>4</item>
         <item>8</item>
@@ -488,13 +472,11 @@
         <item>DELL</item>
     </string-array>
 
-    <string-array
-        name="WifiLan_mbpsList">
+    <string-array name="WifiLan_mbpsList">
         <item>Select</item>
         <item>150</item>
         <item>300</item>
     </string-array>
-
 
 
     <string-array name="Tablet_brandList">
@@ -542,16 +524,12 @@
         <item>iBall</item>
     </string-array>
 
-    <string-array
-        name="Wifidongle_typeList">
+    <string-array name="Wifidongle_typeList">
         <item>Select</item>
         <item>Prepaid</item>
         <item>Postpaid</item>
 
     </string-array>
-
-
-
 
 
 </resources>

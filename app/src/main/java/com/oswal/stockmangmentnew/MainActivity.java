@@ -56,6 +56,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
 
@@ -80,6 +81,7 @@ public class MainActivity extends AppCompatActivity
     List<MenuModel> headerList = new ArrayList<>();
     HashMap<MenuModel, List<MenuModel>> childList = new HashMap<>();
     private Object MouseProfile;
+    Button dashboard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,9 +92,18 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         db = new DatabaseHelper(this);
-
-
         insertCommonDataToDB(db);
+
+        dashboard=(Button)findViewById(R.id.dashboard);
+        dashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(MainActivity.this, webview.class);
+                startActivity(i);
+            }
+        });
+
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -958,11 +969,11 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         } else if (pageName.contains("damage add")) {
             Toast.makeText(getApplicationContext(), "damage add ", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(MainActivity.this, Damage.class);
+            Intent intent = new Intent(MainActivity.this, com.oswal.stockmangmentnew.Services.Return.Damage.class);
             startActivity(intent);
         } else if (pageName.contains("damage view")) {
             Toast.makeText(getApplicationContext(), "damage view ", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(MainActivity.this, Damage.class);
+            Intent intent = new Intent(MainActivity.this, com.oswal.stockmangmentnew.Services.Return.Damage.class);
             startActivity(intent);
         } else if (pageName.contains("qrCode")) {
             Intent intent = new Intent(MainActivity.this, com.oswal.stockmangmentnew.QRcodeModule.MainActivity.class);

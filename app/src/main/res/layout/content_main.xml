@@ -26,9 +26,9 @@
 
     <Button
         android:layout_width="120dp"
-        android:id="@+id/viewbtn"
+        android:id="@+id/dashboard"
         android:layout_height="wrap_content"
-        android:text="View Stock"/>
+        android:text="Dashboard"/>
 
 
 </LinearLayout>
