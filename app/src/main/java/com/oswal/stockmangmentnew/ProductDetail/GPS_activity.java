@@ -81,24 +81,21 @@ public class GPS_activity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent;
                 switch(i){
+
                     case 0:
+
                         break;
                     case 1:
+
                         intent = new Intent(GPS_activity.this, GPS_activity.class);
                         startActivity(intent);
                         break;
                     case 2:
+
                         intent = new Intent(GPS_activity.this, GPS_activity.class);
                         startActivity(intent);
                         break;
-                    case 3:
-                        intent = new Intent(GPS_activity.this, GPS_activity.class);
-                        startActivity(intent);
-                        break;
-                    case 4:
-                        intent = new Intent(GPS_activity.this, GPS_activity.class);
-                        startActivity(intent);
-                        break;
+
                 }
             }
 

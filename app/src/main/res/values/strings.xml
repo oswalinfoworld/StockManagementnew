@@ -23,20 +23,30 @@
         <item>View</item>
     </string-array>
 
-    <string-array name="select">
-        <item>Computer</item>
+    <string-array name="ADD_itemList">
+        <item>Select</item>
         <item>Laptop</item>
+        <item>Monitor</item>
         <item>UPS</item>
         <item>Mouse</item>
         <item>Cable</item>
         <item>Printer</item>
+        <item>Scanner</item>
+        <item>CPU</item>
         <item>LAN</item>
-        <item>Keyboard</item>
-        <item>Xrox</item>
-        <item>wifi Router</item>
-        <item>wifi Dongle</item>
-        <item>Switches</item>
+        <item>Router</item>
+        <item>Xerox-_machin</item>
+        <item>RAM</item>
+        <item>wifi_Dongle</item>
+        <item>GPS_trackingMachine</item>
+        <item>Switch</item>
+        <item>Tablet</item>
+        <item>TV</item>
+        <item>Wifi_LAN_card</item>
+
     </string-array>
+
+
 
     <string-array name="cabel_brandList">
         <item>Select</item>

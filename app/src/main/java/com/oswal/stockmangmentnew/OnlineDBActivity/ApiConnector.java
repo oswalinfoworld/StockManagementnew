@@ -1,6 +1,8 @@
 package com.oswal.stockmangmentnew.OnlineDBActivity;
 
 
+import android.widget.Spinner;
+
 import com.oswal.stockmangmentnew.POJO.Item;
 import com.oswal.stockmangmentnew.POJO.StockIn;
 import com.oswal.stockmangmentnew.POJO.StockOut;
@@ -610,4 +612,70 @@ public class ApiConnector {
 
         return jsonArray;
     }
+
+
+
+
+
+   /* public JSONArray insert_stock_product_detail(String itemUniqueID ,String Brandcat1,Spinner Typecat, Spinner genrationcat, Spinner ramcat, Spinner inchescat,Spinner HDDcat,
+                                                 Spinner SHDDcat, Spinner oscat, Spinner graphiccardcat,Spinner dvdcat) {
+       String itemUniqueID1=itemUniqueID;
+        String BrandcatS=Brandcat1.replaceAll(" ", "%20");
+        String TypecatS=Typecat.replaceAll(" ", "%20");
+        String genrationcatS=genrationcat.replaceAll(" ", "%20");
+        String ramcatS=ramcat.replaceAll(" ", "%20");
+        String inchescatS=inchescat.replaceAll(" ", "%20");
+        String HDDcatS=HDDcat.replaceAll(" ", "%20");
+        String SHDDcatS=SHDDcat.replaceAll(" ", "%20");
+        String  oscatS= oscat.replaceAll(" ", "%20");
+        String graphiccardcatS=graphiccardcat.replaceAll(" ", "%20");
+        String dvdcatS=dvdcat.replaceAll(" ", "%20");
+
+        String url = ConstantsIdentifier.getDomainName() + "/Laptop.php?itemId=" + itemUniqueID1 + "&Brandcat=" +  BrandcatS + "&Typecat=" + TypecatS + "&genrationcat=" + genrationcatS + "&ramcat=" + ramcatS + "&inchescat=" +
+                inchescatS + "&HDDcat=" + HDDcatS + "&SHDDcat" +SHDDcatS+  "&oscat=" + oscatS + "&graphiccardcat" + graphiccardcatS + "dvdcat" +dvdcatS;
+        // Get HttpResponse Object from url.
+        // Get HttpEntity from Http Response Object
+
+        HttpEntity httpEntity = null;
+
+        try {
+
+            DefaultHttpClient httpClient = new DefaultHttpClient();  // Default HttpClient
+            //Log.d("abhi", url);
+            System.out.print("Abhishek***************** URL " + url);
+            HttpPost httpGet = new HttpPost(url);
+
+            HttpResponse httpResponse = httpClient.execute(httpGet);
+            httpEntity = httpResponse.getEntity();
+//            HashMap<String, Object> hashMap = new HashMap<>(Utility.jsonToMap(httpResponse)) ;
+        } catch (IOException e) {
+            System.out.print("Abhishek Error " + e.getMessage());
+            e.printStackTrace();
+        }
+        // Convert HttpEntity into JSON Array
+        JSONArray jsonArray = null;
+        // List<EVBUser> users=new ArrayList<EVBUser>() ;
+        if (httpEntity != null) {
+            try {
+                String entityResponse = EntityUtils.toString(httpEntity);
+                System.out.println("Abhishek123 SupplierJson------>Entity Response  : " + entityResponse);
+                jsonArray = new JSONArray(entityResponse);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return jsonArray;
+    }
+*/
+
+
+
+
+
+
+
+
 }

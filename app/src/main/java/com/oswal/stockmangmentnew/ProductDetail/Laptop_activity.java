@@ -3,7 +3,10 @@ package com.oswal.stockmangmentnew.ProductDetail;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,9 +16,11 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.oswal.stockmangmentnew.MainActivity;
 import com.oswal.stockmangmentnew.OflineDBActivity.DatabaseHelper;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.KeyboardProfile;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.LaptopProfile;
+import com.oswal.stockmangmentnew.OnlineDBActivity.ApiConnector;
 import com.oswal.stockmangmentnew.R;
 import com.oswal.stockmangmentnew.Services.Items.Add_Item;
 
@@ -27,10 +32,10 @@ import java.util.ArrayList;
 public class Laptop_activity extends AppCompatActivity {
 
     Button submit;
-    private String brandS,compynameS,typeS,genS,ramS,inchesS,hddS,shddS,graphicS;
-    Spinner Brandcat,companynamecat,Typecat,genrationcat,ramcat,inchescat,HDDcat,SHDDcat,oscat,graphiccardcat,dvdcat;
-    DatabaseHelper db =null;
-    LaptopProfile laptopProfile= new LaptopProfile();
+    String itemUniqueID, item_name, company_name, model_no, type, port_no, mbps, generation, capacity, ppm, inches, sim_name, sim_recharge, String, sim_qunatity, avail_quantity, date;
+    Spinner Brandcat, Typecat, genrationcat, ramcat, inchescat, HDDcat, SHDDcat, oscat, graphiccardcat, dvdcat;
+    DatabaseHelper db = null;
+    LaptopProfile laptopProfile = new LaptopProfile();
     ArrayList<String> brandListArray = new ArrayList<String>();
     ArrayList<String> typeListArray = new ArrayList<String>();
     ArrayList<String> genListArray = new ArrayList<String>();
@@ -42,58 +47,54 @@ public class Laptop_activity extends AppCompatActivity {
     ArrayList<String> graphicsListArray = new ArrayList<String>();
     ArrayList<String> dvdListArray = new ArrayList<String>();
 
-   /* String[] brandList = {"Select","HP","DEll" };
-    String[] companyList = {"Select","HP","DELL" };
-    String[ ]typeList = {"Select","C2D", "DC", "i3", "i5", "i7"};
-    String[] genList = {"Select","1", "2", "3", "4", "5", "6", "7", "8", "9"};
-    String[] ramList = {"Select","2GB", "4GB", "8GB", "6GB", "16GB", "32GB", "64Gb", "128GB"};
-    String[] inchesList = {"Select","10.5", "12", "12.5", "14", "15.6", "17"};
-    String[] hddList = {"Select","0", "250GB", "320GB", "500GB", "1TB", "2TB", "4TB"};
-    String[] shddList = {"Select","80GB", "250GB", "320GB", "500GB", "1TB", "2TB", "4TB"};
-    String[] osList = {"Select","DOS", "window10home", "window10pro"};
-    String[] graphicsList = {"Select", "0", "onboard", "2GB", "4GB", "8GB"};
-    String[]dvdsList = {"Select", "Yes","No"};
-*/
+    /* String[] brandList = {"Select","HP","DEll" };
+     String[] companyList = {"Select","HP","DELL" };
+     String[ ]typeList = {"Select","C2D", "DC", "i3", "i5", "i7"};
+     String[] genList = {"Select","1", "2", "3", "4", "5", "6", "7", "8", "9"};
+     String[] ramList = {"Select","2GB", "4GB", "8GB", "6GB", "16GB", "32GB", "64Gb", "128GB"};
+     String[] inchesList = {"Select","10.5", "12", "12.5", "14", "15.6", "17"};
+     String[] hddList = {"Select","0", "250GB", "320GB", "500GB", "1TB", "2TB", "4TB"};
+     String[] shddList = {"Select","80GB", "250GB", "320GB", "500GB", "1TB", "2TB", "4TB"};
+     String[] osList = {"Select","DOS", "window10home", "window10pro"};
+     String[] graphicsList = {"Select", "0", "onboard", "2GB", "4GB", "8GB"};
+     String[]dvdsList = {"Select", "Yes","No"};
+ */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_laptop_activity);
         getSupportActionBar().setTitle("Laptop Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        Brandcat=(Spinner)findViewById(R.id.lap_spinner1) ;
-        Typecat=(Spinner)findViewById(R.id.lap_spinner2) ;
-        genrationcat=(Spinner)findViewById(R.id.lap_spinner3) ;
-        ramcat=(Spinner)findViewById(R.id.lap_spinner4) ;
-        inchescat=(Spinner)findViewById(R.id.lap_spinner5) ;
-        HDDcat=(Spinner)findViewById(R.id.lap_spinner6) ;
-        SHDDcat=(Spinner)findViewById(R.id.lap_spinner7) ;
-        oscat=(Spinner)findViewById(R.id.lap_spinner8) ;
-        graphiccardcat=(Spinner)findViewById(R.id.lap_spinner9) ;
-        dvdcat=(Spinner)findViewById(R.id.lap_spinner11) ;
-
+        Brandcat = (Spinner) findViewById(R.id.lap_spinner1);
+        Typecat = (Spinner) findViewById(R.id.lap_spinner2);
+        genrationcat = (Spinner) findViewById(R.id.lap_spinner3);
+        ramcat = (Spinner) findViewById(R.id.lap_spinner4);
+        inchescat = (Spinner) findViewById(R.id.lap_spinner5);
+        HDDcat = (Spinner) findViewById(R.id.lap_spinner6);
+        SHDDcat = (Spinner) findViewById(R.id.lap_spinner7);
+        oscat = (Spinner) findViewById(R.id.lap_spinner8);
+        graphiccardcat = (Spinner) findViewById(R.id.lap_spinner9);
+        dvdcat = (Spinner) findViewById(R.id.lap_spinner11);
 
 
         db = new DatabaseHelper(this);
-        if(db.getLaptopProfileCount()>0){
-            laptopProfile=db.getAllLaptopProfileDetails();
-            Toast.makeText(getApplicationContext()," Laptop brand List "+laptopProfile.getBrandName(),Toast.LENGTH_LONG).show();
-        }
-        else
-        {
-            Toast.makeText(getApplicationContext(),"I dont find any Data Laptop Details",Toast.LENGTH_LONG).show();
+        if (db.getLaptopProfileCount() > 0) {
+            laptopProfile = db.getAllLaptopProfileDetails();
+            Toast.makeText(getApplicationContext(), " Laptop brand List " + laptopProfile.getBrandName(), Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "I dont find any Data Laptop Details", Toast.LENGTH_LONG).show();
             // Intent home = new Intent(Keyboard_activity.this, MainActivity.class);
             // startActivity(home);
         }
 
 
-
         try {
-            Toast.makeText(getApplicationContext(),"Here"+laptopProfile.getBrandName(),Toast.LENGTH_LONG ).show();
+            Toast.makeText(getApplicationContext(), "Here" + laptopProfile.getBrandName(), Toast.LENGTH_LONG).show();
             JSONObject jsonbrandList = new JSONObject(laptopProfile.getBrandName().toString());
             JSONArray jArraybrandList = jsonbrandList.optJSONArray("brandListLaptopProfile");
 
             if (jArraybrandList != null) {
-                for (int i=0;i<jArraybrandList.length();i++){
+                for (int i = 0; i < jArraybrandList.length(); i++) {
                     brandListArray.add(jArraybrandList.getString(i));
                 }
             }
@@ -102,7 +103,7 @@ public class Laptop_activity extends AppCompatActivity {
             JSONArray jArraytypeList = jsontypeList.optJSONArray("processortypeLaptopProfile");
 
             if (jArraytypeList != null) {
-                for (int i=0;i<jArraytypeList.length();i++){
+                for (int i = 0; i < jArraytypeList.length(); i++) {
                     typeListArray.add(jArraytypeList.getString(i));
                 }
             }
@@ -111,8 +112,8 @@ public class Laptop_activity extends AppCompatActivity {
             JSONArray jArraygenList = jsongenList.optJSONArray("genrationListLaptopProfile");
 
             if (jArraygenList != null) {
-                for (int i=0;i<jArraygenList.length();i++){
-                genListArray.add(jArraygenList.getString(i));
+                for (int i = 0; i < jArraygenList.length(); i++) {
+                    genListArray.add(jArraygenList.getString(i));
                 }
             }
 
@@ -121,7 +122,7 @@ public class Laptop_activity extends AppCompatActivity {
             JSONArray jArrayramList = jsonramList.optJSONArray("RamListLaptopProfile");
 
             if (jArrayramList != null) {
-                for (int i=0;i<jArrayramList.length();i++){
+                for (int i = 0; i < jArrayramList.length(); i++) {
                     ramListArray.add(jArrayramList.getString(i));
                 }
             }
@@ -131,7 +132,7 @@ public class Laptop_activity extends AppCompatActivity {
             JSONArray jArrayinchesList = jsoninchesList.optJSONArray("InchesListLaptopProfile");
 
             if (jArrayinchesList != null) {
-                for (int i=0;i<jArrayinchesList.length();i++){
+                for (int i = 0; i < jArrayinchesList.length(); i++) {
                     inchesListArray.add(jArrayinchesList.getString(i));
                 }
             }
@@ -141,8 +142,8 @@ public class Laptop_activity extends AppCompatActivity {
             JSONArray jArrayHDDList = jsonHDDList.optJSONArray("HDDListLaptopProfile");
 
             if (jArrayHDDList != null) {
-                for (int i=0;i<jArrayHDDList.length();i++){
-                   hddListArray.add(jArrayHDDList.getString(i));
+                for (int i = 0; i < jArrayHDDList.length(); i++) {
+                    hddListArray.add(jArrayHDDList.getString(i));
                 }
             }
 
@@ -151,7 +152,7 @@ public class Laptop_activity extends AppCompatActivity {
             JSONArray jArraySHDDList = jsonSHDDList.optJSONArray("SHDDListLaptopProfile");
 
             if (jArraySHDDList != null) {
-                for (int i=0;i<jArraySHDDList.length();i++){
+                for (int i = 0; i < jArraySHDDList.length(); i++) {
                     shddListArray.add(jArraySHDDList.getString(i));
                 }
             }
@@ -161,8 +162,8 @@ public class Laptop_activity extends AppCompatActivity {
             JSONArray jArrayosList = jsonosList.optJSONArray("OsListLaptopProfile");
 
             if (jArrayosList != null) {
-                for (int i=0;i<jArrayosList.length();i++){
-            osListArray.add(jArrayosList.getString(i));
+                for (int i = 0; i < jArrayosList.length(); i++) {
+                    osListArray.add(jArrayosList.getString(i));
                 }
             }
 
@@ -171,8 +172,8 @@ public class Laptop_activity extends AppCompatActivity {
             JSONArray jArraygraphicList = jsongraphicList.optJSONArray("GraphiccardListLaptopProfile");
 
             if (jArraygraphicList != null) {
-                for (int i=0;i<jArraygraphicList.length();i++){
-                 graphicsListArray.add(jArraygraphicList.getString(i));
+                for (int i = 0; i < jArraygraphicList.length(); i++) {
+                    graphicsListArray.add(jArraygraphicList.getString(i));
                 }
             }
 
@@ -181,8 +182,8 @@ public class Laptop_activity extends AppCompatActivity {
             JSONArray jArrayDVDList = jsonDVDList.optJSONArray("DVDwriterListLaptopProfile");
 
             if (jArrayDVDList != null) {
-                for (int i=0;i<jArrayDVDList.length();i++){
-                   dvdListArray.add(jArrayDVDList.getString(i));
+                for (int i = 0; i < jArrayDVDList.length(); i++) {
+                    dvdListArray.add(jArrayDVDList.getString(i));
                 }
             }
 
@@ -191,38 +192,43 @@ public class Laptop_activity extends AppCompatActivity {
         }
 
 
-
-        submit=(Button)findViewById(R.id.laptop_submitbutton);
+        submit = (Button) findViewById(R.id.laptop_submitbutton);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(Laptop_activity.this, Add_Item.class);
-                startActivity(i);
+
+                Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
+
+/*
+               if (isInternetOn()) {
+                 new insertItemToOnlineDB().execute(new ApiConnector());
+                    Intent i = new Intent(Laptop_activity.this, Add_Item.class);
+                    startActivity(i);
+                }*/
             }
         });
         Brandcat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent;
-                switch(i){
+                switch (i) {
                     case 0:
                         break;
                     case 1:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
 
                         break;
                     case 4:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
 
                         break;
@@ -239,31 +245,31 @@ public class Laptop_activity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent;
-                switch(i){
+                switch (i) {
                     case 0:
                         break;
                     case 1:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
 
                         break;
                     case 2:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
 
                         break;
                     case 3:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
 
                         break;
                     case 4:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
 
                         break;
                     case 5:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
 
                         break;
@@ -280,49 +286,49 @@ public class Laptop_activity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent;
-                switch(i){
+                switch (i) {
                     case 0:
                         break;
                     case 1:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
 
                         break;
                     case 2:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
 
                         break;
                     case 3:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 5:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
 
                         break;
                     case 6:
 
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 7:
 
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 8:
 
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 9:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
 
                         break;
@@ -339,40 +345,40 @@ public class Laptop_activity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent;
-                switch(i){
+                switch (i) {
                     case 0:
                         break;
                     case 1:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
 
                         break;
                     case 2:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 5:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 6:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 7:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 8:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
 
@@ -390,30 +396,30 @@ public class Laptop_activity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent;
-                switch(i) {
+                switch (i) {
                     case 0:
                         break;
                     case 1:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
 
                         break;
                     case 2:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
 
                         break;
                     case 3:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
 
                         break;
                     case 5:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                 }
@@ -430,31 +436,31 @@ public class Laptop_activity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent;
-                switch(i) {
+                switch (i) {
                     case 0:
                         break;
                     case 1:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 5:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 6:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                 }
@@ -471,35 +477,35 @@ public class Laptop_activity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent;
-                switch(i) {
+                switch (i) {
                     case 0:
                         break;
                     case 1:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 5:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 6:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 7:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                 }
@@ -516,23 +522,23 @@ public class Laptop_activity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent;
-                switch(i){
+                switch (i) {
                     case 0:
                         break;
                     case 1:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                 }
@@ -549,31 +555,31 @@ public class Laptop_activity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent;
-                switch(i) {
+                switch (i) {
                     case 0:
                         break;
                     case 1:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 5:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 6:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                 }
@@ -590,15 +596,15 @@ public class Laptop_activity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent;
-                switch(i) {
+                switch (i) {
                     case 0:
                         break;
                     case 1:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                 }
@@ -615,7 +621,6 @@ public class Laptop_activity extends AppCompatActivity {
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         Brandcat.setAdapter(aa);
-
 
 
         ArrayAdapter aa2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, typeListArray);
@@ -654,7 +659,7 @@ public class Laptop_activity extends AppCompatActivity {
         //Setting the ArrayAdapter data on the Spinner
         oscat.setAdapter(aa8);
 
-        ArrayAdapter aa9 = new ArrayAdapter(this, android.R.layout.simple_spinner_item,graphicsListArray);
+        ArrayAdapter aa9 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, graphicsListArray);
         aa9.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         graphiccardcat.setAdapter(aa9);
@@ -665,11 +670,51 @@ public class Laptop_activity extends AppCompatActivity {
         dvdcat.setAdapter(aa10);
 
 
+    }
+/*
+    public boolean isInternetOn() {
+
+        // get Connectivity Manager object to check connection
+        ConnectivityManager connec =
+                (ConnectivityManager) getSystemService(getBaseContext().CONNECTIVITY_SERVICE);
+
+        // Check for network connections
+        if (connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.CONNECTED ||
+                connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.CONNECTING ||
+                connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.CONNECTING ||
+                connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.CONNECTED) {
 
 
+            return true;
+
+        } else if (
+                connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.DISCONNECTED ||
+                        connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.DISCONNECTED) {
+
+            Toast.makeText(getApplicationContext(), "Internet Down Data not Reflect on server", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        return false;
     }
 
 
+    private class insertItemToOnlineDB extends AsyncTask<ApiConnector, Long, JSONArray> {
+        @Override
+        protected JSONArray doInBackground(ApiConnector... params) {
+            // it is executed on Background thread
+            //Toast.makeText(getApplicationContext(),"Saving Data Online ",Toast.LENGTH_LONG).show();
+            Log.d("Abhishek", "Saving Data Online ");
 
+            return params[0].insert_stock_product_detail(Brandcat,Typecat,genrationcat,ramcat,inchescat,HDDcat,SHDDcat,oscat,graphiccardcat,dvdcat);
+        }
+
+        @Override
+        protected void onPostExecute(JSONArray jsonArray) {
+        }
+
+
+    }*/
 }
+
+
 

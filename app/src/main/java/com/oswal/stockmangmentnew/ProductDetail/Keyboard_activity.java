@@ -35,7 +35,7 @@ public class Keyboard_activity extends AppCompatActivity {
     //String[] typeList = {"Select","Wire","Wireless" };
     DatabaseHelper db =null;
     KeyboardProfile keyboardProfile= new KeyboardProfile();
-    ArrayList<String> brandListArray = new ArrayList<String>();
+    ArrayList<String> keyboard_brandListArray = new ArrayList<String>();
     ArrayList<String> typeListArray = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +68,7 @@ public class Keyboard_activity extends AppCompatActivity {
 
             if (jArraybrandList != null) {
                 for (int i=0;i<jArraybrandList.length();i++){
-                    brandListArray.add(jArraybrandList.getString(i));
+                    keyboard_brandListArray.add(jArraybrandList.getString(i));
                 }
             }
 
@@ -152,7 +152,7 @@ public class Keyboard_activity extends AppCompatActivity {
 
 
 
-        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, brandListArray);
+        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, keyboard_brandListArray);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         Brandcat.setAdapter(aa);

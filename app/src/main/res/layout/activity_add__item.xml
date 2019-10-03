@@ -83,7 +83,7 @@
             android:layout_height="30dp"
             android:layout_marginTop="90dp"
 
-           android:entries="@array/select"
+           android:entries="@array/ADD_itemList"
             android:layout_marginLeft="120dp"></Spinner>
 
 
