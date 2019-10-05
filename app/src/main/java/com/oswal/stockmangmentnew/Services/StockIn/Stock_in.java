@@ -13,33 +13,18 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.oswal.stockmangmentnew.MainActivity;
-import com.oswal.stockmangmentnew.ProductDetail.Laptop_activity;
 import com.oswal.stockmangmentnew.OnlineDBActivity.ApiConnector;
 import com.oswal.stockmangmentnew.POJO.StockIn;
-import com.oswal.stockmangmentnew.ProductDetail.Cables_activity;
-import com.oswal.stockmangmentnew.ProductDetail.GPS_activity;
-import com.oswal.stockmangmentnew.ProductDetail.Keyboard_activity;
-import com.oswal.stockmangmentnew.ProductDetail.Monitor_activity;
-import com.oswal.stockmangmentnew.ProductDetail.Mouse_activity;
-import com.oswal.stockmangmentnew.ProductDetail.Printer_activity;
-import com.oswal.stockmangmentnew.ProductDetail.Processor;
-import com.oswal.stockmangmentnew.ProductDetail.RAM_activity;
-import com.oswal.stockmangmentnew.ProductDetail.Router_activity;
-import com.oswal.stockmangmentnew.ProductDetail.Scanner_activity;
-import com.oswal.stockmangmentnew.ProductDetail.Switches_activity;
-import com.oswal.stockmangmentnew.ProductDetail.UPS_activity;
-import com.oswal.stockmangmentnew.ProductDetail.Wifidongle_activity;
+
 import com.oswal.stockmangmentnew.R;
 
 import org.json.JSONArray;
@@ -50,9 +35,10 @@ import java.util.List;
 
 public class Stock_in extends AppCompatActivity {
     TextView stockin_PageNumber;
-    EditText supplierID,  billno, sname, contact, add,  availableq, openpg, storageloc;
-    String  supplierIDString, dateString, billnoString, snameString, contactString, addString, availableqString, storagelocString;
+    EditText  supplierID,  billno, sname, contact, add,  availableq, openpg, storageloc;
+    String   supplierIDString, dateString, billnoString, snameString, contactString, addString, availableqString, storagelocString;
     Button submit, open, scan,date;
+    public static String barCodeContent="";
 
     List<StockIn> stockInList = new ArrayList<>();
     StockIn stockIn = new StockIn();
@@ -182,6 +168,11 @@ public class Stock_in extends AppCompatActivity {
             add.requestFocus();
             return false;
         }
+
+        if (barCodeContent.isEmpty()) {
+           Toast.makeText(getApplicationContext(),"Scan Barcode !!! ",Toast.LENGTH_LONG).show();
+            return false;
+        }
         return true;
     }
 
@@ -225,6 +216,7 @@ public class Stock_in extends AppCompatActivity {
         availableqString = availableq.getText().toString().trim();
         storagelocString = storageloc.getText().toString().trim();
 
+
         stockIn.setSupplierID(supplierIDString);
         stockIn.setDate(dateString);
         stockIn.setBillNumber(billnoString);
@@ -233,6 +225,7 @@ public class Stock_in extends AppCompatActivity {
         stockIn.setAddress(addString);
         stockIn.setStorageLocation(storagelocString);
         stockIn.setAvailableQuantity(availableqString);
+      stockIn.setItemuniqid(barCodeContent);
 
         return stockIn;
     }
@@ -299,6 +292,7 @@ public class Stock_in extends AppCompatActivity {
         try {
             Intent intent = new Intent(ACTION_SCAN);
             intent.putExtra("SCAN_MODE", "PRODUCT_MODE");
+            intent.putExtra("SCAN_FORMATS", "CODE_128");
             startActivityForResult(intent, 0);
         } catch (ActivityNotFoundException anfe) {
             showDialog(Stock_in.this, "No Scanner Found", "Download a scanner code activity?", "Yes", "No").show();
@@ -332,9 +326,10 @@ public class Stock_in extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 String contents = intent.getStringExtra("SCAN_RESULT");
                 String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
-
-                Toast toast = Toast.makeText(this, "Content:" + contents + " Format:" + format, Toast.LENGTH_SHORT);
-                toast.show();
+                barCodeContent=contents;
+                Toast.makeText(getApplicationContext(),"Item Id :"+contents,Toast.LENGTH_LONG).show();
+                //Toast toast = Toast.makeText(this, "Content:" + contents + " Format:" + format, Toast.LENGTH_SHORT);
+             //   toast.show();
             }
         }
     }

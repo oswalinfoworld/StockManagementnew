@@ -50,6 +50,7 @@ import java.util.List;
 
 public class stock_OUT extends AppCompatActivity {
     EditText CustomerID, billno, Cname, contact, add, companyname,availableq, openpg;
+    public static String barCodeContentStockOut="";
     int counter=0;
     TextView pageNumber;
     Spinner category;
@@ -248,6 +249,11 @@ public class stock_OUT extends AppCompatActivity {
             add.requestFocus();
             return false;
         }
+
+        if (barCodeContentStockOut.isEmpty()) {
+            Toast.makeText(getApplicationContext(),"Scan Barcode !!! ",Toast.LENGTH_LONG).show();
+            return false;
+        }
         return true;
     }
 
@@ -295,6 +301,7 @@ public class stock_OUT extends AppCompatActivity {
         stockOut.setContact_number(contactString);
         stockOut.setAddress(addString);
         stockOut.setQuantity(availableqString);
+        stockOut.setItemuniqid(barCodeContentStockOut);
         return stockOut;
     }
     private void setStockOutFormData(int listNumber) {
@@ -356,6 +363,7 @@ public class stock_OUT extends AppCompatActivity {
         try {
             Intent intent = new Intent(ACTION_SCAN);
             intent.putExtra("SCAN_MODE", "PRODUCT_MODE");
+            intent.putExtra("SCAN_FORMATS", "CODE_128");
             startActivityForResult(intent, 0);
         } catch (ActivityNotFoundException anfe) {
             showDialog(stock_OUT.this, "No Scanner Found", "Download a scanner code activity?", "Yes", "No").show();
@@ -389,8 +397,8 @@ public class stock_OUT extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 String contents = intent.getStringExtra("SCAN_RESULT");
                 String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
-
-                Toast toast = Toast.makeText(this, "Content:" + contents + " Format:" + format, Toast.LENGTH_LONG);
+                barCodeContentStockOut=contents;
+                Toast toast = Toast.makeText(this, "Item Id : " + contents  , Toast.LENGTH_LONG);
                 toast.show();
             }
         }

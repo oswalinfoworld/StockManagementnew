@@ -2,8 +2,16 @@ package com.oswal.stockmangmentnew.POJO;
 
 public class StockIn {
 
-    String supplierID, date, billNumber, supplierName, contactNumber, address, availableQuantity,storageLocation;
+    String itemuniqid, supplierID, date, billNumber, supplierName, contactNumber, address, availableQuantity,storageLocation;
     Item item = new Item();
+
+    public String getItemuniqid() {
+        return itemuniqid;
+    }
+
+    public void setItemuniqid(String itemuniqid) {
+        this.itemuniqid = itemuniqid;
+    }
 
     public Item getItem() {
         return item;

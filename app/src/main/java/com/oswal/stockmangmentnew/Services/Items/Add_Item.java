@@ -53,25 +53,7 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
     String[] categoryList = {"Select", "Laptop", "Monitor", "Keyboard", "Mouse", "Printer", "Scanner",
             "UPS", "CPU", "Router", "Wifi_Dongle", "RAM", "Cables", "GPS_trackingMachine", "Xerox-_machin",
             "Switch","Tablet","TV","Wifi_LAN_card"};
-    /*ArrayList<String> categoryList= new ArrayList<String>();
-    /*ArrayList<String> categoryList= new ArrayList<String>();
-    ArrayList<String> MonitorArray = new ArrayList<String>();
-    ArrayList<String> KeyboardArray = new ArrayList<String>();
-    ArrayList<String> MouseArray = new ArrayList<String>();
-    ArrayList<String> PrinterArray = new ArrayList<String>();
-    ArrayList<String> ScannerArray = new ArrayList<String>();
-    ArrayList<String> UPSArray = new ArrayList<String>();
-    ArrayList<String> CPUArray = new ArrayList<String>();
-    ArrayList<String> RouterArray = new ArrayList<String>();
-    ArrayList<String> Wifi_DongleArray = new ArrayList<String>();
-    ArrayList<String> RAMArray = new ArrayList<String>();
-    ArrayList<String> CablesArray = new ArrayList<String>();
-    ArrayList<String> GPS_trackingMachineArray = new ArrayList<String>();
-    ArrayList<String> Xerox_machinArray = new ArrayList<String>();
-    ArrayList<String>SwitchArray = new ArrayList<String>();
-    ArrayList<String>TabletArray = new ArrayList<String>();
-    ArrayList<String>TVArray = new ArrayList<String>();
-    ArrayList<String>Wifi_LAN_cardArray = new ArrayList<String>();*/
+    /*ArrayList<String> ADD_itemList= new ArrayList<String>();*/
 
 
     @Override
@@ -208,90 +190,11 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
         //Setting the ArrayAdapter data on the Spinner
         category.setAdapter(aa);
 
-       /* ArrayAdapter aa1 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, MonitorArray);
+       /* ArrayAdapter aa1 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, ADD_itemList);
         aa1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         category.setAdapter(aa1);
 
-        ArrayAdapter aa2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, KeyboardArray);
-        aa2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        category.setAdapter(aa2);
-
-        ArrayAdapter aa3 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, MouseArray);
-        aa3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        category.setAdapter(aa3);
-
-        ArrayAdapter aa4 = new ArrayAdapter(this, android.R.layout.simple_spinner_item,PrinterArray );
-        aa4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        category.setAdapter(aa4);
-
-        ArrayAdapter aa5 = new ArrayAdapter(this, android.R.layout.simple_spinner_item,ScannerArray );
-        aa5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        category.setAdapter(aa5);
-
-        ArrayAdapter aa6 = new ArrayAdapter(this, android.R.layout.simple_spinner_item,UPSArray );
-        aa6.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        category.setAdapter(aa6);
-
-        ArrayAdapter aa7 = new ArrayAdapter(this, android.R.layout.simple_spinner_item,CPUArray );
-        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        category.setAdapter(aa);
-
-        ArrayAdapter aa8 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, RouterArray );
-        aa8.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        category.setAdapter(aa8);
-
-        ArrayAdapter aa9 = new ArrayAdapter(this, android.R.layout.simple_spinner_item,Wifi_DongleArray );
-        aa9.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        category.setAdapter(aa9);
-
-        ArrayAdapter aa10 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, RAMArray);
-        aa10.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        category.setAdapter(aa10);
-
-        ArrayAdapter aa11 = new ArrayAdapter(this, android.R.layout.simple_spinner_item,CablesArray)  ;
-        aa11.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        category.setAdapter(aa11);
-
-        ArrayAdapter aa12 = new ArrayAdapter(this, android.R.layout.simple_spinner_item,GPS_trackingMachineArray );
-        aa12.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        category.setAdapter(aa12);
-
-        ArrayAdapter aa13 = new ArrayAdapter(this, android.R.layout.simple_spinner_item,Xerox_machinArray );
-        aa13.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        category.setAdapter(aa13);
-
-        ArrayAdapter aa14 = new ArrayAdapter(this, android.R.layout.simple_spinner_item,TVArray );
-        aa14.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        category.setAdapter(aa14);
-
-        ArrayAdapter aa15 = new ArrayAdapter(this, android.R.layout.simple_spinner_item,SwitchArray );
-        aa15.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        category.setAdapter(aa15);
-
-        ArrayAdapter aa16 = new ArrayAdapter(this, android.R.layout.simple_spinner_item,TabletArray );
-        aa16.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        category.setAdapter(aa16);
-
-        ArrayAdapter aa17 = new ArrayAdapter(this, android.R.layout.simple_spinner_item,Wifi_LAN_cardArray);
-        aa17.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        category.setAdapter(aa17);
 */
 
         submit = (Button) findViewById(R.id.submit_item);
@@ -304,8 +207,7 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
                 oneItem.setCategory(categoryS);
 
                 oneItem.setSerial_number(serial_number.getText().toString().trim());
-              /*  oneItem.setDOM(dom.getText().toString().trim());
-                oneItem.setQuantity(quantity.getText().toString().trim());*/
+
                 oneItem.setDate(date.getText().toString().trim());
 
                 if (validateForm(oneItem) && isInternetOn()) {
@@ -331,9 +233,6 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
                 model_numberS = oneItem.getModel_number().toString().trim();
                 serial_numberS = oneItem.getSerial_number().toString().trim();
                 dateS = oneItem.getDate().toString().trim();
-              /*  domS = dom.getText().toString().trim();
-
-                quantitys = quantity.getText().toString().trim();*/
 
                 if (model_numberS.length() == 0) {
                     model_number.setError("Enter model no");
@@ -345,18 +244,7 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
                     serial_number.requestFocus();
                     return false;
                 }
-                /*if (domS.length() == 0) {
-                    dom.setError("Enter DOM no");
-                    dom.requestFocus();
-                    return false;
-                }
 
-
-                if (quantitys.length() == 0) {
-                    quantity.setError("Enter quantity");
-                    quantity.requestFocus();
-                    return false;
-                }*/
                 if (dateS.length() == 0) {
                     date.setError("Enter date");
                     date.requestFocus();

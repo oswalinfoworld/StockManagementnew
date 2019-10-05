@@ -3,8 +3,17 @@ package com.oswal.stockmangmentnew.POJO;
 public class StockOut {
 
 
-    String date,bill_number,customer_id,customer_name,contact_number,address,quantity;
+    String itemuniqid,date,bill_number,customer_id,customer_name,contact_number,address,quantity;
+
     Item item = new Item();
+
+    public String getItemuniqid() {
+        return itemuniqid;
+    }
+
+    public void setItemuniqid(String itemuniqid) {
+        this.itemuniqid = itemuniqid;
+    }
 
     public String getDate() {
         return date;
@@ -65,4 +74,6 @@ public class StockOut {
     public void setItem(Item item) {
         this.item = item;
     }
+
+
 }
