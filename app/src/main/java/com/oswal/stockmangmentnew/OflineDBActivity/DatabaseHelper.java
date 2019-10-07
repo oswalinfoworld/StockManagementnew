@@ -13,6 +13,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Environment;
 import android.util.Log;
 
+import androidx.annotation.Nullable;
+
 import com.oswal.stockmangmentnew.OflineDBActivity.model.CPUProfile;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.CablesProfile;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.CustomerProfile;
@@ -55,9 +57,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "StockManagement.db";
 
 
+
     public String getDatabasePath() {
         return databasePath;
     }
+
 
     public DatabaseHelper(final Context context) {
         super(context, Environment.getExternalStorageDirectory()
@@ -70,6 +74,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + File.separator + DATABASE_NAME);
         SQLiteDatabase.openOrCreateDatabase(context.getDatabasePath(DATABASE_NAME).getPath().toString(), null);
     }
+
 
 
     public static String getDBName() {
@@ -299,7 +304,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Creating Function For getAllKeyboardProfileDetails
-    public KeyboardProfile getAllKeyboardProfileDetails() {
+    public  KeyboardProfile getAllKeyboardProfileDetails() {
 
         // Select All Query
         String selectQuery = "SELECT  * FROM " + KeyboardProfile.TABLE_NAME;
@@ -325,7 +330,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    //Creating Function For deleteSupplierList
+    //Creating Function For deleteKeyboardList
     public void deleteKeyboardProfileList() {
         // Select All Query
         String deleteQuery = "DELETE FROM " + KeyboardProfile.TABLE_NAME;
