@@ -98,22 +98,24 @@ public class AddItemSpinner extends AppCompatActivity {
             public void onClick(View view) {
 
 
-                AddItemSpinner addItemSpinner=new AddItemSpinner();
+                //AddItemSpinner addItemSpinner=new AddItemSpinner();
+               // KeyboardProfile temp =new KeyboardProfile();
                 keyboard_brandnameS = keyboard_brandname.getText().toString();
-                if (keyboard_brandnameS.matches("")) {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+
+                if (!keyboard_brandnameS.isEmpty()) {
+                     String keyboard_brandnameS = KeyboardProfile.getCOLUMN_Brand_Name();
+                    // keyboard_brandnameS  = KeyboardProfile.getCOLUMN_TypeList();
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertKeyboardDetails(keyboard_brandnameS);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
                     return;
                 }
-                else{
-                   /* DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
-                    KeyboardProfile temp;
-                    temp= keyboard_brandnameS;
-                    databaseHelper.insertKeyboardDetails(temp);
-*/
 
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
+
+
+
+
 
 
                 keyboard_typeS = keyboard_type.getText().toString();

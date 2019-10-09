@@ -9,7 +9,7 @@ public class KeyboardProfile implements Serializable {
     public static final String COLUMN_Brand_Name = "brandList";
     public static final String COLUMN_TypeList = "typeList";
 
-
+    private String temp;
     private int ProfileID;
     private String brandName;
     private String typeList;

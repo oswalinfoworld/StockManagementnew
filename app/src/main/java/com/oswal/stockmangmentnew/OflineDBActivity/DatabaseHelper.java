@@ -285,7 +285,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 //KeyBoard Profile
 
-    public long insertKeyboardDetails(KeyboardProfile temp) {
+    public long insertKeyboardDetails(KeyboardProfile   temp) {
         // get writable database as we want to write data
         SQLiteDatabase db = this.getWritableDatabase();
 
