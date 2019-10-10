@@ -12,7 +12,23 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.oswal.stockmangmentnew.OflineDBActivity.DatabaseHelper;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.CPUProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.CablesProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.GPSProfile;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.KeyboardProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.LaptopProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.MonitorProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.MouseProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.PrinterProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.RAMProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.RouterProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.ScannerProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.SwitchProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.TVProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.TabletProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.UPSProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.XeroxProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.wifi_LanProfile;
+import com.oswal.stockmangmentnew.OflineDBActivity.model.wifi_dongleProfile;
 import com.oswal.stockmangmentnew.R;
 
 public class AddItemSpinner extends AppCompatActivity {
@@ -98,629 +114,620 @@ public class AddItemSpinner extends AppCompatActivity {
             public void onClick(View view) {
 
 
-                //AddItemSpinner addItemSpinner=new AddItemSpinner();
-               // KeyboardProfile temp =new KeyboardProfile();
-                keyboard_brandnameS = keyboard_brandname.getText().toString();
 
-                if (!keyboard_brandnameS.isEmpty()) {
-                     String keyboard_brandnameS = KeyboardProfile.getCOLUMN_Brand_Name();
-                    // keyboard_brandnameS  = KeyboardProfile.getCOLUMN_TypeList();
+               keyboard_brandnameS = keyboard_brandname.getText().toString();
+
+
+               if (!keyboard_brandnameS.isEmpty()) {
+                    KeyboardProfile obj=new KeyboardProfile();
+                    obj.setBrandList(keyboard_brandnameS);
                     DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
-                    databaseHelper.insertKeyboardDetails(keyboard_brandnameS);
+                    databaseHelper.insertKeyboardDetails(obj);
                     Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
-                    return;
+
                 }
-
-
-
-
-
 
 
 
                 keyboard_typeS = keyboard_type.getText().toString();
-                if(keyboard_typeS.isEmpty())
+                if(!keyboard_typeS.isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    KeyboardProfile obj=new KeyboardProfile();
+                    obj.setTypeList(keyboard_typeS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertKeyboardDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
+
+
+
+                mouse_brandnameS = mouse_brandname.getText().toString();
+                if( !mouse_brandnameS.isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
+                    MouseProfile obj=new MouseProfile();
+                        obj.setBrandName(mouse_brandnameS);
+                        DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                        databaseHelper.insertMouseDetails(obj);
+                        Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
-                }
 
-
-                mouse_brandnameS = mouse_brandname.getText().toString().trim();
-                if( mouse_brandnameS.isEmpty())
-                {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
-
-                }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
                 }
 
                 mouse_typeS = mouse_type.getText().toString().trim();
-                if(  mouse_typeS .isEmpty())
+                if(  !mouse_typeS .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    MouseProfile obj=new MouseProfile();
+                    obj.setTypeList(mouse_typeS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertMouseDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 Laptop_brandnameS = Laptop_brandname.getText().toString().trim();
 
-                if(  Laptop_brandnameS.isEmpty())
+                if(  !Laptop_brandnameS.isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
-
-                }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
+                 LaptopProfile obj=new LaptopProfile();
+                    obj.setBrandName(Laptop_brandnameS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertLaptopetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
 
                 Laptop_typeS = Laptop_type.getText().toString().trim();
-                if(      Laptop_typeS.isEmpty())
+                if(!Laptop_typeS.isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    LaptopProfile obj=new LaptopProfile();
+                    obj.setProtypeList(Laptop_typeS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertLaptopetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 Laptop_genS = Laptop_gen.getText().toString().trim();
-                if(           Laptop_genS .isEmpty())
+                if(           !Laptop_genS .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    LaptopProfile obj=new LaptopProfile();
+                    obj.setGen(Laptop_genS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertLaptopetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
 
                 Laptop_ramS = Laptop_ram.getText().toString().trim();
-                if(                Laptop_ramS.isEmpty())
+                if(!Laptop_ramS.isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
-
-                }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
+                    LaptopProfile obj=new LaptopProfile();
+                    obj.setRam(Laptop_ramS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertLaptopetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
 
                 Laptop_inchesS =Laptop_inches.getText().toString().trim();
-                if(          Laptop_inchesS  .isEmpty())
+                if( !Laptop_inchesS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    LaptopProfile obj=new LaptopProfile();
+                    obj.setInches(Laptop_inchesS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertLaptopetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
 
                 Laptop_hddS = Laptop_hdd.getText().toString().trim();
-                if(            Laptop_hddS .isEmpty())
+                if(           ! Laptop_hddS .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    LaptopProfile obj=new LaptopProfile();
+                    obj.setHdd(Laptop_hddS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertLaptopetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
 
                 Laptop_shddS = Laptop_shdd.getText().toString().trim();
-                if(             Laptop_shddS  .isEmpty())
+                if(             !Laptop_shddS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    LaptopProfile obj=new LaptopProfile();
+                    obj.setShdd(Laptop_shddS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertLaptopetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 Laptop_osS = Laptop_os.getText().toString().trim();
-                if(             Laptop_osS  .isEmpty())
+                if(             !Laptop_osS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    LaptopProfile obj=new LaptopProfile();
+                    obj.setOs(Laptop_osS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertLaptopetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
 
 
                 Laptop_graphicS= Laptop_graphic.getText().toString().trim();
-                if(            Laptop_graphicS  .isEmpty())
+                if(           ! Laptop_graphicS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    LaptopProfile obj=new LaptopProfile();
+                    obj.setGrapcard(Laptop_graphicS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertLaptopetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
 
 
                 Laptop_dvdS = Laptop_dvd.getText().toString().trim();
-                if(  Laptop_dvdS .isEmpty())
+                if(  !Laptop_dvdS .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    LaptopProfile obj=new LaptopProfile();
+                    obj.setDvd(Laptop_dvdS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertLaptopetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
 
 
 
                 monitor_brandS= monitor_brand.getText().toString().trim();
-                if(monitor_brandS .isEmpty())
+                if(!monitor_brandS .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
-
-                }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
+                    MonitorProfile obj=new  MonitorProfile ();
+                    obj.setBrandName(monitor_brandS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertMonitorDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
 
                 monitor_inchesS = monitor_inches.getText().toString().trim();
-                if(           monitor_inchesS  .isEmpty())
+                if(   !monitor_inchesS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    MonitorProfile obj=new  MonitorProfile ();
+                    obj.setInches(monitor_inchesS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertMonitorDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
+
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
 
                 monitor_porSt = monitor_port.getText().toString().trim();
-                if(           monitor_porSt  .isEmpty())
+                if(           !monitor_porSt  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    MonitorProfile obj=new  MonitorProfile ();
+                    obj.setPort(monitor_porSt);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertMonitorDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 printer_brandnameS = printer_brandname.getText().toString().trim();
-                if(           printer_brandnameS  .isEmpty())
+                if(          ! printer_brandnameS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                  PrinterProfile obj=new  PrinterProfile  ();
+                    obj.setBrandName(printer_brandnameS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertPrinterDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 scanner_brandnameS = scanner_brandname.getText().toString().trim();
-                if(           scanner_brandnameS  .isEmpty())
+                if(          ! scanner_brandnameS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    ScannerProfile obj=new  ScannerProfile();
+                    obj.setBrandList(scanner_brandnameS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertScannerProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 scanner_typeS = scanner_type.getText().toString().trim();
-                if(           scanner_typeS  .isEmpty())
+                if(          ! scanner_typeS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    ScannerProfile obj=new  ScannerProfile();
+                    obj.setTypeList(scanner_typeS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertScannerProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
 
                 ups_brandnameS = ups_brandname.getText().toString().trim();
-                if(           ups_brandnameS  .isEmpty())
+                if(          ! ups_brandnameS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                   UPSProfile obj=new    UPSProfile();
+                    obj.setBrandName(ups_brandnameS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertUPSProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 ups_typeS = ups_type.getText().toString().trim();
-                if(           ups_typeS  .isEmpty())
+                if(          ! ups_typeS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    UPSProfile obj=new    UPSProfile();
+                    obj.setUpstype(ups_typeS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertUPSProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 ups_capacityS = ups_capacity.getText().toString().trim();
-                if(           ups_capacityS  .isEmpty())
+                if(           !ups_capacityS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    UPSProfile obj=new    UPSProfile();
+                    obj.setCapacityList(ups_capacityS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertUPSProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submiteda", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 cpu_brandnamSe = cpu_brandname.getText().toString().trim();
-                if(           cpu_brandnamSe  .isEmpty())
+                if(           !cpu_brandnamSe  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                   CPUProfile obj=new     CPUProfile();
+                    obj.setBrandName(cpu_brandnamSe);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertCPUDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
 
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
-
-                }
                 cpu_typeS = cpu_type.getText().toString().trim();
-                if(           cpu_typeS  .isEmpty())
+                if(          ! cpu_typeS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    CPUProfile obj=new     CPUProfile();
+                    obj.setProtypeList(cpu_typeS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertCPUDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 cpu_genS = cpu_gen.getText().toString().trim();
-                if(           cpu_genS  .isEmpty())
+                if(         !  cpu_genS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    CPUProfile obj=new     CPUProfile();
+                    obj.setGen(cpu_genS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertCPUDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 cpu_ramS = cpu_ram.getText().toString().trim();
-                if(           cpu_ramS  .isEmpty())
+                if(         !  cpu_ramS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    CPUProfile obj=new  CPUProfile();
+                    obj.setRam(cpu_ramS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertCPUDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 cpu_hddS = cpu_hdd.getText().toString().trim();
-                if(           cpu_hddS  .isEmpty())
+                if(         !  cpu_hddS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    CPUProfile obj=new  CPUProfile();
+                    obj.setHdd(cpu_hddS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertCPUDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 cpu_shdds = cpu_shdd.getText().toString().trim();
-                if(           cpu_shdds  .isEmpty())
+                if(          !cpu_shdds  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    CPUProfile obj=new  CPUProfile();
+                    obj.setShdd( cpu_shdds);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertCPUDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 cpu_graphicsS = cpu_graphics.getText().toString().trim();
-                if(           cpu_graphicsS  .isEmpty())
+                if(          !cpu_graphicsS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    CPUProfile obj=new  CPUProfile();
+                    obj.setGrapcard( cpu_graphicsS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertCPUDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 cpu_osS = cpu_os.getText().toString().trim();
-                if(           cpu_osS  .isEmpty())
+                if(           !cpu_osS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    CPUProfile obj=new  CPUProfile();
+                    obj.setOs(     cpu_osS );
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertCPUDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 cpu_dvdS = cpu_dvd.getText().toString().trim();
-                if(           cpu_dvdS  .isEmpty())
+                if(           !cpu_dvdS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
-
-                }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
+                    CPUProfile obj=new  CPUProfile();
+                    obj.setDvd(       cpu_dvdS  );
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertCPUDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
 
                 router_brandnameS = router_brandname.getText().toString().trim();
-                if(           router_brandnameS  .isEmpty())
+                if(          !router_brandnameS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                   RouterProfile obj=new  RouterProfile();
+                    obj.setBrandName(  router_brandnameS );
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertRouterProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 router_typeS = router_type.getText().toString().trim();
-                if(           router_typeS  .isEmpty())
+                if(         !  router_typeS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    RouterProfile obj=new  RouterProfile();
+                    obj.setType( router_typeS );
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertRouterProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 router_portS = router_port.getText().toString().trim();
-                if(           router_portS  .isEmpty())
+                if(           !router_portS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    RouterProfile obj=new  RouterProfile();
+                    obj.setPort( router_portS );
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertRouterProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 router_mbpsS = router_mbps.getText().toString().trim();
-                if(           router_mbpsS  .isEmpty())
+                if(          ! router_mbpsS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    RouterProfile obj=new  RouterProfile();
+                    obj.setMbps( router_mbpsS );
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertRouterProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 ram_brandnameS = ram_brandname.getText().toString().trim();
-                if(           ram_brandnameS  .isEmpty())
+                if(           !ram_brandnameS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    RAMProfile obj=new RAMProfile();
+                    obj.setBrandName( ram_brandnameS );
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertRamDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 ram_typS = ram_type.getText().toString().trim();
-                if(           ram_typS  .isEmpty())
+                if(         !  ram_typS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    RAMProfile obj=new RAMProfile();
+                    obj.setTypeList( ram_typS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertRamDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 ram_gbS = ram_gb.getText().toString().trim();
-                if(           ram_gbS  .isEmpty())
+                if(          ! ram_gbS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    RAMProfile obj=new RAMProfile();
+                    obj.setGb( ram_gbS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertRamDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 cables_brandnameS = cables_brandname.getText().toString().trim();
-                if(           cables_brandnameS  .isEmpty())
+                if(           !cables_brandnameS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    CablesProfile obj=new CablesProfile ();
+                    obj.setBrandName( cables_brandnameS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertCablesProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 gps_brandnameS = gps_brandname.getText().toString().trim();
-                if(           gps_brandnameS  .isEmpty())
+                if(         !  gps_brandnameS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                  GPSProfile obj=new GPSProfile  ();
+                    obj.setBrandName( gps_brandnameS );
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertGPSDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 xerox_brandnameS = xerox_brandname.getText().toString().trim();
-                if(           xerox_brandnameS  .isEmpty())
+                if(         !  xerox_brandnameS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    XeroxProfile obj=new  XeroxProfile  ();
+                    obj.setBrandName( xerox_brandnameS );
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertXeroxProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 xerox_ppmS = xerox_ppm.getText().toString().trim();
-                if(           xerox_ppmS  .isEmpty())
+                if(          ! xerox_ppmS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    XeroxProfile obj=new  XeroxProfile  ();
+                    obj.setPPMList(  xerox_ppmS );
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertXeroxProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 switch_brandnameS = switch_brandname.getText().toString().trim();
-                if(           switch_brandnameS  .isEmpty())
+                if(           !switch_brandnameS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    SwitchProfile obj=new  SwitchProfile   ();
+                    obj.setBrandName( switch_brandnameS  );
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertSwitchProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 switch_ports = switch_port.getText().toString().trim();
-                if(           switch_ports  .isEmpty())
+                if(          ! switch_ports  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    SwitchProfile obj=new  SwitchProfile   ();
+                    obj.setPort( switch_ports );
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertSwitchProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 switch_typeS = switch_type.getText().toString().trim();
-                if(           switch_typeS  .isEmpty())
+                if(          ! switch_typeS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    SwitchProfile obj=new  SwitchProfile   ();
+                    obj.setType(  switch_typeS );
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertSwitchProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 tv_brandnameS = tv_brandname.getText().toString().trim();
-                if(           tv_brandnameS  .isEmpty())
+                if(        !   tv_brandnameS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                   TVProfile obj=new   TVProfile   ();
+                    obj.setBrandName(  tv_brandnameS );
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertTVProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 tv_inchesS = tv_inches.getText().toString().trim();
-                if(           tv_inchesS  .isEmpty())
+                if(  ! tv_inchesS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    TVProfile obj=new   TVProfile   ();
+                    obj.setInchesList(  tv_inchesS  );
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertTVProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 wifiLan_brandnameS = wifiLan_brandname.getText().toString().trim();
-                if(           wifiLan_brandnameS  .isEmpty())
+                if(        !   wifiLan_brandnameS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    wifi_LanProfile obj=new  wifi_LanProfile ();
+                    obj.setBrandName( wifiLan_brandnameS );
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertwifi_LanProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 wifiLan_mbpsS = wifiLan_mbps.getText().toString().trim();
-                if(           wifiLan_mbpsS  .isEmpty())
+                if(           !wifiLan_mbpsS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    wifi_LanProfile obj=new  wifi_LanProfile ();
+                    obj.setMbps(   wifiLan_mbpsS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertwifi_LanProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 wifidongle_brandnameS = wifidongle_brandname.getText().toString().trim();
-                if(           wifidongle_brandnameS  .isEmpty())
-                {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                if(          ! wifidongle_brandnameS  .isEmpty())
+                {    wifi_dongleProfile obj=new  wifi_dongleProfile();
+                     obj.setBrandName(wifidongle_brandnameS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertwifi_dongleProfileDetails(obj);
+
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 wifidongle_typeS = wifidongle_type.getText().toString().trim();
-                if(           wifidongle_typeS  .isEmpty())
+                if( !  wifidongle_typeS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    wifi_dongleProfile obj=new  wifi_dongleProfile();
+                    obj.setTypeList(wifidongle_typeS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertwifi_dongleProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
                 tablet_brandnameS = tablet_brandname.getText().toString().trim();
-                if(           tablet_brandnameS  .isEmpty())
+                if( !  tablet_brandnameS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
+                    TabletProfile obj=new   TabletProfile  ();
+                    obj.setBrandName( tablet_brandnameS );
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertTabletProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
 
-                }
 
                 tablet_inchesS = tablet_inches.getText().toString().trim();
-                if(           tablet_inchesS  .isEmpty())
+                if( !tablet_inchesS  .isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"You did not enter a data", Toast.LENGTH_LONG).show();
-
-                }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
+                    TabletProfile obj=new   TabletProfile  ();
+                    obj.setInchesList(  tablet_inchesS);
+                    DatabaseHelper databaseHelper=new DatabaseHelper(getApplicationContext());
+                    databaseHelper.insertTabletProfileDetails(obj);
+                    Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_LONG).show();
 
                 }
 

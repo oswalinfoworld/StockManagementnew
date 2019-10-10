@@ -3,7 +3,9 @@ package com.oswal.stockmangmentnew.ProductDetail;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,8 +17,10 @@ import android.widget.Toast;
 import com.oswal.stockmangmentnew.OflineDBActivity.DatabaseHelper;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.MonitorProfile;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.MouseProfile;
+import com.oswal.stockmangmentnew.OnlineDBActivity.ApiConnector;
 import com.oswal.stockmangmentnew.R;
 import com.oswal.stockmangmentnew.Services.Items.Add_Item;
+import com.oswal.stockmangmentnew.Services.Return.Reject;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -25,7 +29,9 @@ import java.util.ArrayList;
 
 public class Mouse_activity extends AppCompatActivity {
     Button submit;
-    Spinner Brandcat,companynamecat,Typecat;
+    Spinner Brandcat,Typecat;
+    String itemUniqueID="itemUniqueID";
+
     DatabaseHelper db =null;
     MouseProfile mouseProfile= new  MouseProfile();
     ArrayList<String> brandListArray = new ArrayList<String>();
@@ -107,14 +113,7 @@ public class Mouse_activity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
-                    case 3:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
-                        break;
-                    case 4:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-
-                        break;
                 }
             }
 
@@ -168,10 +167,32 @@ public class Mouse_activity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+              Mouse_activity.insertMouse_activityItemToOnlineDB.execute((Runnable) new ApiConnector());;
                 Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(Mouse_activity.this, Add_Item.class);
                 startActivity(i);
             }
         });
+    }
+
+
+    private class insertMouse_activityItemToOnlineDB extends AsyncTask<ApiConnector, Long, JSONArray> {
+        @Override
+        protected JSONArray doInBackground(ApiConnector... params) {
+
+            // it is executed on Background thread
+            //Toast.makeText(getApplicationContext(),"Saving Data Online ",Toast.LENGTH_LONG).show();
+            Log.d("Abhishek", "Saving Data Online ");
+            return params[0]. insert_mouse_activity(itemUniqueID,Brandcat,Typecat);
+        }
+
+        @Override
+        protected void onPostExecute(JSONArray jsonArray) {
+
+
+        }
+
     }
 }
