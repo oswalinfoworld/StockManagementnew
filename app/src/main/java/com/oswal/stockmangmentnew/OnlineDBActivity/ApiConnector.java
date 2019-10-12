@@ -183,6 +183,18 @@ public class ApiConnector {
         //step4 change link
         //step5 Php script change
         String url = ConstantsIdentifier.getDomainName() + "/stockItemAdd.php?model_number=" + model_number + "&serial_number=" + serial_number + "&date=" + date;
+        String url2 = ConstantsIdentifier.getDomainName() + "/Product_detail.php?mouse_activity_brandCat="+mouse_activity_brandCat+"&mouse_activity_typeCat="+mouse_activity_typeCat+"&Laptop_activity_breandCat="+Laptop_activity_breandCat+"&Laptop_activity_typeCat="+Laptop_activity_typeCat+"&Laptop_activity_generationCat="+Laptop_activity_generationCat+"&Laptop_activity_ramCat="+Laptop_activity_ramCat+
+                "&Laptop_activity_inchesCat="+Laptop_activity_inchesCat+"&Laptop_activity_HDDCat="+Laptop_activity_HDDCat+"&Laptop_activity_SHDDCat="+Laptop_activity_SHDDCat+"&Laptop_activity_OSCatt="+Laptop_activity_OSCatt+"&Laptop_activity_graphiccardCat="+Laptop_activity_graphiccardCat+
+                "&Laptop_acDDtivity_DVDCat="+Laptop_acDDtivity_DVDCat+"&Printer_acDDtivity_brandcat="+Printer_acDDtivity_brandcat+"&Scanner_acDDtivity_brandcat="+Scanner_acDDtivity_brandcat+"&Scanner_acDDtivity_typecat="+Scanner_acDDtivity_typecat+"&CPU_activity_brandCat="+CPU_activity_brandCat+
+                "&CPU_activity_typeCat="+CPU_activity_typeCat+"&CPU_activity_generationCat="+CPU_activity_generationCat+"&CPU_activity_ramCat="+CPU_activity_ramCat+"&CPU_activity_HDDCat="+CPU_activity_HDDCat+"&CPU_activity_SHDDCat="+CPU_activity_SHDDCat+"&CPU_activity_OSCatt="
+                +CPU_activity_OSCatt+"&CPU_activity_graphiccardCat="+CPU_activity_graphiccardCat+"&CPU_acDDtivity_DVDCat="+CPU_acDDtivity_DVDCat+"&Router_activity_brandCat="+Router_activity_brandCat+"&Router_activity_typeCat="+Router_activity_typeCat+"&Router_activity_portCat="+Router_activity_portCat+"&Router_activity_mbpsCat="+Router_activity_mbpsCat+
+                "&wifidongle_activity_brandCat="+wifidongle_activity_brandCat+"&wifidongle_activity_typeCat="+wifidongle_activity_typeCat+"&RAM_activity_brandCat="+RAM_activity_brandCat+"&RAM_activity_typeCat="+RAM_activity_typeCat+"&RAM_activity_gbCat="+RAM_activity_gbCat+
+                "&Cable_activity_brandCat="+Cable_activity_brandCat+"&GPS_activity_brandCat="+GPS_activity_brandCat+"&Xerox_activity_brandCat="+Xerox_activity_brandCat+"&Xerox_activity_ppmCat="+Xerox_activity_ppmCat+
+                "&Switches_activity_brandCat="+Switches_activity_brandCat+"&Switches_activity_typeCat="+Switches_activity_typeCat+"&Switches_activity_portCat="+Switches_activity_portCat+"&tablet_activity_brandCat="+tablet_activity_brandCat+
+                "&tablet_activity_inchesCat="+tablet_activity_inchesCat+"&tv_activity_brandCat="+tv_activity_brandCat+"&tv_activity_inchesCat="+tv_activity_inchesCat+
+                "&wifi_Lan_activity_brandCat="+wifi_Lan_activity_brandCat+"&wifi_Lan_activity_inchesCat="+wifi_Lan_activity_inchesCat;
+
+    ;
 
         // Get HttpResponse Object from url.
         // Get HttpEntity from Http Response Object
