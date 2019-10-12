@@ -2,7 +2,7 @@ package com.oswal.stockmangmentnew.POJO;
 
 public class Item {
 
-    String model_number, serial_number, DOM, supplier_name, mobile_number, category, quantity, date;
+    String model_number, serial_number, category, quantity, date;
     ItemSpecification itemSpecification = new ItemSpecification();
 
 
@@ -22,21 +22,6 @@ public class Item {
         this.serial_number = serial_number;
     }
 
-    public String getSupplier_name() {
-        return supplier_name;
-    }
-
-    public void setSupplier_name(String supplier_name) {
-        this.supplier_name = supplier_name;
-    }
-
-    public String getMobile_number() {
-        return mobile_number;
-    }
-
-    public void setMobile_number(String mobile_number) {
-        this.mobile_number = mobile_number;
-    }
 
     public String getCategory() {
         return category;
@@ -46,13 +31,6 @@ public class Item {
         this.category = category;
     }
 
-    public String getDOM() {
-        return DOM;
-    }
-
-    public void setDOM(String DOM) {
-        this.DOM = DOM;
-    }
 
     public ItemSpecification getItemSpecification() {
         return itemSpecification;

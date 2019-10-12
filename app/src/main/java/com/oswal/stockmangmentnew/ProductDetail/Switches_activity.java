@@ -26,6 +26,7 @@ import java.util.ArrayList;
 public class Switches_activity extends AppCompatActivity {
     Button submit;
     Spinner Brandcat, companynamecat, Typecat, portcat;
+    String brandCatS,typeCats,no_portS;
    /* String[] brandList = {"Select","HP","DEll" };
     String[] companyList = {"Select","DGSOL","Dlink" };
     String[] typeList = {"Select","Wire","Wireless" };
@@ -99,18 +100,22 @@ public class Switches_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -132,10 +137,12 @@ public class Switches_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
+                        typeCats = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
+                        typeCats = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -158,22 +165,27 @@ public class Switches_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
+                        no_portS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
+                        no_portS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
+                        no_portS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
+                        no_portS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 6:
+                        no_portS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(), "Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -210,6 +222,9 @@ public class Switches_activity extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(Switches_activity.this, Add_Item.class);
+                i.putExtra("Switches_activity_brandCat",brandCatS);
+                i.putExtra("Switches_activity_typeCat",  typeCats);
+                i.putExtra("Switches_activity_portCat",  no_portS);
                 startActivity(i);
             }
         });

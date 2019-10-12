@@ -27,6 +27,8 @@ public class RAM_activity extends AppCompatActivity {
 
     Button submit;
     Spinner Brandcat,GBcat,Typecat;
+    String brandCatS,typeCatS,gbS;
+
   /*  String[] brandList = {"Select","HP","DEll" };
     String[] GBList = {"Select","2GB","4GB","8GB","16GB","32GB","64GB","128" };
     String[] typeList = {"Select","SRAM","DRAM","DDR2","DDR3","DDR4","SDRAM" };
@@ -105,18 +107,22 @@ public class RAM_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         intent = new Intent(RAM_activity.this, RAM_activity.class);
                         startActivity(intent);
                         break;
                     case 2:
+                        brandCatS= adapterView.getItemAtPosition(i).toString();
                         intent = new Intent(RAM_activity.this, RAM_activity.class);
                         startActivity(intent);
                         break;
                     case 3:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         intent = new Intent(RAM_activity.this, RAM_activity.class);
                         startActivity(intent);
                         break;
                     case 4:
+                        brandCatS= adapterView.getItemAtPosition(i).toString();
                         intent = new Intent(RAM_activity.this, RAM_activity.class);
                         startActivity(intent);
                         break;
@@ -138,28 +144,37 @@ public class RAM_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
+                        gbS = adapterView.getItemAtPosition(i).toString();
                         intent = new Intent(RAM_activity.this, RAM_activity.class);
                         startActivity(intent);
                         break;
                     case 2:
+                        gbS = adapterView.getItemAtPosition(i).toString();
                         intent = new Intent(RAM_activity.this, RAM_activity.class);
                         startActivity(intent);
                         break;
                     case 3:
+                        gbS = adapterView.getItemAtPosition(i).toString();
                         intent = new Intent(RAM_activity.this, RAM_activity.class);
                         startActivity(intent);
                         break;
                     case 4:
+                        gbS = adapterView.getItemAtPosition(i).toString();
                         intent = new Intent(RAM_activity.this, RAM_activity.class);
                         startActivity(intent);
                         break;
                     case 5:
+                        gbS = adapterView.getItemAtPosition(i).toString();
+                        intent = new Intent(RAM_activity.this, RAM_activity.class);
+                        startActivity(intent);
                         break;
                     case 6:
+                        gbS = adapterView.getItemAtPosition(i).toString();
                         intent = new Intent(RAM_activity.this, RAM_activity.class);
                         startActivity(intent);
                         break;
                     case 7:
+                        gbS = adapterView.getItemAtPosition(i).toString();
                         intent = new Intent(RAM_activity.this, RAM_activity.class);
                         startActivity(intent);
 
@@ -180,26 +195,32 @@ public class RAM_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
+                        typeCatS= adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
+                        typeCatS= adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
+                        typeCatS= adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
+                        typeCatS= adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 5:
+                        typeCatS= adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 6:
+                        typeCatS= adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -235,8 +256,12 @@ public class RAM_activity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(RAM_activity.this, Add_Item.class);
+                i.putExtra("RAM_activity_breandCat",brandCatS);
+                i.putExtra("RAM_activity_typeCat",typeCatS);
+                i.putExtra("RAM_activity_GB",gbS);
+
                 startActivity(i);
             }
         });

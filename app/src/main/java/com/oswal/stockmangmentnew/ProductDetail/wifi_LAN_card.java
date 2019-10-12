@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -14,6 +15,7 @@ import com.oswal.stockmangmentnew.OflineDBActivity.DatabaseHelper;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.TVProfile;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.wifi_LanProfile;
 import com.oswal.stockmangmentnew.R;
+import com.oswal.stockmangmentnew.Services.Items.Add_Item;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -21,7 +23,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class wifi_LAN_card extends AppCompatActivity {
+    Button submit;
     Spinner Brandcat,companynamecat,MBPScat;
+    String brandCatS,mbpsCatS;
    /* String[] brandList = {"Select","HP","DEll" };
     String[] companyList = {"Select","HP","DELL" };
     String[] MBPSList = {"Select","150","300" };
@@ -104,18 +108,20 @@ wifi_LanProfile wifiLanProfile= new wifi_LanProfile();
                     case 0:
                         break;
                     case 1:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
-                    case 3:
+                    case 3:   brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
-                    case 4:
+                    case 4:   brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -136,11 +142,11 @@ wifi_LanProfile wifiLanProfile= new wifi_LanProfile();
                 switch(i){
                     case 0:
                         break;
-                    case 1:
+                    case 1: mbpsCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
-                    case 2:
+                    case 2: mbpsCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -167,6 +173,19 @@ wifi_LanProfile wifiLanProfile= new wifi_LanProfile();
         aa2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         MBPScat.setAdapter(aa2);
+
+
+        submit=(Button)findViewById(R.id.mouse_subbtn1);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(wifi_LAN_card.this, Add_Item.class);
+                i.putExtra("wifi_LAN_card_brandCat",brandCatS);
+                i.putExtra("wifi_LAN_card_mbpsCat",mbpsCatS);
+                startActivity(i);
+            }
+        });
 
     }
 }

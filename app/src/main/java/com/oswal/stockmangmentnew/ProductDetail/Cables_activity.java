@@ -32,6 +32,7 @@ public class Cables_activity extends AppCompatActivity {
     Spinner Brandcat;
     //String[] brandList = {"Select","HP","DEll" };
     RadioGroup radioGroup1;
+    String brandCatS;
 
     DatabaseHelper db =null;
     CablesProfile cablesProfile= new   CablesProfile ();
@@ -88,20 +89,24 @@ public class Cables_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"HP Selected", Toast.LENGTH_SHORT).show();
                        /* intent = new Intent(Cables_activity.this, Cables_activity.class);
                         startActivity(intent);*/
                         break;
                     case 2:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"DEll Selected", Toast.LENGTH_SHORT).show();
                        /* intent = new Intent(Cables_activity.this, Cables_activity.class);
                         startActivity(intent);*/
                         break;
                     case 3:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"DEll Selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"DEll Selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -125,11 +130,12 @@ public class Cables_activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
-/*
 
+                 Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(Cables_activity.this, Add_Item.class);
+                i.putExtra("Cables_activity_brandCat",brandCatS);
+
                 startActivity(i);
-*/
 
             }
         });

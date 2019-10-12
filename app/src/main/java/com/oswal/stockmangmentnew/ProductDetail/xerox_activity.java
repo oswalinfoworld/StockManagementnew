@@ -29,11 +29,12 @@ public class xerox_activity extends AppCompatActivity {
     CheckBox ppm1,ppm2,ppm3,ppm4;
     Button submit;
     Spinner Brandcat,PPMcat;
+    String brandCatS,ppmCatS;
     /*String[] brandList = {"Select","HP","DEll"};
     String[] PPMList = {"Select","20","23","25","28" };*/
 
     DatabaseHelper db =null;
- XeroxProfile xeroxProfile= new  XeroxProfile();
+     XeroxProfile xeroxProfile= new  XeroxProfile();
     ArrayList<String> brandListArray = new ArrayList<String>();
     ArrayList<String> ppmListArray = new ArrayList<String>();
 
@@ -105,18 +106,22 @@ public class xerox_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -136,18 +141,22 @@ public class xerox_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
+                    ppmCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
+                        ppmCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
+                        ppmCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
+                        ppmCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -176,8 +185,10 @@ public class xerox_activity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(xerox_activity.this, Add_Item.class);
+                i.putExtra("Xerox_activity_brandCat",brandCatS);
+                i.putExtra("Xerox_activity_ppmCats",ppmCatS);
                 startActivity(i);
             }
         });

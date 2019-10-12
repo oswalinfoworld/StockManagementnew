@@ -28,6 +28,7 @@ public class Wifidongle_activity extends AppCompatActivity {
     EditText simname,simrecharge,simvalidity;
     Button submit;
     Spinner Brandcat,companynamecat,Typecat;
+    String brandCatS,typeCatS;
    /* String[] brandList = {"Select","HP","DEll" };
     String[] companyList = {"Select","D-Link","Huawei","JioFi","iBall" };
     String[] typeList = {"Select","Prepaid","Postpaid" };*/
@@ -98,18 +99,22 @@ public class Wifidongle_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -131,10 +136,14 @@ public class Wifidongle_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
+                        typeCatS = adapterView.getItemAtPosition(i).toString();
+
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
+                        typeCatS = adapterView.getItemAtPosition(i).toString();
+
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -165,9 +174,12 @@ public class Wifidongle_activity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(Wifidongle_activity.this, Add_Item.class);
+                i.putExtra("wifidongle_activity_brandCat",brandCatS);
+                i.putExtra("wifidongle_activity_typeCats",typeCatS);
                 startActivity(i);
+
             }
         });
     }

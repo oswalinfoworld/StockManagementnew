@@ -27,6 +27,7 @@ public class Printer_activity extends AppCompatActivity {
     CheckBox companyname1,companyname2,companyname3,companyname4,type1,type2,type3,type4;
     Button submit;
     Spinner Brandcat,companynamecat;
+    String brandCatS;
     DatabaseHelper db =null;
     PrinterProfile printerProfile= new   PrinterProfile ();
     ArrayList<String> brandListArray = new ArrayList<String>();
@@ -88,22 +89,27 @@ public class Printer_activity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent;
                 switch(i){
+
                     case 0:
                         break;
                     case 1:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
 
                         break;
                     case 2:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -125,8 +131,10 @@ public class Printer_activity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
-               Intent i = new Intent(Printer_activity.this, Add_Item.class);
+                Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(Printer_activity.this, Add_Item.class);
+                i.putExtra("Printer_activity_brandCat",brandCatS);
+
                 startActivity(i);
             }
         });

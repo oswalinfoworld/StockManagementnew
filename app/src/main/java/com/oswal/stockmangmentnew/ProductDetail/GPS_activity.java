@@ -28,6 +28,7 @@ public class GPS_activity extends AppCompatActivity {
     EditText companyname,simname,simrecharge,simvalidity;
     Button submit;
     Spinner Brandcat,companynamecat;
+    String brandCatS;
    // String[] brandList = {"Select","HP","DEll" };
     //String[] companyList = {"Select","HP","DELL" };
 
@@ -86,12 +87,12 @@ public class GPS_activity extends AppCompatActivity {
 
                         break;
                     case 1:
-
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         intent = new Intent(GPS_activity.this, GPS_activity.class);
                         startActivity(intent);
                         break;
                     case 2:
-
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         intent = new Intent(GPS_activity.this, GPS_activity.class);
                         startActivity(intent);
                         break;
@@ -119,8 +120,10 @@ public class GPS_activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),"Data send", Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(GPS_activity.this, Add_Item.class);
+                i.putExtra("GPS_activity_brandCat",brandCatS);
+
                 startActivity(i);
             }
         });

@@ -111,13 +111,77 @@ public class ApiConnector {
 
         String model_number = oneItem.getModel_number().replaceAll(" ", "%20");
         String serial_number = oneItem.getSerial_number().replaceAll(" ", "%20");
-        //String dom = oneItem.getDOM().replaceAll(" ", "%20");
-        // String supplier_name = oneItem.getSupplier_name().replaceAll(" ", "%20");
-        // String mobile_number = oneItem.getMobile_number();
-        // String quantity = oneItem.getQuantity();
         String date = oneItem.getDate().replaceAll(" ", "%20");
+        String category = oneItem.getCategory().replaceAll(" ", "%20");
+        //step3
+        String mouse_activity_brandCat=oneItem.getItemSpecification().getMouse_activity_brandCat();
+        String mouse_activity_typeCat=oneItem.getItemSpecification().getMouse_activity_typeCat();
 
-        //  String url = ConstantsIdentifier.getDomainName() + "/stockItemAdd.php?model_number=" + model_number + "&serial_number=" + serial_number + "&dom=" + dom + "&supplier_name=" + supplier_name + "&contact_no=" + mobile_number + "&item_quatity=" + quantity + "&date=" + date;
+        String Laptop_activity_breandCat=oneItem.getItemSpecification().getLaptop_activity_breandCat();
+        String Laptop_activity_typeCat=oneItem.getItemSpecification().getLaptop_activity_typeCat();
+        String Laptop_activity_generationCat=oneItem.getItemSpecification().getLaptop_activity_generationCat();
+        String Laptop_activity_ramCat=oneItem.getItemSpecification().getLaptop_activity_ramCat();
+        String Laptop_activity_inchesCat=oneItem.getItemSpecification().getLaptop_activity_inchesCat();
+        String Laptop_activity_HDDCat=oneItem.getItemSpecification().getLaptop_activity_HDDCat();
+        String  Laptop_activity_SHDDCat=oneItem.getItemSpecification().getLaptop_activity_SHDDCat();
+        String Laptop_activity_OSCatt=oneItem.getItemSpecification().getLaptop_activity_OSCat();
+        String  Laptop_activity_graphiccardCat=oneItem.getItemSpecification().getLaptop_activity_graphiccardCat();
+        String  Laptop_acDDtivity_DVDCat=oneItem.getItemSpecification().getLaptop_acDDtivity_DVDCat();
+
+        String Printer_acDDtivity_brandcat=oneItem.getItemSpecification().getPrinter_activity_brandcat();
+
+        String Scanner_acDDtivity_brandcat=oneItem.getItemSpecification().getScanner_acDDtivity_brandcat();
+        String Scanner_acDDtivity_typecat=oneItem.getItemSpecification().getScanner_acDDtivity_typecat();
+
+        String CPU_activity_brandCat=oneItem.getItemSpecification().getCPU_activity_breandCat();
+        String CPU_activity_typeCat=oneItem.getItemSpecification().getCPU_activity_typeCat();
+        String CPU_activity_generationCat=oneItem.getItemSpecification().getCPU_activity_generationCat();
+        String CPU_activity_ramCat=oneItem.getItemSpecification().getCPU_activity_ramCat();
+        String CPU_activity_HDDCat=oneItem.getItemSpecification().getCPU_activity_HDDCat();
+        String  CPU_activity_SHDDCat=oneItem.getItemSpecification().getCPU_activity_SHDDCat();
+        String CPU_activity_OSCatt=oneItem.getItemSpecification().getCPU_activity_OSCat();
+        String  CPU_activity_graphiccardCat=oneItem.getItemSpecification().getCPU_activity_graphiccardCat();
+        String CPU_acDDtivity_DVDCat=oneItem.getItemSpecification().getCPU_acDDtivity_DVDCat();
+
+        String Router_activity_brandCat=oneItem.getItemSpecification().getRouter_activity_brandcat();
+        String Router_activity_typeCat=oneItem.getItemSpecification().getRouter_activity_typecat();
+        String Router_activity_portCat=oneItem.getItemSpecification().getRouter_activity_portcat();
+        String Router_activity_mbpsCat=oneItem.getItemSpecification().getRouter_activity_mbpscat();
+
+        String wifidongle_activity_brandCat=oneItem.getItemSpecification().getWifidongle_activity_brandcat();
+        String wifidongle_activity_typeCat=oneItem.getItemSpecification().getWifidongle_activity_typecat();
+
+        String RAM_activity_brandCat=oneItem.getItemSpecification().getRAM_activity_brandcat();
+        String RAM_activity_typeCat=oneItem.getItemSpecification().getRAM_activity_typecat();
+        String RAM_activity_gbCat=oneItem.getItemSpecification().getRAM_activity_gbcat();
+
+        String Cable_activity_brandCat=oneItem.getItemSpecification().getCables_activity_brandcat();
+
+
+        String GPS_activity_brandCat=oneItem.getItemSpecification().getGPS_activity_brandcat();
+
+
+        String Xerox_activity_brandCat=oneItem.getItemSpecification().getXerox_activity_brandcat();
+        String Xerox_activity_ppmCat=oneItem.getItemSpecification().getXerox_activity_ppmcat();
+
+
+        String Switches_activity_brandCat=oneItem.getItemSpecification().getSwitches_activity_brandcat();
+        String Switches_activity_typeCat=oneItem.getItemSpecification().getSwitches_activity_typecat();
+        String Switches_activity_portCat=oneItem.getItemSpecification().getSwitches_activity_portcat();
+
+        String tablet_activity_brandCat=oneItem.getItemSpecification().getTablet_activity_brandcat();
+        String tablet_activity_inchesCat=oneItem.getItemSpecification().getTablet_activity_inchescat();
+
+        String tv_activity_brandCat=oneItem.getItemSpecification().getTv_activity_brandcat();
+        String tv_activity_inchesCat=oneItem.getItemSpecification().getTv_activity_inchescat();
+
+        String wifi_Lan_activity_brandCat=oneItem.getItemSpecification().getWifi_Lan_activity_brandcat();
+        String wifi_Lan_activity_inchesCat=oneItem.getItemSpecification().getWifi_Lan_activity_mbpscat();
+
+        //
+        // String url = ConstantsIdentifier.getDomainName() + "/stockItemAdd.php?model_number=" + model_number + "&serial_number=" + serial_number + "&dom=" + dom + "&supplier_name=" + supplier_name + "&contact_no=" + mobile_number + "&item_quatity=" + quantity + "&date=" + date;
+        //step4 change link
+        //step5 Php script change
         String url = ConstantsIdentifier.getDomainName() + "/stockItemAdd.php?model_number=" + model_number + "&serial_number=" + serial_number + "&date=" + date;
 
         // Get HttpResponse Object from url.

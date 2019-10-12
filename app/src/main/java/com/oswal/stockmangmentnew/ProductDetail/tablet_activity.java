@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.oswal.stockmangmentnew.OflineDBActivity.DatabaseHelper;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.TabletProfile;
 import com.oswal.stockmangmentnew.R;
+import com.oswal.stockmangmentnew.Services.Items.Add_Item;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -21,6 +23,8 @@ import java.util.ArrayList;
 
 public class tablet_activity extends AppCompatActivity {
     Spinner Brandcat,companynamecat,inchescat,portcat;
+    String brandCatS,inchesCatS;
+    Button submit;
    /* String[] brandList = {"Select","HP","DEll" };
     String[] companyList = {"Select","HP","DELL" };
     String[] inchesList = {"Select","10.5", "12", "12.5", "14", "15.6", "17"};
@@ -98,18 +102,22 @@ public class tablet_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -130,18 +138,22 @@ public class tablet_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
+                     inchesCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
+                        inchesCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
+                        inchesCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
+                        inchesCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
 
@@ -166,6 +178,18 @@ public class tablet_activity extends AppCompatActivity {
         aa3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         inchescat.setAdapter(aa3);
+
+        submit=(Button)findViewById(R.id.mouse_subbtn1);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(tablet_activity.this, Add_Item.class);
+                i.putExtra("Tablet_activity_brandCat",brandCatS);
+                i.putExtra("Tablet_activity_inchesCat",inchesCatS);
+                startActivity(i);
+            }
+        });
 
 
     }

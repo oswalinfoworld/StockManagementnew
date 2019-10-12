@@ -2,107 +2,149 @@ package com.oswal.stockmangmentnew.POJO;
 
 public class ItemSpecification {
 
-    String company_Name, monitor_inches;
-    String keyboard_Type, mouse_Type, printer_Type, ups_Type, ups_capacity, processor_Type, getProcessor_Generation;
-    String router_Type, router_Number_Port, Router_MBPS;
+    String  mouse_activity_brandCat, mouse_activity_typeCat ;
+    String Laptop_activity_breandCat,Laptop_activity_typeCat, Laptop_activity_generationCat,Laptop_activity_ramCat, Laptop_activity_inchesCat,Laptop_activity_HDDCat, Laptop_activity_SHDDCat, Laptop_activity_OSCat, Laptop_activity_graphiccardCat, Laptop_acDDtivity_DVDCat;
+    String  Router_activity_brandcat, Router_activity_typecat,  Router_activity_portcat,  Router_activity_mbpscat;
     String dongle_Type, sim_Name, sim_Recharge, sim_validity;
-    String ram_Type, cabel_Type, xerox_modelNumber, xerox_ppm;
+    String  RAM_activity_brandcat,   RAM_activity_typecat, RAM_activity_gbcat;
+    String  Printer_activity_brandcat;
+    String wifidongle_activity_brandcat, wifidongle_activity_typecat;
+    String Scanner_acDDtivity_brandcat,Scanner_acDDtivity_typecat;
+    String Cables_activity_brandcat, GPS_activity_brandcat;
+    String  Switches_activity_brandcat, Switches_activity_typecat, Switches_activity_portcat;
+    String  xerox_activity_brandcat, xerox_activity_ppmcat;
+    String tv_activity_brandcat, tv_activity_inchescat;
+    String wifi_Lan_activity_brandcat, wifi_Lan_activity_mbpscat;
+    String tablet_activity_brandcat, tablet_activity_inchescat;
+    String CPU_activity_breandCat,CPU_activity_typeCat, CPU_activity_generationCat,CPU_activity_ramCat,CPU_activity_HDDCat, CPU_activity_SHDDCat, CPU_activity_OSCat, CPU_activity_graphiccardCat,CPU_acDDtivity_DVDCat;
 
 
-    public String getCompany_Name() {
-        return company_Name;
+    public String getMouse_activity_brandCat() {
+        return mouse_activity_brandCat;
     }
 
-    public void setCompany_Name(String company_Name) {
-        this.company_Name = company_Name;
+    public void setMouse_activity_brandCat(String mouse_activity_brandCat) {
+        this.mouse_activity_brandCat = mouse_activity_brandCat;
     }
 
-    public String getMonitor_inches() {
-        return monitor_inches;
+    public String getMouse_activity_typeCat() {
+        return mouse_activity_typeCat;
     }
 
-    public void setMonitor_inches(String monitor_inches) {
-        this.monitor_inches = monitor_inches;
+    public void setMouse_activity_typeCat(String mouse_activity_typeCat) {
+        this.mouse_activity_typeCat = mouse_activity_typeCat;
     }
 
-    public String getKeyboard_Type() {
-        return keyboard_Type;
+    public String getLaptop_activity_breandCat() {
+        return Laptop_activity_breandCat;
     }
 
-    public void setKeyboard_Type(String keyboard_Type) {
-        this.keyboard_Type = keyboard_Type;
+    public void setLaptop_activity_breandCat(String laptop_activity_breandCat) {
+        Laptop_activity_breandCat = laptop_activity_breandCat;
     }
 
-    public String getMouse_Type() {
-        return mouse_Type;
+    public String getLaptop_activity_typeCat() {
+        return Laptop_activity_typeCat;
     }
 
-    public void setMouse_Type(String mouse_Type) {
-        this.mouse_Type = mouse_Type;
+    public void setLaptop_activity_typeCat(String laptop_activity_typeCat) {
+        Laptop_activity_typeCat = laptop_activity_typeCat;
     }
 
-    public String getPrinter_Type() {
-        return printer_Type;
+    public String getLaptop_activity_generationCat() {
+        return Laptop_activity_generationCat;
     }
 
-    public void setPrinter_Type(String printer_Type) {
-        this.printer_Type = printer_Type;
+    public void setLaptop_activity_generationCat(String laptop_activity_generationCat) {
+        Laptop_activity_generationCat = laptop_activity_generationCat;
     }
 
-    public String getUps_Type() {
-        return ups_Type;
+    public String getLaptop_activity_ramCat() {
+        return Laptop_activity_ramCat;
     }
 
-    public void setUps_Type(String ups_Type) {
-        this.ups_Type = ups_Type;
+    public void setLaptop_activity_ramCat(String laptop_activity_ramCat) {
+        Laptop_activity_ramCat = laptop_activity_ramCat;
     }
 
-    public String getUps_capacity() {
-        return ups_capacity;
+    public String getLaptop_activity_inchesCat() {
+        return Laptop_activity_inchesCat;
     }
 
-    public void setUps_capacity(String ups_capacity) {
-        this.ups_capacity = ups_capacity;
+    public void setLaptop_activity_inchesCat(String laptop_activity_inchesCat) {
+        Laptop_activity_inchesCat = laptop_activity_inchesCat;
     }
 
-    public String getProcessor_Type() {
-        return processor_Type;
+    public String getLaptop_activity_HDDCat() {
+        return Laptop_activity_HDDCat;
     }
 
-    public void setProcessor_Type(String processor_Type) {
-        this.processor_Type = processor_Type;
+    public void setLaptop_activity_HDDCat(String laptop_activity_HDDCat) {
+        Laptop_activity_HDDCat = laptop_activity_HDDCat;
     }
 
-    public String getGetProcessor_Generation() {
-        return getProcessor_Generation;
+    public String getLaptop_activity_SHDDCat() {
+        return Laptop_activity_SHDDCat;
     }
 
-    public void setGetProcessor_Generation(String getProcessor_Generation) {
-        this.getProcessor_Generation = getProcessor_Generation;
+    public void setLaptop_activity_SHDDCat(String laptop_activity_SHDDCat) {
+        Laptop_activity_SHDDCat = laptop_activity_SHDDCat;
     }
 
-    public String getRouter_Type() {
-        return router_Type;
+    public String getLaptop_activity_OSCat() {
+        return Laptop_activity_OSCat;
     }
 
-    public void setRouter_Type(String router_Type) {
-        this.router_Type = router_Type;
+    public void setLaptop_activity_OSCat(String laptop_activity_OSCat) {
+        Laptop_activity_OSCat = laptop_activity_OSCat;
     }
 
-    public String getRouter_Number_Port() {
-        return router_Number_Port;
+    public String getLaptop_activity_graphiccardCat() {
+        return Laptop_activity_graphiccardCat;
     }
 
-    public void setRouter_Number_Port(String router_Number_Port) {
-        this.router_Number_Port = router_Number_Port;
+    public void setLaptop_activity_graphiccardCat(String laptop_activity_graphiccardCat) {
+        Laptop_activity_graphiccardCat = laptop_activity_graphiccardCat;
     }
 
-    public String getRouter_MBPS() {
-        return Router_MBPS;
+    public String getLaptop_acDDtivity_DVDCat() {
+        return Laptop_acDDtivity_DVDCat;
     }
 
-    public void setRouter_MBPS(String router_MBPS) {
-        Router_MBPS = router_MBPS;
+    public void setLaptop_acDDtivity_DVDCat(String laptop_acDDtivity_DVDCat) {
+        Laptop_acDDtivity_DVDCat = laptop_acDDtivity_DVDCat;
+    }
+
+    public String getRouter_activity_brandcat() {
+        return Router_activity_brandcat;
+    }
+
+    public void setRouter_activity_brandcat(String router_activity_brandcat) {
+        Router_activity_brandcat = router_activity_brandcat;
+    }
+
+    public String getRouter_activity_typecat() {
+        return Router_activity_typecat;
+    }
+
+    public void setRouter_activity_typecat(String router_activity_typecat) {
+        Router_activity_typecat = router_activity_typecat;
+    }
+
+    public String getRouter_activity_portcat() {
+        return Router_activity_portcat;
+    }
+
+    public void setRouter_activity_portcat(String router_activity_portcat) {
+        Router_activity_portcat = router_activity_portcat;
+    }
+
+    public String getRouter_activity_mbpscat() {
+        return Router_activity_mbpscat;
+    }
+
+    public void setRouter_activity_mbpscat(String router_activity_mbpscat) {
+        Router_activity_mbpscat = router_activity_mbpscat;
     }
 
     public String getDongle_Type() {
@@ -137,35 +179,247 @@ public class ItemSpecification {
         this.sim_validity = sim_validity;
     }
 
-    public String getRam_Type() {
-        return ram_Type;
+    public String getRAM_activity_brandcat() {
+        return RAM_activity_brandcat;
     }
 
-    public void setRam_Type(String ram_Type) {
-        this.ram_Type = ram_Type;
+    public void setRAM_activity_brandcat(String RAM_activity_brandcat) {
+        this.RAM_activity_brandcat = RAM_activity_brandcat;
     }
 
-    public String getCabel_Type() {
-        return cabel_Type;
+    public String getRAM_activity_typecat() {
+        return RAM_activity_typecat;
     }
 
-    public void setCabel_Type(String cabel_Type) {
-        this.cabel_Type = cabel_Type;
+    public void setRAM_activity_typecat(String RAM_activity_typecat) {
+        this.RAM_activity_typecat = RAM_activity_typecat;
     }
 
-    public String getXerox_modelNumber() {
-        return xerox_modelNumber;
+    public String getRAM_activity_gbcat() {
+        return RAM_activity_gbcat;
     }
 
-    public void setXerox_modelNumber(String xerox_modelNumber) {
-        this.xerox_modelNumber = xerox_modelNumber;
+    public void setRAM_activity_gbcat(String RAM_activity_gbcat) {
+        this.RAM_activity_gbcat = RAM_activity_gbcat;
     }
 
-    public String getXerox_ppm() {
-        return xerox_ppm;
+    public String getPrinter_activity_brandcat() {
+        return Printer_activity_brandcat;
     }
 
-    public void setXerox_ppm(String xerox_ppm) {
-        this.xerox_ppm = xerox_ppm;
+    public void setPrinter_activity_brandcat(String printer_activity_brandcat) {
+        Printer_activity_brandcat = printer_activity_brandcat;
     }
+
+    public String getWifidongle_activity_brandcat() {
+        return wifidongle_activity_brandcat;
+    }
+
+    public void setWifidongle_activity_brandcat(String wifidongle_activity_brandcat) {
+        this.wifidongle_activity_brandcat = wifidongle_activity_brandcat;
+    }
+
+    public String getWifidongle_activity_typecat() {
+        return wifidongle_activity_typecat;
+    }
+
+    public void setWifidongle_activity_typecat(String wifidongle_activity_typecat) {
+        this.wifidongle_activity_typecat = wifidongle_activity_typecat;
+    }
+
+    public String getScanner_acDDtivity_brandcat() {
+        return Scanner_acDDtivity_brandcat;
+    }
+
+    public void setScanner_acDDtivity_brandcat(String scanner_acDDtivity_brandcat) {
+        Scanner_acDDtivity_brandcat = scanner_acDDtivity_brandcat;
+    }
+
+    public String getScanner_acDDtivity_typecat() {
+        return Scanner_acDDtivity_typecat;
+    }
+
+    public void setScanner_acDDtivity_typecat(String scanner_acDDtivity_typecat) {
+        Scanner_acDDtivity_typecat = scanner_acDDtivity_typecat;
+    }
+
+    public String getCables_activity_brandcat() {
+        return Cables_activity_brandcat;
+    }
+
+    public void setCables_activity_brandcat(String cables_activity_brandcat) {
+        Cables_activity_brandcat = cables_activity_brandcat;
+    }
+
+    public String getGPS_activity_brandcat() {
+        return GPS_activity_brandcat;
+    }
+
+    public void setGPS_activity_brandcat(String GPS_activity_brandcat) {
+        this.GPS_activity_brandcat = GPS_activity_brandcat;
+    }
+
+    public String getSwitches_activity_brandcat() {
+        return Switches_activity_brandcat;
+    }
+
+    public void setSwitches_activity_brandcat(String switches_activity_brandcat) {
+        Switches_activity_brandcat = switches_activity_brandcat;
+    }
+
+    public String getSwitches_activity_typecat() {
+        return Switches_activity_typecat;
+    }
+
+    public void setSwitches_activity_typecat(String switches_activity_typecat) {
+        Switches_activity_typecat = switches_activity_typecat;
+    }
+
+    public String getSwitches_activity_portcat() {
+        return Switches_activity_portcat;
+    }
+
+    public void setSwitches_activity_portcat(String switches_activity_portcat) {
+        Switches_activity_portcat = switches_activity_portcat;
+    }
+
+    public String getXerox_activity_brandcat() {
+        return xerox_activity_brandcat;
+    }
+
+    public void setXerox_activity_brandcat(String xerox_activity_brandcat) {
+        this.xerox_activity_brandcat = xerox_activity_brandcat;
+    }
+
+    public String getXerox_activity_ppmcat() {
+        return xerox_activity_ppmcat;
+    }
+
+    public void setXerox_activity_ppmcat(String xerox_activity_ppmcat) {
+        this.xerox_activity_ppmcat = xerox_activity_ppmcat;
+    }
+
+    public String getTv_activity_brandcat() {
+        return tv_activity_brandcat;
+    }
+
+    public void setTv_activity_brandcat(String tv_activity_brandcat) {
+        this.tv_activity_brandcat = tv_activity_brandcat;
+    }
+
+    public String getTv_activity_inchescat() {
+        return tv_activity_inchescat;
+    }
+
+    public void setTv_activity_inchescat(String tv_activity_inchescat) {
+        this.tv_activity_inchescat = tv_activity_inchescat;
+    }
+
+    public String getWifi_Lan_activity_brandcat() {
+        return wifi_Lan_activity_brandcat;
+    }
+
+    public void setWifi_Lan_activity_brandcat(String wifi_Lan_activity_brandcat) {
+        this.wifi_Lan_activity_brandcat = wifi_Lan_activity_brandcat;
+    }
+
+    public String getWifi_Lan_activity_mbpscat() {
+        return wifi_Lan_activity_mbpscat;
+    }
+
+    public void setWifi_Lan_activity_mbpscat(String wifi_Lan_activity_mbpscat) {
+        this.wifi_Lan_activity_mbpscat = wifi_Lan_activity_mbpscat;
+    }
+
+    public String getTablet_activity_brandcat() {
+        return tablet_activity_brandcat;
+    }
+
+    public void setTablet_activity_brandcat(String tablet_activity_brandcat) {
+        this.tablet_activity_brandcat = tablet_activity_brandcat;
+    }
+
+    public String getTablet_activity_inchescat() {
+        return tablet_activity_inchescat;
+    }
+
+    public void setTablet_activity_inchescat(String tablet_activity_inchescat) {
+        this.tablet_activity_inchescat = tablet_activity_inchescat;
+    }
+
+    public String getCPU_activity_breandCat() {
+        return CPU_activity_breandCat;
+    }
+
+    public void setCPU_activity_breandCat(String CPU_activity_breandCat) {
+        this.CPU_activity_breandCat = CPU_activity_breandCat;
+    }
+
+    public String getCPU_activity_typeCat() {
+        return CPU_activity_typeCat;
+    }
+
+    public void setCPU_activity_typeCat(String CPU_activity_typeCat) {
+        this.CPU_activity_typeCat = CPU_activity_typeCat;
+    }
+
+    public String getCPU_activity_generationCat() {
+        return CPU_activity_generationCat;
+    }
+
+    public void setCPU_activity_generationCat(String CPU_activity_generationCat) {
+        this.CPU_activity_generationCat = CPU_activity_generationCat;
+    }
+
+    public String getCPU_activity_ramCat() {
+        return CPU_activity_ramCat;
+    }
+
+    public void setCPU_activity_ramCat(String CPU_activity_ramCat) {
+        this.CPU_activity_ramCat = CPU_activity_ramCat;
+    }
+
+    public String getCPU_activity_HDDCat() {
+        return CPU_activity_HDDCat;
+    }
+
+    public void setCPU_activity_HDDCat(String CPU_activity_HDDCat) {
+        this.CPU_activity_HDDCat = CPU_activity_HDDCat;
+    }
+
+    public String getCPU_activity_SHDDCat() {
+        return CPU_activity_SHDDCat;
+    }
+
+    public void setCPU_activity_SHDDCat(String CPU_activity_SHDDCat) {
+        this.CPU_activity_SHDDCat = CPU_activity_SHDDCat;
+    }
+
+    public String getCPU_activity_OSCat() {
+        return CPU_activity_OSCat;
+    }
+
+    public void setCPU_activity_OSCat(String CPU_activity_OSCat) {
+        this.CPU_activity_OSCat = CPU_activity_OSCat;
+    }
+
+    public String getCPU_activity_graphiccardCat() {
+        return CPU_activity_graphiccardCat;
+    }
+
+    public void setCPU_activity_graphiccardCat(String CPU_activity_graphiccardCat) {
+        this.CPU_activity_graphiccardCat = CPU_activity_graphiccardCat;
+    }
+
+    public String getCPU_acDDtivity_DVDCat() {
+        return CPU_acDDtivity_DVDCat;
+    }
+
+    public void setCPU_acDDtivity_DVDCat(String CPU_acDDtivity_DVDCat) {
+        this.CPU_acDDtivity_DVDCat = CPU_acDDtivity_DVDCat;
+    }
+
+
 }
+
+

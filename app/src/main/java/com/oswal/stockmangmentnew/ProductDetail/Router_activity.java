@@ -25,7 +25,8 @@ import java.util.ArrayList;
 public class Router_activity extends AppCompatActivity {
     CheckBox companyname1,companyname2,companyname3,companyname4,type1,type2,port1,port2,port3,port4,mbps1,mbps2,mbps3;
     Button submit;
-    Spinner Brandcat,companynamecat,Typecat,portcat,mbpscat;
+    Spinner Brandcat,Typecat,portcat,mbpscat;
+    String brandcatS,typecatS,portcatS,mbpscatS;
 
 /*String[] brandList = {"Select","TP-Link","LINKSYS","Tenda" };
     String[] companyList = {"Select","DGSOL","Dlink" };
@@ -113,18 +114,22 @@ RouterProfile routerProfile= new RouterProfile ();
                     case 0:
                         break;
                     case 1:
+                        brandcatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
+                        brandcatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
+                        brandcatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
+                        brandcatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -146,10 +151,12 @@ RouterProfile routerProfile= new RouterProfile ();
                     case 0:
                         break;
                     case 1:
+                        typecatS= adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
+                        typecatS= adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -172,22 +179,27 @@ RouterProfile routerProfile= new RouterProfile ();
                     case 0:
                         break;
                     case 1:
+                        portcatS= adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
+                        portcatS= adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
+                        portcatS= adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
+                        portcatS= adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 6:
+                        portcatS= adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -208,18 +220,22 @@ RouterProfile routerProfile= new RouterProfile ();
                     case 0:
                         break;
                     case 1:
+                        mbpscatS= adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
+                        mbpscatS= adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
+                        mbpscatS= adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
+                        mbpscatS= adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -262,8 +278,12 @@ RouterProfile routerProfile= new RouterProfile ();
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(Router_activity.this, Add_Item.class);
+                i.putExtra("Router_activity_breandCat",brandcatS);
+                i.putExtra("Router_activity_typeCat",typecatS);
+                i.putExtra("Router_activity_portcat",portcatS);
+                i.putExtra("Router_activity_mbpscat",mbpscatS);
                 startActivity(i);
             }
         });

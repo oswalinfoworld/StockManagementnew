@@ -31,6 +31,9 @@ public class Mouse_activity extends AppCompatActivity {
     Button submit;
     Spinner Brandcat,Typecat;
     String itemUniqueID="itemUniqueID";
+    String brandCatS,typeCats;
+
+
 
     DatabaseHelper db =null;
     MouseProfile mouseProfile= new  MouseProfile();
@@ -101,16 +104,18 @@ public class Mouse_activity extends AppCompatActivity {
         Brandcat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent;
                 switch(i){
                     case 0:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         break;
                     case 1:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
+                        Toast.makeText(getApplicationContext(),"Data selected"+brandCatS ,Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
+                        Toast.makeText(getApplicationContext(),"Data selected"+brandCatS ,Toast.LENGTH_SHORT).show();
 
                         break;
 
@@ -126,20 +131,18 @@ public class Mouse_activity extends AppCompatActivity {
         Typecat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent;
                 switch(i){
                     case 0:
+                        typeCats = adapterView.getItemAtPosition(i).toString();
                         break;
                     case 1:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-
+                        typeCats = adapterView.getItemAtPosition(i).toString();
+                        Toast.makeText(getApplicationContext(),"Data selected"+typeCats, Toast.LENGTH_SHORT).show();
                         break;
                     case 2:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-
+                        typeCats = adapterView.getItemAtPosition(i).toString();
+                        Toast.makeText(getApplicationContext(),"Data selected"+typeCats, Toast.LENGTH_SHORT).show();
                         break;
-
-
                 }
 
             }
@@ -167,18 +170,17 @@ public class Mouse_activity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-              Mouse_activity.insertMouse_activityItemToOnlineDB.execute((Runnable) new ApiConnector());;
-                Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(Mouse_activity.this, Add_Item.class);
+                i.putExtra("Mouse_activity_breandCat",brandCatS);
+                i.putExtra("Mouse_activity_typeCats",typeCats);
                 startActivity(i);
             }
         });
     }
 
 
-    private class insertMouse_activityItemToOnlineDB extends AsyncTask<ApiConnector, Long, JSONArray> {
+    /*private class insertMouse_activityItemToOnlineDB extends AsyncTask<ApiConnector, Long, JSONArray> {
         @Override
         protected JSONArray doInBackground(ApiConnector... params) {
 
@@ -194,5 +196,5 @@ public class Mouse_activity extends AppCompatActivity {
 
         }
 
-    }
+    }*/
 }

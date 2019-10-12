@@ -27,6 +27,7 @@ public class Scanner_activity extends AppCompatActivity {
 
     Button submit;
     Spinner Brandcat,companynamecat,Typecat;
+    String brandCatS,typeCatS;
   /*  String[] brandList = {"Select","HP","Epson" };
     String[] companyList = {"Select","HP","DELL" };
     String[] typeList = {"Select","Flatbed","HighSpeed","Topcammera" };
@@ -101,18 +102,22 @@ public class Scanner_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -134,14 +139,17 @@ public class Scanner_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
+                        typeCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
+                        typeCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
+                        typeCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -179,7 +187,8 @@ public class Scanner_activity extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),"Data Submited", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(Scanner_activity.this, Add_Item.class);
-                startActivity(i);
+                i.putExtra("Scanner_activity_brandCat",brandCatS);
+                i.putExtra("Scanner_activity_typeCat",typeCatS);
             }
         });
     }

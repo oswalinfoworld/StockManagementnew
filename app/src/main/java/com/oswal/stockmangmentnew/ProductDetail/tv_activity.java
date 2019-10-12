@@ -15,6 +15,7 @@ import com.oswal.stockmangmentnew.OflineDBActivity.DatabaseHelper;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.TVProfile;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.TabletProfile;
 import com.oswal.stockmangmentnew.R;
+import com.oswal.stockmangmentnew.Services.Items.Add_Item;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -24,6 +25,7 @@ import java.util.ArrayList;
 public class tv_activity extends AppCompatActivity {
     Button submit;
     Spinner Brandcat,companynamecat,inchescat;
+    String brandCatS,inchesCatS;
     /*String[] brandList = {"Select","HP","DEll" };
     String[] companyList = {"Select","HP","DELL" };
     String[] inchesList = {"Select","22","32","43","49","55","65"};
@@ -105,18 +107,22 @@ public class tv_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 3:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 4:
+                        brandCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -138,31 +144,32 @@ public class tv_activity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
+                        inchesCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
-                    case 2:
+                    case 2: inchesCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
-                    case 3:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-
-                        break;
-                    case 4:
+                    case 3: inchesCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
-
-
-                    case 5:
+                    case 4: inchesCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
-                    case 6:
+
+
+                    case 5: inchesCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
-                    case 7:
+                    case 6: inchesCatS = adapterView.getItemAtPosition(i).toString();
+                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
+
+                        break;
+                    case 7: inchesCatS = adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -191,6 +198,19 @@ public class tv_activity extends AppCompatActivity {
         aa2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         inchescat.setAdapter(aa2);
+
+
+        submit=(Button)findViewById(R.id.mouse_subbtn1);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(tv_activity.this, Add_Item.class);
+                i.putExtra("Tv_activity_brandCat",brandCatS);
+                i.putExtra("Tv_activity_inchesCat",inchesCatS);
+                startActivity(i);
+            }
+        });
 
 
     }

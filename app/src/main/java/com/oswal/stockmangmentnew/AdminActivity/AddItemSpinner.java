@@ -733,16 +733,6 @@ public class AddItemSpinner extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
-
             }
         });
 
