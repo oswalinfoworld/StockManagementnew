@@ -3,7 +3,7 @@ package com.oswal.stockmangmentnew.POJO;
 public class ItemSpecification {
 
     String  mouse_activity_brandCat, mouse_activity_typeCat ;
-    String Laptop_activity_breandCat,Laptop_activity_typeCat, Laptop_activity_generationCat,Laptop_activity_ramCat, Laptop_activity_inchesCat,Laptop_activity_HDDCat, Laptop_activity_SHDDCat, Laptop_activity_OSCat, Laptop_activity_graphiccardCat, Laptop_acDDtivity_DVDCat;
+    String Laptop_activity_brandCat,Laptop_activity_typeCat, Laptop_activity_generationCat,Laptop_activity_ramCat, Laptop_activity_inchesCat,Laptop_activity_HDDCat, Laptop_activity_SHDDCat, Laptop_activity_OSCat, Laptop_activity_graphiccardCat, Laptop_acDDtivity_DVDCat;
     String  Router_activity_brandcat, Router_activity_typecat,  Router_activity_portcat,  Router_activity_mbpscat;
     String dongle_Type, sim_Name, sim_Recharge, sim_validity;
     String  RAM_activity_brandcat,   RAM_activity_typecat, RAM_activity_gbcat;
@@ -35,12 +35,12 @@ public class ItemSpecification {
         this.mouse_activity_typeCat = mouse_activity_typeCat;
     }
 
-    public String getLaptop_activity_breandCat() {
-        return Laptop_activity_breandCat;
+    public String getLaptop_activity_brandCat() {
+        return Laptop_activity_brandCat;
     }
 
     public void setLaptop_activity_breandCat(String laptop_activity_breandCat) {
-        Laptop_activity_breandCat = laptop_activity_breandCat;
+        Laptop_activity_brandCat = laptop_activity_breandCat;
     }
 
     public String getLaptop_activity_typeCat() {

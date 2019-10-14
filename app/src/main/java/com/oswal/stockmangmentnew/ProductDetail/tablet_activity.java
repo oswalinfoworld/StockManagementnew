@@ -179,7 +179,7 @@ public class tablet_activity extends AppCompatActivity {
         //Setting the ArrayAdapter data on the Spinner
         inchescat.setAdapter(aa3);
 
-        submit=(Button)findViewById(R.id.mouse_subbtn1);
+        submit=(Button)findViewById(R.id.tablet_subbtn1);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

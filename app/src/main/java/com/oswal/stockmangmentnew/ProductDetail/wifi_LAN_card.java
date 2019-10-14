@@ -175,7 +175,7 @@ wifi_LanProfile wifiLanProfile= new wifi_LanProfile();
         MBPScat.setAdapter(aa2);
 
 
-        submit=(Button)findViewById(R.id.mouse_subbtn1);
+        submit=(Button)findViewById(R.id.wifilan_subbtn1);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

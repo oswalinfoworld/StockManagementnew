@@ -117,7 +117,7 @@ public class ApiConnector {
         String mouse_activity_brandCat = oneItem.getItemSpecification().getMouse_activity_brandCat();
         String mouse_activity_typeCat = oneItem.getItemSpecification().getMouse_activity_typeCat();
 
-        String Laptop_activity_breandCat = oneItem.getItemSpecification().getLaptop_activity_breandCat();
+        String Laptop_activity_breandCat = oneItem.getItemSpecification().getLaptop_activity_brandCat();
         String Laptop_activity_typeCat = oneItem.getItemSpecification().getLaptop_activity_typeCat();
         String Laptop_activity_generationCat = oneItem.getItemSpecification().getLaptop_activity_generationCat();
         String Laptop_activity_ramCat = oneItem.getItemSpecification().getLaptop_activity_ramCat();
@@ -183,7 +183,10 @@ public class ApiConnector {
         //step4 change link
         //step5 Php script change
         String url = ConstantsIdentifier.getDomainName() + "/stockItemAdd.php?model_number=" + model_number + "&serial_number=" + serial_number + "&date=" + date;
+        System.out.print("Mrunal***************** URL " + url);
+
         String url2 = ConstantsIdentifier.getDomainName() + "/Product_detail.php?mouse_activity_brandCat=" + mouse_activity_brandCat + "&mouse_activity_typeCat=" + mouse_activity_typeCat + "&Laptop_activity_breandCat=" + Laptop_activity_breandCat + "&Laptop_activity_typeCat=" + Laptop_activity_typeCat +
+
                 "&Laptop_activity_generationCat=" + Laptop_activity_generationCat + "&Laptop_activity_ramCat=" + Laptop_activity_ramCat +
                 "&Laptop_activity_inchesCat=" + Laptop_activity_inchesCat + "&Laptop_activity_HDDCat=" + Laptop_activity_HDDCat + "&Laptop_activity_SHDDCat=" + Laptop_activity_SHDDCat + "&Laptop_activity_OSCatt=" + Laptop_activity_OSCatt + "&Laptop_activity_graphiccardCat=" + Laptop_activity_graphiccardCat +
                 "&Laptop_acDDtivity_DVDCat=" + Laptop_acDDtivity_DVDCat + "&Printer_acDDtivity_brandcat=" + Printer_acDDtivity_brandcat + "&Scanner_acDDtivity_brandcat=" + Scanner_acDDtivity_brandcat + "&Scanner_acDDtivity_typecat=" + Scanner_acDDtivity_typecat + "&CPU_activity_brandCat=" + CPU_activity_brandCat +
@@ -195,7 +198,7 @@ public class ApiConnector {
                 "&tablet_activity_inchesCat=" + tablet_activity_inchesCat + "&tv_activity_brandCat=" + tv_activity_brandCat + "&tv_activity_inchesCat=" + tv_activity_inchesCat +
                 "&wifi_Lan_activity_brandCat=" + wifi_Lan_activity_brandCat + "&wifi_Lan_activity_inchesCat=" + wifi_Lan_activity_inchesCat;
 
-        ;
+         System.out.print("Mrunalini***************** URL " + url2);
 
         // Get HttpResponse Object from url.
         // Get HttpEntity from Http Response Object

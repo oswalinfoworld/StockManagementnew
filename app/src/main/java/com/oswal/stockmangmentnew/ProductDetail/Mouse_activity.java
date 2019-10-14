@@ -172,8 +172,8 @@ public class Mouse_activity extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(Mouse_activity.this, Add_Item.class);
-                i.putExtra("Mouse_activity_breandCat",brandCatS);
-                i.putExtra("Mouse_activity_typeCats",typeCats);
+                i.putExtra("Mouse_activity_brandCat",brandCatS);
+                i.putExtra("Mouse_activity_typeCat",typeCats);
                 startActivity(i);
             }
         });

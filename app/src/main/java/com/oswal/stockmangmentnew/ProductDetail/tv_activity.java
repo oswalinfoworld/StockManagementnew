@@ -200,7 +200,7 @@ public class tv_activity extends AppCompatActivity {
         inchescat.setAdapter(aa2);
 
 
-        submit=(Button)findViewById(R.id.mouse_subbtn1);
+        submit=(Button)findViewById(R.id.tv_subbtn1);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

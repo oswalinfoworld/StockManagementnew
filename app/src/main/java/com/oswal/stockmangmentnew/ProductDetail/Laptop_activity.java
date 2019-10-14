@@ -209,7 +209,7 @@ public class Laptop_activity extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(Laptop_activity.this, Add_Item.class);
-                i.putExtra("Laptop_activity_breandCat",brandCatS);
+                i.putExtra("Laptop_activity_brandCat",brandCatS);
                 i.putExtra("Laptop_activity_typeCat",typeCatS);
                 i.putExtra("Laptop_activity_generationCat",generationCatS);
                 i.putExtra("Laptop_activity_ramCat",ramCatS);

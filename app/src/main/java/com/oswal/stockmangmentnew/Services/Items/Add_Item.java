@@ -58,7 +58,7 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
     String mouse_activity_brandCat="NOT_SET";
     String mouse_activity_typeCat="NOT_SET";
 
-    String Laptop_activity_breandCat="NOT_SET";
+    String Laptop_activity_brandCat="NOT_SET";
     String Laptop_activity_typeCat="NOT_SET";
     String  Laptop_activity_generationCat="NOT_SET";
     String  Laptop_activity_ramCat="NOT_SET";
@@ -135,9 +135,9 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
 
         //step1
         mouse_activity_brandCat=  getIntent().getStringExtra("Mouse_activity_brandCat");
-        mouse_activity_typeCat=  getIntent().getStringExtra("Mouse_activity_typeCats");
+        mouse_activity_typeCat=  getIntent().getStringExtra("Mouse_activity_typeCat");
 
-        Laptop_activity_breandCat=  getIntent().getStringExtra("Laptop_activity_breandCat");
+        Laptop_activity_brandCat=  getIntent().getStringExtra("Laptop_activity_brandCat");
         Laptop_activity_typeCat=  getIntent().getStringExtra("Laptop_activity_typeCat");
         Laptop_activity_generationCat=  getIntent().getStringExtra("Laptop_activity_generationCat");
         Laptop_activity_ramCat=  getIntent().getStringExtra("Laptop_activity_ramCat");
@@ -187,7 +187,7 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
        Switches_activity_portcat=  getIntent().getStringExtra("Switches_activity_portCat");
 
         tablet_activity_brandcat=  getIntent().getStringExtra("Tablet_activity_brandCat");
-        tablet_activity_inchescat=  getIntent().getStringExtra("tablet_activity_inchesCat");
+        tablet_activity_inchescat=  getIntent().getStringExtra("Tablet_activity_inchesCat");
 
         tv_activity_brandcat=  getIntent().getStringExtra("Tv_activity_brandCat");
         tv_activity_inchescat=  getIntent().getStringExtra("Tv_activity_inchesCat");
@@ -201,7 +201,7 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
         Toast.makeText(getApplicationContext(),"from Mouse Activity "+mouse_activity_brandCat,Toast.LENGTH_LONG).show();
         Toast.makeText(getApplicationContext(),"from Mouse Activity "+mouse_activity_typeCat,Toast.LENGTH_LONG).show();
 
-        Toast.makeText(getApplicationContext(),"from Laptop Activity "+Laptop_activity_breandCat,Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"from Laptop Activity "+Laptop_activity_brandCat,Toast.LENGTH_LONG).show();
         Toast.makeText(getApplicationContext(),"from Laptop Activity "+Laptop_activity_typeCat,Toast.LENGTH_LONG).show();
         Toast.makeText(getApplicationContext(),"from Laptop Activity "+Laptop_activity_generationCat,Toast.LENGTH_LONG).show();
         Toast.makeText(getApplicationContext(),"from Laptop Activity "+Laptop_activity_ramCat,Toast.LENGTH_LONG).show();
@@ -244,8 +244,8 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
         Toast.makeText(getApplicationContext(),"from GPS Activity "+GPS_activity_brandcat,Toast.LENGTH_LONG).show();
 
 
-        Toast.makeText(getApplicationContext(),"from xerox Activity "+xerox_activity_brandcat,Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(),"from xerox Activity "+xerox_activity_ppmcat,Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"from Xerox Activity "+xerox_activity_brandcat,Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"from Xerox Activity "+xerox_activity_ppmcat,Toast.LENGTH_LONG).show();
 
         Toast.makeText(getApplicationContext(),"from Switches Activity "+Switches_activity_brandcat,Toast.LENGTH_LONG).show();
         Toast.makeText(getApplicationContext(),"from Switches Activity "+Switches_activity_typecat,Toast.LENGTH_LONG).show();
@@ -417,7 +417,7 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
                 itemSpecification.setMouse_activity_brandCat(mouse_activity_brandCat);
                 itemSpecification.setMouse_activity_typeCat(mouse_activity_typeCat);
 
-                itemSpecification.setLaptop_activity_breandCat(Laptop_activity_breandCat);
+                itemSpecification.setLaptop_activity_breandCat(Laptop_activity_brandCat);
                 itemSpecification.setLaptop_activity_typeCat(Laptop_activity_typeCat);
                 itemSpecification.setLaptop_activity_generationCat(Laptop_activity_generationCat);
                 itemSpecification.setLaptop_activity_ramCat( Laptop_activity_ramCat);
@@ -429,6 +429,7 @@ public class Add_Item extends AppCompatActivity implements OnItemSelectedListene
                 itemSpecification.setLaptop_acDDtivity_DVDCat(Laptop_acDDtivity_DVDCat);
 
                 itemSpecification.setPrinter_activity_brandcat( Printer_acDDtivity_brandcat);
+                
                 itemSpecification.setRouter_activity_brandcat(Router_activity_brandcat);
                 itemSpecification.setRouter_activity_mbpscat(Router_activity_mbpscat);
                 itemSpecification.setRouter_activity_portcat(Router_activity_portcat);
