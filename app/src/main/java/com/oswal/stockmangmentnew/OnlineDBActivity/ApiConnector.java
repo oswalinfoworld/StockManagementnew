@@ -113,92 +113,70 @@ public class ApiConnector {
         String serial_number = oneItem.getSerial_number().replaceAll(" ", "%20");
         String date = oneItem.getDate().replaceAll(" ", "%20");
         String category = oneItem.getCategory().replaceAll(" ", "%20");
-        //step3
-        String mouse_activity_brandCat = oneItem.getItemSpecification().getMouse_activity_brandCat();
-        String mouse_activity_typeCat = oneItem.getItemSpecification().getMouse_activity_typeCat();
 
-        String Laptop_activity_breandCat = oneItem.getItemSpecification().getLaptop_activity_brandCat();
-        String Laptop_activity_typeCat = oneItem.getItemSpecification().getLaptop_activity_typeCat();
-        String Laptop_activity_generationCat = oneItem.getItemSpecification().getLaptop_activity_generationCat();
-        String Laptop_activity_ramCat = oneItem.getItemSpecification().getLaptop_activity_ramCat();
-        String Laptop_activity_inchesCat = oneItem.getItemSpecification().getLaptop_activity_inchesCat();
-        String Laptop_activity_HDDCat = oneItem.getItemSpecification().getLaptop_activity_HDDCat();
-        String Laptop_activity_SHDDCat = oneItem.getItemSpecification().getLaptop_activity_SHDDCat();
-        String Laptop_activity_OSCatt = oneItem.getItemSpecification().getLaptop_activity_OSCat();
-        String Laptop_activity_graphiccardCat = oneItem.getItemSpecification().getLaptop_activity_graphiccardCat();
-        String Laptop_acDDtivity_DVDCat = oneItem.getItemSpecification().getLaptop_acDDtivity_DVDCat();
-
-        String Printer_acDDtivity_brandcat = oneItem.getItemSpecification().getPrinter_activity_brandcat();
-
-        String Scanner_acDDtivity_brandcat = oneItem.getItemSpecification().getScanner_acDDtivity_brandcat();
-        String Scanner_acDDtivity_typecat = oneItem.getItemSpecification().getScanner_acDDtivity_typecat();
-
-        String CPU_activity_brandCat = oneItem.getItemSpecification().getCPU_activity_breandCat();
-        String CPU_activity_typeCat = oneItem.getItemSpecification().getCPU_activity_typeCat();
-        String CPU_activity_generationCat = oneItem.getItemSpecification().getCPU_activity_generationCat();
-        String CPU_activity_ramCat = oneItem.getItemSpecification().getCPU_activity_ramCat();
-        String CPU_activity_HDDCat = oneItem.getItemSpecification().getCPU_activity_HDDCat();
-        String CPU_activity_SHDDCat = oneItem.getItemSpecification().getCPU_activity_SHDDCat();
-        String CPU_activity_OSCatt = oneItem.getItemSpecification().getCPU_activity_OSCat();
-        String CPU_activity_graphiccardCat = oneItem.getItemSpecification().getCPU_activity_graphiccardCat();
-        String CPU_acDDtivity_DVDCat = oneItem.getItemSpecification().getCPU_acDDtivity_DVDCat();
-
-        String Router_activity_brandCat = oneItem.getItemSpecification().getRouter_activity_brandcat();
-        String Router_activity_typeCat = oneItem.getItemSpecification().getRouter_activity_typecat();
-        String Router_activity_portCat = oneItem.getItemSpecification().getRouter_activity_portcat();
-        String Router_activity_mbpsCat = oneItem.getItemSpecification().getRouter_activity_mbpscat();
-
-        String wifidongle_activity_brandCat = oneItem.getItemSpecification().getWifidongle_activity_brandcat();
-        String wifidongle_activity_typeCat = oneItem.getItemSpecification().getWifidongle_activity_typecat();
-
-        String RAM_activity_brandCat = oneItem.getItemSpecification().getRAM_activity_brandcat();
-        String RAM_activity_typeCat = oneItem.getItemSpecification().getRAM_activity_typecat();
-        String RAM_activity_gbCat = oneItem.getItemSpecification().getRAM_activity_gbcat();
-
-        String Cable_activity_brandCat = oneItem.getItemSpecification().getCables_activity_brandcat();
+         String brand=oneItem.getItemSpecification().getBrand().replaceAll(" ", "%20");
+          String type=oneItem.getItemSpecification().getType().replaceAll(" ", "%20");
+          String generation=oneItem.getItemSpecification().getGeneration().replaceAll(" ", "%20");
+          String ram=oneItem.getItemSpecification().getRam().replaceAll(" ", "%20");
+          String inches=oneItem.getItemSpecification().getInches().replaceAll(" ", "%20");
+          String hdd=oneItem.getItemSpecification().getHdd().replaceAll(" ", "%20");
+           String shdd=oneItem.getItemSpecification().getShdd().replaceAll(" ", "%20");
+          String os=oneItem.getItemSpecification().getOs().replaceAll(" ", "%20");
+           String graphic_card=oneItem.getItemSpecification().getGraphic_card().replaceAll(" ", "%20");
+           String dvd_writer=oneItem.getItemSpecification().getDvd_writer().replaceAll(" ", "%20");
+          String port=oneItem.getItemSpecification().getPort().replaceAll(" ", "%20");
+          String capacity=oneItem.getItemSpecification().getCapacity().replaceAll(" ", "%20");
+          String cat6_lan=oneItem.getItemSpecification().getCat6_lan().replaceAll(" ", "%20");
+          String cat6_patch_cord=oneItem.getItemSpecification().getCat6_patch_cord().replaceAll(" ", "%20");
+           String vga_csbel=oneItem.getItemSpecification().getVga_csbel().replaceAll(" ", "%20");
+           String cat6_molex=oneItem.getItemSpecification().getCat6_molex().replaceAll(" ", "%20");
+           String hdma_cabels=oneItem.getItemSpecification().getHdma_cabels().replaceAll(" ", "%20");
+          String hdma_4k_hd_cabel=oneItem.getItemSpecification().getHdma_4k_hd_cabel().replaceAll(" ", "%20");
+           String power_cabel=oneItem.getItemSpecification().getPower_cabel().replaceAll(" ", "%20");
+           String audio_cabel=oneItem.getItemSpecification().getAudio_cabel().replaceAll(" ", "%20");
+           String Telephone_cabel=oneItem.getItemSpecification().getTelephone_cabel().replaceAll(" ", "%20");
+           String Electric_cabel=oneItem.getItemSpecification().getElectric_cabel().replaceAll(" ", "%20");
+           String sim_name=oneItem.getItemSpecification().getSim_name().replaceAll(" ", "%20");
+          String sim_recharge=oneItem.getItemSpecification().getSim_recharge().replaceAll(" ", "%20");
+           String sim_validity=oneItem.getItemSpecification().getSim_validity().replaceAll(" ", "%20");
+          String mbps=oneItem.getItemSpecification().getMbps().replaceAll(" ", "%20");
 
 
-        String GPS_activity_brandCat = oneItem.getItemSpecification().getGPS_activity_brandcat();
-
-
-        String Xerox_activity_brandCat = oneItem.getItemSpecification().getXerox_activity_brandcat();
-        String Xerox_activity_ppmCat = oneItem.getItemSpecification().getXerox_activity_ppmcat();
-
-
-        String Switches_activity_brandCat = oneItem.getItemSpecification().getSwitches_activity_brandcat();
-        String Switches_activity_typeCat = oneItem.getItemSpecification().getSwitches_activity_typecat();
-        String Switches_activity_portCat = oneItem.getItemSpecification().getSwitches_activity_portcat();
-
-        String tablet_activity_brandCat = oneItem.getItemSpecification().getTablet_activity_brandcat();
-        String tablet_activity_inchesCat = oneItem.getItemSpecification().getTablet_activity_inchescat();
-
-        String tv_activity_brandCat = oneItem.getItemSpecification().getTv_activity_brandcat();
-        String tv_activity_inchesCat = oneItem.getItemSpecification().getTv_activity_inchescat();
-
-        String wifi_Lan_activity_brandCat = oneItem.getItemSpecification().getWifi_Lan_activity_brandcat();
-        String wifi_Lan_activity_inchesCat = oneItem.getItemSpecification().getWifi_Lan_activity_mbpscat();
 
         //
         // String url = ConstantsIdentifier.getDomainName() + "/stockItemAdd.php?model_number=" + model_number + "&serial_number=" + serial_number + "&dom=" + dom + "&supplier_name=" + supplier_name + "&contact_no=" + mobile_number + "&item_quatity=" + quantity + "&date=" + date;
         //step4 change link
         //step5 Php script change
-        String url = ConstantsIdentifier.getDomainName() + "/stockItemAdd.php?model_number=" + model_number + "&serial_number=" + serial_number + "&date=" + date;
+        String url = ConstantsIdentifier.getDomainName() + "/stockItemAdd.php?model_number=" + model_number + "&serial_number=" + serial_number + "&date=" + date
+                +"&category="+category
+                +"&brand="+brand
+                +"&type="+type
+                +"&generation="+generation
+                +"&ram="+ram
+                +"&inches="+inches
+                +"&hdd="+hdd
+                +"&shdd="+shdd
+                +"&os="+os
+                +"&graphic_card="+graphic_card
+                +"&dvd_writer="+dvd_writer
+                +"&port="+port
+                +"&capacity="+capacity
+                +"&cat6_lan="+cat6_lan
+                +"&cat6_patch_cord="+cat6_patch_cord
+                +"&cat6_molex="+cat6_molex
+                +"&vga_csbel="+vga_csbel
+                +"&hdma_cabels="+hdma_cabels
+                +"&hdma_4k_hd_cabel="+hdma_4k_hd_cabel
+                +"&power_cabel="+power_cabel
+                +"&audio_cabel="+audio_cabel
+                +"&Telephone_cabel="+Telephone_cabel
+                +"&Electric_cabel="+Electric_cabel
+                +"&sim_name="+sim_name
+                +"&sim_recharge="+sim_recharge
+                +"&sim_validity="+sim_validity
+                +"&mbps="+mbps;
         System.out.print("Mrunal***************** URL " + url);
 
-        String url2 = ConstantsIdentifier.getDomainName() + "/Product_detail.php?mouse_activity_brandCat=" + mouse_activity_brandCat + "&mouse_activity_typeCat=" + mouse_activity_typeCat + "&Laptop_activity_breandCat=" + Laptop_activity_breandCat + "&Laptop_activity_typeCat=" + Laptop_activity_typeCat +
-
-                "&Laptop_activity_generationCat=" + Laptop_activity_generationCat + "&Laptop_activity_ramCat=" + Laptop_activity_ramCat +
-                "&Laptop_activity_inchesCat=" + Laptop_activity_inchesCat + "&Laptop_activity_HDDCat=" + Laptop_activity_HDDCat + "&Laptop_activity_SHDDCat=" + Laptop_activity_SHDDCat + "&Laptop_activity_OSCatt=" + Laptop_activity_OSCatt + "&Laptop_activity_graphiccardCat=" + Laptop_activity_graphiccardCat +
-                "&Laptop_acDDtivity_DVDCat=" + Laptop_acDDtivity_DVDCat + "&Printer_acDDtivity_brandcat=" + Printer_acDDtivity_brandcat + "&Scanner_acDDtivity_brandcat=" + Scanner_acDDtivity_brandcat + "&Scanner_acDDtivity_typecat=" + Scanner_acDDtivity_typecat + "&CPU_activity_brandCat=" + CPU_activity_brandCat +
-                "&CPU_activity_typeCat=" + CPU_activity_typeCat + "&CPU_activity_generationCat=" + CPU_activity_generationCat + "&CPU_activity_ramCat=" + CPU_activity_ramCat + "&CPU_activity_HDDCat=" + CPU_activity_HDDCat + "&CPU_activity_SHDDCat=" + CPU_activity_SHDDCat + "&CPU_activity_OSCatt="
-                + CPU_activity_OSCatt + "&CPU_activity_graphiccardCat=" + CPU_activity_graphiccardCat + "&CPU_acDDtivity_DVDCat=" + CPU_acDDtivity_DVDCat + "&Router_activity_brandCat=" + Router_activity_brandCat + "&Router_activity_typeCat=" + Router_activity_typeCat + "&Router_activity_portCat=" + Router_activity_portCat +
-                "&Router_activity_mbpsCat=" + Router_activity_mbpsCat + "&wifidongle_activity_brandCat=" + wifidongle_activity_brandCat + "&wifidongle_activity_typeCat=" + wifidongle_activity_typeCat + "&RAM_activity_brandCat=" + RAM_activity_brandCat + "&RAM_activity_typeCat=" + RAM_activity_typeCat + "&RAM_activity_gbCat=" + RAM_activity_gbCat +
-                "&Cable_activity_brandCat=" + Cable_activity_brandCat + "&GPS_activity_brandCat=" + GPS_activity_brandCat + "&Xerox_activity_brandCat=" + Xerox_activity_brandCat + "&Xerox_activity_ppmCat=" + Xerox_activity_ppmCat +
-                "&Switches_activity_brandCat=" + Switches_activity_brandCat + "&Switches_activity_typeCat=" + Switches_activity_typeCat + "&Switches_activity_portCat=" + Switches_activity_portCat + "&tablet_activity_brandCat=" + tablet_activity_brandCat +
-                "&tablet_activity_inchesCat=" + tablet_activity_inchesCat + "&tv_activity_brandCat=" + tv_activity_brandCat + "&tv_activity_inchesCat=" + tv_activity_inchesCat +
-                "&wifi_Lan_activity_brandCat=" + wifi_Lan_activity_brandCat + "&wifi_Lan_activity_inchesCat=" + wifi_Lan_activity_inchesCat;
-
-         System.out.print("Mrunalini***************** URL " + url2);
 
         // Get HttpResponse Object from url.
         // Get HttpEntity from Http Response Object

@@ -21,6 +21,8 @@ import com.oswal.stockmangmentnew.OflineDBActivity.DatabaseHelper;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.KeyboardProfile;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.LaptopProfile;
 import com.oswal.stockmangmentnew.OnlineDBActivity.ApiConnector;
+import com.oswal.stockmangmentnew.POJO.Item;
+import com.oswal.stockmangmentnew.POJO.ItemSpecification;
 import com.oswal.stockmangmentnew.R;
 import com.oswal.stockmangmentnew.Services.Items.Add_Item;
 
@@ -48,24 +50,20 @@ public class Laptop_activity extends AppCompatActivity {
     ArrayList<String> graphicsListArray = new ArrayList<String>();
     ArrayList<String> dvdListArray = new ArrayList<String>();
 
-    /* String[] brandList = {"Select","HP","DEll" };
-     String[] companyList = {"Select","HP","DELL" };
-     String[ ]typeList = {"Select","C2D", "DC", "i3", "i5", "i7"};
-     String[] genList = {"Select","1", "2", "3", "4", "5", "6", "7", "8", "9"};
-     String[] ramList = {"Select","2GB", "4GB", "8GB", "6GB", "16GB", "32GB", "64Gb", "128GB"};
-     String[] inchesList = {"Select","10.5", "12", "12.5", "14", "15.6", "17"};
-     String[] hddList = {"Select","0", "250GB", "320GB", "500GB", "1TB", "2TB", "4TB"};
-     String[] shddList = {"Select","80GB", "250GB", "320GB", "500GB", "1TB", "2TB", "4TB"};
-     String[] osList = {"Select","DOS", "window10home", "window10pro"};
-     String[] graphicsList = {"Select", "0", "onboard", "2GB", "4GB", "8GB"};
-     String[]dvdsList = {"Select", "Yes","No"};
- */
+
+    String model_number,model_category,model_serial_number,model_date;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_laptop_activity);
         getSupportActionBar().setTitle("Laptop Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        model_number=getIntent().getStringExtra("model_number");
+        model_category=getIntent().getStringExtra("model_Category");
+        model_serial_number=getIntent().getStringExtra("model_serial_number");
+        model_date=getIntent().getStringExtra("model_date");
+
         Brandcat = (Spinner) findViewById(R.id.lap_spinner1);
         Typecat = (Spinner) findViewById(R.id.lap_spinner2);
         genrationcat = (Spinner) findViewById(R.id.lap_spinner3);
@@ -198,14 +196,6 @@ public class Laptop_activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
-
-/*
-               if (isInternetOn()) {
-                 new insertItemToOnlineDB().execute(new ApiConnector());
-                    Intent i = new Intent(Laptop_activity.this, Add_Item.class);
-                    startActivity(i);
-                }*/
 
                 Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(Laptop_activity.this, Add_Item.class);
@@ -221,7 +211,11 @@ public class Laptop_activity extends AppCompatActivity {
                 i.putExtra("Laptop_acDDtivity_DVDCat",DVDCatS);
                 startActivity(i);
 
-
+                if (isInternetOn()) {
+                    new insertItemToOnlineDB().execute(new ApiConnector());
+                    Intent i1 = new Intent(Laptop_activity.this, Add_Item.class);
+                    startActivity(i1);
+                }
 
             }
         });
@@ -752,7 +746,7 @@ public class Laptop_activity extends AppCompatActivity {
 
 
     }
-/*
+
     public boolean isInternetOn() {
 
         // get Connectivity Manager object to check connection
@@ -786,7 +780,26 @@ public class Laptop_activity extends AppCompatActivity {
             //Toast.makeText(getApplicationContext(),"Saving Data Online ",Toast.LENGTH_LONG).show();
             Log.d("Abhishek", "Saving Data Online ");
 
-            return params[0].insert_stock_product_detail(Brandcat,Typecat,genrationcat,ramcat,inchescat,HDDcat,SHDDcat,oscat,graphiccardcat,dvdcat);
+            Item item= new Item();
+            item.setCategory(model_category);
+            item.setModel_number(model_number);
+            item.setSerial_number(model_serial_number);
+            item.setDate(model_date);
+
+            ItemSpecification itemSpecification = new ItemSpecification();
+
+            itemSpecification.setBrand(brandCatS);
+            itemSpecification.setType(typeCatS);
+            itemSpecification.setGeneration(generationCatS);
+            itemSpecification.setRam(ramCatS);
+            itemSpecification.setInches(inchesCatS);
+            itemSpecification.setHdd(HDDCatS);
+            itemSpecification.setShdd(SHDDcatS);
+            itemSpecification.setOs(oscatS);
+            itemSpecification.setGraphic_card(graphiccardCatS);
+            itemSpecification.setDvd_writer(DVDCatS);
+            item.setItemSpecification(itemSpecification);
+            return params[0].insert_item_details(item);
         }
 
         @Override
@@ -794,7 +807,7 @@ public class Laptop_activity extends AppCompatActivity {
         }
 
 
-    }*/
+    }
 }
 
 

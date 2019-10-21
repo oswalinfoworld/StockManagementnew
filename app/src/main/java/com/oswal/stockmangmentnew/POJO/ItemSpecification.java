@@ -2,173 +2,224 @@ package com.oswal.stockmangmentnew.POJO;
 
 public class ItemSpecification {
 
-    String  mouse_activity_brandCat, mouse_activity_typeCat ;
-    String Laptop_activity_brandCat,Laptop_activity_typeCat, Laptop_activity_generationCat,Laptop_activity_ramCat, Laptop_activity_inchesCat,Laptop_activity_HDDCat, Laptop_activity_SHDDCat, Laptop_activity_OSCat, Laptop_activity_graphiccardCat, Laptop_acDDtivity_DVDCat;
-    String  Router_activity_brandcat, Router_activity_typecat,  Router_activity_portcat,  Router_activity_mbpscat;
-    String dongle_Type, sim_Name, sim_Recharge, sim_validity;
-    String  RAM_activity_brandcat,   RAM_activity_typecat, RAM_activity_gbcat;
-    String  Printer_activity_brandcat;
-    String wifidongle_activity_brandcat, wifidongle_activity_typecat;
-    String Scanner_acDDtivity_brandcat,Scanner_acDDtivity_typecat;
-    String Cables_activity_brandcat, GPS_activity_brandcat;
-    String  Switches_activity_brandcat, Switches_activity_typecat, Switches_activity_portcat;
-    String  xerox_activity_brandcat, xerox_activity_ppmcat;
-    String tv_activity_brandcat, tv_activity_inchescat;
-    String wifi_Lan_activity_brandcat, wifi_Lan_activity_mbpscat;
-    String tablet_activity_brandcat, tablet_activity_inchescat;
-    String CPU_activity_breandCat,CPU_activity_typeCat, CPU_activity_generationCat,CPU_activity_ramCat,CPU_activity_HDDCat, CPU_activity_SHDDCat, CPU_activity_OSCat, CPU_activity_graphiccardCat,CPU_acDDtivity_DVDCat;
+    private String brand;
+    private  String type;
+    private  String generation;
+    private  String ram;
+    private  String inches;
+    private  String hdd;
+    private   String shdd;
+    private  String os;
+    private   String graphic_card;
+    private   String dvd_writer;
+    private  String port;
+    private  String capacity;
+    private  String cat6_lan;
+    private  String cat6_patch_cord;
+    private   String vga_csbel;
+    private   String cat6_molex;
+    private   String hdma_cabels;
+    private  String hdma_4k_hd_cabel;
+    private   String power_cabel;
+    private   String audio_cabel;
+    private   String Telephone_cabel;
+    private   String Electric_cabel;
+    private   String sim_name;
+    private  String sim_recharge;
+    private   String sim_validity;
+    private  String mbps;
 
 
-    public String getMouse_activity_brandCat() {
-        return mouse_activity_brandCat;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setMouse_activity_brandCat(String mouse_activity_brandCat) {
-        this.mouse_activity_brandCat = mouse_activity_brandCat;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
-    public String getMouse_activity_typeCat() {
-        return mouse_activity_typeCat;
+    public String getType() {
+        return type;
     }
 
-    public void setMouse_activity_typeCat(String mouse_activity_typeCat) {
-        this.mouse_activity_typeCat = mouse_activity_typeCat;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getLaptop_activity_brandCat() {
-        return Laptop_activity_brandCat;
+    public String getGeneration() {
+        return generation;
     }
 
-    public void setLaptop_activity_breandCat(String laptop_activity_breandCat) {
-        Laptop_activity_brandCat = laptop_activity_breandCat;
+    public void setGeneration(String generation) {
+        this.generation = generation;
     }
 
-    public String getLaptop_activity_typeCat() {
-        return Laptop_activity_typeCat;
+    public String getRam() {
+        return ram;
     }
 
-    public void setLaptop_activity_typeCat(String laptop_activity_typeCat) {
-        Laptop_activity_typeCat = laptop_activity_typeCat;
+    public void setRam(String ram) {
+        this.ram = ram;
     }
 
-    public String getLaptop_activity_generationCat() {
-        return Laptop_activity_generationCat;
+    public String getInches() {
+        return inches;
     }
 
-    public void setLaptop_activity_generationCat(String laptop_activity_generationCat) {
-        Laptop_activity_generationCat = laptop_activity_generationCat;
+    public void setInches(String inches) {
+        this.inches = inches;
     }
 
-    public String getLaptop_activity_ramCat() {
-        return Laptop_activity_ramCat;
+    public String getHdd() {
+        return hdd;
     }
 
-    public void setLaptop_activity_ramCat(String laptop_activity_ramCat) {
-        Laptop_activity_ramCat = laptop_activity_ramCat;
+    public void setHdd(String hdd) {
+        this.hdd = hdd;
     }
 
-    public String getLaptop_activity_inchesCat() {
-        return Laptop_activity_inchesCat;
+    public String getShdd() {
+        return shdd;
     }
 
-    public void setLaptop_activity_inchesCat(String laptop_activity_inchesCat) {
-        Laptop_activity_inchesCat = laptop_activity_inchesCat;
+    public void setShdd(String shdd) {
+        this.shdd = shdd;
     }
 
-    public String getLaptop_activity_HDDCat() {
-        return Laptop_activity_HDDCat;
+    public String getOs() {
+        return os;
     }
 
-    public void setLaptop_activity_HDDCat(String laptop_activity_HDDCat) {
-        Laptop_activity_HDDCat = laptop_activity_HDDCat;
+    public void setOs(String os) {
+        this.os = os;
     }
 
-    public String getLaptop_activity_SHDDCat() {
-        return Laptop_activity_SHDDCat;
+    public String getGraphic_card() {
+        return graphic_card;
     }
 
-    public void setLaptop_activity_SHDDCat(String laptop_activity_SHDDCat) {
-        Laptop_activity_SHDDCat = laptop_activity_SHDDCat;
+    public void setGraphic_card(String graphic_card) {
+        this.graphic_card = graphic_card;
     }
 
-    public String getLaptop_activity_OSCat() {
-        return Laptop_activity_OSCat;
+    public String getDvd_writer() {
+        return dvd_writer;
     }
 
-    public void setLaptop_activity_OSCat(String laptop_activity_OSCat) {
-        Laptop_activity_OSCat = laptop_activity_OSCat;
+    public void setDvd_writer(String dvd_writer) {
+        this.dvd_writer = dvd_writer;
     }
 
-    public String getLaptop_activity_graphiccardCat() {
-        return Laptop_activity_graphiccardCat;
+    public String getPort() {
+        return port;
     }
 
-    public void setLaptop_activity_graphiccardCat(String laptop_activity_graphiccardCat) {
-        Laptop_activity_graphiccardCat = laptop_activity_graphiccardCat;
+    public void setPort(String port) {
+        this.port = port;
     }
 
-    public String getLaptop_acDDtivity_DVDCat() {
-        return Laptop_acDDtivity_DVDCat;
+    public String getCapacity() {
+        return capacity;
     }
 
-    public void setLaptop_acDDtivity_DVDCat(String laptop_acDDtivity_DVDCat) {
-        Laptop_acDDtivity_DVDCat = laptop_acDDtivity_DVDCat;
+    public void setCapacity(String capacity) {
+        this.capacity = capacity;
     }
 
-    public String getRouter_activity_brandcat() {
-        return Router_activity_brandcat;
+    public String getCat6_lan() {
+        return cat6_lan;
     }
 
-    public void setRouter_activity_brandcat(String router_activity_brandcat) {
-        Router_activity_brandcat = router_activity_brandcat;
+    public void setCat6_lan(String cat6_lan) {
+        this.cat6_lan = cat6_lan;
     }
 
-    public String getRouter_activity_typecat() {
-        return Router_activity_typecat;
+    public String getCat6_patch_cord() {
+        return cat6_patch_cord;
     }
 
-    public void setRouter_activity_typecat(String router_activity_typecat) {
-        Router_activity_typecat = router_activity_typecat;
+    public void setCat6_patch_cord(String cat6_patch_cord) {
+        this.cat6_patch_cord = cat6_patch_cord;
     }
 
-    public String getRouter_activity_portcat() {
-        return Router_activity_portcat;
+    public String getVga_csbel() {
+        return vga_csbel;
     }
 
-    public void setRouter_activity_portcat(String router_activity_portcat) {
-        Router_activity_portcat = router_activity_portcat;
+    public void setVga_csbel(String vga_csbel) {
+        this.vga_csbel = vga_csbel;
     }
 
-    public String getRouter_activity_mbpscat() {
-        return Router_activity_mbpscat;
+    public String getCat6_molex() {
+        return cat6_molex;
     }
 
-    public void setRouter_activity_mbpscat(String router_activity_mbpscat) {
-        Router_activity_mbpscat = router_activity_mbpscat;
+    public void setCat6_molex(String cat6_molex) {
+        this.cat6_molex = cat6_molex;
     }
 
-    public String getDongle_Type() {
-        return dongle_Type;
+    public String getHdma_cabels() {
+        return hdma_cabels;
     }
 
-    public void setDongle_Type(String dongle_Type) {
-        this.dongle_Type = dongle_Type;
+    public void setHdma_cabels(String hdma_cabels) {
+        this.hdma_cabels = hdma_cabels;
     }
 
-    public String getSim_Name() {
-        return sim_Name;
+    public String getHdma_4k_hd_cabel() {
+        return hdma_4k_hd_cabel;
     }
 
-    public void setSim_Name(String sim_Name) {
-        this.sim_Name = sim_Name;
+    public void setHdma_4k_hd_cabel(String hdma_4k_hd_cabel) {
+        this.hdma_4k_hd_cabel = hdma_4k_hd_cabel;
     }
 
-    public String getSim_Recharge() {
-        return sim_Recharge;
+    public String getPower_cabel() {
+        return power_cabel;
     }
 
-    public void setSim_Recharge(String sim_Recharge) {
-        this.sim_Recharge = sim_Recharge;
+    public void setPower_cabel(String power_cabel) {
+        this.power_cabel = power_cabel;
+    }
+
+    public String getAudio_cabel() {
+        return audio_cabel;
+    }
+
+    public void setAudio_cabel(String audio_cabel) {
+        this.audio_cabel = audio_cabel;
+    }
+
+    public String getTelephone_cabel() {
+        return Telephone_cabel;
+    }
+
+    public void setTelephone_cabel(String telephone_cabel) {
+        Telephone_cabel = telephone_cabel;
+    }
+
+    public String getElectric_cabel() {
+        return Electric_cabel;
+    }
+
+    public void setElectric_cabel(String electric_cabel) {
+        Electric_cabel = electric_cabel;
+    }
+
+    public String getSim_name() {
+        return sim_name;
+    }
+
+    public void setSim_name(String sim_name) {
+        this.sim_name = sim_name;
+    }
+
+    public String getSim_recharge() {
+        return sim_recharge;
+    }
+
+    public void setSim_recharge(String sim_recharge) {
+        this.sim_recharge = sim_recharge;
     }
 
     public String getSim_validity() {
@@ -179,247 +230,13 @@ public class ItemSpecification {
         this.sim_validity = sim_validity;
     }
 
-    public String getRAM_activity_brandcat() {
-        return RAM_activity_brandcat;
+    public String getMbps() {
+        return mbps;
     }
 
-    public void setRAM_activity_brandcat(String RAM_activity_brandcat) {
-        this.RAM_activity_brandcat = RAM_activity_brandcat;
+    public void setMbps(String mbps) {
+        this.mbps = mbps;
     }
-
-    public String getRAM_activity_typecat() {
-        return RAM_activity_typecat;
-    }
-
-    public void setRAM_activity_typecat(String RAM_activity_typecat) {
-        this.RAM_activity_typecat = RAM_activity_typecat;
-    }
-
-    public String getRAM_activity_gbcat() {
-        return RAM_activity_gbcat;
-    }
-
-    public void setRAM_activity_gbcat(String RAM_activity_gbcat) {
-        this.RAM_activity_gbcat = RAM_activity_gbcat;
-    }
-
-    public String getPrinter_activity_brandcat() {
-        return Printer_activity_brandcat;
-    }
-
-    public void setPrinter_activity_brandcat(String printer_activity_brandcat) {
-        Printer_activity_brandcat = printer_activity_brandcat;
-    }
-
-    public String getWifidongle_activity_brandcat() {
-        return wifidongle_activity_brandcat;
-    }
-
-    public void setWifidongle_activity_brandcat(String wifidongle_activity_brandcat) {
-        this.wifidongle_activity_brandcat = wifidongle_activity_brandcat;
-    }
-
-    public String getWifidongle_activity_typecat() {
-        return wifidongle_activity_typecat;
-    }
-
-    public void setWifidongle_activity_typecat(String wifidongle_activity_typecat) {
-        this.wifidongle_activity_typecat = wifidongle_activity_typecat;
-    }
-
-    public String getScanner_acDDtivity_brandcat() {
-        return Scanner_acDDtivity_brandcat;
-    }
-
-    public void setScanner_acDDtivity_brandcat(String scanner_acDDtivity_brandcat) {
-        Scanner_acDDtivity_brandcat = scanner_acDDtivity_brandcat;
-    }
-
-    public String getScanner_acDDtivity_typecat() {
-        return Scanner_acDDtivity_typecat;
-    }
-
-    public void setScanner_acDDtivity_typecat(String scanner_acDDtivity_typecat) {
-        Scanner_acDDtivity_typecat = scanner_acDDtivity_typecat;
-    }
-
-    public String getCables_activity_brandcat() {
-        return Cables_activity_brandcat;
-    }
-
-    public void setCables_activity_brandcat(String cables_activity_brandcat) {
-        Cables_activity_brandcat = cables_activity_brandcat;
-    }
-
-    public String getGPS_activity_brandcat() {
-        return GPS_activity_brandcat;
-    }
-
-    public void setGPS_activity_brandcat(String GPS_activity_brandcat) {
-        this.GPS_activity_brandcat = GPS_activity_brandcat;
-    }
-
-    public String getSwitches_activity_brandcat() {
-        return Switches_activity_brandcat;
-    }
-
-    public void setSwitches_activity_brandcat(String switches_activity_brandcat) {
-        Switches_activity_brandcat = switches_activity_brandcat;
-    }
-
-    public String getSwitches_activity_typecat() {
-        return Switches_activity_typecat;
-    }
-
-    public void setSwitches_activity_typecat(String switches_activity_typecat) {
-        Switches_activity_typecat = switches_activity_typecat;
-    }
-
-    public String getSwitches_activity_portcat() {
-        return Switches_activity_portcat;
-    }
-
-    public void setSwitches_activity_portcat(String switches_activity_portcat) {
-        Switches_activity_portcat = switches_activity_portcat;
-    }
-
-    public String getXerox_activity_brandcat() {
-        return xerox_activity_brandcat;
-    }
-
-    public void setXerox_activity_brandcat(String xerox_activity_brandcat) {
-        this.xerox_activity_brandcat = xerox_activity_brandcat;
-    }
-
-    public String getXerox_activity_ppmcat() {
-        return xerox_activity_ppmcat;
-    }
-
-    public void setXerox_activity_ppmcat(String xerox_activity_ppmcat) {
-        this.xerox_activity_ppmcat = xerox_activity_ppmcat;
-    }
-
-    public String getTv_activity_brandcat() {
-        return tv_activity_brandcat;
-    }
-
-    public void setTv_activity_brandcat(String tv_activity_brandcat) {
-        this.tv_activity_brandcat = tv_activity_brandcat;
-    }
-
-    public String getTv_activity_inchescat() {
-        return tv_activity_inchescat;
-    }
-
-    public void setTv_activity_inchescat(String tv_activity_inchescat) {
-        this.tv_activity_inchescat = tv_activity_inchescat;
-    }
-
-    public String getWifi_Lan_activity_brandcat() {
-        return wifi_Lan_activity_brandcat;
-    }
-
-    public void setWifi_Lan_activity_brandcat(String wifi_Lan_activity_brandcat) {
-        this.wifi_Lan_activity_brandcat = wifi_Lan_activity_brandcat;
-    }
-
-    public String getWifi_Lan_activity_mbpscat() {
-        return wifi_Lan_activity_mbpscat;
-    }
-
-    public void setWifi_Lan_activity_mbpscat(String wifi_Lan_activity_mbpscat) {
-        this.wifi_Lan_activity_mbpscat = wifi_Lan_activity_mbpscat;
-    }
-
-    public String getTablet_activity_brandcat() {
-        return tablet_activity_brandcat;
-    }
-
-    public void setTablet_activity_brandcat(String tablet_activity_brandcat) {
-        this.tablet_activity_brandcat = tablet_activity_brandcat;
-    }
-
-    public String getTablet_activity_inchescat() {
-        return tablet_activity_inchescat;
-    }
-
-    public void setTablet_activity_inchescat(String tablet_activity_inchescat) {
-        this.tablet_activity_inchescat = tablet_activity_inchescat;
-    }
-
-    public String getCPU_activity_breandCat() {
-        return CPU_activity_breandCat;
-    }
-
-    public void setCPU_activity_breandCat(String CPU_activity_breandCat) {
-        this.CPU_activity_breandCat = CPU_activity_breandCat;
-    }
-
-    public String getCPU_activity_typeCat() {
-        return CPU_activity_typeCat;
-    }
-
-    public void setCPU_activity_typeCat(String CPU_activity_typeCat) {
-        this.CPU_activity_typeCat = CPU_activity_typeCat;
-    }
-
-    public String getCPU_activity_generationCat() {
-        return CPU_activity_generationCat;
-    }
-
-    public void setCPU_activity_generationCat(String CPU_activity_generationCat) {
-        this.CPU_activity_generationCat = CPU_activity_generationCat;
-    }
-
-    public String getCPU_activity_ramCat() {
-        return CPU_activity_ramCat;
-    }
-
-    public void setCPU_activity_ramCat(String CPU_activity_ramCat) {
-        this.CPU_activity_ramCat = CPU_activity_ramCat;
-    }
-
-    public String getCPU_activity_HDDCat() {
-        return CPU_activity_HDDCat;
-    }
-
-    public void setCPU_activity_HDDCat(String CPU_activity_HDDCat) {
-        this.CPU_activity_HDDCat = CPU_activity_HDDCat;
-    }
-
-    public String getCPU_activity_SHDDCat() {
-        return CPU_activity_SHDDCat;
-    }
-
-    public void setCPU_activity_SHDDCat(String CPU_activity_SHDDCat) {
-        this.CPU_activity_SHDDCat = CPU_activity_SHDDCat;
-    }
-
-    public String getCPU_activity_OSCat() {
-        return CPU_activity_OSCat;
-    }
-
-    public void setCPU_activity_OSCat(String CPU_activity_OSCat) {
-        this.CPU_activity_OSCat = CPU_activity_OSCat;
-    }
-
-    public String getCPU_activity_graphiccardCat() {
-        return CPU_activity_graphiccardCat;
-    }
-
-    public void setCPU_activity_graphiccardCat(String CPU_activity_graphiccardCat) {
-        this.CPU_activity_graphiccardCat = CPU_activity_graphiccardCat;
-    }
-
-    public String getCPU_acDDtivity_DVDCat() {
-        return CPU_acDDtivity_DVDCat;
-    }
-
-    public void setCPU_acDDtivity_DVDCat(String CPU_acDDtivity_DVDCat) {
-        this.CPU_acDDtivity_DVDCat = CPU_acDDtivity_DVDCat;
-    }
-
-
 }
 
 
