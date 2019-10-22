@@ -14,16 +14,7 @@ public class ItemSpecification {
     private   String dvd_writer;
     private  String port;
     private  String capacity;
-    private  String cat6_lan;
-    private  String cat6_patch_cord;
-    private   String vga_csbel;
-    private   String cat6_molex;
-    private   String hdma_cabels;
-    private  String hdma_4k_hd_cabel;
-    private   String power_cabel;
-    private   String audio_cabel;
-    private   String Telephone_cabel;
-    private   String Electric_cabel;
+    private String length;
     private   String sim_name;
     private  String sim_recharge;
     private   String sim_validity;
@@ -126,85 +117,6 @@ public class ItemSpecification {
         this.capacity = capacity;
     }
 
-    public String getCat6_lan() {
-        return cat6_lan;
-    }
-
-    public void setCat6_lan(String cat6_lan) {
-        this.cat6_lan = cat6_lan;
-    }
-
-    public String getCat6_patch_cord() {
-        return cat6_patch_cord;
-    }
-
-    public void setCat6_patch_cord(String cat6_patch_cord) {
-        this.cat6_patch_cord = cat6_patch_cord;
-    }
-
-    public String getVga_csbel() {
-        return vga_csbel;
-    }
-
-    public void setVga_csbel(String vga_csbel) {
-        this.vga_csbel = vga_csbel;
-    }
-
-    public String getCat6_molex() {
-        return cat6_molex;
-    }
-
-    public void setCat6_molex(String cat6_molex) {
-        this.cat6_molex = cat6_molex;
-    }
-
-    public String getHdma_cabels() {
-        return hdma_cabels;
-    }
-
-    public void setHdma_cabels(String hdma_cabels) {
-        this.hdma_cabels = hdma_cabels;
-    }
-
-    public String getHdma_4k_hd_cabel() {
-        return hdma_4k_hd_cabel;
-    }
-
-    public void setHdma_4k_hd_cabel(String hdma_4k_hd_cabel) {
-        this.hdma_4k_hd_cabel = hdma_4k_hd_cabel;
-    }
-
-    public String getPower_cabel() {
-        return power_cabel;
-    }
-
-    public void setPower_cabel(String power_cabel) {
-        this.power_cabel = power_cabel;
-    }
-
-    public String getAudio_cabel() {
-        return audio_cabel;
-    }
-
-    public void setAudio_cabel(String audio_cabel) {
-        this.audio_cabel = audio_cabel;
-    }
-
-    public String getTelephone_cabel() {
-        return Telephone_cabel;
-    }
-
-    public void setTelephone_cabel(String telephone_cabel) {
-        Telephone_cabel = telephone_cabel;
-    }
-
-    public String getElectric_cabel() {
-        return Electric_cabel;
-    }
-
-    public void setElectric_cabel(String electric_cabel) {
-        Electric_cabel = electric_cabel;
-    }
 
     public String getSim_name() {
         return sim_name;
@@ -236,6 +148,14 @@ public class ItemSpecification {
 
     public void setMbps(String mbps) {
         this.mbps = mbps;
+    }
+
+    public String getLength() {
+        return length;
+    }
+
+    public void setLength(String length) {
+        this.length = length;
     }
 }
 

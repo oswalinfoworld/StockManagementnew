@@ -34,7 +34,6 @@ import java.util.ArrayList;
 public class Laptop_activity extends AppCompatActivity {
 
     Button submit;
-    String itemUniqueID, item_name, brand_name, model_no, type, port_no, mbps, generation, capacity, ppm, inches, sim_name, sim_recharge, String, sim_qunatity, avail_quantity, date;
     Spinner Brandcat, Typecat, genrationcat, ramcat, inchescat, HDDcat, SHDDcat, oscat, graphiccardcat, dvdcat;
     DatabaseHelper db = null;
     String brandCatS,typeCatS,generationCatS,ramCatS,inchesCatS,HDDCatS,SHDDcatS,oscatS,graphiccardCatS,DVDCatS;
@@ -59,6 +58,7 @@ public class Laptop_activity extends AppCompatActivity {
         getSupportActionBar().setTitle("Laptop Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        //step1
         model_number=getIntent().getStringExtra("model_number");
         model_category=getIntent().getStringExtra("model_Category");
         model_serial_number=getIntent().getStringExtra("model_serial_number");
@@ -192,13 +192,14 @@ public class Laptop_activity extends AppCompatActivity {
 
 
         submit = (Button) findViewById(R.id.laptop_submitbutton);
+        //step2
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
 
                 Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(Laptop_activity.this, Add_Item.class);
+               /* Intent i = new Intent(Laptop_activity.this, Add_Item.class);
                 i.putExtra("Laptop_activity_brandCat",brandCatS);
                 i.putExtra("Laptop_activity_typeCat",typeCatS);
                 i.putExtra("Laptop_activity_generationCat",generationCatS);
@@ -209,7 +210,7 @@ public class Laptop_activity extends AppCompatActivity {
                 i.putExtra("Laptop_activity_OSCat",oscatS);
                 i.putExtra("Laptop_activity_graphiccardCat",graphiccardCatS);
                 i.putExtra("Laptop_acDDtivity_DVDCat",DVDCatS);
-                startActivity(i);
+                startActivity(i);*/
 
                 if (isInternetOn()) {
                     new insertItemToOnlineDB().execute(new ApiConnector());
