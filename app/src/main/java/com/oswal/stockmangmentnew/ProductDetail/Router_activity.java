@@ -3,7 +3,10 @@ package com.oswal.stockmangmentnew.ProductDetail;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,6 +17,9 @@ import android.widget.Toast;
 
 import com.oswal.stockmangmentnew.OflineDBActivity.DatabaseHelper;
 import com.oswal.stockmangmentnew.OflineDBActivity.model.RouterProfile;
+import com.oswal.stockmangmentnew.OnlineDBActivity.ApiConnector;
+import com.oswal.stockmangmentnew.POJO.Item;
+import com.oswal.stockmangmentnew.POJO.ItemSpecification;
 import com.oswal.stockmangmentnew.R;
 import com.oswal.stockmangmentnew.Services.Items.Add_Item;
 
@@ -27,6 +33,7 @@ public class Router_activity extends AppCompatActivity {
     Button submit;
     Spinner Brandcat,Typecat,portcat,mbpscat;
     String brandcatS,typecatS,portcatS,mbpscatS;
+    String model_number,model_category,model_serial_number,model_date;
 
 /*String[] brandList = {"Select","TP-Link","LINKSYS","Tenda" };
     String[] companyList = {"Select","DGSOL","Dlink" };
@@ -46,6 +53,13 @@ RouterProfile routerProfile= new RouterProfile ();
         setContentView(R.layout.activity_router_activity);
         getSupportActionBar().setTitle("Router Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        model_number=getIntent().getStringExtra("model_number");
+        model_category=getIntent().getStringExtra("model_Category");
+        model_serial_number=getIntent().getStringExtra("model_serial_number");
+        model_date=getIntent().getStringExtra("model_date");
+
+
         Brandcat=(Spinner)findViewById(R.id.router_spinner1) ;
         Typecat=(Spinner)findViewById(R.id.routerspinner3) ;
         portcat=(Spinner)findViewById(R.id.router_spinner4) ;
@@ -279,15 +293,82 @@ RouterProfile routerProfile= new RouterProfile ();
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(Router_activity.this, Add_Item.class);
+               /* Intent i = new Intent(Router_activity.this, Add_Item.class);
                 i.putExtra("Router_activity_breandCat",brandcatS);
                 i.putExtra("Router_activity_typeCat",typecatS);
                 i.putExtra("Router_activity_portcat",portcatS);
-                i.putExtra("Router_activity_mbpscat",mbpscatS);
-                startActivity(i);
+                i.putExtra("Router_*//*activity_mbpscat",mbpscatS);
+                startActivity(i);*/
+
+
+                if (isInternetOn()) {
+                    new Router_activity.insertItemToOnlineDB().execute(new ApiConnector());
+                    Intent i1 = new Intent(Router_activity.this, Add_Item.class);
+                    startActivity(i1);
+                }
             }
         });
 
 
     }
+
+    public boolean isInternetOn() {
+
+        // get Connectivity Manager object to check connection
+        ConnectivityManager connec =
+                (ConnectivityManager) getSystemService(getBaseContext().CONNECTIVITY_SERVICE);
+
+        // Check for network connections
+        if (connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.CONNECTED ||
+                connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.CONNECTING ||
+                connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.CONNECTING ||
+                connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.CONNECTED) {
+
+
+            return true;
+
+        } else if (
+                connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.DISCONNECTED ||
+                        connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.DISCONNECTED) {
+
+            Toast.makeText(getApplicationContext(), "Internet Down Data not Reflect on server", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        return false;
+    }
+
+
+
+    private class insertItemToOnlineDB extends AsyncTask<ApiConnector, Long, JSONArray> {
+        @Override
+        protected JSONArray doInBackground(ApiConnector... params) {
+            // it is executed on Background thread
+            //Toast.makeText(getApplicationContext(),"Saving Data Online ",Toast.LENGTH_LONG).show();
+            Log.d("Abhishek", "Saving Data Online ");
+
+            Item item= new Item();
+            item.setCategory(model_category);
+            item.setModel_number(model_number);
+            item.setSerial_number(model_serial_number);
+            item.setDate(model_date);
+
+            ItemSpecification itemSpecification = new ItemSpecification();
+
+            itemSpecification.setBrand(brandcatS);
+            itemSpecification.setType(typecatS);
+            itemSpecification.setPort(portcatS);
+            itemSpecification.setMbps(mbpscatS);
+
+
+            item.setItemSpecification(itemSpecification);
+            return params[0].insert_item_details(item);
+        }
+
+        @Override
+        protected void onPostExecute(JSONArray jsonArray) {
+        }
+
+
+    }
+
 }

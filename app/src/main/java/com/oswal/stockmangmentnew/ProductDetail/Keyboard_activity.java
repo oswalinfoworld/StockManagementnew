@@ -39,7 +39,7 @@ public class Keyboard_activity extends AppCompatActivity {
     ArrayList<String> keyboard_brandListArray = new ArrayList<String>();
     ArrayList<String> typeListArray = new ArrayList<String>();
     String model_number,model_category,model_serial_number,model_date;
-    String brand,type;
+    String brandS,typeS;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,29 +95,23 @@ public class Keyboard_activity extends AppCompatActivity {
         Brandcat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                brand=adapterView.getItemAtPosition(i).toString();
+
                 switch(i){
                     case 0:
                         break;
                     case 1:
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-                        brand=adapterView.getItemAtPosition(i).toString();
+                        brandS=adapterView.getItemAtPosition(i).toString();
 
                         break;
                     case 2:
+                        brandS=adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
 
                         break;
-                    case 3:
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
 
-
-                        Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
-                        break;
-                    case 4:
-                        break;
                 }
             }
 
@@ -131,17 +125,19 @@ public class Keyboard_activity extends AppCompatActivity {
         Typecat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                type=adapterView.getItemAtPosition(i).toString();
+
 
                 switch(i){
                     case 0:
                         break;
                     case 1:
+                        typeS=adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
 
                         break;
                     case 2:
+                        typeS=adapterView.getItemAtPosition(i).toString();
                         Toast.makeText(getApplicationContext(),"Data selected", Toast.LENGTH_SHORT).show();
 
                         break;
@@ -227,8 +223,8 @@ public class Keyboard_activity extends AppCompatActivity {
 
             ItemSpecification itemSpecification = new ItemSpecification();
 
-            itemSpecification.setBrand(brand);
-            itemSpecification.setType(type);
+            itemSpecification.setBrand(brandS);
+            itemSpecification.setType(typeS);
             item.setItemSpecification(itemSpecification);
             return params[0].insert_item_details(item);
         }

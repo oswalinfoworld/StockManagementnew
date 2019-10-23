@@ -51,6 +51,14 @@ public class GPS_activity extends AppCompatActivity {
         setContentView(R.layout.activity_gps_activity);
         getSupportActionBar().setTitle("GPS Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        model_number=getIntent().getStringExtra("model_number");
+        model_category=getIntent().getStringExtra("model_Category");
+        model_serial_number=getIntent().getStringExtra("model_serial_number");
+        model_date=getIntent().getStringExtra("model_date");
+
+
+
         simname=(EditText)findViewById(R.id.gps_simname);
         simrecharge=(EditText)findViewById(R.id.gps_recharge);
         simvalidity=(EditText)findViewById(R.id.gps_validity);

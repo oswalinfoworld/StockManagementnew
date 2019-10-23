@@ -213,7 +213,7 @@ public class Laptop_activity extends AppCompatActivity {
                 startActivity(i);*/
 
                 if (isInternetOn()) {
-                    new insertItemToOnlineDB().execute(new ApiConnector());
+                    new  Laptop_activity. insertItemToOnlineDB().execute(new ApiConnector());
                     Intent i1 = new Intent(Laptop_activity.this, Add_Item.class);
                     startActivity(i1);
                 }

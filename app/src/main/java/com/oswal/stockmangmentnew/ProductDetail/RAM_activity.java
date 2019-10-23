@@ -3,7 +3,10 @@ package com.oswal.stockmangmentnew.ProductDetail;
         import androidx.appcompat.app.AppCompatActivity;
 
         import android.content.Intent;
+        import android.net.ConnectivityManager;
+        import android.os.AsyncTask;
         import android.os.Bundle;
+        import android.util.Log;
         import android.view.View;
         import android.widget.AdapterView;
         import android.widget.ArrayAdapter;
@@ -15,6 +18,9 @@ package com.oswal.stockmangmentnew.ProductDetail;
         import com.oswal.stockmangmentnew.OflineDBActivity.DatabaseHelper;
         import com.oswal.stockmangmentnew.OflineDBActivity.model.KeyboardProfile;
         import com.oswal.stockmangmentnew.OflineDBActivity.model.RAMProfile;
+        import com.oswal.stockmangmentnew.OnlineDBActivity.ApiConnector;
+        import com.oswal.stockmangmentnew.POJO.Item;
+        import com.oswal.stockmangmentnew.POJO.ItemSpecification;
         import com.oswal.stockmangmentnew.R;
         import com.oswal.stockmangmentnew.Services.Items.Add_Item;
 
@@ -39,6 +45,9 @@ public class RAM_activity extends AppCompatActivity {
     ArrayList<String> brandListArray = new ArrayList<String>();
     ArrayList<String> GBListArray = new ArrayList<String>();
     ArrayList<String> typeListArray = new ArrayList<String>();
+
+
+    String model_number,model_category,model_serial_number,model_date;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +55,14 @@ public class RAM_activity extends AppCompatActivity {
         setContentView(R.layout.activity_ram_activity);
         getSupportActionBar().setTitle("RAM Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        model_number=getIntent().getStringExtra("model_number");
+        model_category=getIntent().getStringExtra("model_Category");
+        model_serial_number=getIntent().getStringExtra("model_serial_number");
+        model_date=getIntent().getStringExtra("model_date");
+
+
+
         Brandcat=(Spinner)findViewById(R.id.ram_spinner1);
         GBcat=(Spinner)findViewById(R.id.ram_spinner3) ;
         Typecat=(Spinner)findViewById(R.id.ram_spinner2) ;
@@ -257,15 +274,83 @@ public class RAM_activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "Data Submited", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(RAM_activity.this, Add_Item.class);
+               /* Intent i = new Intent(RAM_activity.this, Add_Item.class);
                 i.putExtra("RAM_activity_breandCat",brandCatS);
                 i.putExtra("RAM_activity_typeCat",typeCatS);
                 i.putExtra("RAM_activity_GB",gbS);
 
-                startActivity(i);
+                startActivity(i);*/
+
+
+
+                if (isInternetOn()) {
+                    new RAM_activity.insertItemToOnlineDB().execute(new ApiConnector());
+                    Intent i1 = new Intent(RAM_activity.this, Add_Item.class);
+                    startActivity(i1);
+                }
+
             }
         });
 
 
     }
+
+    public boolean isInternetOn() {
+
+        // get Connectivity Manager object to check connection
+        ConnectivityManager connec =
+                (ConnectivityManager) getSystemService(getBaseContext().CONNECTIVITY_SERVICE);
+
+        // Check for network connections
+        if (connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.CONNECTED ||
+                connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.CONNECTING ||
+                connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.CONNECTING ||
+                connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.CONNECTED) {
+
+
+            return true;
+
+        } else if (
+                connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.DISCONNECTED ||
+                        connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.DISCONNECTED) {
+
+            Toast.makeText(getApplicationContext(), "Internet Down Data not Reflect on server", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        return false;
+    }
+
+
+
+    private class insertItemToOnlineDB extends AsyncTask<ApiConnector, Long, JSONArray> {
+        @Override
+        protected JSONArray doInBackground(ApiConnector... params) {
+            // it is executed on Background thread
+            //Toast.makeText(getApplicationContext(),"Saving Data Online ",Toast.LENGTH_LONG).show();
+            Log.d("Abhishek", "Saving Data Online ");
+
+            Item item= new Item();
+            item.setCategory(model_category);
+            item.setModel_number(model_number);
+            item.setSerial_number(model_serial_number);
+            item.setDate(model_date);
+
+            ItemSpecification itemSpecification = new ItemSpecification();
+
+            itemSpecification.setBrand(brandCatS);
+            itemSpecification.setType(typeCatS);
+            itemSpecification.setGb(gbS);
+
+
+            item.setItemSpecification(itemSpecification);
+            return params[0].insert_item_details(item);
+        }
+
+        @Override
+        protected void onPostExecute(JSONArray jsonArray) {
+        }
+
+
+    }
+
 }

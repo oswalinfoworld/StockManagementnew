@@ -2,24 +2,41 @@ package com.oswal.stockmangmentnew.POJO;
 
 public class ItemSpecification {
 
-    private String brand;
-    private  String type;
-    private  String generation;
-    private  String ram;
-    private  String inches;
-    private  String hdd;
-    private   String shdd;
-    private  String os;
-    private   String graphic_card;
-    private   String dvd_writer;
-    private  String port;
-    private  String capacity;
-    private String length;
-    private   String sim_name;
-    private  String sim_recharge;
-    private   String sim_validity;
-    private  String mbps;
+    private String brand="NOT_SET";
+    private  String type="NOT_SET";
+    private  String generation="NOT_SET";
+    private  String ram="NOT_SET";
+    private  String inches="NOT_SET";
+    private  String hdd="NOT_SET";
+    private   String shdd="NOT_SET";
+    private  String os="NOT_SET";
+    private   String graphic_card="NOT_SET";
+    private   String dvd_writer="NOT_SET";
+    private  String port="NOT_SET";
+    private  String capacity="NOT_SET";
+    private String length="NOT_SET";
+    private   String sim_name="NOT_SET";
+    private  String sim_recharge="NOT_SET";
+    private   String sim_validity="NOT_SET";
+    private  String mbps="NOT_SET";
+    private  String gb="NOT_SET";
+    private  String ppm="NOT_SET";
 
+    public String getPpm() {
+        return ppm;
+    }
+
+    public void setPpm(String ppm) {
+        this.ppm = ppm;
+    }
+
+    public String getGb() {
+        return gb;
+    }
+
+    public void setGb(String gb) {
+        this.gb = gb;
+    }
 
     public String getBrand() {
         return brand;

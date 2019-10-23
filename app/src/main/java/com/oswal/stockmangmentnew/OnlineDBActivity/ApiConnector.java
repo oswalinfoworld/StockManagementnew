@@ -126,11 +126,13 @@ public class ApiConnector {
            String dvd_writer=oneItem.getItemSpecification().getDvd_writer().replaceAll(" ", "%20");
           String port=oneItem.getItemSpecification().getPort().replaceAll(" ", "%20");
           String capacity=oneItem.getItemSpecification().getCapacity().replaceAll(" ", "%20");
-          String lenght=oneItem.getItemSpecification().getLength().replaceAll(" ", "%20");
+          String length=oneItem.getItemSpecification().getLength().replaceAll(" ", "%20");
           String sim_name=oneItem.getItemSpecification().getSim_name().replaceAll(" ", "%20");
           String sim_recharge=oneItem.getItemSpecification().getSim_recharge().replaceAll(" ", "%20");
            String sim_validity=oneItem.getItemSpecification().getSim_validity().replaceAll(" ", "%20");
           String mbps=oneItem.getItemSpecification().getMbps().replaceAll(" ", "%20");
+          String gb=oneItem.getItemSpecification().getGb().replaceAll(" ", "%20");
+          String ppm=oneItem.getItemSpecification().getPpm().replaceAll(" ", "%20");
 
 
 
@@ -152,11 +154,13 @@ public class ApiConnector {
                 +"&dvd_writer="+dvd_writer
                 +"&port="+port
                 +"&capacity="+capacity
-                +"&length="+lenght
+                +"&length="+length
                 +"&sim_name="+sim_name
                 +"&sim_recharge="+sim_recharge
                 +"&sim_validity="+sim_validity
-                +"&mbps="+mbps;
+                +"&mbps="+mbps
+                +"&gb="+gb
+                +"&ppm="+ppm;
         System.out.print("Mrunal***************** URL " + url);
 
 
